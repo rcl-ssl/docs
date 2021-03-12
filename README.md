@@ -18,8 +18,8 @@ Articles are stored in the GitHub repository as Markdown files. Simple changes t
 
 - Open an [issue](https://github.com/rcl-letsencrypt-auto-ssl/docs/issues) describing what you want to do, such as changing an existing article or creating a new one. Wait for approval before you invest much time.
 
-- Fork the repo of the **master** branch and create a new branch for your changes.
+- Fork the repo of the **main** branch and create a new branch for your changes.
 
-- Submit a PR to the **master** branch with your changes.
+- Submit a PR to the **main** branch with your changes.
 
 - Respond to PR feedback.
