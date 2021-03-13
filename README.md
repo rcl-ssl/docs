@@ -2,7 +2,7 @@
 
 The documentation for the RCL applications. 
 
-View it online at: https://rcl-letsencrypt-auto-ssl.github.io/docs/
+View it online at: https://docs.rclapp.com
 
 ## Contribute to the documentation
 
@@ -16,7 +16,7 @@ Articles are stored in the GitHub repository as Markdown files. Simple changes t
 
 - You need a basic understanding of Git and GitHub.com.
 
-- Open an [issue](https://github.com/rcl-letsencrypt-auto-ssl/docs/issues) describing what you want to do, such as changing an existing article or creating a new one. Wait for approval before you invest much time.
+- Open an [issue](https://github.com/rcl-ssl/docs/issues) describing what you want to do, such as changing an existing article or creating a new one. Wait for approval before you invest much time.
 
 - Fork the repo of the **main** branch and create a new branch for your changes.
 
