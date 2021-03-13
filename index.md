@@ -6,7 +6,7 @@ nav_order: 1
 
 # Introduction
 
-The RCL *Let's Encrypt*<sup>TM</sup> client allows you to Create TLS/SSL certificates for your web applications using the popular *Let's Encrypt*<sup>TM</sup> V2 API.
+The RCL client for *Let's Encrypt*<sup>TM</sup> allows you to Create TLS/SSL certificates for your web applications using the popular *Let's Encrypt*<sup>TM</sup> V2 API.
 
 <sub>Let's Encrypt is a trademark of the Internet Security Research Group. All rights reserved.</sub>
 
