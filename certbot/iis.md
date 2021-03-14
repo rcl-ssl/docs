@@ -6,24 +6,24 @@ nav_order: 3
 
 # Using RCL CertificateBot with Microsoft IIS
 
-[RCL CertificateBot](./certbot) can be used to automate the installation of SSL/TLS certificate in Microsoft IIS. This is achieved as follows:
+[RCL CertificateBot](./certbot) can be used to automate the installation and renewal of SSL/TLS certificate in Microsoft IIS. This is achieved as follows:
 
 - RCL CertificateBot is configured in the ``appsettings.json`` file to recognize the **bindings** of one or more websites in IIS
 - RCL CertificateBot automatically renews certificates and installs the certificates in each binding specified in the configuration
 
 ## Installing RCL CertificateBot in Windows
 
-Please follow the instructions in the following link to install RCL CertificateBot in Windows.
+Please follow the instructions in the following link to install RCL CertificateBot in Windows:
 
 - [Installing RCL CertificateBot in Windows](./windows-service)
 
 ## Configuring RCL CertificateBot for IIS
 
-The IIS website bindings must be configured in the ``appsettings.json`` file in the ``bindings`` section in ``CertBot``. The following is an example shows a single website binding :
+The IIS website bindings must be configured in the ``appsettings.json`` file in the ``bindings`` section in ``CertificateBot``. The following is an example shows a single website binding :
 
 ```
-  "CertBot": {
-    "saveCertificatePath": "C:/test/crt",
+  "CertificateBot": {
+    "saveCertificatePath": "c:/ssl",
     "includeCertificates": [ "all" ],
     "serverIdentifier": "default",
     "bindings": [

@@ -12,14 +12,14 @@ The [RCL SDK](https://github.com/rcl-letsencrypt-auto-ssl/RCL.LetsEncrypt.SDK) p
 
 The project's GitHub page is located at :
 
-[https://github.com/rcl-letsencrypt-auto-ssl/RCL.LetsEncrypt.SDK](https://github.com/rcl-letsencrypt-auto-ssl/RCL.LetsEncrypt.SDK)
+[https://github.com/rcl-ssl/RCL.SDK](https://github.com/rcl-ssl/RCL.SDK)
 
 ## Installing the SDK
 
 You can install the SDK from NuGet :
 
 ```
-Install-Package RCL.LetsEncrypt.SDK -Version 3.1.5
+Install-Package RCL.SDK
 ```
 
 ## Configure the Application Consuming the SDK
@@ -33,9 +33,9 @@ Configure the application consuming the SDK (Console App, ASP.NET Core App, Func
   "Auth:client_secret": "~gdttrffd-645gbdgfT-uyrTT4_",
   "Auth:tenantId": "5547785-76535554-8476534",
 
-  "LetsEncryptSDK:apiEndPoint": "https://letsencryptapi.azure-api.net",
-  "LetsEncryptSDK:armResource": "https://management.core.windows.net",
-  "LetsEncryptSDK:keyVaultResource": "https://vault.azure.net"
+  "RCLSDK:apiEndPoint": "https://rclapi.azure-api.net",
+  "RCLSDK:armResource": "https://management.core.windows.net",
+  "RCLSDK:keyVaultResource": "https://vault.azure.net"
 ```
 
 The ``auth`` configuration must be changed to match the user's AAD Application credentials.
@@ -68,7 +68,7 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 ## Add the Services
 
- Set up the application consuming the SDK to use **Dependency Injection (DI)**; and add the SDK services ``AddAuthTokenService``, ``AddLetsEncryptSDK`` to the ``IServiceCollection``.
+ Set up the application consuming the SDK to use **Dependency Injection (DI)**; and add the SDK services ``AddAuthTokenService``, ``AddRCLSDK`` to the ``IServiceCollection``.
 
 ### Example Console App
 
@@ -76,7 +76,7 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace RCL.LetsEncrypt.SDK.ConsoleSample
+namespace RCL.SDK.ConsoleSample
 {
     public static class Startup
     {
@@ -90,7 +90,7 @@ namespace RCL.LetsEncrypt.SDK.ConsoleSample
 
             // Add the SDK Services
             services.AddAuthTokenService(options => Configuration.Bind("Auth", options));
-            services.AddLetsEncryptSDK(options => Configuration.Bind("LetsEncryptSDK", options));
+            services.AddRCLSDK(options => Configuration.Bind("RCLSDK", options));
 
             return services.BuildServiceProvider();
         }
@@ -110,7 +110,7 @@ public void ConfigureServices(IServiceCollection services)
 {
     // Add the SDK Services
     services.AddAuthTokenService(options => Configuration.Bind("Auth", options));
-    services.AddLetsEncryptSDK(options => Configuration.Bind("LetsEncryptSDK", options));
+    services.AddRCLSDK(options => Configuration.Bind("RCLSDK", options));
 
     services.AddRazorPages();
 }
@@ -123,8 +123,8 @@ using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-[assembly: FunctionsStartup(typeof(RCL.LetsEncrypt.SDK.FunctionSample.Startup))]
-namespace RCL.LetsEncrypt.SDK.FunctionSample
+[assembly: FunctionsStartup(typeof(RCL.SDK.FunctionSample.Startup))]
+namespace RCL.SDK.FunctionSample
 {
     public class Startup : FunctionsStartup
     {
@@ -136,7 +136,7 @@ namespace RCL.LetsEncrypt.SDK.FunctionSample
 
             // Add the SDK Services
             services.AddAuthTokenService(options => configuration.Bind("Auth", options));
-            services.AddLetsEncryptSDK(options => configuration.Bind("LetsEncryptSDK", options));
+            services.AddRCLSDK(options => configuration.Bind("RCLSDK", options));
         }
     }
 }
@@ -150,7 +150,7 @@ namespace RCL.LetsEncrypt.SDK.FunctionSample
 using System;
 using System.Threading.Tasks;
 
-namespace RCL.LetsEncrypt.SDK.ConsoleSample
+namespace RCL.SDK.ConsoleSample
 {
     class Program
     {
@@ -172,7 +172,7 @@ namespace RCL.LetsEncrypt.SDK.ConsoleSample
 ### Example ASP.NET Core App
 
 ```csharp
-namespace RCL.LetsEncrypt.SDK.AspnetSample.Pages
+namespace RCL.SDK.AspnetSample.Pages
 {
     public class IndexModel : PageModel
     {
@@ -188,7 +188,7 @@ namespace RCL.LetsEncrypt.SDK.AspnetSample.Pages
 ### Example Function App
 
 ```csharp
-namespace RCL.LetsEncrypt.SDK.FunctionSample
+namespace RCL.SDK.FunctionSample
 {
     public class GetCertificate
     {
@@ -245,17 +245,13 @@ Make a POST request to the [Certificate API](../api/post-certificate)
   {
     id = 158,
     name = "contoso.com",
-    remoteCreateDate = DateTime.Now
+    remoteCreateDate = DateTime.Now,
+    remoteCreate = "prod-server"
   };
 
 CertificateResponse certificateResponse = await _certificateService
 .PostCertificateAsync(data);
 ```
-## Recommendations for Automation System Design
-
-The SDK can be used to build Automation Systems for installation and renewal of certificates in a server. Please review the following article to see recommendations for the design of such a system :
-
-[Recommendations for Automation System Design](https://rclapp.com/api/automation-system.html)
 
 ## Sample Projects
 
