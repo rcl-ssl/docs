@@ -56,11 +56,5 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 - [Testing AutoRenew Function](./test.md)
 
-## Related Articles
-
-- [Installing AutoRenew Function](./installation.md)
-- [Registering an AAD application](../authorization/aad_application)
-- [Setting Access Control for the AAD application](../authorization/access_control)
-
 
 

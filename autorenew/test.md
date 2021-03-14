@@ -6,7 +6,7 @@ nav_order: 4
 
 ## Testing the Functions
 
-In this section, you will learn how to test the RCL Lest Encrypt AutoRenew functions.
+In this section, you will learn how to test the RCL AutoRenew functions.
 
 - In the Azure portal, open the function app and open the functions
 

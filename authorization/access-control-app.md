@@ -36,7 +36,7 @@ If a user is creating TLS/SSL certificates for **Azure Key Vault**, they will ne
 
 ![install](../images/authorization_access_control/key_vault.PNG)
 
-- In the 'Certificate permissions' dropdown, select all **16 permissions**
+- In the 'Certificate permissions' dropdown, select all **16 permissions**, including 'Purge' permission.
 
 ![install](../images/authorization_access_control/key_vault2.PNG)
 

@@ -10,7 +10,7 @@ In this section, you will learn how to install the **RCL Auto Renew Function** i
 
 ## Install in Azure
 
-- Open the [Github Project Page ](https://github.com/rcl-letsencrypt-auto-ssl/RCL.LetsEncrypt.AutoRenew) for the AutoRenew function , and in the **master** branch, click on the 'Deploy to Azure' button on the **README** page
+- Open the [Github Project Page ](https://github.com/rcl-ssl/RCL.AutoRenew) for the AutoRenew function , and in the **master** branch, click on the 'Deploy to Azure' button on the **README** page
 
 ![install](../images/autorenew_installation/azure_deploy.PNG)
 
@@ -20,7 +20,7 @@ In this section, you will learn how to install the **RCL Auto Renew Function** i
 
 The following Azure applications will be installed in the Resource Group :
 
-- Function app - this is used to automatically renew the TLS/SSL certificates
+- Function app - this is used to automatically renew the SSL/TLS certificates
 - Consumption plan - the function app will run on a [consumption plan](https://docs.microsoft.com/en-us/azure/azure-functions/consumption-plan) and the user will pay only when the function is running
 - Storage account - required by the function app
 
@@ -28,7 +28,6 @@ The estimated cost for these Azure resources may be a few cents or dollars per m
 
 ![install](../images/autorenew_installation/azure_deploy3.PNG)
 
-## Next Steps
+## Next Step
 
 - [Configuring AutoRenew Function](./configure.md)
-- [Testing AutoRenew Function](./test.md)

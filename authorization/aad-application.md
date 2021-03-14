@@ -8,11 +8,11 @@ nav_order: 4
 
 **Authorization** is required for the following operations :
 
-- to install TLS/SSL certificates in an App Services , Key Vault and DNS Zone
+- to install SSL/TLS certificates in an App Services , Key Vault and DNS Zone
 - to make authorized requests to the [RCL API](../api/api)
 - to use the [RCL SDK](../sdk/sdk)
 - to use the [RCL AutoRenew](../autorenew/autorenew) Function app
-- to use the [RCL CertificateBot](../certbot/certbot) Function app
+- to use the [RCL CertificateBot](../certbot/certbot)
 
  This authorization will be granted through an **AAD Application**.
 
