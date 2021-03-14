@@ -151,7 +151,7 @@ cd /etc/systemd/system
 - Create the daemon file
 
 ```bash
-sudo touch rclcertbot.service
+sudo touch certificatebot.service
 ```
 
 - Use nano (or other text editor) to edit the service file 
