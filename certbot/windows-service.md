@@ -6,22 +6,23 @@ nav_order: 2
 
 # RCL CertificateBot for Windows
 
-RCL CertificateBot runs as a **Windows Service** in a Windows Server. The Windows Service will run every four (4) days to automatically renew and save TLS/SSL certificates from a user's subscription in the **RCL Portal**.
+RCL CertificateBot runs as a **Windows Service** in a Windows Server. The Windows Service will run every four (4) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL Portal**.
 
-## Automatically Renew TLS/SSL Certificates
+## Automatically Renew SSL/TLS Certificates
 
-You can use RCL CertificateBot to automatically renew TLS/SSL certificates created in the **RCL Portal** using the the following creation options :
+You can use RCL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL Portal** using the the following creation options :
 
-- Azure DNS (including SAN) - Recommended
+- Azure DNS (including SAN) - **Recommended**
 - Azure Key Vault (including SAN)
 
 **'Stand Alone' certificates are not supported by RCL CertificateBot.**
 
+# Install RCL CertificateBot
 ## Download the Files
 
 - Download the Windows Service files from the GitHub Project page in the Releases section:
 
-- Click to : [Download RCL CertificateBot Files](https://github.com/rcl-letsencrypt-auto-ssl/RCL.LetsEncrypt.CertBot/releases)
+- [Download RCL CertificateBot Files](https://github.com/rcl-ssl/RCL.CertificateBot/releases/tag/V2.1)
 
 - Select the zip file with bitness (win-x86, win-x64, win-arm) to match your Windows server bitness
 
@@ -31,7 +32,7 @@ You can use RCL CertificateBot to automatically renew TLS/SSL certificates creat
 
 ### Register an AAD Application
 
-An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources and to make authorized requests to the [RCL API](../api/api). 
+An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources (eg: DNS Zone). 
 
 Please refer to the following link to register an AAD application:
 
@@ -39,7 +40,7 @@ Please refer to the following link to register an AAD application:
 
 ### Set Access Control for the AAD application
 
-Access control must be set for the AAD application to access resources in a user's Azure subscription. Please refer to the following link to set access control :
+Access control must be set for the AAD application to access resources in a user's Azure subscription (eg: DNS Zone). Please refer to the following link to set access control :
 
 - [Setting Access Control for the AAD Application](../authorization/access-control-app)
 
@@ -59,7 +60,7 @@ Please refer to the following link to get the AAD credentials to configure the s
   - client_secret
   - tenantId
 
-- In the **CertBot** section, set a folder path to save the TLS/SSL certificates. Create the folder in the server and set it with read/write permissions so that the certificates can be saved to it :
+- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates in the server. Create the folder in the server and set it with read/write permissions so that the certificates can be saved to it :
 
   - saveCertificatePath
 
@@ -75,8 +76,8 @@ Please refer to the following link to get the AAD credentials to configure the s
     "client_secret": "~irjhfyyr-6653gfghf",
     "tenantId": "47735-477635-46534"
   },
-  "CertBot": {
-    "saveCertificatePath": "c:/ssl/reclcertbot",
+  "CertificateBot": {
+    "saveCertificatePath": "c:/ssl",
     "includeCertificates": ["all"],
     "serverIdentifier": "default",
     "bindings": []
@@ -102,6 +103,8 @@ Please refer to the following link to get the AAD credentials to configure the s
 }
 ```
 
+- Save the **appsettings.json** file when you are done.
+
 # Create the Windows Service
 
 - Open a **Command Prompt** in the Windows server as an **Administrator**
@@ -109,10 +112,10 @@ Please refer to the following link to get the AAD credentials to configure the s
 - Run the command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service files were downloaded and extracted
 
 ```
-sc.exe create RCLCertBot binpath= <file-path>\RCL.LetsEncrypt.Certbot.WindowsService.exe
+sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.WindowsService.exe
 ```
 
-- After the service in installed, open **Windows Service** and Start the service
+- After the service in installed, open **Services** in the Windows server and **Start** the service
 
 ![image](../images/certbot/winservice-start.png)
 
@@ -122,13 +125,13 @@ sc.exe create RCLCertBot binpath= <file-path>\RCL.LetsEncrypt.Certbot.WindowsSer
 
 # View the Event Logs
 
-- Open **Event Viewer**, under 'Windows Logs > Application', look for the 'RCL.LetsEncrypt.Certbot.WindowsService' events
+- Open **Event Viewer**, under 'Windows Logs > Application', look for the 'RCL.CertificateBot.WindowsService' events
 
 ![image](../images/certbot/winservice-events.PNG)
 
 - Ensure that there are no error events for the service. If there are error events, the service is misconfigured and will not function
 
-- Additional logs can be found at the location : < saveCertificatePath > / log.txt, where 'saveCertificatePath' is the path that you configured in 'appsettings' to save the TLS/SSL certificates
+- Additional logs can be found at the location : < saveCertificatePath > / log.txt, where 'saveCertificatePath' is the path that you configured in 'appsettings' to save the SSL/TLS certificates
 
 - Each time a certificates is downloaded and saved in the server or a certificate is scheduled for renewal, a log will be written
 
@@ -137,7 +140,7 @@ sc.exe create RCLCertBot binpath= <file-path>\RCL.LetsEncrypt.Certbot.WindowsSer
 Run the command to delete the service
 
 ```
-sc.exe delete RCLCertBot  
+sc.exe delete CertificateBot  
 ```
 
 # Fixing Errors
@@ -150,8 +153,8 @@ RCL CertificateBot will save renewed TLS/SSL certificate files to a folder in th
 
 Please follow the links below to configure your web server:
 
-- [Installing TLS/SSL Certificates in Apache Server](../installations/apache)
-- [Installing TLS/SSL Certificates in Apache Tomcat](../installations/apache-tomcat)
-- [Installing TLS/SSL Certificates in NGINX](../installations/nginx)
-- [Installing TLS/SSL Certificates in IIS](./iis)
+- [Installing SSL/TLS Certificates in Apache Server](../installations/apache)
+- [Installing SSL/TLS Certificates in Apache Tomcat](../installations/apache-tomcat)
+- [Installing SSL/TLS Certificates in NGINX](../installations/nginx)
+
 

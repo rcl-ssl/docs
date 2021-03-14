@@ -6,7 +6,7 @@ nav_order: 1
 
 # Introduction
 
-RCL CertificateBot is installed in a server running a website. It allows for automatic renewal of certificates and installation of certificates in the server.
+RCL CertificateBot is installed in a server running a website. It allows for automatic renewal of SSL/TLS certificates and installation of certificates in the server.
 
 ## Windows Server
 

@@ -47,9 +47,3 @@ nav_order: 4
 ## Next Step
 
 - [Set Access Control for the AAD application](./access-control-app)
-
-## Related Articles
-
-- [Configuring AutoRenew Function](../autorenew/configure)
-- [API Authorization](../api/authorization)
-- [SDK Configuration](../sdk/sdk)

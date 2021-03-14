@@ -1,6 +1,6 @@
 ---
 title: Linux Daemon
-parent: Certificate Bot
+parent: CertificateBot
 nav_order: 3
 ---
 
