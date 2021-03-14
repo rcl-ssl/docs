@@ -6,17 +6,18 @@ nav_order: 3
 
 # RCL CertificateBot for Linux
 
-RCL CertificateBot runs as a **Daemon** in a Linux Server. The daemon will run every four (4) days to automatically renew and save TLS/SSL certificate from a user's subscription in the **RCL Portal** to a Linux Server.
+RCL CertificateBot runs as a **Daemon** in a Linux Server. The daemon will run every four (4) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL Portal** to a Linux Server.
 
 ## Automatically Renew TLS/SSL Certificates
 
-You can use RCL CertificateBot to automatically renew TLS/SSL certificates created in the **RCL Portal** using the the following creation options :
+You can use RCL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL Portal** using the the following creation options :
 
-- Azure DNS (including SAN) - Recommended
+- Azure DNS (including SAN) - **Recommended**
 - Azure Key Vault (including SAN)
 
 **'Stand Alone' certificates are not supported by RCL CertificateBot.**
 
+# Installing RCL CertificateBot
 
 ## Download and Extract the Daemon Files to the Linux Server
 
@@ -31,20 +32,20 @@ cd /usr/sbin
 - Run the command in the folder to download and extract the ``linux-x64`` files:
 
 ```bash
-wget -c https://github.com/rcl-letsencrypt-auto-ssl/RCL.LetsEncrypt.CertBot/releases/download/v2/rclcertbot-linux-x64.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V2.1/certificatebot-linux-x64.tar.gz -O - | sudo tar -xz
 ```
 
 or ``linux-arm`` files :
 
 ```bash
-wget -c https://github.com/rcl-letsencrypt-auto-ssl/RCL.LetsEncrypt.CertBot/releases/download/v2/rclcertbot-linux-arm.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V2.1/certificatebot-linux-arm.tar.gz -O - | sudo tar -xz
 ```
 
 ## Configure the Daemon
 
 ### Register an AAD Application
 
-An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources and to make authorized requests to the [RCL API](../api/api). 
+An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources (eg: DNS Zone). 
 
 Please refer to the following link to register an AAD application:
 
@@ -67,13 +68,13 @@ Please refer to the following link to get the AAD Application credentials to con
 - Navigate to the folder you downloaded and extracted the daemon files :
 
 ```bash
-cd /usr/sbin/rclcertbot-linux-x64
+cd /usr/sbin/certificatebot-linux-x64
 ```
 
 or for ``arm``
 
 ```bash
-cd /usr/sbin/rclcertbot-linux-arm
+cd /usr/sbin/certificatebot-linux-arm
 ```
 
 - Use nano (or other text editor) to edit the **appsettings.json** file in the folder
@@ -87,14 +88,14 @@ sudo nano appsettings.json
   - client_secret
   - tenantId
 
-- In the **CertBot** section, set a folder path to save the TLS/SSL certificates. Recommended path : /etc/ssl/rclcertbot
+- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : /etc/ssl/certificatebot
 
   - saveCertificatePath
 
 - Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
 
 ```bash
-sudo mkdir /etc/ssl/rclcertbot
+sudo mkdir -m 777 /etc/ssl/certificatebot
 ```
 
 - The ``includeCertificates`` settings will allow for including specific certificates by its name 
@@ -156,7 +157,7 @@ sudo touch rclcertbot.service
 - Use nano (or other text editor) to edit the service file 
 
 ```bash
-sudo nano rclcertbot.service
+sudo nano certificatebot.service
 ```
 
 - Add the following code to the file
@@ -167,15 +168,15 @@ Description=RCL CertificateBot
 
 [Service]
 Type=notify
-WorkingDirectory=/usr/sbin/rclcertbot-linux-x64
-ExecStart=/usr/sbin/rclcertbot-linux-x64/RCL.LetsEncrypt.Certbot.LinuxDaemon
+WorkingDirectory=/usr/sbin/certificatebot-linux-x64
+ExecStart=/usr/sbin/certificatebot-linux-x64/RCL.CertificateBot.LinuxDaemon
 
 [Install]
 WantedBy=multi-user.target
 
 ```
 
-If you installed the ``arm`` version, change the directory to the arm path ``/usr/sbin/rclcertbot-linux-arm`` instead of ``/usr/sbin/rclcertbot-linux-x64`` in the 'WorkingDirectory' and 'ExecStart' settings
+If you installed the ``arm`` version, change the directory to the arm path ``/usr/sbin/certificatebot-linux-arm`` instead of ``/usr/sbin/certificatebot-linux-x64`` in the 'WorkingDirectory' and 'ExecStart' settings
 
 ## Reload the Daemon
 
@@ -190,7 +191,7 @@ sudo systemctl daemon-reload
 - Run the code to start the daemon
 
 ```bash
-sudo systemctl start rclcertbot
+sudo systemctl start certificatebot
 ```
 
 ## View the Status of the Daemon
@@ -198,7 +199,7 @@ sudo systemctl start rclcertbot
 - Run the code to view the status of the daemon
 
 ```bash
-sudo systemctl status rclcertbot
+sudo systemctl status certificatebot
 ```
 
 - You will see the status of the daemon. The most recent logs will also be displayed. 
@@ -210,15 +211,15 @@ sudo systemctl status rclcertbot
 - Run the command to view the daemon's detailed logs
 
 ```bash
-sudo journalctl -u rclcertbot
+sudo journalctl -u certificatebot
 ```
 
 ## When you need to Stop the Daemon
 
-- Run the code when you need to stop the daemon. When the daemon is stopped CertBot will discontinue certificate renewals and installation in the server.
+- Run the code when you need to stop the daemon. When the daemon is stopped CertificateBot will discontinue certificate renewals and installation in the server.
 
 ```bash
-sudo systemctl stop rclcertbot
+sudo systemctl stop certificatebot
 ```
 
 # Fixing Errors
@@ -227,7 +228,7 @@ If you encounter errors in the logs for the daemon, please stop the daemon. Ensu
 
 # Installing Certificates in Web Servers
 
-RCL CertificateBot will save renewed TLS/SSL certificate files to a folder in the server. You should then configure the web server to use these files to implement SSL/TLS in your website.
+RCL CertificateBot will save renewed SSL/TLS certificate files to a folder in the server. You should then configure the web server to use these files to implement SSL/TLS in your website.
 
 Please follow the links below to configure your web server:
 
