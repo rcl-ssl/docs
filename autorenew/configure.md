@@ -1,5 +1,6 @@
 ﻿---
 title: Configure the Function
+description: Configuring the RCL AutoRenew Function
 parent: AutoRenew Function
 nav_order: 3
 ---

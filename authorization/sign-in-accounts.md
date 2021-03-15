@@ -1,5 +1,6 @@
 ---
 title: Sign-In Accounts
+description: Learn about the Microsoft Personal Account and Azure Active Directory Organization User Account used for sign-in in RCL applications
 parent: Authorization
 nav_order: 1
 ---

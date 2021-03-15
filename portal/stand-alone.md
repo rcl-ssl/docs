@@ -1,5 +1,6 @@
 ---
 title: Stand Alone 
+description: Use the RCL portal to manually create single-domain SSL/TLS certificates 
 parent: Portal
 nav_order: 2
 ---

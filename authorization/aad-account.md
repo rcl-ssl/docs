@@ -1,5 +1,6 @@
 ---
 title: AAD User Account
+description: Learn how to create an Active Directory Organization User Account for use in RCL applications
 parent: Authorization
 nav_order: 2
 ---

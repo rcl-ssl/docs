@@ -1,5 +1,6 @@
 ﻿---
 title: Access Control - AAD App
+description: Learn how to set Access Control for an Azure Active Directory application for use in RCL applications
 parent: Authorization
 nav_order: 5
 ---

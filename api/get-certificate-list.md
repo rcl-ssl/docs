@@ -1,5 +1,6 @@
 ---
 title: GET Certificate List
+description: RCL API - GET Certificate List
 parent: API
 nav_order: 4
 ---

@@ -1,5 +1,6 @@
 ---
 title: Introduction
+description: Using the RCL API to get and renew certificates created in the RCL portal
 parent: API
 nav_order: 1
 ---

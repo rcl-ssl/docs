@@ -1,5 +1,6 @@
 ---
 title: Introduction
+description: RCL CertificateBot for automatic SSL/TLS certificate installation and renewal in Windows and Linux servers
 parent: CertificateBot
 nav_order: 1
 ---

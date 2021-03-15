@@ -1,5 +1,6 @@
 ---
 title: Stand Alone SAN
+description: Use the RCL portal to manually create multi-domain SAN SSL/TLS certificates 
 parent: Portal
 nav_order: 3
 ---

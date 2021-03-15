@@ -1,5 +1,6 @@
 ﻿---
 title: AAD Application
+description: Learn how to create an Azure Active Directory Application for use in RCL applications
 parent: Authorization
 nav_order: 4
 ---

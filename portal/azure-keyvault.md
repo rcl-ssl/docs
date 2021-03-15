@@ -1,5 +1,6 @@
 ---
 title: Azure Key Vault
+description: Use the RCL portal to create Single-Domain SSL/TLS certificates using an Azure DNS Zone and automatically install it in Azure Key Vault
 parent: Portal
 nav_order: 7
 ---

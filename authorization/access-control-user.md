@@ -1,5 +1,6 @@
 ---
 title: Access Control - AAD User
+description: Learn how to set Access Control for an Azure Active Directory Organization User for use in RCL applications
 parent: Authorization
 nav_order: 3
 ---

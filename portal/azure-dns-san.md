@@ -1,5 +1,6 @@
 ---
 title: Azure DNS SAN
+description: Use the RCL portal to create Multi-Domain SAN SSL/TLS certificates using an Azure DNS Zone 
 parent: Portal
 nav_order: 5
 ---

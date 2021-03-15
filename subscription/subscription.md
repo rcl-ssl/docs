@@ -1,15 +1,15 @@
 ---
 title: Subscription
+description: Learn how to subscribe to the RCL application in the Azure Marketplace or Azure Portal 
 has_children: false
 nav_order: 2
 ---
 
 # RCL Subscription
 
-- You will subscribe RCL in the Azure portal or n the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=overview)
+- You will subscribe to RCL in the Azure portal or in the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=overview)
 
-- In the Azure portal, search for the RCL application
-Click on the ‘Setup+Subscribe’ button to add a subscription
+- In the Azure portal, search for the RCL application. Click on the ‘Setup+Subscribe’ button to add a subscription
 
 ![image](../images/subscription/marketplace-subscribe.png)
 
