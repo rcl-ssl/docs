@@ -2,6 +2,8 @@
 remote_theme: pmarsceill/just-the-docs
 color_scheme: "dark"
 search_enabled: true
+ga_tracking: G-R8D9K4GZVQ
+ga_tracking_anonymize_ip: true
 aux_links:
   "RCL Docs on GitHub":
     - "https://github.com/rcl-ssl/docs"
