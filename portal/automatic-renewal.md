@@ -38,7 +38,7 @@ The web servers in the Windows Server must be configured to use the SSL/TLS cert
 
 #### Special Support for IIS
 
-CertificateBot in a Windows Server has [Special Support for IIS](../iis). You can configure CertificateBot with the bindings of the websites hosted in IIS. Once the bindings are configured, CertificateBot will automatically install and renew SSL/TLS certificates for each of the websites' binding.
+CertificateBot in a Windows Server has [Special Support for IIS](../certbot/iis). You can configure CertificateBot with the bindings of the websites hosted in IIS. Once the bindings are configured, CertificateBot will automatically install and renew SSL/TLS certificates for each of the websites' binding.
 
 ### Linux Server
 
@@ -64,7 +64,7 @@ The AutoRenew function will run every week, and if it finds a certificate about 
 
 ## RCL API and SDK
 
-If you need to create a custom solution to renew SSL/TLS certificates in your server or system, you can use the RCL API or the C# SDK.
+If you need to create a custom solution to renew SSL/TLS certificates in your server or system, you can use the RCL API or the RCL SDK.
 
 ### RCL API
 
