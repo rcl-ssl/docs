@@ -11,7 +11,7 @@ In this section, we will discuss a general approach to installing SSL/TLS certif
 
 ## General Approach
 
-The general approach to installing SSL/TLS in a web server or hosting system is to :
+The general approach to installing a SSL/TLS certificate in a web server or a hosting system is to :
 
 - Download the SSL/TLS certificate files from the certificate provider
 - Save the certificate files to a folder in your system
