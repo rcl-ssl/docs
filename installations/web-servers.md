@@ -5,7 +5,7 @@ parent: Certificate Installations
 nav_order: 1
 ---
 
-# Installing SSL/TLS Certificates in Web Servers
+# Installing SSL/TLS Certificates in Web Servers and Hosting Systems
 
 In this section, we will discuss a general approach to installing SSL/TLS certificates in web servers or web hosting systems.
 
