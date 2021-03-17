@@ -7,14 +7,14 @@ nav_order: 1
 
 # Installing SSL/TLS Certificates in Web Servers and Hosting Systems
 
-In this section, we will discuss a general approach to installing SSL/TLS certificates in web servers or web hosting systems.
+In this section, we will discuss a general approach to installing SSL/TLS certificates in web servers or web hosting systems. This is applicable if you host your website in a web server in a Windows or Linux Server (Virtual Machine or Container). This may also be applicable if you host your website with a hosting provider or system.
 
 ## General Approach
 
 The general approach to installing a SSL/TLS certificate in a web server or a hosting system is to :
 
 - Download the SSL/TLS certificate files from the certificate provider
-- Save the certificate files to a folder in your system
+- Save the certificate files to a folder in your server or system
 - Configure the web server or hosting system to use the files to enable SSL for your website
 
 ## SSL/TLS Certificate Files
@@ -35,7 +35,7 @@ Web Servers or Hosting Systems may need one or more of the following certificate
 
 ### Configuration File
 
-Most web servers and hosting systems must be configured to install SSL/TLS in your website. This is done with a configuration file. In the configuration file , you will specify the file path where the certificate files are stored for each certificate file required by the server or system.
+Most web servers and hosting systems must be configured to install SSL/TLS in your website. This is done with a configuration file. In the configuration file , you will specify the file path for each certificate file required by the server or system.
 
 ### Text 
 
