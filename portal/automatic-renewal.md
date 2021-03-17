@@ -60,7 +60,7 @@ The AutoRenew function can also be used to automatically renew and install certi
 
 The AutoRenew Function is an Azure Function that runs on a Consumption plan.
 
-The AutoRenew function will run every week, and if it finds a certificate about to expire, it will automatically renew the certificate and bind it to the App Service or save it to Azure Key Vault. The older certificate is replaced with the newer one.
+The AutoRenew function will run every week, if it finds a certificate about to expire, it will automatically renew the certificate and bind it to the App Service or save it to Azure Key Vault. The older certificate is replaced with the newer one.
 
 ## RCL API and SDK
 
