@@ -29,6 +29,8 @@ Web Servers or Hosting Systems may need one or more of the following certificate
 
 - **Full Chain Certificate** (.crt) - this is a single file that contains the primary certificate and all the intermediate certificates. It does not contain the private key. This file usually uses the '.crt' extension, but could be opened as a text file.
 
+- **PKCS#12** (.pfx or .p12) - this is a single file that contains the primary certificate and intermediate certificate files. It also contains the private key and may be password protected. This is an archive file and uses the '.pfx' or '.p12' file extension.
+
 **All of the above certificate files are provided in the RCL portal in the 'Details' page for the Certificate.**
 
 ## Installing the Certificate Files
@@ -36,6 +38,9 @@ Web Servers or Hosting Systems may need one or more of the following certificate
 ### Configuration File
 
 Most web servers and hosting systems must be configured to install SSL/TLS in your website. This is done with a configuration file. In the configuration file , you will specify the file path for each certificate file required by the server or system.
+
+### Certificate Store
+The .PFX certificate archive is usually 'extracted' and saved to a **Certificate Store** in your system. The certificate is then bound to your website by the webserver or hosting system using a configuration file or SSL binding system. Some web servers can use a .PFX file that is saved directly to the file system instead of a certificate store.
 
 ### Text 
 
