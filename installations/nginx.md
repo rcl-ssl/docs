@@ -2,7 +2,7 @@
 title: NGINX Server
 description: Using RCL to install SSL/TLS certificates in NGINX
 parent: Certificate Installations
-nav_order: 3
+nav_order: 4
 ---
 
 # Installing TLS/SSL Certificates in NGINX

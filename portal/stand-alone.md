@@ -165,10 +165,11 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 
 You will need to manually download and install your certificate in your web server. The following links provides instructions on how to install the certificate in a web server
 
-- [Installing TLS/SSL Certificates in Apache Server](../installations/apache)
-- [Installing TLS/SSL Certificates in Apache Tomcat](../installations/apache-tomcat)
-- [Installing TLS/SSL Certificates in NGINX](../installations/nginx)
-- [Installing TLS/SSL Certificates in IIS](../installations/iis)
+- [Installing SSL/TLS Certificates in Web Servers and Hosting Services](../installations/web-servers)
+- [Installing SSL/TLS Certificates in Apache Server](../installations/apache)
+- [Installing SSL/TLS Certificates in Apache Tomcat](../installations/apache-tomcat)
+- [Installing SSL/TLS Certificates in NGINX](../installations/nginx)
+- [Installing SSL/TLS Certificates in IIS](../installations/iis)
 
 # Certificate Renewal
 

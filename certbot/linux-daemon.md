@@ -233,8 +233,9 @@ RCL CertificateBot will save renewed SSL/TLS certificate files to a folder in th
 
 Please follow the links below to configure your web server:
 
-- [Installing TLS/SSL Certificates in Apache Server](../installations/apache)
-- [Installing TLS/SSL Certificates in Apache Tomcat](../installations/apache-tomcat)
-- [Installing TLS/SSL Certificates in NGINX](../installations/nginx)
+- [Installing SSL/TLS Certificates in Apache Server](../installations/apache)
+- [Installing SSL/TLS Certificates in Apache Tomcat](../installations/apache-tomcat)
+- [Installing SSL/TLS Certificates in NGINX](../installations/nginx)
+- [Installing SSL/TLS Certificates in Web Servers and Hosting Services](../installations/web-servers)
 
 
