@@ -58,6 +58,14 @@ RCL uses the HTTP-01 challenge type to issue certificates for :
 
 Wildcard subdomains (e.g. *.contoso.net) are **NOT Supported** with the HTTP-01 challenge type. Use the DNS-01 challenge type for wildcard certificates instead.
 
+## HTTP Validation Requirements
+
+For HTTP validation, an extension-less validation file will be automatically added to the root of your website at path : '/.well-known/acme-challenge/' . You must ensure that your website allows the folder and file to be created in your website root (/site/wwwroot) by providing the necessary read/write permissions. Alternatively, you can manually create the validation folder and path in your website root and provide the necessary read/write permissions.
+
+In addition, your website must be able to serve the validation file publicly on the web from this path. There should be no authorization requirement (resulting in a 403) to view a file at this path. Finally, your website must be able to serve extension-less files. If these requirements are not met the HTTP validation will fail.
+
+You can test the validation by publicly browsing a file at the validation path in the browser and ensuring a valid response in the browser. The content of the extension-less file should be displayed in the browser.
+
 ## Add a Custom Domain to your App Service
 
 If you registered a domain name, add a custom domain (or sub domain) to your app service following the instructions in this link:
