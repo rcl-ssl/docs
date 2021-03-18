@@ -111,8 +111,8 @@ sudo mkdir -m 777 /etc/ssl/certificatebot
     "client_secret": "~irjhfyyr-6653gfghf",
     "tenantId": "47735-477635-46534"
   },
-  "CertBot": {
-    "saveCertificatePath": "/etc/ssl/rclcertbot",
+  "CertificateBot": {
+    "saveCertificatePath": "/etc/ssl/certificatebot",
      "includeCertificates": ["all"],
      "serverIdentifier": "default",
      "bindings": []
@@ -130,8 +130,8 @@ sudo mkdir -m 777 /etc/ssl/certificatebot
       }
     }
   },
-  "LetsEncryptSDK": {
-    "apiEndPoint": "https://letsencryptapi.azure-api.net",
+  "RCLSDK": {
+    "apiEndPoint": "https://rclapi.azure-api.net",
     "armResource": "https://management.core.windows.net",
     "keyVaultResource": "https://vault.azure.net"
   }
