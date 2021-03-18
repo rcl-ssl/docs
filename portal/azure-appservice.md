@@ -60,6 +60,8 @@ Wildcard subdomains (e.g. *.contoso.net) are **NOT Supported** with the HTTP-01 
 
 ## HTTP Validation Requirements
 
+Normally, the HTTP validation is performed automatically and you are not required to make any configuration changes to your app service. However, if the HTTP validation should fail, the following recommendations may resolve the situation.
+
 For HTTP validation, an extension-less validation file will be automatically added to the root of your website at path : '/.well-known/acme-challenge/' . You must ensure that your website allows the folder and file to be created in your website root (/site/wwwroot) by providing the necessary read/write permissions. Alternatively, you can manually create the validation folder and path in your website root and provide the necessary read/write permissions using the 'App Service Editor'.
 
 In addition, your website must be able to serve the validation file publicly on the web from this path. There should be no authorization requirement (resulting in a 403) to view a file at this path. Finally, your website must be able to serve extension-less files. If these requirements are not met the HTTP validation will fail.
