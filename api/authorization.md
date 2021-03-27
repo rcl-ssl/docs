@@ -1,5 +1,5 @@
 ---
-title: Authorization
+title: API Authorization
 description: Obtaining authorization tokens for the RCL API
 parent: API
 nav_order: 2

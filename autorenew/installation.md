@@ -1,5 +1,5 @@
 ﻿---
-title: Installation
+title: Installing the Function
 description: Installing the RCL Auto Renew Function
 parent: AutoRenew Function
 nav_order: 2
