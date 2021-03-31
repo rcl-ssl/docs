@@ -26,7 +26,7 @@ The files required are :
 
 ## Web Server Configuration
 
-Update your web server configuration (in the : /path-to-nginx/sites-enabled folder) for your site and add these attributes to the sites you want HTTPS on
+Update your web server configuration. For Linux, look in the : /path-to-nginx/sites-enabled folder. For Windows, look in the : /path-to-nginx/conf/nginx.conf. Add or update these attributes to the sites you want HTTPS on
 
 ```
 # SSL configuration
@@ -39,7 +39,7 @@ You can modify the names of the files and paths to match the location and filena
 
 Remember to reload the service, or restart if it's a new site.
 
-Linux command
+Linux command :
 ```
 sudo systemctl reload nginx
 ```

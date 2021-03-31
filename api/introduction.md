@@ -20,7 +20,7 @@ Developers can use the APIs to build custom applications to automate the install
 
 Developers can explore and test the APIs in the **RCL Developers Portal** located at :
 
-- [RCL Developer's Portal](https://letsencryptapi.developer.azure-api.net/)
+- [RCL Developer's Portal](https://rclapi.developer.azure-api.net/)
 
 ## Quick Start
 
