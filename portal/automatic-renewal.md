@@ -11,7 +11,7 @@ In this section, we will discuss the various options for the automatic renewal o
 
 ## RCL CertificateBot
 
-If you are hosting your website in a Windows or Linux Server in a Virtual Machine or Container, [CertificateBot](../certbot/certbot) is the ideal option to automatically renew the SSL/TLS certificates.
+If you are hosting your website in a Windows or Linux Server in a Virtual Machine, Container or Hosting System, [CertificateBot](../certbot/certbot) is the ideal option to automatically renew the SSL/TLS certificates.
 
 It is recommended that you create certificates using the following options :
 
