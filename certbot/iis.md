@@ -20,7 +20,7 @@ Please follow the instructions in the following link to install RCL CertificateB
 
 ## Configuring RCL CertificateBot for IIS
 
-The IIS website bindings must be configured in the ``appsettings.json`` file in the ``bindings`` section in ``CertificateBot``. The following is an example shows a single website binding :
+The IIS website bindings must be configured in the ``appsettings.json`` file in the ``bindings`` section in ``CertificateBot``. The following example shows a single website binding :
 
 ```
   "CertificateBot": {

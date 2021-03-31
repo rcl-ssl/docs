@@ -9,7 +9,6 @@ nav_order: 4
 
 RCL creates SSL/TLS certificates using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records).
 
-You can download the certificate and manually install it in your web server.
 
 # Access Control
 

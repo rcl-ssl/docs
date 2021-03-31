@@ -96,8 +96,8 @@ Please refer to the following link to get the AAD credentials to configure the s
       }
     }
   },
-  "LetsEncryptSDK": {
-    "apiEndPoint": "https://letsencryptapi.azure-api.net",
+  "RCLSDK": {
+    "apiEndPoint": "https://rclapi.azure-api.net",
     "armResource": "https://management.core.windows.net",
     "keyVaultResource": "https://vault.azure.net"
   }
@@ -146,7 +146,7 @@ sc.exe delete CertificateBot
 
 # Fixing Errors
 
-If you encounter error events for the service in the Event Viewer, please stop the service and delete it completely. Ensure the 'appsettings' configuration is correct for the AAD Application and the certificate save path settings. Then restart the service.
+If you encounter error events for the service in the Event Viewer, please stop the service and delete it completely. Ensure the 'appsettings' configuration is correct for the AAD Application and the certificate save path settings. Then, re-install and restart the service.
 
 # Installing Certificates in Web Servers
 

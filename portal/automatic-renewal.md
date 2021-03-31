@@ -22,7 +22,7 @@ Certificates created with an Azure DNS Zone qualifies for automatic renewals.
 
 **Certificates created with [Stand Alone](../portal/stand-alone) or [Stand Alone - SAN](../portal/stand-alone-san) cannot be automatically renewed.**
 
-If you are using CertificateBot, please **DO NOT use the AutoRenew Function**. CertificateBot will carry out the operations of the AutoRenew function and both should not be used together.
+If you are using CertificateBot, please **DO NOT use the AutoRenew Function**. CertificateBot will carry out the same operations of the AutoRenew function and both should not be used together.
 
 ### Windows Server
 

@@ -217,7 +217,7 @@ sudo journalctl -u certificatebot
 
 ## When you need to Stop the Daemon
 
-- Run the code when you need to stop the daemon. When the daemon is stopped CertificateBot will discontinue certificate renewals and installation in the server.
+- Run the code when you need to stop the daemon. When the daemon is stopped, CertificateBot will discontinue certificate renewals and installation in the server.
 
 ```bash
 sudo systemctl stop certificatebot

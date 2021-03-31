@@ -1,5 +1,5 @@
 ---
-title: Subscription
+title: RCL Subscription
 description: Learn how to subscribe to the RCL application in the Azure Marketplace or Azure Portal 
 has_children: false
 nav_order: 2

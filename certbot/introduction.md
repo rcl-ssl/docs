@@ -35,6 +35,7 @@ The following web servers are supported:
 - Apache
 - Apache Tomcat
 - NGINX
+- IIS
 - any server that configures SSL/TLS by referencing certificates files stored in the server
 
 ## Next Steps
