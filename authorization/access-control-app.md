@@ -9,7 +9,6 @@ nav_order: 5
 
 A user will need to provide **Access Control** to the [AAD Application](./aad-application) for it to manage the user's Azure Services (App Services, DNS Zone and Key Vault).
 
-
 - Go to Azure subscriptions, and open the subscription
 
 - In the subscription, click on 'Access control (IAM)' and add a new **role assignment**
@@ -28,6 +27,8 @@ A user will need to provide **Access Control** to the [AAD Application](./aad-ap
 - In the 'Role assignments' tab, you will see the new role assignment you just added
 
 ![install](../images/authorization_access_control/add_role3.PNG)
+
+**You must repeat these steps for each Azure Subscription that a user may wish to access.**
 
 ## Access Policies for Key Vault
 

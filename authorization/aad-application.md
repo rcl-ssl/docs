@@ -31,7 +31,7 @@ nav_order: 4
 
 - In the Active Directory, open the application that was registered
 
-- Copy the **Application (Client) ID** [Auth:client_id] and **Directory (Tenant) ID** [Auth:tenantId] for configuration purposes
+- Copy the **Application (client) ID** [Auth:client_id] and **Directory (tenant) ID** [Auth:tenantId] for configuration purposes
 
 ![install](../images/authorization_aad_app/aad_app.PNG)
 
@@ -41,7 +41,7 @@ nav_order: 4
 
 ![install](../images/authorization_aad_app/aad_app3.PNG)
 
-- Copy the **Client Secret** for configuration purposes [Auth:client_secret] 
+- Copy the Client Secret **Value** for configuration purposes [Auth:client_secret] 
 
 ![install](../images/authorization_aad_app/aad_app4.PNG)
 

@@ -11,7 +11,7 @@ In this section, you will configure the Azure Function app.
 
 ## Register an AAD Application
 
-An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources (App Service, DNS Zone, Key Vault). Please refer to the following link for instruction:
+An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources (App Service, DNS Zone, Key Vault). Please refer to the following link for instruction on how to register the AAD application:
 
 - [Registering an AAD Application](../authorization/aad-application)
 
@@ -51,11 +51,11 @@ The RCL AutoRenew function app uses the RCL SDK/API to execute its operations.
 
 To add the AAD Application's ``Client Id`` to the portal, please follow the instructions in this link :
 
-- [Add the Client Id in the RCL Portal](../api/authorization#add-the-client-id-in-the-rcl-lets-encrypt-portal)
+- [Add the Client Id in the RCL Portal](https://docs.rclapp.com/api/authorization#add-the-client-id-in-the-rcl-portal)
 
 ## Next Step
 
-- [Testing AutoRenew Function](./test.md)
+- [Testing the AutoRenew Function](./test.md)
 
 
 

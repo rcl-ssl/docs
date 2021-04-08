@@ -23,7 +23,7 @@ The RCL AutoRenew Function is ideally suited for renewal of certificates for **A
 
 If you need to automate the renewal and installation of certificates in your own webserver (Apache, Apache Tomcat, NGINX, IIS, etc) especially in a VM, please use the [RCL CertificateBot](../certbot/certbot) instead.
 
-The function will run once a week and automatically update certificates that are about to expire.
+The function app will run once a week and automatically update certificates that are about to expire.
 
 ## Quick Start
 
