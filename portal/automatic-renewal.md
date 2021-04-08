@@ -28,6 +28,8 @@ If you are using CertificateBot, please **DO NOT use the AutoRenew Function**. C
 
 CertificateBot runs as a [Windows Service](../certbot/windows-service) in a Windows Server. It saves SSL/TLS certificates from the RCL portal to a folder in the Windows Server. Every four days, it sends a request to renew SSL/TLS certificates. Certificates that are about to expire are automatically renewed and the certificate files are saved in the server to a specified folder.
 
+Please follow the instructions in this link : [CertificateBot for Windows](../certbot/windows-service) to use CertificateBot.
+
 #### Web Servers on Windows
 
 The web servers in the Windows Server must be configured to use the SSL/TLS certificate files saved in the specified folder in the server. You can use the following guidance for installing SSL/TLS certificates in the following web servers :
@@ -44,6 +46,8 @@ CertificateBot in a Windows Server has [Special Support for IIS](../certbot/iis)
 ### Linux Server
 
 CertificateBot runs as a [Linux Daemon](../certbot/linux-daemon) in a Linux Server. It saves SSL/TLS certificates from the RCL portal to a specified folder in the Linux Server. Every four days, it sends a request to renew SSL/TLS certificates. Certificates that are about to expire are automatically renewed and the certificate files are saved in the server.
+
+Please follow the instructions in this link : [CertificateBot for Linux](../certbot/linux-daemon) to use CertificateBot.
 
 #### Web Servers on Linux
 

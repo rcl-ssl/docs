@@ -5,9 +5,9 @@ parent: Portal
 nav_order: 2
 ---
 
-# Creating Stand Alone TLS/SSL Certificates
+# Creating Stand Alone SSL/TLS Certificates
 
-In the RCL Portal, you can create Stand Alone single-domain TLS/SSL certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
+In the RCL Portal, you can create Stand Alone single-domain SSL/TLS certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
 
 You will need to manually download and install the certificate in your web server.
 
@@ -22,10 +22,11 @@ You can create a TLS/SSL certificate by using either the :
 
 # Create a SSL/TLS Certificate using HTTP-01
 
-RCL Portal uses the HTTP-01 challenge type to issue certificates for
+The RCL Portal uses the HTTP-01 challenge type to issue certificates for : 
 
-primary domains (e.g. contoso.net)
-subdomains (e.g. store.contoso.net).
+- primary domains (e.g. contoso.net)
+- subdomains (e.g. store.contoso.net).
+
 To validate your domain with the HTTP challenge, you will be required to place a file in the root of your website and ensure that this file can be accessed publicly on the web.
 
 **Wildcard subdomains (e.g. \*.contoso.net) are NOT supported with the HTTP-01 challenge type. Use the DNS-01 challenge type for wildcard certificates instead.**
@@ -46,7 +47,7 @@ To validate your domain with the HTTP challenge, you will be required to place a
 
     - In this case, we are requesting a SSL/TLS certificate for the primary domain, ‘shopeneur.com’
 
-    - The root domain is the ‘apex’ domain. For instance, the root domain for the hostname: ‘shop.contoso.com’ is ‘contoso.com’. Similarly, the root domain for the hostname : ‘contoso.com’ is ‘contoso.com’.
+    - The root domain is the ‘apex’ domain. For instance, the root domain for the hostname: ‘shop.contoso.com’ is ‘contoso.com’. Similarly, the root domain for the hostname : ‘contoso.com’ is ‘contoso.com’ and '*.contoso.com' is 'contoso/com'.
 
 ![image](../images/portal/stand-alone-create.PNG)
 
@@ -54,7 +55,7 @@ To validate your domain with the HTTP challenge, you will be required to place a
 
 - In your hosted website, you will need to create a folder named: **.well-known/acme-challenge** (note the dot at the start) in the root of your website.
 
-- Add a extension-less file with the file name identified in the HTTP Validation page. To this file, add the content identified in the **HTTP Validation Page**.
+- Add a extension-less file with the file name identified in the HTTP Validation page. To this file, add the file content identified in the **HTTP Validation Page**.
 
 ![image](../images/portal/stand-alone-http-validation.PNG)
 
@@ -62,7 +63,7 @@ To validate your domain with the HTTP challenge, you will be required to place a
 
 ![image](../images/portal/stand-alone-http-token.PNG)
 
-**Note:** - for sites hosted in Azure App Service in a Windows Server, extension-less files are not served by default. To solve, this add the following ``web.config`` file to the ``acme-challenge`` folder.
+**Note:** - for sites hosted in a Windows Server in IIS, extension-less files are not served by default. To solve this, add the following ``web.config`` file to the ``acme-challenge`` folder.
 
 ```
 <configuration>
@@ -74,11 +75,11 @@ To validate your domain with the HTTP challenge, you will be required to place a
 </configuration>
 ```
 
-- Ensure the website and ‘well known’ file can be accessed. Click on the link to test your validation file on the **HTTP Validation Page**
-
-![image](../images/portal/stand-alone-http-validation-test.PNG)
+- Ensure the website and ‘well known’ file can be accessed publicly on the web. Click on the link to test your validation file on the **HTTP Validation Page**
 
 - For a successful test, you should see the validation value in the web browser.
+
+![image](../images/portal/stand-alone-http-validation-test.PNG)
 
 - If the test is successful, click the Validate button. If the test is not successful the certificate creation will fail.
 
@@ -89,6 +90,8 @@ To validate your domain with the HTTP challenge, you will be required to place a
 - When this is done, the SSL/TLS certificate will be displayed in the certificates list.
 
 ![image](../images/portal/certificate-list.PNG)
+
+- You can download the SSL/TLS certificate or the relevant certificates files for installation in your webserver is the **Certificate Details** page.
 
 # Create a SSL/TLS Certificate using DNS-01
 
