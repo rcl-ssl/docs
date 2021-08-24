@@ -5,7 +5,21 @@ has_children: false
 nav_order: 2
 ---
 
-# RCL Subscription
+# Subscription Types
+
+There are two subscription types 
+
+- **Standard Subscription** - you can subscribe on the [RCL Website](https://rclapp.com) , payments are handled through PayPal. This subscription is ideal for users creating stand alone TLS/SSL certificates. Users can use a REST API or custom applications to automate certificate renewal. 
+
+- **Azure Marketplace Subscription** - you can subscribe in the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=overview), payments are handled through Microsoft. This subscription is ideal for users wishing to automate TLS/SSL certificate creation and renewal using an Azure DNS Zone. It is also ideal for installing certificates in Azure App Services and Key Vault.
+
+# Standard Subscription
+
+- You will subscribe in the [RCL Website](https://rclapp.com)
+
+![image](../images/subscription/standard-paypal.PNG)
+
+# Azure Marketplace Subscription
 
 - You will subscribe to RCL in the Azure portal or in the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=overview)
 
