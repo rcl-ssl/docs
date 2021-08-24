@@ -25,7 +25,7 @@ You can create a TLS/SSL certificate by using either the :
 The RCL Portal uses the HTTP-01 challenge type to issue certificates for : 
 
 - primary domains (e.g. contoso.net)
-- subdomains (e.g. store.contoso.net).
+- subdomains (e.g. store.contoso.net, www.contoso.net, etc.)
 
 To validate your domain with the HTTP challenge, you will be required to place a file in the root of your website and ensure that this file can be accessed publicly on the web.
 
@@ -51,7 +51,9 @@ To validate your domain with the HTTP challenge, you will be required to place a
 
 ![image](../images/portal/stand-alone-create.PNG)
 
-- Clieck the **Create** button when you are done
+- **The website must exist at the domain you entered, eg. in our example, the website can be accessed at 'http://shopeneur.com' in a web browser**
+
+- Click the **Create** button when you are done
 
 - In your hosted website, you will need to create a folder named: **.well-known/acme-challenge** (note the dot at the start) in the root of your website.
 
@@ -98,10 +100,10 @@ To validate your domain with the HTTP challenge, you will be required to place a
 RCL uses the DNS-01 challenge type to issue certificates for :
 
 - primary domains (e.g. contoso.net)
-- subdomains (e.g. store.contoso.net)
+- subdomains (e.g. store.contoso.net, www.contoso.net, etc.)
 - wild card subdomains (e.g. *.contoso.net)
 
-## Add A SSL/TLS Certificate
+## Add a SSL/TLS Certificate
 
 - In the ‘Certificates’ module of RCL , click on the 'Create New SSL/TLS Certificate' link.
 
@@ -123,7 +125,7 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 
 - Click the 'Create' button when you are done
 
-- In your management portal from your domain registrar, add a DNS TXT record (name/host) as defined in the ‘DNS Validation’ page (note the underscore '_') with the value as defined on the page.
+- In your management portal from your domain registrar, add a DNS TXT record (name/host) as defined in the ‘DNS Validation’ page (note the underscore '_' at the start) with the value as defined on the page
 
 ![image](../images/portal/stand-alone-dns-validation.PNG)
 
@@ -131,7 +133,7 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 
 ![image](../images/portal/stand-alone-dns-record.PNG)
 
-- You can test the DNS record in the [Dig site](https://toolbox.googleapps.com/apps/dig/). In the site add the name identified in the DNS Validation page; and select the **TXT** record. The value for the record will be shown in the **;ANSWER** section
+- You can test the DNS record in the [Dig site](https://toolbox.googleapps.com/apps/dig/). In the site add the name identified in the DNS Validation page; and select the **TXT** record. The value for the record will be shown in the **TXT** section
 
 ![image](../images/portal/dig.PNG)
 
@@ -146,6 +148,10 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 - When this is done, the SSL/TLS certificate will be displayed in the certificates list.
 
 ![image](../images/portal/certificate-list.PNG)
+
+# Create a Free TLS/SSL Certificate
+
+You can create a free TLS/SSL certificate in the [RCL Website](https://rclapp.com)
 
 # Accessing the TLS/SSL Certificate
 
