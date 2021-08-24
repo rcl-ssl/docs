@@ -39,10 +39,11 @@ You can access the RCL apps that you have subscribed to in the Azure portal.
 
 - You can now view the details of the application
 
-
 ![image](../images/subscription/unsubscribe.PNG)
 
 - In the SaaS application, click on the ‘Delete’ link to unsubscribe
+
+
 
 
 

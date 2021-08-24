@@ -11,15 +11,34 @@ The RCL client for *Let's Encrypt*<sup>TM</sup> allows you to create SSL/TLS cer
 
 <sub>Let's Encrypt is a trademark of the [Internet Security Research Group](https://www.abetterinternet.org/). All rights reserved.</sub>
 
-Use the applications to create and renew single or multiple-domain SSL/TLS certificates for your web sites / applications. Naked apex domains (e.g. contoso.com), sub-domains (e.g. store.contoso.com), wild card domains (e.g. *.contoso.com) and SAN mutli-domains are all supported. 
+Use the applications to create and renew single or multiple-domain SSL/TLS certificates for your web sites / applications. The following domains are supported
+
+- Naked apex domains (e.g. contoso.com)
+- Sub-domains (e.g. store.contoso.com, www.contoso.com)
+- Wild card domains (e.g. *.contoso.com) 
+- SAN mutli-domains (multiple domains in a single certificate) 
+
+# Subscription Types
+
+There are two subscription types 
+
+- **Standard Subscription** - you can subscribe on the [RCL Website](https://rclapp.com) , payments are handled through PayPal. This subscription is ideal for users creating stand alone TLS/SSL certificates. Users can use a REST API or custom applications to automate certificate renewal. 
+
+- **Azure Marketplace Subscription** - you can subscribe in the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=overview), payments are handled through Microsoft. This subscription is ideal for users wishing to automate TLS/SSL certificate creation and renewal using an Azure DNS Zone. It is also ideal for installing certificates in Azure App Services and Key Vault.
 
 # RCL Portal
 
-The [RCL portal](../portal/portal) is the primary application. It is a SaaS application that you can [Subscribe](../subscription/subscription) to in the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=overview).
+The [RCL portal](../portal/portal) is the primary application. It is a SaaS application that you can [Subscribe](../subscription/subscription) for.
+
+![image](./images/portal/portal.PNG)
 
 The RCL portal is a simple-to-use online Web UI and allows you to :
 
-- Create [Single](../portal/stand-alone) and [Multi-Domain SAN](../portal/stand-alone-san) SSL/TLS certificates manually. You can download the certificates and manually install them in your web servers. It is ideal for web applications hosted in a Virtual Machine, Container or Hosting System where manual installation and renewal of SSL/TLS certificates in web servers (eg. Apache, Tomcat, NGINX, IIS, Express, etc.) do not prove to be a problem.
+## Common Features
+
+- Create [Single](../portal/stand-alone) and [Multi-Domain SAN](../portal/stand-alone-san) SSL/TLS certificates manually. You can download the certificates and manually install them in your web servers. It is ideal for web applications hosted in a Hosting Provider, Virtual Machine or Container where manual installation and renewal of SSL/TLS certificates in web servers (eg. Apache, Tomcat, NGINX, IIS, Express, etc.) do not prove to be a problem.
+
+## Azure Maketplace Subscription Features
 
 - Create [Single](../portal/azure-dns) and [Multi-Domain SAN](../portal/azure-dns-san) SSL/TLS certificates automatically using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records). This option allows you to automatically install and renew certificates in a Windows or Linux server (VM or Container) using [RCL CertificateBot](../certbot/certbot). Many popular web servers are supported, eg. Apache, Tomcat, NGINX, IIS, Express, etc.
 
@@ -29,13 +48,15 @@ The RCL portal is a simple-to-use online Web UI and allows you to :
 
 # The Other RCL Apps
 
-## RCL CertificateBot
+## Azure Marketplace Applications
+
+### RCL CertificateBot
 
 The [RCL CertificateBot](../certbot/certbot) runs as a [Windows Service](../certbot/windows-service) in a Windows Server and a [Linux Daemon](../certbot/linux-daemon) in a Linux Server. The primary purpose of CertificateBot is to automatically renew SSL/TLS certificates created in the RCL portal and save them to a folder in the server (VM or Container). The web server must be configured to use the certificates files from the folder. In this way, the [Installation and Renewal](../installations/installations) of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated. 
 
 CertificateBot also provides [Special Support for IIS](../certbot/iis), it allows for the automatic renewal and binding of SSL/TLS certificates to websites hosted in IIS. CertificateBot is an open-source project and is available on [GitHub](https://github.com/rcl-ssl/RCL.CertificateBot).
 
-## RCL AutoRenew Function
+### RCL AutoRenew Function
 
 The [RCL AutoRenew](/autorenew/autorenew) function is an Azure Function app that runs in a [Consumption Plan](https://docs.microsoft.com/en-us/azure/azure-functions/consumption-plan). The primary purpose of the AutoRenew Function is to automate the renewal and installation of certificates created in the RCL portal for an **Azure App Service** or **Azure Key Vault**. The AutoRenew function is an open-source project and can be directly deployed to a user's Azure Account from the [GitHub](https://github.com/rcl-ssl/RCL.AutoRenew) project page.
 

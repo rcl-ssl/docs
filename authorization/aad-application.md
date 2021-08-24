@@ -17,7 +17,7 @@ nav_order: 4
 
  This authorization will be granted through an **AAD Application**.
 
-- In the **Azure Active Directory (AAD)**, add a new 'App registration'
+- In your **Azure Active Directory (AAD)** tenant, add a new 'App registration'
 
 ![install](../images/authorization_aad_app/create.PNG)
 
