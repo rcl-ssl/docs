@@ -56,7 +56,7 @@ There are two subscription types
 
 # Unsubscribe to RCL 
 
-## Standard Subscription
+## Cancel a Standard Subscription
 
 - In the Admin portal, open the 'Subscription' section
 
@@ -73,7 +73,7 @@ There are two subscription types
 **Download your certificates before your data is deleted. A cancelled subscription cannot be re-activated. You will need to wait a few days create a new subscription and your old data will not be restored.**
 
 
-## Azure Marketplace Subscription
+## Cancel an Azure Marketplace Subscription
 
 You can access the RCL apps that you have subscribed to in the Azure portal.
 
