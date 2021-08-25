@@ -26,13 +26,15 @@ In your management portal from your domain registrar, add a DNS TXT record (name
 
 ![image](../images/portal/stand-alone-dns-validation.PNG)
 
-- This is an example of a DNS record
+- This is an example of a DNS TXT record in the 'Azure DNS Zone' domain management portal
 
 ![image](../images/portal/stand-alone-dns-record.PNG)
 
-- This is another example of a DNS record
+- This is another example of a DNS TXT record in the 'GoDaddy' domain management portal  
 
 ![image](../images/portal/stand-alone-dns-record2.PNG)
+
+- Your domain registrar will have a similar portal to add your DNS TXT record
 
 - You can test the DNS record in the [Dig site](https://toolbox.googleapps.com/apps/dig/). In the site add the name identified in the DNS Validation page; and select the **TXT** record. The value for the record will be shown in the **TXT** section
 
