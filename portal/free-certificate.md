@@ -30,7 +30,7 @@ In your management portal from your domain registrar, add a DNS TXT record (name
 
 ![image](../images/portal/stand-alone-dns-record.PNG)
 
-- This is another example of another DNS record
+- This is another example of a DNS record
 
 ![image](../images/portal/stand-alone-dns-record2.PNG)
 
