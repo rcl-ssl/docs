@@ -21,6 +21,7 @@ You can create a free TLS/SSL certificate in the [RCL Website's](https://rclapp.
 
 ![image](../images/portal/free-certificate-password.PNG)
 
+# Completing the DNS Challenge
 In your management portal from your domain registrar, add a DNS TXT record (name/host) as defined in the ‘DNS Validation’ page (note the underscore '_' at the start) with the value as defined on the page
 
 ![image](../images/portal/stand-alone-dns-validation.PNG)
@@ -29,22 +30,26 @@ In your management portal from your domain registrar, add a DNS TXT record (name
 
 ![image](../images/portal/stand-alone-dns-record.PNG)
 
+- This is another example of another DNS record
+
+![image](../images/portal/stand-alone-dns-record2.PNG)
+
 - You can test the DNS record in the [Dig site](https://toolbox.googleapps.com/apps/dig/). In the site add the name identified in the DNS Validation page; and select the **TXT** record. The value for the record will be shown in the **TXT** section
 
 ![image](../images/portal/dig.PNG)
 
-- If you see the correct DNS TXT record and value, the test is successful
+- If you see the correct DNS TXT record and value as specified in the validation page, the test is successful
 
 - If the test is successful, click the Validate button. 
 
-- You will need to wait up to 10 mins to validate the site and install the certificate. When this is done, the SSL/TLS certificate will be displayed in the Certificates Details page.
+- You will need to wait up to 10 mins to validate the DNS record and create the certificate. When this is done, the SSL/TLS certificate will be displayed in the Certificates Details page.
 
 ![image](../images/portal/free-certificate-ordered.PNG)
 
 
 # Accessing the TLS/SSL Certificate
 
-- To access the certificate, click the **Details** button 
+- To access the certificate, click the **Go to Certificate Details** button 
 
 - You can download the certificate in .PFX, .CER, .CRT or .PEM formats.
 
