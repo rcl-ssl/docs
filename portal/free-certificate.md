@@ -76,9 +76,6 @@ You will need to manually download and install your certificate in your web serv
 - [Installing SSL/TLS Certificates in NGINX](../installations/nginx)
 - [Installing SSL/TLS Certificates in IIS](../installations/iis)
 
-# Certificate Renewal
-
-When a certificate is close to expiration, you should delete the certificate and create a new one.
 
 # Rate Limits
 

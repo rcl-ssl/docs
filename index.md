@@ -18,14 +18,6 @@ Use the applications to create and renew single or multiple-domain SSL/TLS certi
 - Wild card domains (e.g. *.contoso.com) 
 - SAN mutli-domains (multiple domains in a single certificate) 
 
-# Subscription Types
-
-There are two subscription types 
-
-- **Standard Subscription** - you can subscribe on the [RCL Website](https://rclapp.com) , payments are handled through PayPal. This subscription is ideal for users creating stand alone TLS/SSL certificates. Users can use a REST API or custom applications to automate certificate renewal. 
-
-- **Azure Marketplace Subscription** - you can subscribe in the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=overview), payments are handled through Microsoft. This subscription is ideal for users wishing to automate TLS/SSL certificate creation and renewal using an Azure DNS Zone. It is also ideal for installing certificates in Azure App Services and Key Vault.
-
 # RCL Portal
 
 The [RCL portal](../portal/portal) is the primary application. It is a SaaS application that you can [Subscribe](../subscription/subscription) for.
@@ -38,7 +30,7 @@ The RCL portal is a simple-to-use online Web UI and allows you to :
 
 - Create [Single](../portal/stand-alone) and [Multi-Domain SAN](../portal/stand-alone-san) SSL/TLS certificates manually. You can download the certificates and manually install them in your web servers. It is ideal for web applications hosted in a Hosting Provider, Virtual Machine or Container where manual installation and renewal of SSL/TLS certificates in web servers (eg. Apache, Tomcat, NGINX, IIS, Express, etc.) do not prove to be a problem.
 
-## Azure Maketplace Subscription Features
+## Microsoft Azure Integrated Services
 
 - Create [Single](../portal/azure-dns) and [Multi-Domain SAN](../portal/azure-dns-san) SSL/TLS certificates automatically using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records). This option allows you to automatically install and renew certificates in a Windows or Linux server (VM or Container) using [RCL CertificateBot](../certbot/certbot). Many popular web servers are supported, eg. Apache, Tomcat, NGINX, IIS, Express, etc.
 
@@ -48,7 +40,7 @@ The RCL portal is a simple-to-use online Web UI and allows you to :
 
 # The Other RCL Apps
 
-## Azure Marketplace Applications
+## Azure Integrated Services
 
 ### RCL CertificateBot
 
