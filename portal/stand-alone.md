@@ -55,6 +55,8 @@ To validate your domain with the HTTP challenge, you will be required to place a
 
 - Click the **Create** button when you are done
 
+### Completing the HTTP Challenge
+
 - In your hosted website, you will need to create a folder named: **.well-known/acme-challenge** (note the dot at the start) in the root of your website.
 
 - Add a extension-less file with the file name identified in the HTTP Validation page. To this file, add the file content identified in the **HTTP Validation Page**.
@@ -84,6 +86,8 @@ To validate your domain with the HTTP challenge, you will be required to place a
 ![image](../images/portal/stand-alone-http-validation-test.PNG)
 
 - If the test is successful, click the Validate button. If the test is not successful the certificate creation will fail.
+
+### Certificate Creation
 
 - You will need to wait up to 10 mins to validate the site and install the certificate. When this is done, the SSL/TLS certificate will be displayed in the certificates list.
 
@@ -125,6 +129,8 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 
 - Click the 'Create' button when you are done
 
+### Completing the DNS Challenge
+
 - In your management portal from your domain registrar, add a DNS TXT record (name/host) as defined in the ‘DNS Validation’ page (note the underscore '_' at the start) with the value as defined on the page
 
 ![image](../images/portal/stand-alone-dns-validation.PNG)
@@ -133,6 +139,8 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 
 ![image](../images/portal/stand-alone-dns-record.PNG)
 
+### Verifying the DNS TXT Record with Dig
+
 - You can test the DNS record in the [Dig site](https://toolbox.googleapps.com/apps/dig/). In the site add the name identified in the DNS Validation page; and select the **TXT** record. The value for the record will be shown in the **TXT** section
 
 ![image](../images/portal/dig.PNG)
@@ -140,6 +148,8 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 - If you see the correct DNS TXT record and value, the test is successful
 
 - If the test is successful, click the Validate button. 
+
+### Certificate Creation
 
 - You will need to wait up to 10 mins to validate the site and install the certificate. When this is done, the SSL/TLS certificate will be displayed in the certificates list.
 

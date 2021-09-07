@@ -68,7 +68,7 @@ To validate your domain with the HTTP challenge, you will be required to place f
 
 - Click the **Create** button when you are done
     
-## Validating the Domain
+## Completing the HTTP Challenge
 
 To validate your domain, you will be required to place two (2) files in the root of your website.
 
@@ -119,7 +119,7 @@ Add the data to create the certificate. The image below illustrates data for a s
 
 - In this case, we are requesting a SSL/TLS certificate for the naked apex domain, ‘shopeneur.com’. The wild card domain, '*.shopeneur.com', will be automatically included in the certificate.
 
-## Validating the Domain
+## Completing the DNS Challenge
 
 To validate the domain, you are required to create a DNS TXT record in your domain registrar or the application that manages your domain records.
 
@@ -133,6 +133,7 @@ The following is an example of the DNS TXT record.
 
 ![image](../images/portal/stand-alone-san-dns-record.PNG)
 
+## Verifying the DNS TXT Record with Dig
 
 - You can test the DNS record in the [Dig site](https://toolbox.googleapps.com/apps/dig/). In the site add the name identified in the DNS Validation page; and select the **TXT** record. The values for the record will be shown in the **;ANSWER** section
 
