@@ -23,10 +23,10 @@ Failed to create certificate with target Stand ALone for host : contoso.com for 
 
 # Solution
 
-- Complete the [DNS Challenge](https://docs.rclapp.com/portal/stand-alone.html#create-a-ssltls-certificate-using-dns-01) for a Stand Alone Certificate
+- Complete the [DNS Challenge](https://docs.rclapp.com/portal/stand-alone.html#completing-the-dns-challenge) for a Stand Alone Certificate
 
-- Use the [Dig](https://docs.rclapp.com/portal/stand-alone.html#create-a-ssltls-certificate-using-dns-01) site to verify the domain TXT record for a Stand Alone Certificate
+- Use the [Dig](https://docs.rclapp.com/portal/stand-alone.html#verifying-the-dns-txt-record-with-dig) site to verify the domain TXT record for a Stand Alone Certificate
 
-- Complete the [DNS Challenge](https://docs.rclapp.com/portal/stand-alone.html#create-a-ssltls-certificate-using-dns-01) for a Stand Alone SAN Certificate
+- Complete the [DNS Challenge](https://docs.rclapp.com/portal/stand-alone-san.html#completing-the-dns-challenge) for a Stand Alone SAN Certificate
 
-- Use the [Dig](https://docs.rclapp.com/portal/stand-alone.html#create-a-ssltls-certificate-using-dns-01) site to verify the domain TXT record for a Stand Alone SAN Certificate
+- Use the [Dig](https://docs.rclapp.com/portal/stand-alone-san.html#verifying-the-dns-txt-record-with-dig) site to verify the domain TXT record for a Stand Alone SAN Certificate
