@@ -30,6 +30,6 @@ Failed to create certificate with target Stand ALone for host : contoso.com for 
 
 ## Stand Alone SAN Certificate
 
-- Add the [validation record(s)]https://docs.rclapp.com/portal/stand-alone-san.html#completing-the-http-challenge) to the root of the website
+- Add the [validation record(s)](https://docs.rclapp.com/portal/stand-alone-san.html#completing-the-http-challenge) to the root of the website
 
 - Ensure the [validation record(s)](https://docs.rclapp.com/portal/stand-alone-san.html#completing-the-http-challenge) can be publicly accessed on the web
