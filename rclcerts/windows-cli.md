@@ -50,7 +50,7 @@ rclerts is built on the RCL Stand Alone API and SDK. To access the APIs you must
 
 - To get het run this command
 
-```bash
+```
 > rclcerts -h
 ```
 
@@ -58,7 +58,7 @@ rclerts is built on the RCL Stand Alone API and SDK. To access the APIs you must
 
 - To get help on a particular command, follow the example below
 
-```bash
+```
 > rclcerts set-csrinfo -h 
 ```
 
@@ -72,7 +72,7 @@ rclerts is built on the RCL Stand Alone API and SDK. To access the APIs you must
 
 - To **create or update** the CSR Info, follow the example below :
 
-```bash
+```
 > rclcerts set-csrinfo 
 --organization RCL 
 --organization-unit IT 
@@ -93,7 +93,7 @@ rclerts is built on the RCL Stand Alone API and SDK. To access the APIs you must
 
 - To **get** the CSR Info, run the following command
 
-```bash
+```
 > rclcerts get-csrinfo
 ```
 
@@ -103,7 +103,7 @@ rclerts is built on the RCL Stand Alone API and SDK. To access the APIs you must
 
 - To **create** a TLS/SSL certificate, follow the example below :
 
-```bash
+```
 rclcerts create-certificate 
 --hostname icloudinfinity.com 
 --domainroot icloudinfinity.com 
@@ -142,7 +142,7 @@ rclcerts create-certificate
 
 - To **get** a certificate, run the command following the example below :
 
-```bash
+```
 rclcerts get-certificate --hostname icloudinfinity.com
 ```
 
@@ -150,7 +150,7 @@ rclcerts get-certificate --hostname icloudinfinity.com
 
 - To **delete** a certificate, run the command following the example below :
 
-```bash
+```
 rclcerts delete-certificate --hostname icloudinfinity.com
 ```
 
@@ -158,7 +158,7 @@ rclcerts delete-certificate --hostname icloudinfinity.com
 
 - To install certificate files in a folder, run the command following the example below :
 
-```bash
+```
 rclcerts install-certificate-infolder 
 --hostname icloudinfinity.com 
 --installation-folderpath C:\ssl\certs
@@ -173,7 +173,7 @@ rclcerts install-certificate-infolder
 
 - To install the certificate in the IIS Server, run the command following the example below :
 
-```bash
+```
 rclcerts install-certificate-iniis 
 --hostname icloudinfinity.com 
 --installation-folderpath C:\ssl\certs 
@@ -198,7 +198,7 @@ rclcerts install-certificate-iniis
 
 - To renew a certificate, run the command following the example shown below :
 
-```bash
+```
 rclcerts-win-x64>rclcerts renew-certificate --hostname icloudinfinity.com
 ```
 
