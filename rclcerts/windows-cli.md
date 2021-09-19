@@ -1,7 +1,7 @@
 ---
 title: rclerts Windows CLI
 description: A command line application for use in the Windows operating systems to create, install and renew TLS/SSL certificates
-parent: rclcerts Server Applications
+parent: rclcerts Applications
 nav_order: 2
 ---
 
