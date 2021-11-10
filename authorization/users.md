@@ -1,9 +1,9 @@
 ---
-title: Co-Admin
+title: Users
 parent: Authorization
 nav_order: 6
 ---
 
-# Co-Admin
+# Users
 
 This document is under construction.
