@@ -6,9 +6,9 @@ nav_order: 6
 
 # Users
 
-A user must be assigned to a subscription to use the subscription. When a subscription is created, the person creating the subscription is called the 'purchaser'. For a single subscription, the purchaser is automatically assigned as a 'user' in the subscription to use the application.
+A user must be assigned to a subscription to use the application. When a subscription is created, the person creating the subscription is called the 'purchaser'. For a single subscription, the purchaser is automatically assigned as a 'user' in the subscription to use the application.
 
-If a 'purchaser' creates another subscription, no user is assigned to the subscription. The purchaser must teh manually assign a user to use the subscription.
+If a 'purchaser' creates another subscription, no user is assigned to the subscription. The purchaser must then manually assign a user to use the subscription.
 
 ## Assign a User to a Subscription
 
