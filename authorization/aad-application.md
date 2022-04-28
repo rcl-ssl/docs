@@ -47,3 +47,7 @@ nav_order: 4
 ## Next Step
 
 - [Set Access Control for the AAD application](./access-control-app)
+
+## Related Articles
+
+- [AutoRenew Function](../autorenew/autorenew.md)

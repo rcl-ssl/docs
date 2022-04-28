@@ -138,3 +138,4 @@ Authorization: Bearer eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw
 - [POST CertificateRenewal](./post-certificate-renewal)
 - [POST Certificate](./post-certificate-renewal)
 - [Recommendations for Automation System Design](./automation-system)
+- [AutoRenew Function](../autorenew/autorenew.md)

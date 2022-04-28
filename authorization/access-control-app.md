@@ -65,3 +65,7 @@ If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will ne
 
 ![install](../images/authorization_access_control/key_vault6.PNG)
 
+## Related Articles
+
+- [AutoRenew Function](../autorenew/autorenew.md)
+
