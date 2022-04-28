@@ -44,15 +44,15 @@ Update the following configuration entries with the credentials from the AAD app
 
 - In the [RCL Portal](../portal/portal.md), open the 'Subscription Detials' page
 
-![install](../images/autorenew_configure/add_subscriptionid.PNG)
+![install](../images/autorenew_configure/add_subscriptionid.png)
 
 - Scroll down and copy the 'Subscription Id' (Api:SubscriptionId) for configuration purposes
 
-![install](../images/autorenew_configure/add_subscriptionid2.PNG)
+![install](../images/autorenew_configure/add_subscriptionid2.png)
 
 - In the Function App configuration page, add the 'Subscription Id' value to the **Api:SubscriptionId** configuration entry
 
-![install](../images/autorenew_configure/add_subscriptionid3.PNG)
+![install](../images/autorenew_configure/add_subscriptionid3.png)
 
 
 - Click the 'Save' button when you are done

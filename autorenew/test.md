@@ -30,7 +30,7 @@ In this section, you will learn how to test the RCL AutoRenew function.
 
 - You should see the output of the function in the logs window similar to the one shown below.
 
-![install](../images/autorenew_test/func4.PNG)
+![install](../images/autorenew_test/func4.png)
 
 - Please ensure that there are no errors in the log. If there are errors, the function is misconfigured and certificate renewal will fail.
 
