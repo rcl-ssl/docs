@@ -27,11 +27,11 @@ A user will need to provide **Access Control** to the [AAD Application](./aad-ap
 
 - Click the 'Review + assign' button 
 
-![install](../images/authorization_access_control/add_role4.PNG)
+![install](../images/authorization_access_control/add_role4.png)
 
 - In the 'Role assignments' tab, you will see the new role assignment you just added
 
-![install](../images/authorization_access_control/add_role5.PNG)
+![install](../images/authorization_access_control/add_role5.png)
 
 **You must repeat these steps for each Azure Subscription that a user may wish to access.**
 
