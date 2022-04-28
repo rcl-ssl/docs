@@ -6,16 +6,17 @@ nav_order: 2
 ---
 
 # Installing AutoRenew Function
+**V6.0.10**
 
-In this section, you will learn how to install the **RCL Auto Renew Function** in an Azure account.
+In this section, you will learn how to install the [RCL AutoRenew Function](../autorenew/autorenew.md) in an Azure account.
 
 ## Install in Azure
 
-- Open the [Github Project Page ](https://github.com/rcl-ssl/RCL.AutoRenew) for the AutoRenew function , and in the **master** branch, click on the 'Deploy to Azure' button on the **README** page
+- Open the [Github Project Page ](https://github.com/rcl-ssl/RCL.AutoRenew.Function) for the AutoRenew function , and in the **master** branch, click on the 'Deploy to Azure' button on the **README** page
 
 ![install](../images/autorenew_installation/azure_deploy.PNG)
 
-- Create a new **Resource Group** and install the function app. Do not edit the 'Auto' settings.
+- Create a new **Resource Group** and install the function app. Do not edit the 'Auto Generated' settings.
 
 ![install](../images/autorenew_installation/azure_deploy2.PNG)
 

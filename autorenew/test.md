@@ -5,31 +5,36 @@ parent: AutoRenew Function
 nav_order: 4
 ---
 
-## Testing the Function
+## Testing the AutoRenew Function
+**V6.0.10**
 
 In this section, you will learn how to test the RCL AutoRenew function.
 
 - In the Azure portal, open the function app and open the 'Functions'
 
-- Then, open the 'RenewCertificate' function
+- Then, open the 'Certificate-Test' function
 
 ![install](../images/autorenew_test/func.PNG)
 
-- In the **RenewCertificates** function, click on 'Code + Test', and then click on 'Test/Run'
+- In the **Certificate-Test** function, click on 'Code + Test', and expand the 'Logs' window
+
+- Get the **function Url**
 
 ![install](../images/autorenew_test/func2.PNG)
 
-- Click the 'Run' button to manually run the function
+- Paste the function url in a browser
+
+- You should see the output of the function in the browser similar to the one shown below. 
 
 ![install](../images/autorenew_test/func3.PNG)
 
-- You should see the output of the function in the logs window similar to the one shown above.
+- You should see the output of the function in the logs window similar to the one shown below.
 
-- You may need to run the function twice to see the message from the function app. It will identity if there are any certificates that it has scheduled for renewal.
+![install](../images/autorenew_test/func4.PNG)
 
 - Please ensure that there are no errors in the log. If there are errors, the function is misconfigured and certificate renewal will fail.
 
-**Note: The 'RenewCertificates' function will automatically run on a weekly basis and automatically renew certificates that are about to expire. There is no need to manually run the function apart from manual testing**
+**Note: The 'Certificate-Renew-Automatic' function will automatically run on a weekly basis and automatically renew certificates that are about to expire. There is no need to manually run the function apart from manual testing**
 
 ## Related Articles
 

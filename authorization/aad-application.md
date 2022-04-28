@@ -6,14 +6,13 @@ nav_order: 4
 ---
 
 ## Register an AAD Application
+**V6.0.10**
 
 **Authorization** is required for the following operations :
 
-- to install SSL/TLS certificates in an App Services , Key Vault and DNS Zone
-- to make authorized requests to the [RCL API](../api/api)
-- to use the [RCL SDK](../sdk/sdk)
+- to make authorized requests to the RCL Public API
 - to use the [RCL AutoRenew](../autorenew/autorenew) Function app
-- to use the [RCL CertificateBot](../certbot/certbot)
+- to access Azure App Services , Key Vault and DNS Zone
 
  This authorization will be granted through an **AAD Application**.
 
@@ -35,7 +34,7 @@ nav_order: 4
 
 ![install](../images/authorization_aad_app/aad_app.PNG)
 
-- In the 'Certificates & secrets', create a new client secret
+- In the 'Certificates & secrets', create a new client secret. It is recommended that you use the maximum expiry period for the secret. 
 
 ![install](../images/authorization_aad_app/aad_app2.PNG)
 

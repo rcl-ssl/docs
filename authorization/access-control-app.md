@@ -6,27 +6,32 @@ nav_order: 5
 ---
 
 ## Set Access Control for the AAD application
+**V6.0.10**
 
 A user will need to provide **Access Control** to the [AAD Application](./aad-application) for it to manage the user's Azure Services (App Services, DNS Zone and Key Vault).
 
-- Go to Azure subscriptions, and open the subscription
+- Go to Azure subscriptions, and open the subscription that contains your Azure App Services, DNS Zone, Key Vault
 
 - In the subscription, click on 'Access control (IAM)' and add a new **role assignment**
 
 ![install](../images/authorization_access_control/add_role.PNG)
 
-- Select the 'Contributor' role
+- Select the 'Contributor' role and click the 'Next' button
+
+![install](../images/authorization_access_control/add_role2.PNG)
 
 - Search for the AAD App that was registered and select it. (If you did not register an AAD app previously, please follow the instruction in this link : [Registering an AAD Application](../authorization/aad-application))
 
 
-![install](../images/authorization_access_control/add_role2.PNG)
+![install](../images/authorization_access_control/add_role3.PNG)
 
-- Click the 'Save' button 
+- Click the 'Review + assign' button 
+
+![install](../images/authorization_access_control/add_role4.PNG)
 
 - In the 'Role assignments' tab, you will see the new role assignment you just added
 
-![install](../images/authorization_access_control/add_role3.PNG)
+![install](../images/authorization_access_control/add_role5.PNG)
 
 **You must repeat these steps for each Azure Subscription that a user may wish to access.**
 
@@ -44,7 +49,7 @@ If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will ne
 
 - Then , click on 'Select principal'
 
-- Search for the application that was registered and select it 
+- Search for the application that was registered and click the 'Select; button to select it 
 
 ![install](../images/authorization_access_control/key_vault3.PNG)
 

@@ -54,8 +54,9 @@ A user must add the Client Id in the **RCL Portal** in order to associate the AA
 
 ![install](../images/api_authorization/client_id2.PNG)
 
-- Click the 'Submit' button 
+- Click the 'Submit' button when you are done.
  
+
 ## Request an Access Token
 
  To request an access token, use an HTTP POST to the Application-specific Azure AD token endpoint.
