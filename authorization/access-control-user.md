@@ -6,13 +6,14 @@ nav_order: 3
 ---
 
 # Set Access Control for the AAD user
+**V6.0.10**
 
-The Azure Active Directory (AAD) organization (Work or School) account that you use to login to RCL  must either be :
+The Azure Active Directory (AAD) organization (Work or School) account that you use to login to the [RCL Portal](../portal/portal.md)  must either be :
 
 - An 'Administrator' or 'Owner' to your Azure subscription
 - Have a role of ‘Owner’ or ‘Contributor’ to your Azure subscription
 
-If either of these requirements are not met, you will not be able to use RCL to manage your Azure resources.
+If either of these requirements are not met, you will not be able to use the RCL Portal to manage your Azure resources (App Services, DNS, Key Vault, etc).
 
 You may also experience an error message.
 
@@ -20,13 +21,13 @@ You may also experience an error message.
 
 In this article, you will learn how to set access control for your AAD organization account (**AAD user**) to your Azure subscription.
 
-You can select or create a new AAD account in your AAD tenant to sign in to RCL. Refer to the following link for more information :
+You can select or create a new **AAD user account** in your AAD tenant to sign in to the RCL Portal. Refer to the following link for more information :
 
-- [AAD Account](./aad-account)
+- [AAD User Account](./aad-account)
 
 # Subscription Administrator
 
-You can determine if your AAD organization account is an 'Administrator' or 'Owner' on the Azure subscription by logging in to the Azure portal with the same AAD account that you use to login to to the RCL app.
+You can determine if your AAD organization account is an 'Administrator' or 'Owner' on the Azure subscription by logging in to the Azure portal with the same AAD account that you use to login to to the the RCL Portal app.
 
 - In the Azure portal, search for 'Subscriptions' and navigate to it
 
@@ -38,17 +39,21 @@ You can determine if your AAD organization account is an 'Administrator' or 'Own
 
 - After you select a subscription, click on the ‘My permissions’ link for the subscription
 
+- Here , you can determine if you are an 'Administrator' on the subscription
+
 ![image](../images/authorization_signin/access-control-mypermissions.png)
 
 # Set Owner or Contributor roles
 
-If the AAD account that you use to log in to the RCL is not an administrator in the Azure subscription, you need to add the AAD account as an ‘Owner’ or ‘Contributor’ to the Azure subscription.
+If the AAD account that you use to log in to the RCL Portal is not an 'Administrator' in the Azure subscription, you need to add the AAD account as an ‘Owner’ or ‘Contributor’ to the Azure subscription.
 
 - Click on the the ‘Access Control (IAM)’ link in the Subscription section
 
 - Click on the ‘Add’ link at the top to add a new role
 
-- Add a “Contributor’ or ‘Owner’ role assignment to your subscription for the AAD account that you use to login to RCL app
+- Select 'Contributor' or 'Owner', then click on 'Select Member'
+
+- Search for and select the AAD user account that you use to login to the RCL Portal
 
 ![image](../images/authorization_signin/access-control-create.png)
 
@@ -56,11 +61,11 @@ If the AAD account that you use to log in to the RCL is not an administrator in 
 
 ![image](../images/authorization_signin/access-control-list.png)
 
-**You must do this for each Azure subscription that you want to use in the RCL app.**
+**You must do this for each Azure subscription that you want to use in the RCL Portal.**
 
 # Test Access Control
 
-Once access control is properly set up for the AAD account that you use to login to RCL, you can open any page that requires subscription access to test it.
+Once access control is properly set up for the AAD account that you use to login to the RCL Portal, you can open any page that requires subscription access to test it.
 
 If the access control was correctly set, you will see the subscription in the drop down list.
 

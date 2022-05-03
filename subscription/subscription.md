@@ -42,7 +42,9 @@ You can access the RCL Portal app that you have subscribed to in the Azure porta
 
 ![image](../images/subscription/unsubscribe.PNG)
 
-- In the SaaS application, click on the ‘Delete’ link to unsubscribe
+- In the SaaS application, click on the ‘Cancel subscription’ link to unsubscribe
+
+_ After, you can Delete the subscription
 
 - Once you cancel a subscription, your data will be scheduled for deletion within the next few days
 

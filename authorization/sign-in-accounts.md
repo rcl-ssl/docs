@@ -6,8 +6,9 @@ nav_order: 1
 ---
 
 # Sign-In Accounts for RCL
+**V6.0.10**
 
-You can subscribe to and sign in to RCL with a
+You can subscribe to and sign in to the [RCL Portal](../portal/portal.md) with a :
 
 - Microsoft personal account (MSA)
 - Azure Active Directory organization account (Work or School)
@@ -24,7 +25,7 @@ The MSA account is a personal Microsoft account. You usually register for one to
 
 ## Azure Active Directory Organization Account
 
-The AAD Work or School account is issued to users by an organization from their Active Directory tenant. These accounts are normally used to access enterprise resources and applications provided by organizations to their employees or students.
+The AAD Work or School account is issued to users by an organization from their **Active Directory** tenant. These accounts are normally used to access enterprise resources and applications provided by organizations to their employees or students.
 
 # Account Limitations
 
@@ -36,7 +37,7 @@ If you try to manage an Azure Resource with a MSA account you will get the follo
 
 # Associating a Work or School Account to a Subscription
 
-If you subscribed to RCL with an MSA account, you must associate the subscription with an AAD Work or School account to manage Azure resources.
+If you subscribed to [RCL Portal](../portal/portal.md) with an MSA account, you must associate the subscription with an AAD Work or School account to manage Azure resources.
 
 This will allow you to login to your subscription with the AAD Work or School account.
 
