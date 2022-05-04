@@ -6,12 +6,13 @@ nav_order: 5
 ---
 
 # SAN Certificates - Azure DNS
+**V6.0.10**
 
 A Subject Alternative Name (SAN) TLS/SSL certificate will contain multiple domains in a single certificate. SAN certificates created with an Azure DNS Zone will contain the naked apex domain (e.g. contoso.com) and the wild card domain (e.g. *.contoso.com) in a single TLS/SSL certificate.
 
 # Single Apex Domains
 
-SAN certificates only allow a single apex domain. For instance the two domains 'fabricam.com' and 'contoso.com' are not allowed in a SAN multi-domain certificate.
+SAN certificates only allow a single apex domain. For instance, the two domains 'fabricam.com' and 'contoso.com' are not allowed in a SAN multi-domain certificate.
 
 # Access Control
 
@@ -23,13 +24,13 @@ If you try to manage an Azure DNS with a MSA account you will get the following 
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for RCL with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
 
-- [Sign-In Accounts for RCL Lets](../authorization/sign-in-accounts)
+- [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
 
 ## Set Access Control
 
-To create certificates for Azure DNS, the Azure AAD organizational account that you use to login to RCL must either be :
+To create certificates for Azure DNS, the Azure AAD organizational account that you use to login to the RCL Portal must either be :
 
 - An administrator to the subscription containing the Azure DNS Zone(s)
 
@@ -125,20 +126,6 @@ You will need to manually download and install your certificate in your web serv
 SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the certificates list to update a certificate.
 
 ![image](../images/portal/azure-dns-update.PNG)
-
-# Automatic Certificate Renewal and Installation
-
-You can use the [RCL CertificateBot](../certbot/certbot) to automatically renew certificates and install them in web servers (Apache, Apache Tomcat, NGINX, IIS).
-
-RCL CertificateBot can be installed in :
-
-- Windows
-- Linux
-
-Follow the instructions in these links to use RCL CertificateBot :
-
-- [RCL CertificateBot](../certbot/certbot)
-
 
 # Rate Limits
 
