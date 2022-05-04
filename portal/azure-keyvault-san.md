@@ -6,6 +6,7 @@ nav_order: 8
 ---
 
 # SAN Certificate - Azure Key Vault
+**V6.0.10**
 
 RCL creates TLS/SSL certificates using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records) and automatically saves them to [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts).
 
@@ -25,13 +26,13 @@ If you try to manage Azure DNS / Key Vault with a MSA account you will get the f
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for RCL with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
 
 - [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
 
 ## Set Access Control
 
-To create certificates for Azure DNS / Key Vault, the Azure AAD organizational account that you use to login to RCL must either be :
+To create certificates for Azure DNS / Key Vault, the Azure AAD organizational account that you use to login to the RCL Portal must either be :
 
 - An administrator to the subscription containing the Azure DNS Zone(s) / Key Vault(s)
 
@@ -85,9 +86,9 @@ This is required to import the SSL/TLS certificate in a Key Vault in your Azure 
 
 ![image](../images/portal/certificate-keyvault-access-policy-add.png)
 
-- Select all the permissions for the ‘Certificate permissions’ (approximately 16). Ensure you include the **purge** permission.
+- Select all the permissions for the ‘Certificate permissions’ (all 16 permissions). Ensure you include the **purge** permission.
 
-- Select a service principal : search for the Azure Active Directory organizational account that you use to login to RCL
+- Select a service principal : search for the Azure Active Directory organizational account that you use to login to the RCL Portal
 
 - Click the ‘Select’ button
 
@@ -115,9 +116,9 @@ This is required to import the SSL/TLS certificate in a Key Vault in your Azure 
 
 - In the case above, we are requesting a SAN SSL/TLS certificate for the naked apex domain, ‘shopeneur.com’. The wild card domain '*.shopeneur.com' will be automatically included in the certificate.
 
-- The Host Name must be valid for the DNS Zone. For instance, the naked apex domain ‘shopeneur.com’ is valid for the DNS Zone ‘shopeneur.com’
+- Select the Key Vault name.
 
-- Select the Key Vault name and add a unique certificate name for the key vault. The certificate name should only contain alphanumeric characters and dashes (-).
+- The Host Name must be valid for the DNS Zone. For instance, the naked apex domain ‘shopeneur.com’ is valid for the DNS Zone ‘shopeneur.com’
 
 ![image](../images/portal/azure-keyvault-san-create.PNG)
 
@@ -137,7 +138,7 @@ This is required to import the SSL/TLS certificate in a Key Vault in your Azure 
 
 # Manually Renewing SSL/TLS Certificates
 
-SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the certificates list to update a certificate.
+SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the 'Manage' menu in the certificates list to update a certificate.
 
 ![image](../images/portal/azure-dns-update.PNG)
 

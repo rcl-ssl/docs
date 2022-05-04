@@ -40,7 +40,7 @@ You can also create a new user account to sign in to the RCL Portal.
 
 ![image](../images/authorization_signin/subscribe-aad-user-member.png)
 
-- You can use this new AAD organization account to login in to any of the RCL applications.
+- You can use this new AAD organization account to login in to any of the RCL Portal.
 
 # Sign In
 

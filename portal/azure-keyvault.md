@@ -6,6 +6,7 @@ nav_order: 7
 ---
 
 # Creating SSL/TLS Certificates for Azure Key Vault
+**V6.0.10**
 
 RCL creates TLS/SSL certificates using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records) and automatically saves them to [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts).
 
@@ -19,7 +20,7 @@ If you try to manage an Azure DNS / Key Vault with a MSA account you will get th
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for RCL with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
 
 - [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
 
@@ -79,9 +80,9 @@ This is required to import the SSL/TLS certificate in a Key Vault in your Azure 
 
 ![image](../images/portal/certificate-keyvault-access-policy-add.png)
 
-- Select all the permissions for the ‘Certificate permissions’ (approximately 16). Ensure you include the **purge** permission.
+- Select all the permissions for the ‘Certificate permissions’ (select all 16). Ensure you include the **purge** permission.
 
-- Select a service principal : search for the Azure Active Directory organizational account that you use to login to RCL
+- Select a service principal : search for the Azure Active Directory organizational account that you use to login to the RCL
 
 - Click the ‘Select’ button
 
@@ -109,9 +110,9 @@ Select the ‘Azure Key Vault’ option
 
 - In this case, we are requesting a SSL/TLS certificate for the custom primary domain, ‘shopeneur.com’.
 
-- The Host Name must be valid for the DNS Zone. For instance, ‘shopeneur.com’, ‘store.shopeneur.com’, ‘*.shopeneur.com’ is valid for the DNS Zone ‘shopeneur.com’
+- Select the Key Vault name.
 
-- Select the Key Vault name and add a unique certificate name for the key vault. The certificate name should only contain alphanumeric characters and dashes (-).
+- The Host Name must be valid for the DNS Zone. For instance, ‘shopeneur.com’, ‘store.shopeneur.com’, ‘*.shopeneur.com’ is valid for the DNS Zone ‘shopeneur.com’
 
 ![image](../images/portal/azure-keyvault-create.PNG)
 
@@ -131,7 +132,7 @@ Select the ‘Azure Key Vault’ option
 
 # Manually Renewing SSL/TLS Certificates
 
-SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the certificates list to update a certificate.
+SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the 'Manage' menu in the certificates list to update a certificate.
 
 ![image](../images/portal/azure-dns-update.PNG)
 

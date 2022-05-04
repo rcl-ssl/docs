@@ -55,13 +55,13 @@ To associate an AAD Work or School account follow these steps.
 
 ![image](../images/authorization_signin/signin-aad-associate.png)
 
-- After the account is associated with your subscription, sign in with the Work or School account in RCL.
+- After the account is associated with your subscription, sign in with the Work or School account in the RCL Portal.
 
 # Access Control
 
 To access resources in you Microsoft Azure account a further step is required. Your AAD Work or School account must be an 'Administrator' or 'Owner' on the subscription containing your azure resources. 
 
-Alternatively, you can assign the 'Contributor' or 'Owner' role to the sWork or School account in your azure subscription.
+Alternatively, you can assign the 'Contributor' or 'Owner' role to the Work or School account in your azure subscription.
 
 Refer to the following link for more information :
 
