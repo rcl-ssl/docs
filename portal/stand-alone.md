@@ -166,6 +166,8 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 
 - To access the certificate, click the **Details** button in the **Manage** menu in the certificates list page.
 
+![image](../images/portal/certificate-details.png)
+
 - You can download the certificate in .PFX, .CER, .CRT or .PEM formats.
 
 ![image](../images/portal/certificate-download.PNG)
