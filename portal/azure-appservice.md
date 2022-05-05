@@ -6,6 +6,7 @@ nav_order: 6
 ---
 
 # Creating SSL/TLS Certificates for App Services
+**V6.0.10**
 
 You can use RCL to create and install SSL/TLS certificates in your app services.
 
@@ -23,7 +24,7 @@ If you try to manage an Azure App service with a MSA account you will get the fo
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for RCL with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
 
 - [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
 
