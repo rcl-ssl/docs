@@ -162,11 +162,9 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 
 - You can download the SSL/TLS certificate or the relevant certificates files for installation in your webserver is the **Certificate Details** page.
 
-
-
 # Accessing the TLS/SSL Certificate
 
-- To access the certificate, click the **Details** button in the certificates list page.
+- To access the certificate, click the **Details** button in the **Manage** menu in the certificates list page.
 
 - You can download the certificate in .PFX, .CER, .CRT or .PEM formats.
 
@@ -193,7 +191,7 @@ You will need to manually download and install your certificate in your web serv
 
 # Certificate Renewal
 
-When a certificate is close to expiration, you should delete the certificate and create a new one. Then install the new certificate in the web server.
+When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the new certificate in the web server.
 
 # Rate Limits
 

@@ -6,26 +6,25 @@ nav_order: 3
 ---
 
 # SAN Certificates - Stand Alone
+**V6.0.10**
 
-A Subject Alternative Name (SAN) TLS/SSL certificate will contain multiple domains in a single certificate.
+A Subject Alternative Name (SAN) SSL/TLS certificate will contain multiple domains in a single certificate.
 
 # HTTP SAN Certificate
 
-A SAN certificate created with the HTTP Challenge will contain the naked apex domain (e.g. contoso.com) and the www subdomain (e.g. www.contoso.com) in a single TLS/SSL certificate.
+A SAN certificate created with the HTTP Challenge will contain the naked apex domain (e.g. contoso.com) and the www subdomain (e.g. www.contoso.com) in a single SSL/TLS certificate.
 
 # DNS SAN Certificate
 
-A SAN certificate created with the DNS Challenge will contain the naked apex domain (e.g. contoso.com) and a wild card domain (e.g. *.contoso.com) in a single TLS/SSL certificate.
+A SAN certificate created with the DNS Challenge will contain the naked apex domain (e.g. contoso.com) and a wild card domain (e.g. *.contoso.com) in a single SSL/TLS certificate.
 
 # Single Apex Domains
 
-SAN certificates only allow a single apex domain. For instance the two domains 'fabricam.com' and 'contoso.com' are not allowed in a SAN multi-domain certificate.
+SAN certificates only allow a single apex domain. For instance the two different domains, eg.  'fabricam.com' and 'contoso.com', are not allowed in a SAN multi-domain certificate.
 
-# Creating Stand Alone SAN TLS/SSL Certificates
+# Creating Stand Alone SAN SSL/TLS Certificates
 
-In the RCL Portal, you can create Stand Alone SAN TLS/SSL certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
-
-You will need to manually download and install the certificate in your web server.
+In the RCL Portal, you can create Stand Alone SAN SSL/TLS certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
 
 You will need to manually download and install the certificate in your web server.
 
@@ -34,7 +33,7 @@ You will need to manually download and install the certificate in your web serve
 **When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the renewed certificate in your web server.**
 
 
-You can create a TLS/SSL certificate by using either the :
+You can create a SSL/TLS certificate by using either the :
 
 - HTTP-01 Challenge or
 - DNS-01 Challenge
@@ -51,10 +50,10 @@ You can create a TLS/SSL certificate by using either the :
 
 # HTTP Challenge
 
-RCL uses the HTTP-01 challenge type to create a certificate that includes the following domains in a single TLS/SSL certificate:
+RCL uses the HTTP-01 challenge type to create a certificate that includes the following domains in a single SSL/TLS certificate:
 
-- naked apex domain (e.g. contoso.net)
-- www subdomain (e.g. www.contoso.net)
+- naked apex domain (e.g. contoso.com)
+- www subdomain (e.g. www.contoso.com)
 
 To validate your domain with the HTTP challenge, you will be required to place files in the root of your website and ensure that these files can be accessed publicly on the web.
 
@@ -70,17 +69,19 @@ To validate your domain with the HTTP challenge, you will be required to place f
     
 ## Completing the HTTP Challenge
 
-To validate your domain, you will be required to place two (2) files in the root of your website.
+To validate your domain, you will be required to place **two (2)** files in the root of your website.
 
 In your hosted website, you will need to create a folder named: .well-known/acme-challenge (note the dot at the start) in the root of your website.
 
-Add a extension less file with the file name identified in the HTTP Validation page. To this file, add the content identified in the HTTP Validation page.
+Add a extension-less file with the file name identified in the HTTP Validation page. To this file, add the content identified in the HTTP Validation page.
 
-Ensure you can access the file publicly in the web browser by clicking on the link in the HTTP validation page. When you click on the link, you should see the validation content in the file displayed in the browser. If you do not see the content or the link is in-accessible the domain validation will fail.
+Ensure you can access the files publicly in the web browser by clicking on the links in the HTTP validation page. 
+
+When you click on a link, you should see the validation content in the file displayed in the browser. If you do not see the content or the link is in-accessible the domain validation will fail. 
 
 ![image](../images/portal/stand-alone-san-http-validation.PNG)
 
-- The following example image illustrates the file in the web root directory
+- The following example image illustrates one of the files in the web root directory
 
 ![image](../images/portal/stand-alone-san-http-token.PNG)
 
@@ -104,12 +105,12 @@ Click on the 'Validate' button when you are done.
 
 # DNS Challenge
 
-RCL uses the DNS-01 challenge to create a certificate that includes the following domains in a single TLS/SSL certificate:
+RCL uses the DNS-01 challenge to create a certificate that includes the following domains in a single SSL/TLS certificate:
 
-- naked apex domain (e.g. contoso.net)
-- wildcard (e.g. *.contoso.net)
+- naked apex domain (e.g. contoso.com)
+- wildcard (e.g. *.contoso.com)
 
-To validate your domain with the DNS challenge, you will be required to create a DNS TXT record in your domain settings.
+To validate your domain with the DNS challenge, you will be required to create a DNS TXT record in your domain settings with your domain registrar.
 
 Add the data to create the certificate. The image below illustrates data for a sample domain.
 
@@ -135,13 +136,13 @@ The following is an example of the DNS TXT record.
 
 ## Verifying the DNS TXT Record with Dig
 
-- You can test the DNS record in the [Dig site](https://toolbox.googleapps.com/apps/dig/). In the site add the name identified in the DNS Validation page; and select the **TXT** record. The values for the record will be shown in the **;ANSWER** section
+- You can test the DNS record in the [Dig site](https://toolbox.googleapps.com/apps/dig/). In the site, add the name identified in the DNS Validation page; and select the **TXT** record. The values for the record will be shown in the **TXT** section
 
 ![image](../images/portal/dig-san.PNG)
 
 - If you see the correct DNS TXT record and values, the test is successful
 
-- If the test is successful, click the Validate button. 
+- If the test is successful, click the 'Validate' button. 
 
 # Certificate Creation
 
@@ -155,7 +156,7 @@ The following is an example of the DNS TXT record.
 
 # Accessing the TLS/SSL Certificate
 
-- To access the certificate, click the **Details** button in the certificates list page.
+- To access the certificate, click the **Details** button in the **Manage** menu in the certificates list page.
 
 - You can download the certificate in .PFX, .CER, .CRT or .PEM formats.
 
@@ -182,7 +183,7 @@ You will need to manually download and install your certificate in your web serv
 
 # Certificate Renewal
 
-When a certificate is close to expiration, you should delete the certificate and create a new one.
+When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the new certificate in the web server.
 
 # Rate Limits
 
