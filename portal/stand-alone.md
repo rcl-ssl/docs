@@ -6,6 +6,7 @@ nav_order: 2
 ---
 
 # Creating Stand Alone SSL/TLS Certificates
+**V6.0.10**
 
 In the RCL Portal, you can create Stand Alone single-domain SSL/TLS certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
 
@@ -15,7 +16,7 @@ You will need to manually download and install the certificate in your web serve
 
 **When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the renewed certificate in your web server.**
 
-You can create a TLS/SSL certificate by using either the :
+You can create a SSL/TLS certificate by using either the :
 
 - HTTP-01 Challenge or
 - DNS-01 Challenge
@@ -79,17 +80,17 @@ To validate your domain with the HTTP challenge, you will be required to place a
 </configuration>
 ```
 
-- Ensure the website and ‘well known’ file can be accessed publicly on the web. Click on the link to test your validation file on the **HTTP Validation Page**
+- Ensure the website and ‘well known’ file can be accessed publicly on the web. On the **HTTP Validation Page**, click on the link to test your validation file 
 
 - For a successful test, you should see the validation value in the web browser.
 
 ![image](../images/portal/stand-alone-http-validation-test.PNG)
 
-- If the test is successful, click the Validate button. If the test is not successful the certificate creation will fail.
+- If the test is successful, click the 'Validate' button. If the test is not successful the certificate creation will fail.
 
 ### Certificate Creation
 
-- You will need to wait up to 10 mins to validate the site and install the certificate. When this is done, the SSL/TLS certificate will be displayed in the certificates list.
+- You will need to wait up to 10 mins to validate the site and create the certificate. When this is done, the SSL/TLS certificate will be displayed in the certificates list.
 
 ![image](../images/portal/certificate-ordered.PNG)
 
@@ -109,7 +110,7 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 
 ## Add a SSL/TLS Certificate
 
-- In the ‘Certificates’ module of RCL , click on the 'Create New SSL/TLS Certificate' link.
+- In the ‘Certificates’ module of the RCL Portal , click on the 'Create New SSL/TLS Certificate' link.
 
 ![image](../images/portal/create-new.PNG)
 
@@ -141,17 +142,17 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 
 ### Verifying the DNS TXT Record with Dig
 
-- You can test the DNS record in the [Dig site](https://toolbox.googleapps.com/apps/dig/). In the site add the name identified in the DNS Validation page; and select the **TXT** record. The value for the record will be shown in the **TXT** section
+- You can test the DNS record in the [Dig site](https://toolbox.googleapps.com/apps/dig/). In the site, add the name identified in the DNS Validation page; and select the **TXT** record. The value for the record will be shown in the **TXT** section
 
 ![image](../images/portal/dig.PNG)
 
 - If you see the correct DNS TXT record and value, the test is successful
 
-- If the test is successful, click the Validate button. 
+- If the test is successful, click the 'Validate' button. 
 
 ### Certificate Creation
 
-- You will need to wait up to 10 mins to validate the site and install the certificate. When this is done, the SSL/TLS certificate will be displayed in the certificates list.
+- You will need to wait up to 10 mins to validate the site and create the certificate. When this is done, the SSL/TLS certificate will be displayed in the certificates list.
 
 ![image](../images/portal/certificate-ordered.PNG)
 
@@ -159,43 +160,7 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 
 ![image](../images/portal/certificate-list.PNG)
 
-# Create a Free TLS/SSL Certificate
-
-You can create a free TLS/SSL certificate in the [RCL Website's](https://rclapp.com) home page.
-
-- Add the hostname. **The hostname must be a primary apex domain (eg. contoso.com)**. Sub-domains (eg. www.contoso.com, shop.contoso.com, etc) , wild card domains (eg. *.contoso.com) and mult-domain SAN are not supported in free certificates. Do not include 'http' or 'https' in your hostname. Click the 'Create Now' button when you are done
-
-![image](../images/portal/free-certificate-hostname.PNG)
-
-- Add a Microsoft Email for the SSL/TLS certificate. **If you do do not have a Microsoft Email, you can create one in the Sign-In page**
-
-![image](../images/portal/free-certificate-email.PNG)
-
-- Add a password for the certificate
-
-![image](../images/portal/free-certificate-password.PNG)
-
-In your management portal from your domain registrar, add a DNS TXT record (name/host) as defined in the ‘DNS Validation’ page (note the underscore '_' at the start) with the value as defined on the page
-
-![image](../images/portal/stand-alone-dns-validation.PNG)
-
-- This is an example of a DNS record
-
-![image](../images/portal/stand-alone-dns-record.PNG)
-
-- You can test the DNS record in the [Dig site](https://toolbox.googleapps.com/apps/dig/). In the site add the name identified in the DNS Validation page; and select the **TXT** record. The value for the record will be shown in the **TXT** section
-
-![image](../images/portal/dig.PNG)
-
-- If you see the correct DNS TXT record and value, the test is successful
-
-- If the test is successful, click the Validate button. 
-
-- You will need to wait up to 10 mins to validate the site and install the certificate. When this is done, the SSL/TLS certificate will be displayed in the Certificates Details page.
-
-![image](../images/portal/free-certificate-ordered.PNG)]
-
-- Click on the 'Go to Certificate Details' button to access the TLS/SSL Certificate
+- You can download the SSL/TLS certificate or the relevant certificates files for installation in your webserver is the **Certificate Details** page.
 
 
 
@@ -228,7 +193,7 @@ You will need to manually download and install your certificate in your web serv
 
 # Certificate Renewal
 
-When a certificate is close to expiration, you should delete the certificate and create a new one.
+When a certificate is close to expiration, you should delete the certificate and create a new one. Then install the new certificate in the web server.
 
 # Rate Limits
 

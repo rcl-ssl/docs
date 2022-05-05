@@ -96,7 +96,7 @@ Follow the instructions in the link below to set up your DNS Zone and delegate t
 
 # Manually Installing TLS/SSL Certificates in Web Servers
 
-- To access the certificate, click the **Details** button in the certificates list page.
+- To access the certificate, click the **Details** button in the **Manage** menu in the certificates list page.
 
 - You can download the certificate in .PFX, .CER, .CRT or .PEM formats.
 
