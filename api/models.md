@@ -80,7 +80,7 @@ Represents a SSL/TLS certificate
 
 ## Example
 
-```json
+```
 {
     "certificateName":"shopeneur.com",
     "rootDomain":null,
@@ -147,7 +147,7 @@ Represents a request for a certificate operation
 
 ## Example
 
-```json
+```
 {
     "accessToken" : "eyJ0eXAiOiJk....ww",
     "accessTokenKeyVault" : "eyJ0eXAiOZ....DQ",

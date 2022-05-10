@@ -75,7 +75,7 @@ Content-Type: application/json
 ```
 
 # Example Response Body
-```json
+```
 [
     {
         "certificateName": "shopeneur.com",
