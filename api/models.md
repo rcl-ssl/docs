@@ -9,9 +9,9 @@ nav_order: 100
 
 This section contain the model classes for the RCL Public API.
 
-# AccessToken
+# AuthToken
 
-Represents an access token
+Represents an authorization token
 
 | Parameter | Description | Type
 | --- | --- |--- |

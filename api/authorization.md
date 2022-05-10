@@ -96,7 +96,7 @@ grant_type=client_credentials&client_id=625bc9f6-3bf6-4b6d-94ba-e97cf07a22de&cli
 
 ## Service Response
 
-A success response contains a JSON response with an [AccessToken](./models.md#access-token) in the body of the reposnse.
+A success response contains a JSON response with an [AuthToken](./models.md#authtoken) in the body of the response. The Access Token can be acquired from the ``AuthToken``.
 
 ## Use the Access Tokens to Make a Request
 
