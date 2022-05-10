@@ -2,7 +2,7 @@
 title: POST Certificate Renew
 description: RCL Public API - POST Certificate Renew
 parent: API
-nav_order: 5
+nav_order: 6
 ---
 
 # POST Certificate Renew
@@ -69,25 +69,10 @@ Content-Type: application/json
     "accessTokenKeyVault" : "eyJ0eXAiOZ....DQ",
     "certificate" : {
         "certificateName": "shopeneur.com",
-        "rootDomain": null,
-        "email": null,
-        "challengeType": null,
-        "orderUri": null,
-        "csrInfo": null,
-        "issueDate": "2022-05-10T03:31:32.2585666",
-        "expiryDate": "2022-05-28T23:33:01.5479202",
         "target": "Azure Key Vault + DNS",
         "renewal": "Automatic",
         "id": 3673,
-        "subscriptionId": 889,
-        "password": null,
-        "pfxString": null,
-        "certificateDownloadUrl": null,
-        "azureSubscriptionId": null,
-        "dnsZoneResourceGroup": null,
-        "keyVaultName": null,
-        "keyVaultCertificateName": null,
-        "siteId": 0
+        "subscriptionId": 889
     }
 }
 ```
