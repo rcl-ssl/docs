@@ -1,14 +1,14 @@
 ---
-title: POST Certificate Test
-description: RCL API - POST Certificate Test
+title: POST Renew Certificate Get List
+description: RCL Public API - POST Renew Certificate list
 parent: API
-nav_order: 3
+nav_order: 4
 ---
 
-# POST Certificate Test
+# POST Renew Certificate Get List 
 **V6.0.10**
 
-The **Certificate Test API** will test the authorized connectivity to the RCL Public API.
+The **Renew Certificate Get List API** will return a list of certificates that will expire in the next 20 days.
 
 # Authorization
 
@@ -34,7 +34,7 @@ https://rclapi.azure-api.net/public
 The endpoint for the **POST Certificate Test** API is :
 
 ```
-/v1/subscription/{subscriptionid}/public/certificate/test
+/v1/subscription/{subscriptionid}/public/certificate/renew/getlist
 ```
 
 where the placeholder : {subscriptionid} is the **Subscription Id** of the subscription in the RCL Portal.
@@ -47,7 +47,11 @@ The request body should include a JSON of the [ResourceRequest](./models.md#reso
 
 ## 200 Ok
 
-This represents success in making an authorized connection to the RCL Public API
+This represents success in making an authorized connection to the RCL Public API. An **Array** of [Certificate](./models.md#certificate) is provided in the **body** of the response in JSON format.
+
+## 404 Notfound
+
+If no certificates were found that matches the renewal criteria.
 
 ## 401 Unauthorized
 
@@ -60,7 +64,7 @@ An error occurred while processing the request. Check the body of the response f
 # Example Request
 
 ```
-POST /public/v1/subscription/subscr-34001/public/certificate/test HTTP/1.1
+POST /public/v1/subscription/subscr-431/public/certificate/renew/getlist HTTP/1.1
 Host: rclapi.azure-api.net
 Content-Type: application/json
 
@@ -68,6 +72,35 @@ Content-Type: application/json
     "accessToken" : "eyJ0eXAiOiJk..ww",
     "accessTokenKeyVault" : "eyJ0eXAiOZ..DQ"
 }
+```
+
+# Example Response Body
+```json
+[
+    {
+        "certificateName": "shopeneur.com",
+        "rootDomain": null,
+        "email": null,
+        "challengeType": null,
+        "orderUri": null,
+        "csrInfo": null,
+        "issueDate": "2022-05-10T03:31:32.2585666",
+        "expiryDate": "2022-05-28T23:33:01.5479202",
+        "target": "Azure Key Vault + DNS",
+        "renewal": "Automatic",
+        "id": 3673,
+        "subscriptionId": 889,
+        "password": null,
+        "pfxString": null,
+        "certificateDownloadUrl": null,
+        "azureSubscriptionId": null,
+        "dnsZoneResourceGroup": null,
+        "keyVaultName": null,
+        "keyVaultCertificateName": null,
+        "siteId": 0
+    }
+]
+
 ```
 
 

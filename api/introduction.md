@@ -6,46 +6,35 @@ nav_order: 1
 ---
 
 # Introduction
+**V6.0.10**
 
-The **RCL API** provides free REST API services to:
+The **RCL Public API** provides REST API services to:
 
-- Get TLS/SSL certificates from an **RCL Portal** user's subscription
-- Renew TLS/SSL certificates that are about to expire
+- Get SSL/TLS certificates from an **RCL Portal** user's subscription
+- Renew SSL/TLS certificates that are about to expire
 
 ## Primary Usage
 
-Developers can use the APIs to build custom applications to automate the installation and renewal of certificates.
-
-## Developer's Portal
-
-Developers can explore and test the APIs in the **RCL Developers Portal** located at :
-
-- [RCL Developer's Portal](https://rclapi.developer.azure-api.net/)
+Developers can use the APIs to build custom applications to automate the installation and renewal of SSL/TLS certificates.
 
 ## Quick Start
 
-Start using the API in two simple steps.
+Start using the RCL Public API in two simple steps.
 
-[Obtain an Access Token](./authorization) to make authorized requests to the API.
+[Obtain Access Tokens](./authorization) to make authorized requests to the API.
 
-Make an authorized request to any one of these endpoints:
+Test authorized connectivity to the API
 
-- [GET Certificate](./get-certificate)
-- [GET CertificateList](./get-certificate-list)
-- [POST CertificateRenewal](./post-certificate-renewal)
-- [POST Certificate](./post-certificate)
+- [POST Certificate Test](./post-certificate-test.md)
+
 
 ## Rate Limits
 
 The following rate limit is enforced for the API :
 
-- Maximum of 50 requests per week for a subscriber
+- Maximum of 100 requests per week for a subscriber
 
 ## Related Articles
 
 - [Authorization: Obtaining an Access Token](./authorization)
-- [GET Certificate](./get-certificate)
-- [GET CertificateList](./get-certificate-list)
-- [POST CertificateRenewal](./post-certificate-renewal)
-- [POST Certificate](./post-certificate-renewal)
-- [Recommendations for Automation System Design](./automation-system)
+- [POST Certificate test](./get-certificate)
