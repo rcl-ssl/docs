@@ -10,7 +10,7 @@ nav_order: 1
 
 The **RCL Public API** provides REST API services to:
 
-- Get SSL/TLS certificates from an **RCL Portal** user's subscription
+- Get SSL/TLS certificates from a user's subscription in the **RCL Portal**
 - Renew SSL/TLS certificates that are about to expire
 
 ## Primary Usage
@@ -25,9 +25,7 @@ Start using the RCL Public API in two simple steps.
 
 Test authorized connectivity to the API
 
-- [POST Certificate Test](./post-certificate-test.md)
-- [POST Certificate Renew Get List](./post-certificate-renew-get-list.md)
-- [POST Certificate Renew](./post-certificate.renew.md)
+[POST Certificate Test](./post-certificate-test.md)
 
 ## Rate Limits
 
