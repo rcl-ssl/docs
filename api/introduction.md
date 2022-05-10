@@ -26,7 +26,8 @@ Start using the RCL Public API in two simple steps.
 Test authorized connectivity to the API
 
 - [POST Certificate Test](./post-certificate-test.md)
-
+- [POST Certificate Renew Get List](./post-certificate-renew-get-list.md)
+- [POST Certificate Renew](./post-certificate.renew.md)
 
 ## Rate Limits
 
@@ -37,4 +38,3 @@ The following rate limit is enforced for the API :
 ## Related Articles
 
 - [Authorization: Obtaining an Access Token](./authorization)
-- [POST Certificate test](./get-certificate)

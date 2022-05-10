@@ -47,7 +47,7 @@ The request body should include a JSON of the [ResourceRequest](./models.md#reso
 
 ## 200 Ok
 
-This represents success in making an authorized connection to the RCL Public API
+This represents success in making an authorized connection to the RCL Public API.
 
 ## 401 Unauthorized
 

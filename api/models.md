@@ -26,7 +26,7 @@ Represents an access token
 
 ```
 {
-"access_token":"eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw",
+"access_token":"eyJ0eXAiO ....gKcgw",
 "token_type":"Bearer",
 "expires_in":"3599",
 "expires_on":"1388452167",
@@ -46,8 +46,8 @@ Represents an request for a resource in the RCL Public API
 ## Example
 ```
 {
-    "accessToken" : "eyJ0eXAiOiJk..ww",
-    "accessTokenKeyVault" : "eyJ0eXAiOZ..DQ"
+    "accessToken" : "eyJ0eXAiOiJk....ww",
+    "accessTokenKeyVault" : "eyJ0eXAiOZ....DQ"
 }
 ```
 
@@ -62,7 +62,6 @@ Represents a SSL/TLS certificate
 | rootDomain |The root domain for the certificate. | string |
 | email |The email contact for the user creating the certificate. | string |
 | challengeType |The challenge type to validate the certificate ('HTTP' or 'DNS'). | string |
-| orderUri |The Lets Encrypt URI for the certificate order. | string |
 | orderUri |The Lets Encrypt URI for the certificate order. | string |
 | csrInfo |The Certificate Signing Request Information. | [CsrInfo](#csrinfo) |
 | issueDate |The issue date of the certificate. | DateTime |
@@ -135,3 +134,44 @@ Represents the download URLs for various certificate formats
 | certCrtUrl |The download url for the Certificate in .CRT format. | string |
 | cabundleCrtUrl |The download url for the Certificate Bundle in .CRT format. | string |
 | fullchainCrtUrl |The download url for the Full Chain Certificate  in .CRT format. | string |
+
+# CertificateRequest
+
+Represents a request for a certificate operation
+
+| Parameter | Description | Type
+| --- | --- |--- |
+| accessToken |The Azure Resource Manager access token. | string |
+| accessTokenKeyVault |The Key Vault access token. | string |
+| certificate |The SSL/TLS certificate. | [Certificate](#certificate) |
+
+## Example
+
+```json
+{
+    "accessToken" : "eyJ0eXAiOiJk....ww",
+    "accessTokenKeyVault" : "eyJ0eXAiOZ....DQ",
+    "certificate" : {
+        "certificateName": "shopeneur.com",
+        "rootDomain": null,
+        "email": null,
+        "challengeType": null,
+        "orderUri": null,
+        "csrInfo": null,
+        "issueDate": "2022-05-10T03:31:32.2585666",
+        "expiryDate": "2022-05-28T23:33:01.5479202",
+        "target": "Azure Key Vault + DNS",
+        "renewal": "Automatic",
+        "id": 3673,
+        "subscriptionId": 889,
+        "password": null,
+        "pfxString": null,
+        "certificateDownloadUrl": null,
+        "azureSubscriptionId": null,
+        "dnsZoneResourceGroup": null,
+        "keyVaultName": null,
+        "keyVaultCertificateName": null,
+        "siteId": 0
+    }
+}
+```
