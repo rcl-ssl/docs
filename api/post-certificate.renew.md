@@ -8,7 +8,7 @@ nav_order: 5
 # POST Certificate Renew
 **V6.0.10**
 
-The **Certificate Renew API** will renew a certificate.
+The **Certificate Renew API** will schedule a certificate for renewal. The certificate will be renewed within an hour.
 
 # Authorization
 

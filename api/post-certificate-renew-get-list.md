@@ -47,7 +47,7 @@ The request body should include a JSON of the [ResourceRequest](./models.md#reso
 
 ## 200 Ok
 
-This represents success in making an authorized request to the RCL Public API. An **Array** of [Certificate](./models.md#certificate) is provided in the **body** of the response in JSON format.
+This represents success in making an authorized request to the RCL Public API. An **Array** of [Certificate](./models.md#certificate) that are about to expire is provided in the **body** of the response in JSON format.
 
 ## 404 Notfound
 

@@ -21,11 +21,11 @@ Developers can use the APIs to build custom applications to automate the install
 
 Start using the RCL Public API in two simple steps.
 
-[Obtain Access Tokens](./authorization) to make authorized requests to the API.
+- [Obtain Access Tokens](./authorization) to make authorized requests to the API.
 
 Test authorized connectivity to the API
 
-[POST Certificate Test](./post-certificate-test.md)
+- [POST Certificate Test](./post-certificate-test.md)
 
 ## Rate Limits
 
