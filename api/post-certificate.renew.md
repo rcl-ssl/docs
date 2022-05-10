@@ -60,7 +60,7 @@ An error occurred while processing the request. Check the body of the response f
 # Example Request
 
 ```
-POST /public/v1/subscription/subscr-431/public/certificate/renew/getlist HTTP/1.1
+POST /public/v1/subscription/849/public/certificate/renew HTTP/1.1
 Host: rclapi.azure-api.net
 Content-Type: application/json
 

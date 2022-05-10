@@ -117,7 +117,7 @@ Each request should include the **Subscription Id** of the subscription in the R
 ### Example
 
 ```
-POST /public/v1/subscription/subscr-34001/public/certificate/test HTTP/1.1
+POST /public/v1/subscription/879/public/certificate/test HTTP/1.1
 Host: rclapi.azure-api.net
 Content-Type: application/json
 
