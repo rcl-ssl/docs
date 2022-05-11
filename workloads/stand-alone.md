@@ -17,11 +17,11 @@ The web servers may include :
  - Microsoft IIS
  - Other web servers and hosting systems
 
- # STEPS
+# STEPS
 
- ## Step 1 : Create the SSL/TLS Certificate
+## Step 1 : Create the SSL/TLS Certificate
 
- - Create the SSL/TLS certificate either using the :
+- Create the SSL/TLS certificate either using the :
     - [Stand Alone](../portal/stand-alone.md) option
     - [Stand Alone SAN](../portal/stand-alone-san.md) option
 
@@ -42,4 +42,4 @@ SSL/TLS Certificates will expire within 90 days. Follow these instructions to re
 
 - Delete the SSL/TLS certificate in the RCL Portal
 - Create a new certificate using the 'Stand Alone' or 'Stand Alone SAN' option
-- Remove the old certificate and re-install the new one in your web server. 
+- Remove the old certificate and re-install the new one in your web server
