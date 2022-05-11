@@ -35,15 +35,16 @@ This workload allows for the **automatic creation, installation and renewal** of
 Application Gateway supports TLS termination at the gateway, after which traffic typically flows unencrypted to the backend servers. 
 
 - Learn about [TLS Termination with Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/ssl-overview)
-- Follow the instruction in the link below to configure TLS termination with Key Vault certificates and Application Gateway using the Azure portal :
+- Learn about [Virtual Machines with Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal)
+- Follow the instruction in the link below to configure TLS termination with Key Vault certificates and Application Gateway V2 using the Azure portal :
 
-- [Configure TLS termination with Key Vault certificates and Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/configure-key-vault-portal)
+- [Configure TLS termination with Key Vault certificates and Application Gateway V2](https://docs.microsoft.com/en-us/azure/application-gateway/configure-key-vault-portal)
 
 ## Step 4 : Automatically Renewing a SSL/TLS Certificate
 
 SSL/TLS Certificates will expire within 90 days. Follow these instructions to automatically renew the certificate.
 
 - Use the [RCL AutoRenew Function](../autorenew/introduction.md) to automatically renew certificates 
-- The certificates will be automatically renewed , imported to Key Vault and the TLS termination with Application gateway will be updated without any user interaction
+- The certificates will be automatically renewed , imported to Key Vault and the TLS termination with Application gateway will be updated without any user interaction required
 
 
