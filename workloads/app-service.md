@@ -9,7 +9,7 @@ nav_order: 3
 
 **V6.0.10**
 
-This workload allows for the **automatic creation, installation and renewal** of a SSL/TLS certificate in an [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/) (Web App, Function App, API App, Mobile App). This workload also supports apps in slots.
+This workload allows for the **automatic creation, installation and renewal** of a SSL/TLS certificate in an [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/) (Web App, Function App, API App, Mobile App, etc.). This workload also supports apps in slots.
 
 # STEPS
 
