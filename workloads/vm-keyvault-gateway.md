@@ -19,11 +19,11 @@ This workload allows for the **automatic creation, installation and renewal** of
 
 ## Step 1 : Create the SSL/TLS Certificate
 
-- Create the SSL/TLS certificate either using the :
+- Create the SSL/TLS certificate by using either the :
     - [Azure DNS + Key Vault](../portal/azure-keyvault.md) option
     - [Azure DNS + Key Vault SAN](../portal/azure-keyvault-san.md) option
 
-- The SAN option allow for two domains on the certificate, whereas, the other option only allows on domain on the certificate.
+- The SAN option allow for two domains on the certificate, whereas, the other option only allows one domain on the certificate.
 
 ## Step 2 : Certificate Automatically Imported to Key Vault
 
