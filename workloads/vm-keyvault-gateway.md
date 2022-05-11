@@ -23,7 +23,7 @@ This workload allows for the **automatic creation, installation and renewal** of
     - [Azure DNS + Key Vault](../portal/azure-keyvault.md) option
     - [Azure DNS + Key Vault SAN](../portal/azure-keyvault-san.md) option
 
-- The SAN option allow for two domains on the certificate, whereas, the other option only allows one domain on the certificate.
+- The SAN option allow for two domains (wild card + naked domain, eg: *.contoso.com, contoso.com) on the certificate, whereas, the other option only allows one domain on the certificate.
 
 ## Step 2 : Certificate Automatically Imported to Key Vault
 
@@ -34,8 +34,8 @@ This workload allows for the **automatic creation, installation and renewal** of
 
 Application Gateway supports TLS termination at the gateway, after which traffic typically flows unencrypted to the backend servers. 
 
-- Learn about [TLS Termination with Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/ssl-overview)
-- Learn about [Virtual Machines with Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal)
+- Learn about : [TLS Termination with Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/ssl-overview)
+- Learn about : [Virtual Machines with Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal)
 - Follow the instruction in the link below to configure TLS termination with Key Vault certificates and Application Gateway V2 using the Azure portal :
 
 - [Configure TLS termination with Key Vault certificates and Application Gateway V2](https://docs.microsoft.com/en-us/azure/application-gateway/configure-key-vault-portal)
