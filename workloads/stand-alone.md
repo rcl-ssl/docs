@@ -6,8 +6,9 @@ nav_order: 1
 ---
 
 # Stand Alone Workload
+**V6.0.10**
 
-The stand alone workload is applicable for the creation of a SSL/TLS certificates manually and installing the certificate in a web server.
+The stand alone workload is applicable for the **manual creation, installation and renewal** of a SSL/TLS certificate in a web server.
 
 The web servers may include : 
 

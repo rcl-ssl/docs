@@ -6,5 +6,6 @@ nav_order: 9
 ---
 
 # Workloads
+**V6.0.10**
 
 In this section you will learn the various workloads and the recommended approach for installing and renewing SSL/TLS certificates
