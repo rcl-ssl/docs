@@ -2,7 +2,7 @@
 title: Azure Virtual Machine with Key Vault, DNS and Application Gateway
 description: Automatically create, install and renew a SSL/TLS certificates in an Azure VM using Key Vault, DNS and Application Gateway
 parent: Workloads
-nav_order: 1
+nav_order: 2
 ---
 
 # Azure Virtual Machine with Key Vault, DNS and Application Gateway
@@ -45,6 +45,6 @@ Application Gateway supports TLS termination at the gateway, after which traffic
 SSL/TLS Certificates will expire within 90 days. Follow these instructions to automatically renew the certificate.
 
 - Use the [RCL AutoRenew Function](../autorenew/introduction.md) to automatically renew certificates 
-- The certificates will be automatically renewed , imported to Key Vault and the TLS termination with Application gateway will be updated without any user interaction required
+- The certificates will be automatically renewed , imported to Key Vault and the TLS termination with Application gateway will be updated without any user interaction being required
 
 
