@@ -9,7 +9,7 @@ nav_order: 2
 
 **V6.0.10**
 
-This workload allows for the **automatic creation, installation and renewal** of a SSL/TLS certificate in an [Azure Virtual Machine](https://docs.microsoft.com/en-us/azure/virtual-machines/) using :
+This workload allows for the **automatic creation, installation and renewal** of a SSL/TLS certificate for [Azure Virtual Machines](https://docs.microsoft.com/en-us/azure/virtual-machines/) using :
 
 - [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/certificates/about-certificates) 
 - [Azure DNS](https://docs.microsoft.com/en-us/azure/dns/) 
@@ -32,7 +32,7 @@ This workload allows for the **automatic creation, installation and renewal** of
 
 ## Step 3 : TLS Termination with Azure Application Gateway
 
-Application Gateway supports TLS termination at the gateway, after which traffic typically flows unencrypted to the backend servers. 
+Application Gateway supports TLS termination at the gateway, after which traffic typically flows unencrypted to the backend servers or virtual machines.
 
 - Learn about : [TLS Termination with Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/ssl-overview)
 - Learn about : [Virtual Machines with Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal)

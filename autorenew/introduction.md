@@ -14,7 +14,7 @@ The [RCL AutoRenew Function](../autorenew/autorenew.md) is a Microsoft Azure Fun
 
 You can use the function app to automatically renew SSL/TLS certificates created in the [RCL Portal](../autorenew/autorenew.md) using the the following creation options :
 
-- **Azure App Services** 
+- Azure App Services 
 - Azure Key Vault + DNS (including SAN)
 - Azure DNS (including SAN)
 
