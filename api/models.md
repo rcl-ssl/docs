@@ -36,7 +36,7 @@ Represents an authorization token
 
 # ResourceRequest
 
-Represents an request for a resource in the RCL Public API
+Represents a request for a resource in the RCL Public API
 
 | Parameter | Description | Type
 | --- | --- |--- |

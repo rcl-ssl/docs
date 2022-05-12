@@ -55,7 +55,7 @@ This represents success in making an authorized request to the RCL Public API an
 
 ## 404 Notfound
 
-If the certificate was found.
+If the certificate was not found.
 
 ## 401 Unauthorized
 
