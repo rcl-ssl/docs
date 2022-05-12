@@ -64,7 +64,7 @@ A user must add the **Client Id** in the **RCL Portal** in order to associate th
  https://login.microsoftonline.com/<tenantId>/oauth2/token
  ```
 
- Replace the `tenantId` placeholder with the **Tenant Id** credential for the user's AAD Application.
+ Replace the `tenantId` placeholder with the **Tenant Id** for the user's AAD Application.
 
  Include the following parameters in the **body** of the POST request in the [Form-UrlEncoded](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) format :
 
@@ -100,7 +100,7 @@ A success response contains a JSON response with an [AuthToken](./models.md#auth
 
 ## Use the Access Tokens to Make a Request
 
-To make a request to the RCL Public API, **both the access tokens** (Azure Resource Manager and Key Vault) are set in the body of the request as a JSON using the [ResourceRequest](./models.md#resourcerequest) class.
+To make a request to the RCL Public API, **both access tokens** (Azure Resource Manager and Key Vault tokens) are set in the body of the request as a JSON using the [ResourceRequest](./models.md#resourcerequest) class.
 
 The base URL for the RCL Public API is :
 ```
@@ -110,6 +110,10 @@ https://rclapi.azure-api.net/public
 The following example illustrates how to make a **POST** request to the : ``/v1/subscription/{subscriptionid}/public/certificate/test`` API endpoint. This API tests for a valid authenticated connection to the RCL Public API.
 
 Each request should include the **Subscription Id** of the subscription in the RCL Portal.
+
+![install](../images/autorenew_configure/add_subscriptionid.png)
+
+- Scroll down and copy the 'Subscription Id' 
 
 ![install](../images/autorenew_configure/add_subscriptionid2.png)
 

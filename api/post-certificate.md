@@ -20,6 +20,10 @@ Authorization tokens for **Azure Resource Manager** and **Azure Key Vault** must
 
 Each request must include the **Subscription Id** of the user's subscription in the RCL Portal as a parameter in the request url. You can acquire the Subscription Id in the **Subscription Details** section in the RCL Portal.
 
+![install](../images/autorenew_configure/add_subscriptionid.png)
+
+- Scroll down and copy the 'Subscription Id' 
+
 ![install](../images/autorenew_configure/add_subscriptionid2.png)
 
 # Base URI

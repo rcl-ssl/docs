@@ -34,7 +34,7 @@ nav_order: 4
 
 ![install](../images/authorization_aad_app/aad_app.PNG)
 
-- In the 'Certificates & secrets', create a new client secret. It is recommended that you use the maximum expiry period for the secret. 
+- In the 'Certificates & secrets', create a new client secret. You must remember to change the client secret when it expires. It is recommended that you use the maximum expiry period for the secret.
 
 ![install](../images/authorization_aad_app/aad_app2.PNG)
 

@@ -10,7 +10,7 @@ nav_order: 5
 
 A user will need to provide **Access Control** to the [AAD Application](./aad-application) for it to manage the user's Azure Services (App Services, DNS Zone and Key Vault).
 
-- Go to Azure subscriptions, and open the subscription that contains your Azure App Services, DNS Zone, Key Vault
+- Go to **Azure subscriptions**, and open the subscription that contains your Azure App Services, DNS Zone, Key Vault
 
 - In the subscription, click on 'Access control (IAM)' and add a new **role assignment**
 
@@ -41,7 +41,7 @@ If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will ne
 
 **This step is not required, if SSl/TLS certificates are not being created for Key Vault.**
 
-- In Key Vault, click on 'Access policies' and 'Add Access Policy'
+- In **Key Vault**, click on 'Access policies' and 'Add Access Policy'
 
 ![install](../images/authorization_access_control/key_vault.PNG)
 
@@ -51,7 +51,7 @@ If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will ne
 
 - Then , click on 'Select principal'
 
-- Search for the application that was registered and click the 'Select; button to select it 
+- Search for the application that was registered and click the 'Select' button to select it 
 
 ![install](../images/authorization_access_control/key_vault3.PNG)
 
