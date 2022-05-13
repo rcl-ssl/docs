@@ -23,7 +23,7 @@ Use the RCL Apps to create and renew single or multiple-domain SSL/TLS certifica
 
 The [RCL portal](../portal/portal) is the **primary application**. It is a SaaS application that you can [Subscribe](../subscription/subscription) for in the [Azure Market Place](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=Overview).
 
-![image](./images/portal/rcl-portal.PNG)
+![image](./images/portal/portal.PNG)
 
 The RCL portal is a simple-to-use online Web UI and allows you to :
 
