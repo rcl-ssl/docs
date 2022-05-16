@@ -134,29 +134,6 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Example Console App
 
-```csharp
-using System;
-using System.Threading.Tasks;
-
-namespace RCL.SDK.ConsoleSample
-{
-    class Program
-    {
-        private static readonly ICertificateService _certificateService;
-
-        static Program()
-        {
-            _certificateService = (ICertificateService)Startup
-                .ServiceProvider().GetService(typeof(ICertificateService));
-        }
-
-        static async Task Main(string[] args)
-        {
-        }
-    }
-}
-```
-
 ### Example 
 
 ```csharp
