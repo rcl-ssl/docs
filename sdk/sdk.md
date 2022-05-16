@@ -6,6 +6,7 @@ nav_order: 7
 ---
 
 # RCL SDK
+![Nuget](https://img.shields.io/nuget/v/RCL.SDK)
 
 The [RCL SDK](https://github.com/rcl-ssl/RCL.SDK) provides a C# .NET Core library to make authorized requests to the [RCL Public API](../api/api.md) . In this section, you will learn how to use the SDK.
 
