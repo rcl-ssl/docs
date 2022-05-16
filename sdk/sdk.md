@@ -20,7 +20,7 @@ The project's GitHub page is located at :
 You can install the SDK from NuGet :
 
 ```
-Install-Package RCL.SDK -Version 6.0.10
+Install-Package RCL.SDK
 ```
 
 ## Configure the Application using the SDK
