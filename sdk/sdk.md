@@ -31,11 +31,12 @@ Configure the application consuming the SDK by using the app's configuration fil
 
 ```
 {
-  "RCLSDK:ClientId": "0era74aa-7455-4a43-a32f-c3c56g56cf",
-  "RCLSDK:ClientSecret": "df84yehrer~_6-f5lNI84B0ER.dft4",
-  "RCLSDK:TenantId": "se34rdc-bc7c-4929-b9c2-45dfdt5540e7",
+  "RCLSDK:ClientId": "4tr56ff4aa-7nn5-4g53-kk2f-6yegdf564435eecf",
+  "RCLSDK:ClientSecret": "cheyvd456eh~_7-f7lNI34B01.xIDUMHh",
+  "RCLSDK:TenantId": "23fdvrxffc-bc3c-4323-b4c2-4502c3b9b0e6",
+  "RCLSDK:SubscriptionId": "879",
   "RCLSDK:ApiBaseUrl": "https://rclapi.azure-api.net/public",
-  "RCLSDK:SubscriptionId": "879"
+  "RCLSDK:SourceApplication": "RCL SDK"
 }
 ```
 
