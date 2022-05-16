@@ -40,7 +40,7 @@ Configure the application consuming the SDK by using the app's configuration fil
 }
 ```
 
-The configuration must be changed to match the user's AAD Application credentials.
+The configuration must be changed to match the **User's AAD Application** credentials.
 
 ## Register an AAD Application
 
