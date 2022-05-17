@@ -1,7 +1,7 @@
 ---
 title: POST Certificate Test
 description: RCL API - POST Certificate Test
-parent: API
+parent: RCL Public API
 nav_order: 3
 ---
 

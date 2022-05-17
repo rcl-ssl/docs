@@ -1,7 +1,7 @@
 ---
 title: POST Certificate 
 description: RCL Public API - POST Certificate 
-parent: API
+parent: RCL Public API
 nav_order: 4
 ---
 

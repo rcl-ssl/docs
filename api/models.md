@@ -1,7 +1,7 @@
 ---
 title: API Models
 description: The models for the RCL Public API
-parent: API
+parent: RCL Public API
 nav_order: 100
 ---
 
