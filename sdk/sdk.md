@@ -134,8 +134,6 @@ public void ConfigureServices(IServiceCollection services)
 
 ## Inject the ``CertificateService`` in your Class or Controller
 
-### Example Console App
-
 ### Example 
 
 ```csharp
