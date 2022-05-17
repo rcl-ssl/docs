@@ -1,7 +1,7 @@
 ﻿---
 title: Testing the Function
 description: Testing the RCL AutoRenew Function
-parent: AutoRenew Function
+parent: RCL AutoRenew Function
 nav_order: 4
 ---
 
