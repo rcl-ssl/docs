@@ -128,7 +128,7 @@ namespace RCL.SDK.Test
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    services.AddRCLSDK(options => Configuration.Bind("RCLSDK", options));
+    services.AddRCLSDKService(options => Configuration.Bind("RCLSDK", options));
 }
 ```
 
