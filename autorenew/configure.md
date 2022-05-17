@@ -24,7 +24,13 @@ Access control must be set for the AAD application to access resources in a user
 
 ## Get the AAD Credentials 
 
-Please refer to the following link to get the AAD credentials to configure the function app :
+Please refer to the following link to get the AAD credentials :
+
+    - Client Id
+    - Client Secret
+    - Tenant Id
+
+to configure the function app :
 
 - [Get the AAD Application Credentials](../authorization/aad-application#get-the-aad-application-credentials)
 
@@ -36,9 +42,9 @@ Please refer to the following link to get the AAD credentials to configure the f
 
 Update the following configuration entries with the credentials from the AAD application :
 
-- Auth:client_id - the AAD App Client Id
-- Auth:client_secret - the AAD App Client Secret
-- Auth:tenantId - the AAD App Tenant Id
+- RCLSDK:ClientId - the AAD App Client Id
+- RCLSDK:ClientSecret - the AAD App Client Secret
+- RCLSDK:TenantId - the AAD App Tenant Id
 
 ![install](../images/autorenew_configure/func2.PNG)
 
@@ -46,11 +52,11 @@ Update the following configuration entries with the credentials from the AAD app
 
 ![install](../images/autorenew_configure/add_subscriptionid.png)
 
-- Scroll down and copy the 'Subscription Id' (Api:SubscriptionId) for configuration purposes
+- Scroll down and copy the 'Subscription Id' for configuration purposes
 
 ![install](../images/autorenew_configure/add_subscriptionid2.png)
 
-- In the Function App configuration page, add the 'Subscription Id' value to the **Api:SubscriptionId** configuration entry
+- In the Function App configuration page, add the 'Subscription Id' value to the **RCLSDK:SubscriptionId** configuration entry
 
 ![install](../images/autorenew_configure/add_subscriptionid3.png)
 
