@@ -247,6 +247,12 @@ sudo systemctl status certificatebot
 sudo journalctl -u certificatebot --no-pager
 ```
 
+- If the application is working correctly you should see messages similar to the one below :
+
+```bash
+RCL.CertificateBot.Linux.Worker[0] Found 1 certificate(s) to save locally.  Successfully saved : shopeneur.com,*.shopeneur.com.  Did not find any certificates to renew.
+```
+
 ## When you need to Stop the Daemon
 
 - Run the code when you need to stop the daemon. When the daemon is stopped, CertificateBot will discontinue certificate renewals and installation in the server.
@@ -257,7 +263,11 @@ sudo systemctl stop certificatebot
 
 # Fixing Errors
 
-If you encounter errors in the logs for the daemon, please stop the daemon. Ensure the 'appsettings' configuration is correct for the AAD Application credentials and the certificate save path settings. The folder to save the certificate must have read/write access. Reload and restart the daemon after you make changes and check if the errors were resolved.
+If you encounter errors in the logs for the daemon, please stop the daemon. Ensure the 'appsettings' configuration is correct for the AAD Application credentials and the certificate save path settings. 
+
+The folder to save the certificate must have read/write access. 
+
+Reload and restart the daemon after you make changes and check if the errors were resolved.
 
 # Installing Certificates in Web Servers
 
