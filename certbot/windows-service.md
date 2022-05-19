@@ -1,7 +1,7 @@
 ---
 title: Windows Service
 description: RCL CertificateBot Windows Service for automatic SSL/TLS certificate installation and renewal in a Windows server 
-parent: CertificateBot
+parent: RCL CertificateBot
 nav_order: 3
 ---
 
