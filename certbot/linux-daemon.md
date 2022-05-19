@@ -149,24 +149,23 @@ Example app.settings file
     "LogLevel": {
       "Default": "Information",
       "Microsoft.Hosting.Lifetime": "Information"
-    },
-    "RCLSDK": {
-      "ApiBaseUrl": "https://rclapi.azure-api.net/public",
-      "SourceApplication": "RCL CertificateBot",
-      "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
-      "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
-      "TenantId": "22cd4a8c-bc2c-3618-b1c3-4610c1b9b3e8",
-      "SubscriptionId": "879"
-    },
-    "CertificateBot": {
-      "SaveCertificatePath": "/etc/ssl/certificatebot",
-      "IncludeCertificates": [
-        "shopeneur.com,*.shopeneur.com"
-      ]
     }
+  },
+  "RCLSDK": {
+    "ApiBaseUrl": "https://rclapi.azure-api.net/public",
+    "SourceApplication": "RCL CertificateBot",
+    "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
+    "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
+    "TenantId": "22cd4a8c-bc2c-3618-b1c3-4610c1b9b3e8",
+    "SubscriptionId": "879"
+  },
+  "CertificateBot": {
+    "SaveCertificatePath": "/etc/ssl/certificatebot",
+    "IncludeCertificates": [
+      "shopeneur.com,*.shopeneur.com"
+    ]
   }
 }
-
 ```
 - Save the updated **appsettings.json** file when you are done
 
