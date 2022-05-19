@@ -6,6 +6,7 @@ nav_order: 2
 ---
 
 # RCL CertificateBot for Linux
+**V6.0.10**
 
 RCL CertificateBot runs as a **Daemon** in a Linux Server. The daemon will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL Portal** to a Linux Server.
 
@@ -22,7 +23,7 @@ You can use RCL CertificateBot to automatically renew SSL/TLS certificates creat
 
 ## Download and Extract the Daemon Files to the Linux Server
 
-- You will download the files from the RCL CertificateBot [GitHub Project Page](https://github.com/rcl-ssl/RCL.CertificateBot) in the [Releases](https://github.com/rcl-ssl/RCL.CertificateBot/releases) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
+In this section, you will download the files from the RCL CertificateBot [GitHub Project Page](https://github.com/rcl-ssl/RCL.CertificateBot) in the [Releases](https://github.com/rcl-ssl/RCL.CertificateBot/releases) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
 
 - In your Linux server, navigate to the ``/usr/sbin`` folder
 
@@ -46,7 +47,7 @@ wget -c https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V2.1/cer
 
 ### Register an AAD Application
 
-An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources (eg: DNS Zone). 
+An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources (**DNS Zone**). 
 
 Please refer to the following link to register an AAD application:
 
@@ -54,7 +55,7 @@ Please refer to the following link to register an AAD application:
 
 ### Set Access Control for the AAD Application
 
-Access control must be set for the AAD application to access resources in a user's Azure subscription. Please refer to the following link to set access control :
+Access control must be set for the AAD application to access resources (**DNS Zone**) in a user's Azure subscription. Please refer to the following link to set access control :
 
 - [Setting Access Control for the AAD Application](../authorization/access-control-app)
 
@@ -141,7 +142,7 @@ Example
   },
 ```
 
-Example app.settings file
+## Example of a configured **appsettings.json** file
 
 ```
 {
