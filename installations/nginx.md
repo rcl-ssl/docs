@@ -1,17 +1,20 @@
 ---
 title: NGINX Server
-description: Using RCL to install SSL/TLS certificates in NGINX
+description: Installing SSL/TLS certificates in NGINX
 parent: Certificate Installations
 nav_order: 4
 ---
 
 # Installing TLS/SSL Certificates in NGINX
+**V6.0.10**
 
 This article assumes that you have experience with NGINX in Linux or Windows.
 
 ## Get the Certificate Files Manually
 
 You can download the files required to install the TLS/SSL certificate in the NGINX web server from the **RCL Portal** on the **Certificate Details** page.
+
+![image](../images/certificate_installations/installation_files.png)
 
 ## Get the Certificate Files Automatically
 
@@ -26,7 +29,15 @@ The files required are :
 
 ## Web Server Configuration
 
-Update your web server configuration. For Linux, look in the : /path-to-nginx/sites-enabled folder. For Windows, look in the : /path-to-nginx/conf/nginx.conf. Add or update these attributes to the sites you want HTTPS on
+Update your web server configuration. 
+
+It is assumed that you have NGINX already installed and hosting your website on your server. In addition, you have established your own custom domain name that points to your website.
+
+For Linux, look in the : /path-to-nginx/sites-enabled folder. 
+
+For Windows, look in the : /path-to-nginx/conf/nginx.conf. 
+
+Add or update these attributes to the sites you want HTTPS on
 
 ```
 # SSL configuration
