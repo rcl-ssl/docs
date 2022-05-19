@@ -1,17 +1,20 @@
 ---
 title: Apache Server
-description: Using RCL to install SSL/TLS certificates in Apache Server
+description: Installing SSL/TLS certificates in Apache Server
 parent: Certificate Installations
 nav_order: 2
 ---
 
 # Installing TLS/SSL Certificates in Apache Server
+**V6.0.10**
 
-This article assumes that you have experience with Apache and configuring Virtual Hosts in Linux or Windows.
+This article assumes that you have experience with Apache 2 and configuring Virtual Hosts in Linux or Windows.
 
 ## Get the Certificate Files Manually
 
 You can download the files required to install the TLS/SSL certificate in the Apache web server from the **RCL Portal** on the **Certificate Details** page.
+
+![image](../images/certificate_installations/installation_files.png)
 
 ## Get the Certificate Files Automatically
 
@@ -29,14 +32,16 @@ The files required are :
 
 After you have downloaded the certificate files, the next step is to edit your Apache configuration file to use them.
 
-Ensure the SSL module is enabled in apache.
+It is assumed that you have Apache 2 already installed and hosting your website on your server. In addition, you have established your own custom domain name that points to your website.
 
-Linux Command : 
+## Ensure the SSL module is enabled in apache.
+
+### Linux Command 
 ```
 sudo a2enmod ssl
 ```
 
-In Windows :
+### Windows :
 
 In the ```httpd.conf``` file, change the following lines by removing the leading # sign in order to uncomment the lines:
 
@@ -47,6 +52,7 @@ In the ```httpd.conf``` file, change the following lines by removing the leading
 ```#Include conf/extra/httpd-default.conf```
 
 
+## Create a Virtual Host
 
 In your server, create a **Virtual Host** entry or file for your domain under the recommended folder. Use it to enable SSL and include the certificate files as required. (If there is a SSL default template available in your apache server, then use the template to create the Virtual Host). In Windows, edit the ```httpd-ssl.conf``` file.
 
@@ -58,6 +64,7 @@ Please see the Virtual host example below:
    ServerAdmin admin@mail.com
    DocumentRoot /path/to/mysite
    ServerName mydomain.com
+   ServerAlias www.mydomain.com
 
 # This is the important section   
 
