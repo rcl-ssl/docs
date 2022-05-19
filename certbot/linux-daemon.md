@@ -126,12 +126,10 @@ sudo mkdir -m 777 /etc/ssl/certificatebot
 ```
 
 - The ``includeCertificates`` settings will allow for including specific certificates by its name 
-(eg: [ "contoso.com" ] or ["contoso.com, *.contoso.com"] for SAN) as an array of strings in the renewal operation. 
-
-Multiple certificates can be also be set 
+(eg:  "contoso.com"  or "contoso.com, *.contoso.com" - for SAN) as an array of strings in the renewal and installation operation. 
 
 Example
-```json
+```
   "CertificateBot": {
     "saveCertificatePath": "/etc/ssl/certificatebot",
      "includeCertificates": [
@@ -145,7 +143,7 @@ Example
 
 Example app.settings file
 
-```json
+```
 {
   "Logging": {
     "LogLevel": {
