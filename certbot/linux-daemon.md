@@ -2,12 +2,12 @@
 title: Linux Daemon
 description: RCL CertificateBot Linux Daemon for automatic SSL/TLS certificate installation and renewal in a Linux server 
 parent: CertificateBot
-nav_order: 3
+nav_order: 2
 ---
 
 # RCL CertificateBot for Linux
 
-RCL CertificateBot runs as a **Daemon** in a Linux Server. The daemon will run every four (4) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL Portal** to a Linux Server.
+RCL CertificateBot runs as a **Daemon** in a Linux Server. The daemon will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL Portal** to a Linux Server.
 
 ## Automatically Renew TLS/SSL Certificates
 
@@ -22,7 +22,7 @@ You can use RCL CertificateBot to automatically renew SSL/TLS certificates creat
 
 ## Download and Extract the Daemon Files to the Linux Server
 
-- You will download the files from the RCL CertificateBot GitHub Project Page in the [Releases](https://github.com/rcl-letsencrypt-auto-ssl/RCL.LetsEncrypt.CertBot/releases) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
+- You will download the files from the RCL CertificateBot GitHub Project Page in the [Releases](https://github.com/rcl-ssl/RCL.CertificateBot/releases) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
 
 - In your Linux server, navigate to the ``/usr/sbin`` folder
 
@@ -33,7 +33,7 @@ cd /usr/sbin
 - Run the command in the folder to download and extract the ``linux-x64`` files:
 
 ```bash
-wget -c https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V2.1/certificatebot-linux-x64.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-linux-x64.tar.gz -O - | sudo tar -xz
 ```
 
 or ``linux-arm`` files :
@@ -60,11 +60,36 @@ Access control must be set for the AAD application to access resources in a user
 
 ### Get the AAD Application Credentials 
 
-Please refer to the following link to get the AAD Application credentials to configure the daemon :
+To obtain the following credentials from the AAD application:
+
+- ClientId
+- ClientSecret
+- TenantId
+
+follow the instructions in this link :
 
 - [Get the AAD Application Credentials](../authorization/aad-application#get-the-aad-application-credentials)
 
-### Add the Configuration variables
+## Get the SubscriptionId
+
+Get the **Subscription Id** in the RCL Portal.
+
+![install](../images/autorenew_configure/add_subscriptionid.png)
+
+- Scroll down and copy the 'Subscription Id' 
+
+![install](../images/autorenew_configure/add_subscriptionid2.png)
+
+## Register the AAD Application's ``Client Id`` in the RCL Portal
+
+The AAD Application must be associated with a user's RCL subscription. This is achieved by registering the AAD Application's ``Client Id`` in the **RCL Portal**.
+
+To add the AAD Application's ``Client Id`` to the portal, please follow the instructions in this link :
+
+- [Add the Client Id in the RCL Portal](../api/authorization#add-the-client-id-in-the-rcl-lets-encrypt-portal)
+
+
+## Add the Configuration variables
 
 - Navigate to the folder you downloaded and extracted the daemon files :
 
@@ -84,10 +109,11 @@ cd /usr/sbin/certificatebot-linux-arm
 sudo nano appsettings.json
 ```
 
-- Add the credentials for the AAD Application in the **Auth** section
-  - client_id
-  - client_secret
-  - tenantId
+- Add the credentials for the AAD Application and SubscriptionId in the **RCLSDK** section :
+  - ClientId
+  - ClientSecret
+  - TenantId
+  - SubscriptionId
 
 - In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : /etc/ssl/certificatebot
 
@@ -100,42 +126,49 @@ sudo mkdir -m 777 /etc/ssl/certificatebot
 ```
 
 - The ``includeCertificates`` settings will allow for including specific certificates by its name 
-(eg: [ "contoso.com" ] or ["contoso.com, *.contoso.com"] for SAN) as an array of strings in the renewal operation. Multiple certificates can be also be set (eg: [ "contoso.com", "acme.com", "fabricam.com, *.fabricam.com" ]). To include all certificates in the renewal operation, leave the settings as [ "all" ]
+(eg: [ "contoso.com" ] or ["contoso.com, *.contoso.com"] for SAN) as an array of strings in the renewal operation. 
 
-- The ``serverIdentifier`` setting should be used to identify the server in which the daemon is being installed
+Multiple certificates can be also be set 
 
-```
-{
-  "Auth": {
-    "client_id": "3434354ere455-6464-5456",
-    "client_secret": "~irjhfyyr-6653gfghf",
-    "tenantId": "47735-477635-46534"
-  },
+Example
+```json
   "CertificateBot": {
     "saveCertificatePath": "/etc/ssl/certificatebot",
-     "includeCertificates": ["all"],
-     "serverIdentifier": "default",
-     "bindings": []
+     "includeCertificates": [
+       "contoso.com",
+       "fabricam.com",
+       "acme.com,*.acme.com",
+       "adworks.com, www.adworks.com"
+       ],
   },
+```
+
+Example app.settings file
+
+```json
+{
   "Logging": {
     "LogLevel": {
       "Default": "Information",
-      "Microsoft": "Warning",
       "Microsoft.Hosting.Lifetime": "Information"
     },
-    "EventLog": {
-      "LogLevel": {
-        "Default": "Information",
-        "Microsoft.Hosting.Lifetime": "Information"
-      }
+    "RCLSDK": {
+      "ApiBaseUrl": "https://rclapi.azure-api.net/public",
+      "SourceApplication": "RCL CertificateBot",
+      "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
+      "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
+      "TenantId": "22cd4a8c-bc2c-3618-b1c3-4610c1b9b3e8",
+      "SubscriptionId": "879"
+    },
+    "CertificateBot": {
+      "SaveCertificatePath": "/etc/ssl/certificatebot",
+      "IncludeCertificates": [
+        "shopeneur.com,*.shopeneur.com"
+      ]
     }
-  },
-  "RCLSDK": {
-    "apiEndPoint": "https://rclapi.azure-api.net",
-    "armResource": "https://management.core.windows.net",
-    "keyVaultResource": "https://vault.azure.net"
   }
 }
+
 ```
 - Save the updated **appsettings.json** file when you are done
 
@@ -170,7 +203,7 @@ Description=RCL CertificateBot
 [Service]
 Type=notify
 WorkingDirectory=/usr/sbin/certificatebot-linux-x64
-ExecStart=/usr/sbin/certificatebot-linux-x64/RCL.CertificateBot.LinuxDaemon
+ExecStart=/usr/sbin/certificatebot-linux-x64/RCL.CertificateBot.Linux
 
 [Install]
 WantedBy=multi-user.target
@@ -178,6 +211,8 @@ WantedBy=multi-user.target
 ```
 
 If you installed the ``arm`` version, change the directory to the arm path ``/usr/sbin/certificatebot-linux-arm`` instead of ``/usr/sbin/certificatebot-linux-x64`` in the 'WorkingDirectory' and 'ExecStart' settings
+
+- Save the file when you are done
 
 ## Reload the Daemon
 
@@ -212,7 +247,7 @@ sudo systemctl status certificatebot
 - Run the command to view the daemon's detailed logs
 
 ```bash
-sudo journalctl -u certificatebot
+sudo journalctl -u certificatebot --no-pager
 ```
 
 ## When you need to Stop the Daemon
