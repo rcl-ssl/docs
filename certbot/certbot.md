@@ -18,4 +18,4 @@ RCL CertificateBot can be run as a Linux Daemon or a Windows Service. It is inst
 - Apache
 - Apache Tomcat
 - NGINX
-- any server that configures SSL/TLS by referencing certificates files stored in the server
+- any server that configures SSL/TLS by referencing certificate files stored in the server
