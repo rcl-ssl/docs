@@ -13,7 +13,7 @@ RCL CertificateBot can be run as a Linux Daemon or a Windows Service. It is inst
 - automatically send requests to renew certificates created in the RCL Portal
 - save SSL/TLS certificates in the server for a web server to use 
 
-- The following web servers are supported:
+The following web servers are supported:
 
 - Apache
 - Apache Tomcat
