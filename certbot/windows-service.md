@@ -116,7 +116,14 @@ Example
   "Logging": {
     "LogLevel": {
       "Default": "Information",
+      "Microsoft": "Warning",
       "Microsoft.Hosting.Lifetime": "Information"
+    },
+    "EventLog": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft.Hosting.Lifetime": "Information"
+      }
     }
   },
   "RCLSDK": {
