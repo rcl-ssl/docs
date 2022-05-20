@@ -87,7 +87,7 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
   - TenantId
   - SubscriptionId
 
-- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : C:/ssl/certificatebot
+- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : C:/ssl
 
   - saveCertificatePath
 
@@ -99,7 +99,7 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 Example
 ```
   "CertificateBot": {
-    "saveCertificatePath": "/etc/ssl/certificatebot",
+    "saveCertificatePath": "C:/ssl",
      "includeCertificates": [
        "contoso.com",
        "fabricam.com",
@@ -107,42 +107,6 @@ Example
        "adworks.com, www.adworks.com"
        ],
   },
-```
-
-- The ``serverIdentifier`` setting should be used to identify the server in which the service is being installed
-
-```
-{
-  "Auth": {
-    "client_id": "3434354ere455-6464-5456",
-    "client_secret": "~irjhfyyr-6653gfghf",
-    "tenantId": "47735-477635-46534"
-  },
-  "CertificateBot": {
-    "saveCertificatePath": "c:/ssl",
-    "includeCertificates": ["all"],
-    "serverIdentifier": "default",
-    "bindings": []
-  },
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft": "Warning",
-      "Microsoft.Hosting.Lifetime": "Information"
-    },
-    "EventLog": {
-      "LogLevel": {
-        "Default": "Information",
-        "Microsoft.Hosting.Lifetime": "Information"
-      }
-    }
-  },
-  "RCLSDK": {
-    "apiEndPoint": "https://rclapi.azure-api.net",
-    "armResource": "https://management.core.windows.net",
-    "keyVaultResource": "https://vault.azure.net"
-  }
-}
 ```
 
 ## Example of a configured **appsettings.json** file
@@ -164,7 +128,7 @@ Example
     "SubscriptionId": "879"
   },
   "CertificateBot": {
-    "SaveCertificatePath": "/etc/ssl/certificatebot",
+    "SaveCertificatePath": "C:/ssl",
     "IncludeCertificates": [
       "shopeneur.com,*.shopeneur.com"
     ]
@@ -184,7 +148,7 @@ Example
 sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.Windows.exe
 ```
 
-- After the service in installed, open **Services** in the Windows server and **Start** the service
+- After the service in installed, open **Services** in the Windows, look for the ``CertificateBot`` service and **Start** the service
 
 ![image](../images/certbot/winservice-start.png)
 
@@ -206,7 +170,7 @@ sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.Windows.exe
 
 If you encounter error events for the service in the Event Viewer, please stop the service and delete it completely. 
 
-Ensure the 'appsettings' configuration is correct for the AAD Application and the certificate save path settings. Then, re-install and restart the service.
+Ensure the 'appsettings' configuration is correct for the AAD Application and the certificate save path settings point to a folder that exists. Then, re-install and restart the service.
 
 # Deleting the Windows Service
 
