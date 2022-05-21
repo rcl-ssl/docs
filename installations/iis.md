@@ -6,12 +6,15 @@ nav_order: 5
 ---
 
 # Installing TLS/SSL Certificates in IIS
+**V6.0.10**
 
 This article assumes that you have experience with IIS.
 
 # Get the Certificate Files Manually
 
 You can download the files required to install the TLS/SSL certificate in IIS from the **RCL Portal** on the **Certificate Details** page.
+
+![image](../images/certificate_installations/installation_files_pfx.png)
 
 ## Files Required
 
@@ -61,7 +64,7 @@ The SSL Certificate, Private Key and any Intermediate Certificates should now be
 
 # How To Bind An SSL Certificate In Microsoft IIS
 
-Once the SSL Certificate has been imported it is important to now bind the SSL Certificate to your website so that the website functions correctly. Your SSL Certificate will not function until the following steps are completed.
+Once the SSL Certificate has been imported, it is important to now bind the SSL Certificate to your website so that the website functions correctly. Your SSL Certificate will not function until the following steps are completed.
 
 Step 1 : Click “Start”, “Administrative Tools” and then choose Internet Information Services (IIS) Manager.
 
@@ -78,18 +81,6 @@ Step 6 : Under “Type” choose https. The IP address should be the correspondi
 Step 7 : Click “OK”.
 
 Step 8 : Your SSL Certificate should now be installed and functioning correctly in conjunction with your website. Occasionally a restart of IIS may be required before the new SSL Certificate is recognized.
-
-# Automatically Installing Certificates with RCL CertificateBot
-
-You can automate the certificate renewal and installation process for IIS by using RCL CertificateBot.
-
-This article will provide instructions on how to install RCL CertificateBot in Windows :
-
-[Installing RCL CertificateBot in Windows](../certbot/windows-service)
-
-This article will provide instructions on how to configure RCL CertificateBot for IIS :
-
-[Using RCL CertificateBot with Microsoft IIS](../certbot/iis)
 
 
 
