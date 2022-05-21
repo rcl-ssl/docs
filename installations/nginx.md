@@ -35,16 +35,29 @@ Update your web server configuration.
 
 It is assumed that you have NGINX already installed and hosting your website on your server. In addition, you have established your own custom domain name that points to your website.
 
-For Linux, look in the : /path-to-nginx/sites-enabled folder. 
+For **Linux**, look in : 
 
-For Windows, look in the : /path-to-nginx/conf/nginx.conf. 
+```
+/path-to-nginx/sites-enabled
+``` 
+
+
+For **Windows**, look in : 
+
+``` 
+/path-to-nginx/conf/nginx.conf
+``` 
 
 Add or update these attributes to the sites you want HTTPS on
 
 ```
 # SSL configuration
+
 listen 443 ssl default_server;
 listen [::]:443 ssl default_server;
+
+# Important part
+
 ssl_certificate  /path/to/fullChainCertificate.crt;
 ssl_certificate_key  /path/to/privateKey.key;
 ```
@@ -52,9 +65,14 @@ You can modify the names of the files and paths to match the location and filena
 
 Remember to reload the service, or restart if it's a new site.
 
-Linux command :
+**Linux** command :
 ```
 sudo systemctl reload nginx
+```
+
+**Windows** command :
+```
+nginx -s reload
 ```
 
 Now you can confirm your domain SSL certificate using any of the SSL checker tools available. Or you can just browse the URL.
