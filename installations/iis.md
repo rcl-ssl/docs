@@ -28,7 +28,7 @@ On some operating systems, .pfx files may be downloaded with a .p12 extension. T
 
 Importing a PFX (PKCS12) file into Windows IIS is generally a straight-forward process.
 
-Step 1 : Click “Start” and choose “Run”.
+Step 1 : In “Start” find and open “Run”.
 
 Step 2 : In the “Run” dialogue box type “MMC” and click “OK”. The MMC should then appear.
 
@@ -44,13 +44,13 @@ Step 7 : Click “OK” to close the “Add / Remove Snap-In” window.
 
 Step 8 : Double click on “Certificates (Local Computer)” in the center window.
 
-Step 9 : Right click on the “Personal Certificates Store” folder.
+Step 9 : Right click on the “Personal" certificates store folder.
 
 Step 10 : Choose “ALL TASKS” then select “Import”.
 
-Step 11 : Follow the “Certificate Import Wizard” to import your “Primary Certificate” from the .PFX file.
+Step 11 : Follow the “Certificate Import Wizard” to import your “Certificate” from the .PFX file saved on your hosting machine.
 
-Step 12 : Browse to the .PFX and enter the associated password when prompted. Enter the certificate password you assigned when creating the certificate in the RCL portal. You can find this password in the Certificate Details page (Certificate Password) of the RCL portal.
+Step 12 : Browse to the .PFX and enter the associated password when prompted. Enter the certificate password you assigned when creating the certificate in the RCL portal. You can find this password in the **Certificate Details** page (```Certificate Password``) of the **RCL Portal**.
 
 Step 13 : If desired, check the box to “Mark This Key As Exportable”. We recommend choosing this option.
 
@@ -66,17 +66,17 @@ The SSL Certificate, Private Key and any Intermediate Certificates should now be
 
 Once the SSL Certificate has been imported, it is important to now bind the SSL Certificate to your website so that the website functions correctly. Your SSL Certificate will not function until the following steps are completed.
 
-Step 1 : Click “Start”, “Administrative Tools” and then choose Internet Information Services (IIS) Manager.
+Step 1 : In “Start”, find and open “Administrative Tools”. Then, choose **Internet Information Services (IIS) Manager**.
 
 Step 2 : Click on the server name and expand the “Sites” folder.
 
 Step 3 : Locate your website (usually this will be called “Default Web Site”) and click on it.
 
-Step 4 : From the “Actions” menu (on the right) click on “Site Bindings” or similar.
+Step 4 : From the “Actions” menu (on the right) click on “Edit Site > Bindings” or similar.
 
 Step 5. In the “Site Bindings” window, click “Add” or similar. This will open the “Add Site Binding” window.
 
-Step 6 : Under “Type” choose https. The IP address should be the corresponding dedicated IP address of the site or “All Unassigned”. The “Port” which traffic will be secured by SSL is usually 443. The “SSL Certificate” field should specify the SSL Certificate that was installed during the import process above.
+Step 6 : Under “Type” choose https. The IP address should be the corresponding dedicated IP address of the site or “All Unassigned”. The “Port” which traffic will be secured by SSL is usually 443. The hostname should be the custom domain for your site (eg. contoso.com). The “SSL Certificate” field should specify the SSL Certificate that was installed during the import process above. You can choose the certificate from the drop down selector.
 
 Step 7 : Click “OK”.
 
