@@ -8,7 +8,7 @@ nav_order: 1
 # Introduction
 **V6.0.10**
 
-RCL CertificateBot is installed in a server running a website. It allows for automatic renewal of SSL/TLS certificates and installation of certificates in the server for a web server to use.
+RCL CertificateBot is installed in a server running a website. It allows for automatic renewal of SSL/TLS certificates and installation of certificates in the hosting machine for a web server to use.
 
 ## Linux Server
 
@@ -36,6 +36,9 @@ The following web servers are supported:
 - Apache Tomcat
 - NGINX
 - any server that configures SSL/TLS by referencing certificates files stored in the server
+
+## Important
+**Please do no use the [RCL AutoRenew Function](../autorenew/autorenew.md) if you are using CertificateBot. This may result in unexpected behavior and certificates may not be automatically updated in the hosting machine.**
 
 ## Next Steps
 
