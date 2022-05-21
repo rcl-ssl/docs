@@ -42,7 +42,7 @@ Tomcat can use a PFX (PKCS12) file just fine, there is no need to convert to JKS
 
 3. Delete the comment markers at the beginning of the code (<!–) and at the end of the code (–>)
 
-4. Add the following attributes, change the keystoreFile and keystorePassword. The keystoreFile, is the path to where your PFX certificate is stored. The keystorePassword can be found in the **Certificate Details** page (```Certificate Password```) in the **RCL Portal**.
+4. Add the following attributes, change the keystoreFile and keystorePassword. The keystoreFile, is the path to where your PFX certificate is stored on the hosting machine. The keystorePassword can be found in the **Certificate Details** page (```Certificate Password```) in the **RCL Portal**.
 
 ```
 <Connector
