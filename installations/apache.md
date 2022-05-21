@@ -56,7 +56,20 @@ In the ```httpd.conf``` file, change the following lines by removing the leading
 
 ## Create a Virtual Host
 
-In your server, create a **Virtual Host** entry or file for your domain under the recommended folder. Use it to enable SSL and include the certificate files as required. (If there is a SSL default template available in your apache server, then use the template to create the Virtual Host). In Windows, edit the ```httpd-ssl.conf``` file.
+In your server, create a **Virtual Host** entry or file for your domain under the recommended folder. Use it to enable SSL and include the certificate files as required. 
+
+If there is a SSL default template available in your apache server, then use the template to create the Virtual Host.
+
+In **Linux**, the Virtual Host files are usually located at:
+
+```
+/etc/apache2/sites-available
+```
+
+In **Windows**, the Virtual Host files are usually located at:
+```
+/Apache24/conf/extra/httpd-ssl.conf
+```
 
 Please see the Virtual host example below:
 
@@ -78,6 +91,8 @@ Please see the Virtual host example below:
 </VirtualHost>
 ```
 
+Note : The ``SSLCertificateChainFile`` may be named ``SSLCACertificateFile`` in some apache installations.
+
 You can modify the names of the files and paths to match the location and filename that you used to save your certificate files:
 
 - **SSLCertificateFile** - should be your **Primary Certificate** file (.crt)
@@ -86,7 +101,7 @@ You can modify the names of the files and paths to match the location and filena
 
 Ensure the Virtual host is enabled in apache. 
 
-Linux example command for 'mysite.conf' :
+**Linux** example command for 'mysite.conf' :
 
 ```
 sudo a2ensite mysite.conf
@@ -94,10 +109,12 @@ sudo a2ensite mysite.conf
 
 Reload the Apache service once you're done.
 
-Linux command:
+**Linux** command:
 
 ```
 sudo systemctl reload apache2
 ```
+
+In **Windows**, restart the Apache service.
 
 Now you can confirm your domain SSL certificate using any of the SSL checker tools available. Or you can just browse the URL.
