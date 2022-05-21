@@ -51,7 +51,7 @@ For **Windows**, look in :
 Add or update these attributes to the sites you want HTTPS on
 
 ```
-# SSL configuration
+# General SSL configuration
 
 listen 443 ssl default_server;
 listen [::]:443 ssl default_server;
