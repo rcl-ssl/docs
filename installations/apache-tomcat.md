@@ -15,7 +15,9 @@ You can download your TLS/SSL certificate in .PFX format :
 
 - **manually** : from the **RCL Portal** on the **Certificate Details** page
 
-- **automatically** : using the [RCL CertificateBot](../certbot/certbot). The CertificateBot will also automatically renew certificates
+![image](../images/certificate_installations/installation_files.png)
+
+- **automatically** : using the [RCL CertificateBot](../certbot/certbot). The CertificateBot will also automatically renew certificates. The certificate files will be saved on the hosting machine at the path you specified in the ``appsettings.json`` configuration file.
 
 Tomcat can use a PFX (PKCS12) file just fine, there is no need to convert to JKS.
 

@@ -18,7 +18,9 @@ You can download the files required to install the TLS/SSL certificate in the Ap
 
 ## Get the Certificate Files Automatically
 
-You can also use the [RCL CertificateBot](../certbot/certbot.md) to automatically renew and download the files required to install the TLS/SSL certificate in the Apache web server.
+You can also use the [RCL CertificateBot](../certbot/certbot.md) to automatically renew and download the files required to install the TLS/SSL certificate in the Apache web server. 
+
+The certificate files will be saved on the hosting machine at the path you specified in the ``appsettings.json`` configuration file.
 
 ## Files Required
 
