@@ -6,22 +6,22 @@ nav_order: 1
 ---
 
 # Installing SSL/TLS Certificates in Web Servers and Hosting Systems
+**V6.0.10**
 
-In this section, we will discuss a general approach to installing SSL/TLS certificates in web servers or web hosting systems. This is applicable if you host your website in a web server in a Windows or Linux Server (Virtual Machine or Container). This may also be applicable if you host your website with a hosting provider or system.
+In this section, we will discuss a general approach to installing SSL/TLS certificates in web servers or web hosting systems. This is applicable if you host your website in a web server in a Windows or Linux Server (Virtual Machine). This may also be applicable if you host your website with a hosting provider or system.
 
 ## General Approach
 
 The general approach to installing a SSL/TLS certificate in a web server or a hosting system is to :
 
-- Download the SSL/TLS certificate files from the certificate provider
-- Save the certificate files to a folder in your server or system
-- Configure the web server or hosting system to use the files to enable SSL for your website
+- Download the SSL/TLS certificate files on your hosting machine
+- Configure the web server or hosting system to use the files on the hosting machine to enable SSL for your website
 
 ## SSL/TLS Certificate Files
 
 Web Servers or Hosting Systems may need one or more of the following certificate files :
 
-- **Certificate Private Key** (.key) : this is the private key for the certificate. This file usually uses the '.key' extension, but could be opened as a text file.
+- **Certificate Private Key** (.key) : this is the private key for the certificate. This file usually uses the '.key' extension, but could be opened as a text file or with a '.pem' extension.
 
 - **Primary Certificate** (.crt) : this is the primary certificate for your domain. It does not contain the private key. This file usually uses the '.crt' or '.pem' extension, but could be opened as a text file.
 
