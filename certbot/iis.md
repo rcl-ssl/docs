@@ -97,9 +97,9 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 - Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
 
-- Configure the site bindings for each website that you want to bind SSL/TLS certificate
+- Configure the site bindings for each website that you want to bind a SSL/TLS certificate. You can have single of multiple bindings.
 
-- Example bindings :
+- Example of multiple bindings :
 
 ```
 "IISBindings": [
