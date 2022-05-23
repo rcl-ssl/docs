@@ -8,7 +8,9 @@ nav_order: 1
 # Introduction
 **V6.0.10**
 
-RCL CertificateBot is installed in a server running a website. It allows for automatic renewal of SSL/TLS certificates and installation of certificates in the hosting machine for a web server to use.
+RCL CertificateBot is installed in a server running a website. 
+
+It allows for automatic renewal of SSL/TLS certificates and installation of certificates in the hosting machine for a web server to use.
 
 ## Linux Server
 
@@ -21,20 +23,22 @@ RCL CertificateBot runs as a **Windows Service** in a Windows Server.
 ## How it Works
 
 - The application will request a list of certificates in a user's subscription in the RCL Portal
-- It will look for certificates in the list that are specified to be 'included in the server'. If it finds a specified certificate, it will save the certificate in the server
+- It will look for certificates in the list that are specified to be 'included in the server'. If it finds a specified certificate, it will save the certificate in the hosting machine
 - The application will then send a request to to renew certificates in a user's subscription. 
-- If a certificates is about to expire it will be scheduled for renewal, and subsequently saved to the server the next time the process is run
+- If a certificates is about to expire it will be scheduled for renewal, and subsequently saved to the hosting machine the next time the process is run
+- The webserver will be configured to use the SSL/TLS certificate that was saved to the hosting machine
 
 This entire process is repeated every seven (7) days to ensure the automatic renewal and installation of certificates in a server.
 
 ## Web Servers
-Web servers can use the certificates saved in the Windows or Linux server.
+Web servers can use the certificates saved in the Windows or Linux hosting machine.
 
 The following web servers are supported:
 
 - Apache
 - Apache Tomcat
 - NGINX
+- IIS
 - any server that configures SSL/TLS by referencing certificates files stored in the server
 
 ## Important

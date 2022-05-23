@@ -1,14 +1,16 @@
 ---
-title: Windows Service
-description: RCL CertificateBot Windows Service for automatic SSL/TLS certificate installation and renewal in a Windows server 
+title: IIS
+description: RCL CertificateBot Windows Service for automatic SSL/TLS certificate installation and renewal in IIS
 parent: RCL CertificateBot
-nav_order: 3
+nav_order: 4
 ---
 
-# RCL CertificateBot for Windows
+# RCL CertificateBot for IIS
 **V6.0.10**
 
 RCL CertificateBot runs as a **Windows Service** in a Windows Server. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL Portal** to a Windows hosting machine.
+
+Certificates will be automatically saved to the ``Local Machine`` certificate store in the  ``Trusted People`` folder. Certificates will also be automatically bound to the **IIS Web Server** on the hosting machine.
 
 ## Automatically Renew SSL/TLS Certificates
 
@@ -18,16 +20,16 @@ You can use RCL CertificateBot to automatically renew SSL/TLS certificates creat
 
 **'Stand Alone' certificates are not supported by RCL CertificateBot.**
 
-# Install RCL CertificateBot
+# Install RCL CertificateBot for IIS
 ## Download the Files
 
-- The Windows Service files (``certificatebot-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.CertificateBot/releases/tag/V6.0.10) section:
+- The Windows Service files (``certificatebot-iis-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.CertificateBot/releases/tag/V6.0.10) section:
 
-- Download the zip file with bitness
+- Download the zip file with bitness :
 
-  - [win-x86](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-win-x86.zip)
-  - [win-x64](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-win-x64.zip) 
-  - [win-arm](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-win-arm.zip)
+  - [win-x86](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-iis-win-x86.zip)
+  - [win-x64](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-iis-win-x64.zip) 
+  - [win-arm](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-iis-win-arm.zip)
   
   to match your Windows server bitness
 
@@ -79,7 +81,6 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 - [Add the Client Id in the RCL Portal](../api/authorization#add-the-client-id-in-the-rcl-lets-encrypt-portal)
 
-
 ### Add the Configuration variables
 
 - In the folder containing the files for the Windows Service that you extracted, find and open the **appsettings.json** file
@@ -96,23 +97,36 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 - Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
 
-- The ``includeCertificates`` settings will allow for including specific certificates by its name 
-(eg:  "contoso.com"  or "contoso.com, *.contoso.com" - for SAN) for the certificate(s) you want to save on the server. 
+- Configure the site bindings for each website that you want to bind SSL/TLS certificate
 
-- **Note: use forward slashes (/) when setting folder paths (eg: C:/ssl)**
+- Example bindings :
 
-Example
 ```
-  "CertificateBot": {
-    "saveCertificatePath": "C:/ssl",
-     "includeCertificates": [
-       "contoso.com",
-       "fabricam.com",
-       "acme.com,*.acme.com",
-       "adworks.com, www.adworks.com"
-       ],
+"IISBindings": [
+  {
+    "ip": "*",
+    "port": "443",
+    "siteName": "Home",
+    "host": "shopneur.com",
+    "certificateName": "shopeneur.com,*.shopeneur.com"
   },
+  {
+    "ip": "*",
+    "port": "443",
+    "siteName": "Home",
+    "host": "www.shopneur.com",
+    "certificateName": "shopeneur.com,*.shopeneur.com"
+  }
+]
 ```
+
+- siteName - this the the site name of the IIS website
+- ip - this is the IP address of the IIS website (you can use any (``*``))
+- port - the is the port number of the IIS website (you can use ``443``)
+- host - the the host name assigned to the IIS website
+- certificateName - this is the name of the certificate in the RCL Portal to be installed in the IIS website
+
+![install](../images/certbot/iis.PNG)
 
 ## Example of a configured **appsettings.json** file
 
@@ -133,22 +147,34 @@ Example
   },
   "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/public",
-    "SourceApplication": "RCL CertificateBot Windows",
+    "SourceApplication": "RCL CertificateBot IIS",
     "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
     "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
     "TenantId": "22cd4a8c-bc2c-3618-b1c3-4610c1b9b3e8",
     "SubscriptionId": "879"
   },
   "CertificateBot": {
-    "IISBindings": [],
+    "IncludeCertificates":[],
     "SaveCertificatePath": "C:/ssl",
-    "IncludeCertificates": [
-      "shopeneur.com,*.shopeneur.com"
+    "IISBindings": [
+      {
+        "ip": "*",
+        "port": "443",
+        "siteName": "Home",
+        "host": "shopneur.com",
+        "certificateName": "shopeneur.com,*.shopeneur.com"
+      },
+      {
+        "ip": "*",
+        "port": "443",
+        "siteName": "Home",
+        "host": "www.shopneur.com",
+        "certificateName": "shopeneur.com,*.shopeneur.com"
+      }
     ]
   }
 }
 ```
-
 - Save the **appsettings.json** file when you are done.
 
 # Create the Windows Service
@@ -158,7 +184,7 @@ Example
 - Run the command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service files were downloaded and extracted
 
 ```
-sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.Windows.exe
+sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.IIS.exe
 ```
 
 - After the service in installed, open **Services** in the Windows, look for the ``CertificateBot`` service and **Start** the service
@@ -171,7 +197,7 @@ sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.Windows.exe
 
 # View the Event Logs
 
-- Open **Event Viewer**, under 'Windows Logs > Application', look for the 'RCL.CertificateBot.Windows' events
+- Open **Event Viewer**, under 'Windows Logs > Application', look for the 'RCL.CertificateBot.IIS' events
 
 ![image](../images/certbot/winservice-events.PNG)
 
@@ -183,7 +209,7 @@ sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.Windows.exe
 
 If you encounter error events for the service in the Event Viewer, please stop the service and delete it completely. 
 
-Ensure the 'appsettings' configuration is correct for the AAD Application and the certificate save path settings point to a folder that exists. Then, re-install and restart the service.
+Ensure the ``appsettings`` configuration is correct for the AAD Application and the certificate save path settings point to a folder that exists. Then, re-install and restart the service.
 
 # Deleting the Windows Service
 
@@ -192,31 +218,3 @@ If you need to remove the Windows Service for any reason, run the command to del
 ```
 sc.exe delete CertificateBot  
 ```
-
-# Installing Certificates in Web Servers
-
-RCL CertificateBot will automatically save renewed SSL/TLS certificate files to a folder in the server. You should then configure the web server to use these files to implement SSL/TLS in your website.
-
-## Certificate Files
-
-The SSL/TLS certificate files will be stored at the path you specified in the ``appsettings.json`` configuration file. In this example, we used the path ``C:/ssl`` to store the certificate files.
-
-When configuring the web servers, you will reference the specific certificate files stored at that path in a folder generated by CertificateBot for a specified domain.
-
-The following files are downloaded and saved on the server :
-
-  - ``certificate.pfx`` - The PFX certificate file
-  - ``primaryCertificate.crt`` The primary certificate file
-  - ``fullChainCertificate.crt`` - The full chain certificate file
-  - ``caBundle.crt`` - The intermediate certificate file
-  - ``privateKey.key`` - The certificate's private key file
-
-## Configuring the Web Servers
-
-Please follow the links below to configure your web server:
-
-- [Installing SSL/TLS Certificates in Apache Server](../installations/apache)
-- [Installing SSL/TLS Certificates in Apache Tomcat](../installations/apache-tomcat)
-- [Installing SSL/TLS Certificates in NGINX](../installations/nginx)
-- [Installing SSL/TLS Certificates in Web Servers and Hosting Services](../installations/web-servers)
-

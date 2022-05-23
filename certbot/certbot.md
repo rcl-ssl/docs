@@ -18,4 +18,5 @@ The following web servers are supported:
 - Apache
 - Apache Tomcat
 - NGINX
-- any server that configures SSL/TLS by referencing certificate files stored in the server
+- IIS
+- any server that configures SSL/TLS by referencing certificate files stored in the hosting machine
