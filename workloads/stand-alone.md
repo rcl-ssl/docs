@@ -22,7 +22,7 @@ The web servers may include :
 
 ## Step 1 : Create the SSL/TLS Certificate
 
-- Create the SSL/TLS certificate by using either the :
+- Create the SSL/TLS certificate in the RCL Portal by using either the :
     - [Stand Alone](../portal/stand-alone.md) option
     - [Stand Alone SAN](../portal/stand-alone-san.md) option
 

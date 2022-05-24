@@ -19,7 +19,7 @@ This workload allows for the **automatic creation, installation and renewal** of
 
 ## Step 1 : Create the SSL/TLS Certificate
 
-- Create the SSL/TLS certificate by using either the :
+- Create the SSL/TLS certificate in the RCL Portal by using either the :
     - [Azure DNS + Key Vault](../portal/azure-keyvault.md) option
     - [Azure DNS + Key Vault SAN](../portal/azure-keyvault-san.md) option
 

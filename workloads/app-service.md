@@ -15,7 +15,7 @@ This workload allows for the **automatic creation, installation and renewal** of
 
 ## Step 1 : Create the SSL/TLS Certificate
 
-- Create the SSL/TLS certificate by using the:
+- Create the SSL/TLS certificate in the RCL Portal by using the:
     - [Azure App Service](../portal/azure-appservice.md) option
 
 ## Step 2 : Certificate Automatically Bound to the App Service

@@ -22,7 +22,7 @@ The following web servers are supported:
 
 ## Step 1 : Create the SSL/TLS Certificate
 
-- Create the SSL/TLS certificate by using either the:
+- Create the SSL/TLS certificate in the RCL Portal by using either the:
     - [Azure DNS](../portal/azure-dns.md) option
     - [Azure DNS SAN](../portal/azure-dns-san.md) option
 
