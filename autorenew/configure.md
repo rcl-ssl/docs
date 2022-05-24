@@ -71,7 +71,7 @@ The [RCL AutoRenew](../autorenew/autorenew.md) function app uses the RCL Public 
 
 To add the AAD Application's ``Client Id`` to the portal, please follow the instructions in this link :
 
-- [Add the Client Id in the RCL Portal](https://docs.rclapp.com/api/authorization#add-the-client-id-in-the-rcl-portal)
+- [Add the Client Id in the RCL Portal](../api/authorization.md#add-the-client-id-in-the-rcl-portal)
 
 ## Next Step
 

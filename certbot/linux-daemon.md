@@ -86,7 +86,7 @@ The AAD Application must be associated with a user's RCL subscription. This is a
 
 To add the AAD Application's ``Client Id`` to the portal, please follow the instructions in this link :
 
-- [Add the Client Id in the RCL Portal](../api/authorization#add-the-client-id-in-the-rcl-lets-encrypt-portal)
+- [Add the Client Id in the RCL Portal](../api/authorization#add-the-client-id-in-the-rcl-portal)
 
 
 ## Add the Configuration variables

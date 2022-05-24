@@ -77,7 +77,7 @@ The AAD Application must be associated with a user's RCL subscription. This is a
 
 To add the AAD Application's ``Client Id`` to the portal, please follow the instructions in this link :
 
-- [Add the Client Id in the RCL Portal](../api/authorization#add-the-client-id-in-the-rcl-lets-encrypt-portal)
+- [Add the Client Id in the RCL Portal](../api/authorization#add-the-client-id-in-the-rcl-portal)
 
 
 ### Add the Configuration variables
@@ -93,6 +93,8 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 - In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : C:/ssl
 
   - saveCertificatePath
+
+- **Note : when setting the folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl``**
 
 - Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
 
@@ -155,23 +157,23 @@ Example
 
 - Open a **Command Prompt** in the Windows server as an **Administrator**
 
-- Run the command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service files were downloaded and extracted
+- Run the following command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service files were downloaded and extracted
 
 ```
 sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.Windows.exe
 ```
 
-- After the service in installed, open **Services** in the Windows, look for the ``CertificateBot`` service and **Start** the service
+- After the service in installed, open **Services** in Windows, look for the ``CertificateBot`` service and **Start** the service
 
 ![image](../images/certbot/winservice-start.png)
 
-- You can set the **Properties** of the service to start automatically when the server starts
+- Set the **Properties** of the service to start automatically when the server starts
 
 ![image](../images/certbot/winservice-automatic.png)
 
 # View the Event Logs
 
-- Open **Event Viewer**, under 'Windows Logs > Application', look for the 'RCL.CertificateBot.Windows' events
+- Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.CertificateBot.Windows`` events
 
 ![image](../images/certbot/winservice-events.PNG)
 
@@ -183,7 +185,9 @@ sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.Windows.exe
 
 If you encounter error events for the service in the Event Viewer, please stop the service and delete it completely. 
 
-Ensure the 'appsettings' configuration is correct for the AAD Application and the certificate save path settings point to a folder that exists. Then, re-install and restart the service.
+Ensure the 'appsettings' configuration is correct for the AAD Application and the certificate save path settings point to a folder that exists. 
+
+Fix any other errors that are reported Then, re-install and restart the service.
 
 # Deleting the Windows Service
 

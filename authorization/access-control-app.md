@@ -39,7 +39,7 @@ A user will need to provide **Access Control** to the [AAD Application](./aad-ap
 
 If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will need to set **Access policies** for the certificate in Key Vault. 
 
-**This step is not required, if SSl/TLS certificates are not being created for Key Vault.**
+**This step is not required, if SSL/TLS certificates are not being created for Key Vault.**
 
 - In **Key Vault**, click on 'Access policies' and 'Add Access Policy'
 
@@ -70,4 +70,6 @@ If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will ne
 ## Related Articles
 
 - [AutoRenew Function](../autorenew/autorenew.md)
+autorenew.md)
+- [CertificateBot](../certbot/certbot.md)
 

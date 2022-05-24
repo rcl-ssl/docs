@@ -13,6 +13,7 @@ nav_order: 4
 - to make authorized requests to the RCL Public API
 - to use the [RCL AutoRenew](../autorenew/autorenew) Function app
 - to access Azure App Services , Key Vault and DNS Zone
+- to use the [RCL certificateBot](../certbot/certbot.md)
 
  This authorization will be granted through an **AAD Application**.
 
@@ -51,3 +52,4 @@ nav_order: 4
 ## Related Articles
 
 - [AutoRenew Function](../autorenew/autorenew.md)
+- [CertificateBot](../certbot/certbot.md)
