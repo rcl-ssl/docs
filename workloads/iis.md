@@ -19,7 +19,7 @@ This workload allows for the **automatic installation and renewal** of a SSL/TLS
 
 ## Step 2 : Automatically Install the Certificate
 
-- After certificate creation, install and configure the [RCL CertificateBo for IIS](../certbot/iis.md) in your Windows hosting machine (server) 
+- After certificate creation, install and configure the [RCL CertificateBot for IIS](../certbot/iis.md) in your Windows hosting machine (server) 
 
 - [RCL CertificateBot for IIS](../certbot/iis.md) will automatically download the certificate in the Windows hosting machine and install the certificate in the IIS web server
 
