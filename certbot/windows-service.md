@@ -157,7 +157,7 @@ Example
 
 - Open a **Command Prompt** in the Windows server as an **Administrator**
 
-- Run the following command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service files were downloaded and extracted
+- Run the following command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service zip files were extracted
 
 ```
 sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.Windows.exe
