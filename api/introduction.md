@@ -1,14 +1,14 @@
 ---
 title: Introducing the API
 description: Using the RCL API to get and renew certificates created in the RCL portal
-parent: RCL Public API
+parent: RCL Renewal API
 nav_order: 1
 ---
 
 # Introduction
 **V6.0.10**
 
-The **RCL Public API** provides REST API services to:
+The **RCL Renewal API** provides REST API services to:
 
 - Get SSL/TLS certificates from a user's subscription in the **RCL Portal**
 - Renew SSL/TLS certificates that are about to expire

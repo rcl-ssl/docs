@@ -1,13 +1,13 @@
 ---
 title: API Models
 description: The models for the RCL Public API
-parent: RCL Public API
+parent: RCL Renewal API
 nav_order: 100
 ---
 
 # Model Classes
 
-This section contain the model classes for the RCL Public API.
+This section contain the model classes for the RCL Renewal API.
 
 # AuthToken
 
