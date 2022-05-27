@@ -10,7 +10,7 @@ nav_order: 4
 
 **Authorization** is required for the following operations :
 
-- to make authorized requests to the RCL Public API
+- to make authorized requests to the [RCL Renewal API](../api/api.md)
 - to use the [RCL AutoRenew](../autorenew/autorenew) Function app
 - to access Azure App Services , Key Vault and DNS Zone
 - to use the [RCL certificateBot](../certbot/certbot.md)
@@ -28,6 +28,13 @@ nav_order: 4
 - Click the 'Register' button 
 
 ## Get the AAD Application Credentials
+
+In this section, the following credentials will be obtained from the AAD application :
+
+    - Client ID (Application ID)
+    - Client Secret
+    - Tenant ID (Directory ID)
+   
 
 - In the Active Directory, open the application that was registered
 
