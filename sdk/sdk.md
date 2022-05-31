@@ -1,14 +1,14 @@
 ---
-title: RCL SDK
-description: The RCL SDK provides a C# library to make authorized requests to the RCL Public API 
+title: RCL Renewal SDK
+description: The RCL Renewal SDK provides a C# library to make authorized requests to the RCL Public API 
 has_children: false
-nav_order: 7
+nav_order: 9
 ---
 
-# RCL SDK
+# RCL Renewal SDK
 ![Nuget](https://img.shields.io/nuget/v/RCL.SDK)
 
-The [RCL SDK](https://github.com/rcl-ssl/RCL.SDK) provides a C# .NET Core library to make authorized requests to the [RCL Public API](../api/api.md) . In this section, you will learn how to use the SDK.
+The [RCL Renewal SDK](https://github.com/rcl-ssl/RCL.SDK) provides a C# .NET Core library to make authorized requests to the [RCL Renewal API](../api/api.md) . In this section, you will learn how to use the SDK.
 
 ## Project's GitHub Page
 

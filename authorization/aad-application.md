@@ -52,11 +52,8 @@ In this section, the following credentials will be obtained from the AAD applica
 
 ![install](../images/authorization_aad_app/aad_app4.PNG)
 
-## Next Step
-
-- [Set Access Control for the AAD application](./access-control-app)
 
 ## Related Articles
-
+- [Set Access Control for the AAD application](./access-control-app)
 - [AutoRenew Function](../autorenew/autorenew.md)
 - [CertificateBot](../certbot/certbot.md)
