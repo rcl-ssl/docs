@@ -52,7 +52,7 @@ The request body should include a JSON of the [ValidationRequest](./models.md#va
 ## Example Request
 
 ```
-POST /production/ssl/core/v1/order/subscription/sx-001/validate HTTP/1.1
+POST /production/ssl/core/v1/order/subscription/subscr9836/validate HTTP/1.1
 Host: rclapi.azure-api.net
 Authorization: Bearer eyJ0eXAiOiJ...TKbWi7-d2Q
 Content-Type: application/json
@@ -101,7 +101,7 @@ Todo
 
 - **Validated Order** - Once an Order is validated. You can [Get the Order](order-get.md) and view the status. The status of the order should be ``ready`` and the status of the challenge should be ``valid``. If an order validation has failed, you cannot try to re-validate the same order again. You will need to create a new [Certificate Order](./order-create.md) and validate this new order.
 
-## Example of a ValidatedOrder
+## Example of a Validated Order
 ```
 {
     "status": "ready",

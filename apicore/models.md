@@ -176,3 +176,62 @@ Represents a request to validate a SSL/TLS certificate order
     "challengeType": "DNS"
 }
 ```
+
+# FinalizationRequest
+
+Represents a request to validate a SSL/TLS certificate order
+
+| Parameter | Description | Type
+| --- | --- |--- |
+| hostName |The host name for the certificate. | string |
+| rootDomain |The root domain for the host name. | string |
+| orderUri |The URI of the order. | string |
+| challengeType |The challenge type that was used to create the certificate order. | string |
+| email |The email contact for the user requesting the certificate. | string |
+| password |The password for the certificate. | string |
+| csrInfo |The password for the certificate. | [CsrInfo](#csrinfo) |
+
+## Example
+
+```
+{
+    "hostName":"www.shopeneur.com",
+    "rootDomain":"shopeneur.com",
+    "orderUri":"https://acme-v02.api.letsencrypt.org/acme/order/527702946/93863252796",
+    "challengeType":"DNS",
+    "email":"support@mail.com",
+    "password":"pwd1234",
+    "csrInfo":{
+        "countryName":"Trinidad",
+        "locality":"Homeland Gardens",
+        "state":"Cunupia",
+        "organization":"Ray Consulting Limited",
+        "organizationUnit":"IT"
+    }
+}
+```
+
+# CsrInfo
+
+Represents the information of the organization requesting the SSL/TLS certificate
+
+| Parameter | Description | Type
+| --- | --- |--- |
+| countryName |The country. | string |
+| locality |The city. | string |
+| state |The State/Region. | string |
+| organization |The organization name. | string |
+| organizationUnit |The organization department or unit. | string |
+
+## Example
+
+```
+{
+    "countryName":"Trinidad",
+    "locality":"Homeland Gardens",
+    "state":"Cunupia",
+    "organization":"Ray Consulting Limited",
+    "organizationUnit":"IT"
+}
+```
+
