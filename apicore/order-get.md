@@ -1,14 +1,14 @@
 ---
-title: Order Create
-description: RCL Core API - Create an order for a SSL/TLS certificate
+title: Order Get
+description: RCL Core API - Get an order for a SSL/TLS certificate
 parent: RCL Core API
-nav_order: 3
+nav_order: 4
 ---
 
 # Order Create 
 **V6.0.10**
 
-The **Order Create API** will create an order for a SSL/TLS certificate.
+The **Order Get API** will get an order for a SSL/TLS certificate by the Order URI.
 
 # Authorization
 
@@ -35,10 +35,10 @@ https://rclapi.azure-api.net
 
 # API Endpoint and Method
 
-The endpoint for the **Order Create** API is :
+The endpoint for the **Order Get** API is :
 
 ```
-/production/ssl/core/v1/order/subscription/{subscriptionid}/create
+production/ssl/core/v1/order/subscription/{subscriptionid}/get
 ```
 
 where the placeholder : {subscriptionid} is the **Subscription Id** of the user's subscription in the RCL Portal.
@@ -47,34 +47,23 @@ A ``POST`` request must be made to the endpoint.
 
 # Request Body
 
-The request body should include a JSON of the [CertificateRequest](./models.md#certificaterequest) class.
+The request body should include a JSON of the [OrderRequest](./models.md#orderrequest) class.
 
 ## Example Request
 
 ```
-POST /production/ssl/core/v1/order/subscription/subscr9836/create HTTP/1.1
+POST /production/ssl/core/v1/order/subscription/subscr9836/get HTTP/1.1
 Host: rclapi.azure-api.net
-Authorization: Bearer eyJ0eXAiOi..p1tiXcUnFA
+Authorization: Bearer eyJ0eXA..N9spaA
 Content-Type: application/json
+Content-Length: 158
 
 {
-    "hostName" : "www.shopeneur.com",
-    "rootDomain" : "shopeneur.com",
-    "email":"support@rclapp.com",
-    "challengeType":"DNS",
-    "isSAN":false
+    "orderUri": "https://acme-v02.api.letsencrypt.org/acme/order/527702946/93863252796",
+    "challengeType": "DNS",
+    "rootDomain": "shopeneur.com"
 }
 ```
-
-# Notes
-
-- **hostName** - the ``hostName`` is the domain you are requesting the certificate for. Example: apex domain - contoso.com, sub domain - store.contoso.com, www sub domain www.contoso.com, wild card domain - *.contoso.com
-
-- **rootDomain** - the root domain is the ‘apex’ domain for the ``hostName``. For instance, the root domain for the ``hostName``: ‘shop.contoso.com’ is ‘contoso.com’. Similarly, the root domain for the ``hostName`` : ‘contoso.com’ is also ‘contoso.com’
-
-- **challengeType** - The challenge type used to validate your domain. To validate your domain with the ``HTTP`` challenge, you will be required to place a file in the root of your website and ensure that this file can be accessed publicly on the web. To validate your domain with the ``DNS`` challenge, you will be required to create a DNS TXT record in your domain settings with your domain registrar. The DNS challenge supports wildcard domains (*.contoso.com).
-
-- **isSAN** - specify if the certificate is a SAN certificate. A Subject Alternative Name (SAN) SSL/TLS certificate will contain multiple domains in a single certificate. A SAN certificate created with the ``HTTP Challenge`` will contain the naked apex domain (e.g. contoso.com) and the www subdomain (e.g. www.contoso.com) in a single SSL/TLS certificate. A SAN certificate created with the ``DNS Challenge`` will contain the naked apex domain (e.g. contoso.com) and a wild card domain (e.g. \*.contoso.com) in a single SSL/TLS certificate. For a SAN certificate, the ``hostName`` MUST be an apex domain (eg: contoso.com) AND the ``rootDomain`` MUST be the same as the ``hostName``. Host names must not include multiple domains, sub-domains, commas (,) and asterisk (*). 
 
 # Response
 
@@ -120,6 +109,11 @@ This represents success in making an authorized request to the RCL Core API. An 
 
 The authorization failed for the request. Check the body of the response for additional error details in ``text/plain`` format.
 
+## 404 Not Found
+
+The order was not found.
+
 ## 400 Bad Request
 
 An error occurred while processing the request. Check the body of the response for additional error details in ``text/plain`` format.
+

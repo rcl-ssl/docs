@@ -10,9 +10,9 @@ nav_order: 2
 
 Steps in acquiring an access token :
 
-- Register an AAD Application
+- Register an AAD Application in the Azure portal
 - Register the AAD Application's Client Id in the **RCL Portal**
-- Make a POST request to the AAD Application-specific token endpoint to obtain the tokens
+- Make a POST request to the AAD Application-specific token endpoint to obtain a token
 
 ## Registering an AAD Application
 
@@ -79,7 +79,7 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 
  ```
 
- ## Service Response
+## Service Response
 
 A success response contains a JSON response with an [AuthToken](./models.md#authtoken) in the body of the response. The Access Token can be acquired from the ``AuthToken``.
 
@@ -95,12 +95,12 @@ A success response contains a JSON response with an [AuthToken](./models.md#auth
 
 ## Use the Access Tokens to Make a Request
 
-To make a request to the RCL Core API, include the access token as a `Bearer` Authorization in the header of the request
+To make a request to the RCL Core API, include the access token as a `Bearer` **Authorization** in the header of the request
 
 ## Example
 
 ```
-GET /development/ssl/core/v1/certificate/subscription/I-TKGDBEFH2BEN/get/all
+GET /production/ssl/core/v1/certificate/subscription/I-TKGDBEFH2BEN/get/all
 Host: https://rclapi.azure-api.net
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNBVGZNNXBP...
 ```

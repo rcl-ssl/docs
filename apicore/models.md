@@ -17,7 +17,7 @@ Represents an authorization token
 | --- | --- |--- |
 | access_token |The requested access token. | string |
 | token_type |Indicates the token type value. | string |
-| expires_in |How long the access token is valid (in seconds). | string |
+| expires_in |How long the access token is valid (in seconds). | int |
 
 ## Example
 
@@ -38,7 +38,7 @@ Represents a request for a SSL/TLS certificate
 | hostName |The host name for the certificate. | string |
 | rootDomain |The root domain for the host name. | string |
 | email |The email contact for the user requesting the certificate. | string |
-| email |The challenge type for validating the certificate. | string |
+| challengeType |The challenge type for validating the certificate. | string |
 | isSAN |Whether the certificate is a SAN certificate. | bool |
 
 ## Example
@@ -47,7 +47,7 @@ Represents a request for a SSL/TLS certificate
 {
     "hostName" : "www.shopeneur.com",
     "rootDomain" : "shopeneur.com",
-    "email":"support@rclapp.com",
+    "email":"support@mail.com",
     "challengeType":"DNS",
     "isSAN":false
 }
@@ -121,7 +121,7 @@ Represents an token to be used to validate the SSL/TLS certificate order
 
 # Challenge
 
-Represents a challenge thst is used to validate the SSL/TLS certificate order
+Represents a challenge that is used to validate the SSL/TLS certificate order
 
 | Parameter | Description | Type
 | --- | --- |--- |
@@ -136,5 +136,43 @@ Represents a challenge thst is used to validate the SSL/TLS certificate order
     "challengeType": "dns-01",
     "status": "pending",
     "token": "OavU5bQv41k5885ofozqxSJs5TgCulc4THtfdixGWdQ"
+}
+```
+
+# OrderRequest
+
+Represents a request to get a SSL/TLS certificate order
+
+| Parameter | Description | Type
+| --- | --- |--- |
+| orderUri |The URI of the order. | string |
+| challengeType |The challenge type that was used to create the certificate order. | string |
+| rootDomain |The root domain that was used to create the certificate order. | string |
+
+## Example
+
+```
+{
+    "orderUri": "https://acme-v02.api.letsencrypt.org/acme/order/527702946/93863252796",
+    "challengeType": "DNS",
+    "rootDomain": "shopeneur.com"
+}
+```
+
+# ValidationRequest
+
+Represents a request to validate a SSL/TLS certificate order
+
+| Parameter | Description | Type
+| --- | --- |--- |
+| orderUri |The URI of the order. | string |
+| challengeType |The challenge type that was used to create the certificate order. | string |
+
+## Example
+
+```
+{
+    "orderUri": "https://acme-v02.api.letsencrypt.org/acme/order/527702946/93863252796",
+    "challengeType": "DNS"
 }
 ```
