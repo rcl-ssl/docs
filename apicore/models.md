@@ -45,11 +45,11 @@ Represents a request for a SSL/TLS certificate
 
 ```
 {
-  "hostName" : "shopeneur.com",
-  "rootDomain" : "shopeneur.com",
-  "email":"support@rclapp.com",
-  "challengeType":"DNS",
-  "isSAN":false
+    "hostName" : "www.shopeneur.com",
+    "rootDomain" : "shopeneur.com",
+    "email":"support@rclapp.com",
+    "challengeType":"DNS",
+    "isSAN":false
 }
 ```
 
@@ -69,11 +69,33 @@ Represents an order for a SSL/TLS certificate
 
 ```
 {
-  "hostName" : "shopeneur.com",
-  "rootDomain" : "shopeneur.com",
-  "email":"support@rclapp.com",
-  "challengeType":"DNS",
-  "isSAN":false
+    "status": "pending",
+    "validationTokens": [
+        {
+            "tokenName": "_acme-challenge.www",
+            "tokenValue": "hW9A7-hOZw1WQxLaxZbZRtrn5r3Tq9ufJ5IYxCODB3w",
+            "challengeType": "DNS"
+        }
+    ],
+    "challenges": [
+        {
+            "challengeType": "http-01",
+            "status": "pending",
+            "token": "OavU5bQv41k5885ofozqxSJs5TgCulc4THtfdixGWdQ"
+        },
+        {
+            "challengeType": "dns-01",
+            "status": "pending",
+            "token": "OavU5bQv41k5885ofozqxSJs5TgCulc4THtfdixGWdQ"
+        },
+        {
+            "challengeType": "tls-alpn-01",
+            "status": "pending",
+            "token": "OavU5bQv41k5885ofozqxSJs5TgCulc4THtfdixGWdQ"
+        }
+    ],
+    "orderUri": "https://acme-v02.api.letsencrypt.org/acme/order/527702946/93863252796",
+    "certificateUri": null
 }
 ```
 
@@ -87,6 +109,16 @@ Represents an token to be used to validate the SSL/TLS certificate order
 | tokenValue |The value of the token. | string |
 | challengeType |The challenge type for which this token must be used. | string |
 
+## Example
+
+```
+{
+    "tokenName": "_acme-challenge.www",
+    "tokenValue": "hW9A7-hOZw1WQxLaxZbZRtrn5r3Tq9ufJ5IYxCODB3w",
+    "challengeType": "DNS"
+}
+```
+
 # Challenge
 
 Represents a challenge thst is used to validate the SSL/TLS certificate order
@@ -96,3 +128,13 @@ Represents a challenge thst is used to validate the SSL/TLS certificate order
 | challengeType |The type of the challenge. | string |
 | status |The status of the challenge. | string |
 | token |The base token for the challenge (may differ from the tokenValue). | string |
+
+## Example
+
+```
+{
+    "challengeType": "dns-01",
+    "status": "pending",
+    "token": "OavU5bQv41k5885ofozqxSJs5TgCulc4THtfdixGWdQ"
+}
+```
