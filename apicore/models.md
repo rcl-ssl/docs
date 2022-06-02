@@ -235,3 +235,89 @@ Represents the information of the organization requesting the SSL/TLS certificat
 }
 ```
 
+# Certificate
+
+Represents a SSL/TLS certificate
+
+| Parameter | Description | Type
+| --- | --- |--- |
+| certificateName |The name of the certificate, equivalent to the domain or host name. | string |
+| issueDate |The date the certificate was issued. | DateTime |
+| expiryDate |The expiry date of the certificate. | DateTime |
+| pfxPassword |The password for the PFX certificate. | string   |
+| pfxString |The Base64 encoded string of the PFX certificate. | string   |
+| certificateDownloadUrls |The download URLs for a certificate in various formats. | [CertificateDownloadUrl](#certificatedownloadurl)   |
+
+## Example
+``
+{
+    "certificateName": "www.shopeneur.com",
+    "issueDate": "2022-06-01T19:34:06.3563456",
+    "expiryDate": "2022-08-30T19:34:06.356435",
+    "pfxPassword": "pwd1234",
+    "pfxString": "MIACAQMwgAYJK...5AH",
+    "certificateDownloadUrls": {
+        "pemUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da007cf8...%3D",
+        "pfxUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da007c...DA%3D",
+        "cerUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da007c...oI%3D",
+        "crtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...%3D",
+        "txtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...Y%3D",
+        "keyUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...E%3D",
+        "certCrtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...U%3D",
+        "cabundleCrtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...%3D",
+        "fullchainCrtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...A%3D"
+    }
+}
+``
+
+# CertificateDownloadUrl
+
+Represents the URLs to download the various formats of a SSL/TLS certificate
+
+| Parameter | Description | Type
+| --- | --- |--- |
+| pemUrl |The download URL for the certificate in .PEM format. | string |
+| pfxUrl |The download URL for the certificate in .PFX/P12 format. | string |
+| cerUrl |The download URL for the certificate in .CER format. | string |
+| crtUrl |The download URL for the certificate in .CRT format. | string |
+| txtUrl |The download URL for the certificate in .TXT format. | string |
+| keyUrl |The download URL for the certificate private key .KEY format. | string |
+| certCrtUrl |The download URL for the primary certificate in .CRT format. | string |
+| cabundleCrtUrl |The download URL for the intermediate certificates (CA Bundle) in .CRT format. | string |
+| fullchainCrtUrl |The download URL for the full chain certificate in .CRT format. | string |
+
+## Example
+
+``
+{
+    "pemUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da007cf8...%3D",
+    "pfxUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da007c...DA%3D",
+    "cerUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da007c...oI%3D",
+    "crtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...%3D",
+    "txtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...Y%3D",
+    "keyUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...E%3D",
+    "certCrtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...U%3D",
+    "cabundleCrtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...%3D",
+    "fullchainCrtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...A%3D"
+}
+``
+
+# CertificateInfo
+
+Represents the certificate information of a SSL/TLS certificate
+
+| Parameter | Description | Type
+| --- | --- |--- |
+| certificateName |The name of the certificate, equivalent to the domain or host name. | string |
+| issueDate |The date the certificate was issued. | DateTime |
+| expiryDate |The expiry date of the certificate. | DateTime |
+
+## Example
+
+``
+{
+    "certificateName": "www.shopeneur.com",
+    "issueDate": "2022-06-01T19:34:06.3563456",
+    "expiryDate": "2022-08-30T19:34:06.356435"
+}
+``
