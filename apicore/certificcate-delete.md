@@ -8,7 +8,7 @@ nav_order: 9
 # Certificate Delete
 **V6.0.10**
 
-The **Certificate Delete API** delate a SSL/TLS certificate.
+The **Certificate Delete API** deletes a SSL/TLS certificate.
 
 # Authorization
 
@@ -52,7 +52,7 @@ The the name of the certificate must be included in a parameter named ``name`` i
 ## Example Request
 
 ```
-DELETE /production/ssl/core/v1/certificate/subscription/sx-001/delete?name=www.shopeneur.com HTTP/1.1
+DELETE /production/ssl/core/v1/certificate/subscription/subscr9836/delete?name=www.shopeneur.com HTTP/1.1
 Host: rclapi.azure-api.net
 Authorization: Bearer eyJ0eXAiOi...ygSQ
 ```

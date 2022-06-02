@@ -8,7 +8,7 @@ nav_order: 6
 # Order Finalize
 **V6.0.10**
 
-The **Order Finalize API** create a SSL/TLS certificate using a [validated](./order-validate.md) certificate order.
+The **Order Finalize API** create a SSL/TLS certificate after a certificate order has been [validated](./order-validate.md).
 
 # Authorization
 
@@ -43,7 +43,7 @@ The endpoint for the **Order Finalize** API is :
 
 where the placeholder : {subscriptionid} is the **Subscription Id** of the user's subscription in the RCL Portal.
 
-A ``POST`` request must be made to the endpoint.
+A ``POST`` request must be made to the endpoint. The order must be have a ``ready`` status before it can be finalized.
 
 # Request Body
 

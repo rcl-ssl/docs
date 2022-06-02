@@ -48,7 +48,7 @@ A ``GET`` request must be made to the endpoint.
 ## Example Request
 
 ```
-GET /production/ssl/core/v1/certificate/subscription/sx-001/get/all HTTP/1.1
+GET /production/ssl/core/v1/certificate/subscription/subscr9836/get/all HTTP/1.1
 Host: rclapi.azure-api.net
 Authorization: Bearer eyJ0eXAiOiJKV1QiL..u9A3-g
 ```

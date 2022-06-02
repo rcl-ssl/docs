@@ -43,7 +43,7 @@ The endpoint for the **Order Validate** API is :
 
 where the placeholder : {subscriptionid} is the **Subscription Id** of the user's subscription in the RCL Portal.
 
-A ``POST`` request must be made to the endpoint.
+A ``POST`` request must be made to the endpoint **after you complete the ``DNS`` or ``HTTP`` challenge**. Please read the [Notes](#notes-on-validation) on how the complete the challenges.
 
 # Request Body
 
@@ -63,7 +63,7 @@ Content-Type: application/json
 }
 ```
 
-# Notes
+# Notes on Validation
 
 - **DNS Validation** - To validate your domain with the ``DNS`` challenge, you will be required to create a DNS TXT record in your domain settings with your domain registrar. The name of the record should be the ``tokenName`` in the [ValidationToken](./models.md#validationtoken) of the [Order](./models.md#order). The value of the record should be the ``tokenValue`` in the [ValidationToken](./models.md#validationtoken) of the [Order](./models.md#order). For a SAN certificate, you will be required to place two(2) token values in the in a single DNS TXT record. This wll be represented by an array of two (2) ValidationTokens in the Order. The  array of ValidationTokens in the order will have the same ``tokenName``, but with two different ``tokenValues``.
 
@@ -78,6 +78,8 @@ Content-Type: application/json
     }
 ]
 ```
+
+In this example, a DNS TX Record : ``_acme-challenge.www`` with value : `hW9A7-hOZw1WQxLaxZbZRtrn5r3Tq9ufJ5IYxCODB3w` must be created with your domain registrar in order to validate the ``DNS`` challenge.
 
 ## Example of a DNS ValidationToken Array for a SAN Certificate Order
 
@@ -99,7 +101,7 @@ Todo
 Todo
 ```
 
-- **Validated Order** - Once an Order is validated. You can [Get the Order](order-get.md) and view the status. The status of the order should be ``ready`` and the status of the challenge should be ``valid``. If an order validation has failed, you cannot try to re-validate the same order again. You will need to create a new [Certificate Order](./order-create.md) and validate this new order.
+- **Validated Order** - Once an Order is validated. You can [Get the Order](order-get.md) and view the status. The status of the order should be ``ready`` and the status of the challenge should be ``valid``. If an order validation has failed the status will be set to  ``invalid``. You cannot try to re-validate the invalid order again. You will need to create a new [Certificate Order](./order-create.md) and validate this new order.
 
 ## Example of a Validated Order
 ```

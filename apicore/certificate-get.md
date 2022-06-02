@@ -65,7 +65,7 @@ This represents success in making an authorized request to the RCL Core API. A [
 
 ## Example Response Body
 
-``
+```
 {
     "certificateName": "www.shopeneur.com",
     "issueDate": "2022-06-01T19:34:06.3563456",
@@ -84,7 +84,7 @@ This represents success in making an authorized request to the RCL Core API. A [
         "fullchainCrtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...A%3D"
     }
 }
-``
+```
 
 ## 401 Unauthorized
 
