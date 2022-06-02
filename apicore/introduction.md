@@ -19,7 +19,7 @@ Developers can use the APIs to build custom applications to create SSL/TLS certi
 
 ## Quick Start
 
-Start using the RCL Core API in two simple steps.
+Start using the RCL Core API in these simple steps :
 
 - [Obtain an Access Token](./authorization.md) to make authorized requests to the API
 
@@ -30,6 +30,12 @@ Start using the RCL Core API in two simple steps.
 - [Validate a Certificate Order](./order-validate.md) for a SSL/TLS certificate
 
 - [Finalize a Certificate Order](./order-finalize.md) for a SSL/TLS certificate
+
+- [Get a Certificate](./certificate-get.md)
+
+- [Get all Certificates](./certificate-get-all.md) in a subscription
+
+- [Delete a Certificate](./certificcate-delete.md)
 
 ## Rate Limits
 
