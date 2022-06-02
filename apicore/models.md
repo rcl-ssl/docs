@@ -55,7 +55,7 @@ Represents a request for a SSL/TLS certificate
 
 # Order
 
-Represents an order for a SSL/TLS certificate
+Represents a SSL/TLS certificate order
 
 | Parameter | Description | Type
 | --- | --- |--- |
@@ -179,7 +179,7 @@ Represents a request to validate a SSL/TLS certificate order
 
 # FinalizationRequest
 
-Represents a request to validate a SSL/TLS certificate order
+Represents a request to finalize a SSL/TLS certificate order
 
 | Parameter | Description | Type
 | --- | --- |--- |
@@ -249,7 +249,7 @@ Represents a SSL/TLS certificate
 | certificateDownloadUrls |The download URLs for a certificate in various formats. | [CertificateDownloadUrl](#certificatedownloadurl)   |
 
 ## Example
-``
+```
 {
     "certificateName": "www.shopeneur.com",
     "issueDate": "2022-06-01T19:34:06.3563456",
@@ -268,7 +268,7 @@ Represents a SSL/TLS certificate
         "fullchainCrtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...A%3D"
     }
 }
-``
+```
 
 # CertificateDownloadUrl
 
@@ -288,7 +288,7 @@ Represents the URLs to download the various formats of a SSL/TLS certificate
 
 ## Example
 
-``
+```
 {
     "pemUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da007cf8...%3D",
     "pfxUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da007c...DA%3D",
@@ -300,7 +300,7 @@ Represents the URLs to download the various formats of a SSL/TLS certificate
     "cabundleCrtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...%3D",
     "fullchainCrtUrl": "https://rclstrg.blob.core.windows.net/pem/cert/da00...A%3D"
 }
-``
+```
 
 # CertificateInfo
 
@@ -314,10 +314,10 @@ Represents the certificate information of a SSL/TLS certificate
 
 ## Example
 
-``
+```
 {
     "certificateName": "www.shopeneur.com",
     "issueDate": "2022-06-01T19:34:06.3563456",
     "expiryDate": "2022-08-30T19:34:06.356435"
 }
-``
+```

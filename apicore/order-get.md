@@ -56,7 +56,6 @@ POST /production/ssl/core/v1/order/subscription/subscr9836/get HTTP/1.1
 Host: rclapi.azure-api.net
 Authorization: Bearer eyJ0eXA..N9spaA
 Content-Type: application/json
-Content-Length: 158
 
 {
     "orderUri": "https://acme-v02.api.letsencrypt.org/acme/order/527702946/93863252796",

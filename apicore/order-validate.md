@@ -65,6 +65,8 @@ Content-Type: application/json
 
 # Notes on Validation
 
+- **Order Status** - To validate an order, it should have a status of ``pending``.
+
 - **DNS Validation** - To validate your domain with the ``DNS`` challenge, you will be required to create a DNS TXT record in your domain settings with your domain registrar. The name of the record should be the ``tokenName`` in the [ValidationToken](./models.md#validationtoken) of the [Order](./models.md#order). The value of the record should be the ``tokenValue`` in the [ValidationToken](./models.md#validationtoken) of the [Order](./models.md#order). For a SAN certificate, you will be required to place two(2) token values in the in a single DNS TXT record. This wll be represented by an array of two (2) ValidationTokens in the Order. The  array of ValidationTokens in the order will have the same ``tokenName``, but with two different ``tokenValues``.
 
 ## Example of a DNS ValidationToken Array a Certificate Order
@@ -101,7 +103,7 @@ Todo
 Todo
 ```
 
-- **Validated Order** - Once an Order is validated. You can [Get the Order](order-get.md) and view the status. The status of the order should be ``ready`` and the status of the challenge should be ``valid``. If an order validation has failed the status will be set to  ``invalid``. You cannot try to re-validate the invalid order again. You will need to create a new [Certificate Order](./order-create.md) and validate this new order.
+- **Validated Order** -  Once an Order is validated. You can [Get the Order](order-get.md) and view the status. The status of the order should be ``ready`` and the status of the challenge should be ``valid``. If an order validation has failed the status will be set to  ``invalid``. You cannot try to re-validate the invalid order again. You will need to create a new [Certificate Order](./order-create.md) and validate this new order.
 
 ## Example of a Validated Order
 ```

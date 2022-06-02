@@ -8,7 +8,7 @@ nav_order: 8
 # Certificate Get
 **V6.0.10**
 
-The **Certificate Get All API** get all SSL/TLS certificates in a subscription.
+The **Certificate Get All API** gets all SSL/TLS certificates in a subscription.
 
 # Authorization
 
@@ -59,7 +59,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiL..u9A3-g
 
 This represents success in making an authorized request to the RCL Core API. An array of [CertificateInfo](./models.md#certificateinfo) to represent the certificates is provided in the **body** of the response in JSON format.
 
-## Example Response Body
+### Example Response Body
 
 ```
 [

@@ -8,7 +8,7 @@ nav_order: 7
 # Certificate Get
 **V6.0.10**
 
-The **Certificate Get API** get a SSL/TLS certificate from a [finalized order](./order-finalize.md).
+The **Certificate Get API** gets a SSL/TLS certificate from a [finalized order](./order-finalize.md).
 
 # Authorization
 
@@ -63,7 +63,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLC..Vrulj8Xabubg
 
 This represents success in making an authorized request to the RCL Core API. A [Certificate](./models.md#certificate) entity to represent the certificate is provided in the **body** of the response in JSON format.
 
-## Example Response Body
+### Example Response Body
 
 ```
 {

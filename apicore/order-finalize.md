@@ -8,7 +8,7 @@ nav_order: 6
 # Order Finalize
 **V6.0.10**
 
-The **Order Finalize API** create a SSL/TLS certificate after a certificate order has been [validated](./order-validate.md).
+The **Order Finalize API** creates a SSL/TLS certificate after a certificate order has been [validated](./order-validate.md).
 
 # Authorization
 
