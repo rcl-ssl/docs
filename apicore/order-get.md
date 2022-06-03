@@ -5,7 +5,7 @@ parent: RCL Core API
 nav_order: 4
 ---
 
-# Order Create 
+# Order Get
 **V6.0.10**
 
 The **Order Get API** will get an order for a SSL/TLS certificate by the Order URI.

@@ -5,7 +5,7 @@ parent: RCL Core API
 nav_order: 8
 ---
 
-# Certificate Get
+# Certificate Get All
 **V6.0.10**
 
 The **Certificate Get All API** gets all SSL/TLS certificates in a subscription.
