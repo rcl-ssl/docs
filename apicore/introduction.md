@@ -8,7 +8,7 @@ nav_order: 1
 # Introduction
 **V6.0.10**
 
-The **RCL COre API** provides REST API services to:
+The **RCL Core API** provides REST API services to:
 
 - Create SSL/TLS certificates
 - Get SSL/TLS certificates that were created 
@@ -21,21 +21,21 @@ Developers can use the APIs to build custom applications to create SSL/TLS certi
 
 Start using the RCL Core API in these simple steps :
 
-- [Obtain an Access Token](./authorization.md) to make authorized requests to the API
+- Step 1: [Obtain an Access Token](./authorization.md) to make authorized requests to the API
 
-- [Create a Certificate Order](./order-create.md) for a SSL/TLS certificate
+- Step 2: [Create a Certificate Order](./order-create.md) for a SSL/TLS certificate
 
-- [Get a Certificate Order](./order-get.md) for a SSL/TLS certificate
+- Step 3: [Get a Certificate Order](./order-get.md) for a SSL/TLS certificate
 
-- [Validate a Certificate Order](./order-validate.md) for a SSL/TLS certificate
+- Step 4: [Validate a Certificate Order](./order-validate.md) for a SSL/TLS certificate
 
-- [Finalize a Certificate Order](./order-finalize.md) for a SSL/TLS certificate
+- Step 5: [Finalize a Certificate Order](./order-finalize.md) for a SSL/TLS certificate
 
-- [Get a Certificate](./certificate-get.md)
+- Step 6: [Get a Certificate](./certificate-get.md)
 
-- [Get all Certificates](./certificate-get-all.md) in a subscription
+- Step 7: [Get all Certificates](./certificate-get-all.md) in a subscription
 
-- [Delete a Certificate](./certificcate-delete.md)
+- Step 8: [Delete a Certificate](./certificcate-delete.md)
 
 ## Rate Limits
 
