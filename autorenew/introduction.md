@@ -28,6 +28,6 @@ The function app will run once a week and automatically update certificates that
 
 Follow these steps to use the RCL AutoRenew Function :
 
-- [Install the Function App in an Azure Account](./installation)
-- [Configure the Function App](./configure)
-- [Manually Test the Function App](./test)
+- Step 1: [Install the Function App in an Azure Account](./installation)
+- Step 2: [Configure the Function App](./configure)
+- Step 3: [Manually Test the Function App](./test)
