@@ -10,9 +10,9 @@ nav_order: 2
 
 Steps in acquiring an access token :
 
-- Register an AAD Application in the Azure portal
-- Register the AAD Application's Client Id in the **RCL Portal**
-- Make a POST request to the AAD Application-specific token endpoint to obtain a token
+- Step 1: Register an AAD Application in the Azure portal
+- Step 2: Register the AAD Application's Client Id in the **RCL Portal**
+- Step 3: Make a POST request to the AAD Application-specific token endpoint to obtain a token
 
 ## Registering an AAD Application
 
