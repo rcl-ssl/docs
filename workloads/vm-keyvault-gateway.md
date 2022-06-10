@@ -36,7 +36,7 @@ Application Gateway supports TLS termination at the gateway, after which traffic
 
 - Learn about : [TLS Termination with Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/ssl-overview)
 - Learn about : [Virtual Machines with Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal)
-- After creating and installing the SSL/TLS certificate in Azure Key Vault, follow the instructions in the link below to configure TLS termination with the Key Vault certificate and Application Gateway V2 :
+- After creating and installing the SSL/TLS certificate in Azure Key Vault using the RCL portal, follow the instructions in the link below to configure TLS termination with the Key Vault certificate and Application Gateway V2 :
 
 - [Configure TLS termination with Key Vault certificates and Application Gateway V2](https://docs.microsoft.com/en-us/azure/application-gateway/configure-key-vault-portal)
 
