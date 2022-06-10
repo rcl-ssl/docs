@@ -1,11 +1,11 @@
 ---
-title: Stand Alone
+title: Stand Alone Workload for SSL/TLS
 description: The Stand Alone workload for installing and renewing SSL/TLS certificates
 parent: Workloads
 nav_order: 1
 ---
 
-# Stand Alone Workload
+# Stand Alone Workload for SSL/TLS
 **V6.0.10**
 
 The stand alone workload is applicable for the **manual creation, installation and renewal** of a SSL/TLS certificate in a web server.

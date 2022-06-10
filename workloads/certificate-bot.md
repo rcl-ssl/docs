@@ -1,11 +1,11 @@
 ---
-title: Automatic Renewal
+title: Automatic Renewal of SSL/TLS Certificate
 description: Automatically create, install and renew a SSL/TLS certificates in Web Servers
 parent: Workloads
 nav_order: 4
 ---
 
-# Automatic Renewals and Installations
+# Automatic Renewals and Installations of SSL/TLS Certificates
 
 **V6.0.10**
 

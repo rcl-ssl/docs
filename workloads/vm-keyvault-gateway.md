@@ -1,11 +1,11 @@
 ---
-title: Azure Virtual Machine with Key Vault, DNS and Application Gateway
+title: SSL/TLS for Azure Virtual Machine with Key Vault, DNS and Application Gateway
 description: Automatically create, install and renew a SSL/TLS certificates in an Azure VM using Key Vault, DNS and Application Gateway
 parent: Workloads
 nav_order: 2
 ---
 
-# Azure Virtual Machine with Key Vault, DNS and Application Gateway
+# SSL/TLS for Azure Virtual Machine with Key Vault, DNS and Application Gateway
 
 **V6.0.10**
 

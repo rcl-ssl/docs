@@ -1,11 +1,11 @@
 ---
-title: Azure Kubernetes Service with Key Vault and akv2k8s
+title: SSL/TL for Azure Kubernetes Service with Key Vault and akv2k8s
 description: Automatically create, install and renew a SSL/TLS certificates in an Azure Kubernetes Service
 parent: Workloads
 nav_order: 6
 ---
 
-# Azure Kubernetes Service (AKS) with Key Vault and akv2k8s
+# SSL/TLS for Azure Kubernetes Service (AKS) with Key Vault and akv2k8s
 
 **V6.0.10**
 

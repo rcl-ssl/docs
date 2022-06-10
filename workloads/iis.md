@@ -1,11 +1,11 @@
 ---
-title: IIS
+title: SSL/TLS for IIS
 description: Automatically create, install and renew a SSL/TLS certificates in IIS Web Server
 parent: Workloads
 nav_order: 5
 ---
 
-# Automatic Renewals and Installations in IIS
+# SSL/TLS for IIS
 
 **V6.0.10**
 

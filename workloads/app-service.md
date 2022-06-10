@@ -1,11 +1,11 @@
 ---
-title: App Service
+title: SSL/TLS for App Service
 description: Automatically create, install and renew a SSL/TLS certificates in an Azure App Service
 parent: Workloads
 nav_order: 3
 ---
 
-# Azure App Service
+# SSL/TLS for Azure App Service
 
 **V6.0.10**
 
