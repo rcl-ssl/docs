@@ -26,7 +26,14 @@ SAN certificates only allow a single apex domain. For instance the two different
 
 In the RCL Portal, you can create Stand Alone SAN SSL/TLS certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
 
-You will need to manually download and install the certificate in your web server.
+You will need to manually download and install the certificate in your web server. The following web servers are supported :
+
+- Apache
+- Apache Tomcat
+- NGINX
+- IIS
+- cPanel, Plesk, etc
+- Any hosting system that supports upload of SSL/TLS certificates
 
 ![image](../images/portal/flow-manual.png)
 
