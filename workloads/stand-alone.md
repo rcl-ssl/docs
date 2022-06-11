@@ -1,6 +1,6 @@
 ---
 title: Stand Alone Workload for SSL/TLS
-description: The Stand Alone workload for installing and renewing SSL/TLS certificates
+description: Using RCL to install SSL/TLS certificates
 parent: Workloads
 nav_order: 1
 ---

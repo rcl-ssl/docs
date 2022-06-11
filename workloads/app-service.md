@@ -1,6 +1,6 @@
 ---
-title: SSL/TLS for App Service
-description: Automatically create, install and renew a SSL/TLS certificates in an Azure App Service
+title: App Service
+description: Using RCL to automatically create, install and renew a SSL/TLS certificates in an Azure App Service
 parent: Workloads
 nav_order: 3
 ---

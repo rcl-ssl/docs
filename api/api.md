@@ -1,6 +1,6 @@
 ---
 title: RCL Renewal API
-description: Using the RCL API to get and renew certificates created in the RCL portal
+description: Using the RCL Renewal API to get and renew certificates created in the RCL portal
 has_children: true
 nav_order: 6
 ---

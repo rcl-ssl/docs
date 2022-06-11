@@ -1,6 +1,6 @@
 ---
-title: API Models
-description: The models for the RCL Public API
+title: RCL Renewal API Models
+description: The models for the RCL Renewal API
 parent: RCL Renewal API
 nav_order: 100
 ---

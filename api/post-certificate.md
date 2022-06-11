@@ -1,6 +1,6 @@
 ---
 title: POST Certificate 
-description: RCL Public API - POST Certificate 
+description: RCL Renewal API - POST Certificate 
 parent: RCL Renewal API
 nav_order: 4
 ---

@@ -1,6 +1,6 @@
 ---
 title: API Authorization
-description: Obtaining authorization tokens for the RCL API
+description: Obtaining authorization tokens for the RCL Renewal API
 parent: RCL Renewal API
 nav_order: 2
 ---

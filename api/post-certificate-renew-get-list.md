@@ -1,6 +1,6 @@
 ---
 title: POST Certificate Renew Get List
-description: RCL Public API - POST Certificate Renew Get List
+description: RCL Renewal API - POST Certificate Renew Get List
 parent: RCL Renewal API
 nav_order: 5
 ---

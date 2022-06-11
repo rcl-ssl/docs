@@ -1,6 +1,6 @@
 ---
-title: SSL/TL for Azure Kubernetes Service with Key Vault and akv2k8s
-description: Automatically create, install and renew a SSL/TLS certificates in an Azure Kubernetes Service
+title: Azure Kubernetes Service with Key Vault and akv2k8s
+description: Using RCL to automatically create, install and renew a SSL/TLS certificates in an Azure Kubernetes Service
 parent: Workloads
 nav_order: 6
 ---

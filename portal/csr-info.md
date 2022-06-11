@@ -6,6 +6,7 @@ nav_order: 1
 ---
 
 # Certificate Signing Request (CSR) Info
+**V6.0.10**
 
 The Certificate Signing Request (CSR) provides information about the holder of the certificate. To add the CSR info, follow these steps :
 
