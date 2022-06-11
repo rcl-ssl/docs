@@ -43,7 +43,7 @@ The RCL portal is a simple-to-use online Web UI and allows you to :
 
 ## RCL CertificateBot
 
-The [RCL CertificateBot](../certbot/certbot) runs as a [Windows Service](../certbot/windows-service) in a Windows Server and a [Linux Daemon](../certbot/linux-daemon) in a Linux Server. The primary purpose of CertificateBot is to automatically renew SSL/TLS certificates created in the RCL portal and save them to a folder in the server (Virtual Machine). The web server must be configured to use the certificates files from the folder. In this way, the [Installation and Renewal](../installations/installations) of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated. 
+The [RCL CertificateBot](../certbot/certbot) runs as a [Windows Service](../certbot/windows-service) in a Windows Server and a [Linux Daemon](../certbot/linux-daemon) in a Linux Server. The primary purpose of CertificateBot is to automatically renew SSL/TLS certificates created in the RCL portal and save them to a folder in the server (Virtual Machine). The web server must be configured to use the certificates files from the folder. In this way, the [Installation and Renewal](../installations/installations) of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated. CertificateBot is an open-source project and is available on [GitHub](https://github.com/rcl-ssl/RCL.CertificateBot).
 
 ## RCL CertificateBot for IIS
 
@@ -51,7 +51,7 @@ CertificateBot also provides [Special Support for IIS](../certbot/iis), it allow
 
 ## RCL AutoRenew Function
 
-The [RCL AutoRenew](/autorenew/autorenew) function is an Azure Function app that runs in a [Consumption Plan](https://docs.microsoft.com/en-us/azure/azure-functions/consumption-plan). The primary purpose of the AutoRenew Function is to automate the renewal and installation of certificates created in the RCL portal for an **Azure App Service** or **Azure Key Vault**. The AutoRenew function is an open-source project and can be directly deployed to a user's Azure Account from the [GitHub](https://github.com/rcl-ssl/RCL.AutoRenew.Function) project page.
+The [RCL AutoRenew](/autorenew/autorenew) function is an Azure Function app that runs in a [Consumption Plan](https://docs.microsoft.com/en-us/azure/azure-functions/consumption-plan). The primary purpose of the AutoRenew Function is to automate the renewal and installation of certificates created in the RCL portal for an **Azure App Service** , **Azure Key Vault** or **Azure DNS**. The AutoRenew function is an open-source project and can be directly deployed to a user's Azure Account from the [GitHub](https://github.com/rcl-ssl/RCL.AutoRenew.Function) project page.
 
 # REST API 
 
@@ -59,15 +59,15 @@ The [RCL AutoRenew](/autorenew/autorenew) function is an Azure Function app that
 
 The [RCL Renewal API](../api/api) is a REST API service to get and renew SSL/TLS certificates created in the [RCL Portal](./portal/portal.md). It is primarily focused on automating the renewal of certificates. It applies to certificates created with the following options :
 
-- Azure DNS (Including SAN)
-- Azure DNS + Key Vault (Including SAN)
-- Azure App Service
+- [Azure DNS](./portal/azure-dns.md) (Including [SAN](./portal/azure-dns-san.md))
+- [Azure DNS + Key Vault](./portal/azure-keyvault.md) (Including [SAN](./portal/azure-keyvault-san.md))
+- [Azure App Service](./portal/azure-appservice.md)
 
 You can use the API to create your own applications to automate the installation and renewal of SSL/TLS certificates created in the RCL Portal.
 
 ## RCL Core API
 
-The [RCL Core API](//apicore/apicore.md) is used to create and get SSL/TLS certificates. The RCL Core API uses the [Let's Encrypt V2 API](https://letsencrypt.org/) to create SSL/TLS certificates. 
+The [RCL Core API](./apicore/apicore.md) is used to create and get SSL/TLS certificates. The RCL Core API uses the [Let's Encrypt V2 API](https://letsencrypt.org/) to create SSL/TLS certificates. 
 
 The RCL Core API seeks to simplify the use of the Let's Encrypt API by introducing a wrapper REST API for Lets's Encrypt that is easily understandable by users.
 
