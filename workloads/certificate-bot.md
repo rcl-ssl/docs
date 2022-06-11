@@ -1,5 +1,5 @@
 ---
-title: Automatic Renewal of SSL/TLS Certificate
+title: Automatic Renewal
 description: Using RCL to automatically create, install and renew a SSL/TLS certificates in Web Servers
 parent: Workloads
 nav_order: 4
