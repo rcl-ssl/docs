@@ -74,6 +74,8 @@ If you do not have an Azure Key Vault, follow the steps in this link to create o
 
 You must have security access to the Azure Key Vault certificate operations.
 
+**If you do not set the access policy for Key Vault, you will experience 'Access Denied' or 'Forbidden' errors when you try to create a certificate.**
+
 This is required to import the SSL/TLS certificate in a Key Vault in your Azure account. If you have not yet created an access policy for your certificates, then follow these steps.
 
 - In your Azure Key Vault, click on the ‘Access policies’ link. Then click on ‘Add Access Policy’.
