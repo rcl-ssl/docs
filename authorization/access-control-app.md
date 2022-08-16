@@ -8,9 +8,9 @@ nav_order: 5
 ## Set Access Control for the AAD application
 **V6.0.10**
 
-A user will need to provide **Access Control** to the [AAD Application](./aad-application) for it to manage the user's Azure Services (App Services, DNS Zone and Key Vault).
+A user will need to provide **Access Control** to the [AAD Application](./aad-application) for it to manage the user's Azure Services (Key Vault, DNS Zone and App Services).
 
-- Go to **Azure subscriptions**, and open the subscription that contains your Azure App Services, DNS Zone, Key Vault
+- Go to **Azure subscriptions**, and open the subscription that contains your Azure Key Vault, DNS Zone, App Services
 
 - In the subscription, click on 'Access control (IAM)' and add a new **role assignment**
 
@@ -70,6 +70,5 @@ If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will ne
 ## Related Articles
 
 - [AutoRenew Function](../autorenew/autorenew.md)
-autorenew.md)
 - [CertificateBot](../certbot/certbot.md)
 

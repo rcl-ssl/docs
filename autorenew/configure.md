@@ -12,7 +12,7 @@ In this section, you will configure the [RCL AutoRenew Function](../autorenew/au
 
 ## Register an AAD Application
 
-An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources (App Service, DNS Zone, Key Vault). Please refer to the following link for instructions on how to register the AAD application:
+An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources (Key Vault, DNS Zone, App Services). Please refer to the following link for instructions on how to register the AAD application:
 
 - [Registering an AAD Application](../authorization/aad-application)
 

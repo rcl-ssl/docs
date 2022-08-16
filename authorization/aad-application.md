@@ -10,9 +10,10 @@ nav_order: 4
 
 **Authorization** is required for the following operations :
 
-- to make authorized requests to the [RCL Renewal API](../api/api.md)
+- to access Azure Key Vault, DNS Zone and App Service
 - to use the [RCL AutoRenew](../autorenew/autorenew) Function app
-- to access Azure App Services , Key Vault and DNS Zone
+- to make authorized requests to the [RCL Renewal API](../api/api.md)
+- to use the [RCL Renewal SDK](../sdk/sdk.md)
 - to use the [RCL certificateBot](../certbot/certbot.md)
 
  This authorization will be granted through an **AAD Application**.
@@ -32,9 +33,9 @@ nav_order: 4
 In this section, the following credentials will be obtained from the AAD application :
 
     - Client ID (Application ID)
-    - Client Secret
     - Tenant ID (Directory ID)
-   
+    - Client Secret
+    
 
 - In the Active Directory, open the application that was registered
 
@@ -42,13 +43,13 @@ In this section, the following credentials will be obtained from the AAD applica
 
 ![install](../images/authorization_aad_app/aad_app.PNG)
 
-- In the 'Certificates & secrets', create a new client secret. You must remember to change the client secret when it expires. It is recommended that you use the maximum expiry period for the secret.
+- In the 'Certificates & secrets', create a new client secret. You must remember to change the client secret when it expires. It is recommended that you use the maximum expiry period (24 months) for the secret.
 
 ![install](../images/authorization_aad_app/aad_app2.PNG)
 
 ![install](../images/authorization_aad_app/aad_app3.PNG)
 
-- Copy the Client Secret **Value** for configuration purposes [Auth:client_secret] 
+- Copy the Client Secret **Value** [Auth:client_secret] for configuration purposes  
 
 ![install](../images/authorization_aad_app/aad_app4.PNG)
 

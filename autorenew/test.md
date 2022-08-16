@@ -10,8 +10,6 @@ nav_order: 4
 
 In this section, you will learn how to test the RCL AutoRenew function. 
 
-This test is limited to connectivity of the APIs. User's must ensure that [Access Control](../authorization/access-control-app.md) is properly set for the [AAD Application](../authorization/aad-application.md) or the certificates renewals may fail, even though this connectivity test passes. 
-
 - In the Azure portal, open the function app and open the 'Functions'
 
 - Then, open the 'Certificate-Test' function
@@ -35,6 +33,17 @@ This test is limited to connectivity of the APIs. User's must ensure that [Acces
 ![install](../images/autorenew_test/func4.png)
 
 - Please ensure that there are no errors in the log. If there are errors, the function is misconfigured and certificate renewal will fail.
+
+## Failed Connectivity
+TODO
+
+## Failed Authorization
+TODO
+
+## Failed Access Control
+TODO
+
+## Notes
 
 **Note: The 'Certificate-Renew-Automatic' function will automatically run on a weekly basis and automatically renew certificates that are about to expire. There is no need to manually run the function apart from manual testing**
 
