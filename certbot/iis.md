@@ -23,7 +23,7 @@ You can use RCL CertificateBot to automatically renew SSL/TLS certificates creat
 # Install RCL CertificateBot for IIS
 ## Download the Files
 
-- The Windows Service files (``certificatebot-iis-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.CertificateBot/releases/tag/V6.0.10) section:
+- The Windows Service files (``certificatebot-iis-win-xx``) are available in the [GitHub Project](https://github.com/icloudinfinity/ICI.SSL.CertificateBot) page in the [Releases](https://github.com/icloudinfinity/ICI.SSL.CertificateBot/releases) section:
 
 - Download the zip file with bitness :
 
