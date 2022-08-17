@@ -2,7 +2,7 @@
 title: Configure the Function
 description: Configuring the RCL AutoRenew Function
 parent: RCL AutoRenew Function
-nav_order: 3
+nav_order: 2
 ---
 
 # Configure the RCL AutoRenew Function App
