@@ -10,7 +10,7 @@ nav_order: 3
 
 In this section, you will learn how to test the RCL AutoRenew function. 
 
-- In the Azure portal, open the function app and open the 'Functions'
+- In the Azure portal, open the function app and click the 'Functions' link
 
 - Then, open the 'Certificate-Test' function
 
@@ -89,19 +89,19 @@ This may indicate the you have not set the Access Control for the AAD Applicatio
 
 - Get the **function Url**
 
-![install](../images/autorenew_test/certificate-renew.PNG)
+![install](../images/autorenew_test/certificate-renew.png)
 
 
 - Paste the function url in a browser
 
-![install](../images/autorenew_test/certificate-renew-2.PNG)
+![install](../images/autorenew_test/certificate-renew-2.png)
 
 - You should see the output of the function in the logs window similar to the one shown below.
 
 ![install](../images/autorenew_test/certificate-renew-3.png)
 
 
-**Note: The 'Certificate-Renew-Automatic' function will automatically run on a weekly basis and automatically renew certificates that are about to expire. There is no need to manually run the function apart from manual testing**
+**Note: The 'Certificate-Renew-Automatic' function will automatically run on a weekly basis and automatically renew certificates that are about to expire. There is no need to manually run the 'Certificate-Renew-Manual' function apart from manual testing**
 
 ## Related Articles
 
