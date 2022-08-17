@@ -20,6 +20,4 @@ You can use the function app to automatically renew SSL/TLS certificates created
 
 **'Stand Alone' certificates are not supported by the AutoRenew function.**
 
-The RCL AutoRenew Function is ideally suited for renewal of certificates for **Key Vault** and **Azure App Services**. 
-
 The function app will run once a week and automatically update certificates that are about to expire.
