@@ -1,11 +1,11 @@
 ---
-title: Automatic Renewal
+title: Automatic Renewal with CertificateBot
 description: Using RCL to automatically create, install and renew a SSL/TLS certificates in Web Servers
 parent: Workloads
-nav_order: 4
+nav_order: 6
 ---
 
-# Automatic Renewals and Installations of SSL/TLS Certificates
+# Automatic Renewals with CertificateBot
 
 **V6.0.10**
 

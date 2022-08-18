@@ -1,14 +1,14 @@
 ---
-title: Stand Alone 
+title: Web Servers and Hosting Systems 
 description: Using RCL to install SSL/TLS certificates
 parent: Workloads
 nav_order: 1
 ---
 
-# Stand Alone Workload for SSL/TLS
+# SSL/TLS for Web Servers and Hosting Systems 
 **V6.0.10**
 
-The stand alone workload is applicable for the **manual creation, installation and renewal** of a SSL/TLS certificate in a web server.
+This workload is applicable for the **manual creation, installation and renewal** of a SSL/TLS certificate in a web server.
 
 The web servers may include : 
 
