@@ -84,7 +84,7 @@ This access policy is required to import the SSL/TLS certificate in a Key Vault 
 
 - Select all the permissions for the ‘Certificate permissions’ (select all 16). Ensure you include the **purge** permission.
 
-- Select a service principal : search for the Azure Active Directory organizational account that you use to login to the RCL
+- Select a service principal : search for the Azure Active Directory organizational account that you use to login to the RCL portal
 
 - Click the ‘Select’ button
 
