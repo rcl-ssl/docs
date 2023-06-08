@@ -1,28 +1,28 @@
 ---
 title: Linux Daemon
-description: RCL CertificateBot Linux Daemon for automatic SSL/TLS certificate installation and renewal in a Linux server 
-parent: RCL CertificateBot
+description: RCL SSL CertificateBot Linux Daemon for automatic SSL/TLS certificate installation and renewal in a Linux server 
+parent: RCL SSL CertificateBot
 nav_order: 2
 ---
 
-# RCL CertificateBot for Linux
-**V6.0.10**
+# RCL SSL CertificateBot for Linux
+**V7.0.0**
 
-RCL CertificateBot runs as a **Daemon** in a Linux Server. The daemon will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL Portal** to a Linux hosting machine.
+RCL SSL CertificateBot runs as a **Daemon** in a Linux Server. The daemon will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to a Linux hosting machine.
 
-## Automatically Renew TLS/SSL Certificates
+## Automatically Renew SSL/TLS Certificates
 
-You can use RCL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL Portal** using the the following creation options :
+You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
 - Azure DNS (including SAN) - **Recommended**
 
-**'Stand Alone' certificates are not supported by RCL CertificateBot.**
+**'Stand Alone' certificates are not supported by RCL SSL CertificateBot.**
 
-# Installing RCL CertificateBot
+# Installing RCL SSL CertificateBot
 
 ## Download and Extract the Daemon Files to the Linux Server
 
-In this section, you will download the files from the RCL CertificateBot [GitHub Project Page](https://github.com/rcl-ssl/RCL.CertificateBot) in the [Releases](https://github.com/rcl-ssl/RCL.CertificateBot/releases) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
+In this section, you will download the files from the RCL SSL CertificateBot [GitHub Project Page](https://github.com/rcl-ssl/RCL.CertificateBot) in the [Releases](https://github.com/rcl-ssl/RCL.CertificateBot/releases) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
 
 - In your Linux server, navigate to the ``/usr/sbin`` folder
 
@@ -72,7 +72,7 @@ follow the instructions in this link :
 
 ## Get the SubscriptionId
 
-Get the **Subscription Id** in the RCL Portal.
+Get the **Subscription Id** in the RCL SSL Portal.
 
 ![install](../images/autorenew_configure/add_subscriptionid.png)
 
@@ -80,13 +80,13 @@ Get the **Subscription Id** in the RCL Portal.
 
 ![install](../images/autorenew_configure/add_subscriptionid2.png)
 
-## Register the AAD Application's ``Client Id`` in the RCL Portal
+## Register the AAD Application's ``Client Id`` in the RCL SSL Portal
 
-The AAD Application must be associated with a user's RCL subscription. This is achieved by registering the AAD Application's ``Client Id`` in the **RCL Portal**.
+The AAD Application must be associated with a user's RCL SSL subscription. This is achieved by registering the AAD Application's ``Client Id`` in the **RCL SSL Portal**.
 
 To add the AAD Application's ``Client Id`` to the portal, please follow the instructions in this link :
 
-- [Add the Client Id in the RCL Portal](../api/authorization#add-the-client-id-in-the-rcl-portal)
+- [Add the Client Id in the RCL SSL Portal](../api/authorization#add-the-client-id-in-the-rcl-portal)
 
 
 ## Add the Configuration variables
@@ -153,7 +153,7 @@ Example
   },
   "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/public",
-    "SourceApplication": "RCL CertificateBot Linux",
+    "SourceApplication": "RCL SSL CertificateBot Linux",
     "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
     "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
     "TenantId": "22cd4a8c-bc2c-3618-b1c3-4610c1b9b3e8",
@@ -272,7 +272,7 @@ Reload and restart the daemon after you make changes and check if the errors wer
 
 # Installing Certificates in Web Servers
 
-RCL CertificateBot will automatically save renewed SSL/TLS certificate files to a folder in the server. You should then configure the web server to use these files to implement SSL/TLS in your website.
+RCL SSL CertificateBot will automatically save renewed SSL/TLS certificate files to a folder in the server. You should then configure the web server to use these files to implement SSL/TLS in your website.
 
 ## Certificate Files
 

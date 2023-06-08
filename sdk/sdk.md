@@ -5,7 +5,7 @@ has_children: false
 nav_order: 9
 ---
 
-# RCL Renewal SDK
+# RCL SSL SDK
 ![Nuget](https://img.shields.io/nuget/v/RCL.SSL.SDK)
 
 The [RCL SSL SDK](https://github.com/rcl-ssl/RCL.SDK) provides a C# .NET Core library to make authorized requests to the [RCL SSL API](../api/api.md). The SDK can be used to renew certificates created in th [RCL SSL Portal](../portal/portal.md). In this section, you will learn how to use the SDK.

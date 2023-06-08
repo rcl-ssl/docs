@@ -1,24 +1,24 @@
 ---
 title: Windows Service
-description: RCL CertificateBot Windows Service for automatic SSL/TLS certificate installation and renewal in a Windows server 
-parent: RCL CertificateBot
+description: RCL SSL CertificateBot Windows Service for automatic SSL/TLS certificate installation and renewal in a Windows server 
+parent: RCL SSL CertificateBot
 nav_order: 3
 ---
 
 # RCL CertificateBot for Windows
-**V6.0.10**
+**V7.0.0**
 
-RCL CertificateBot runs as a **Windows Service** in a Windows Server. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL Portal** to a Windows hosting machine.
+RCL SSL CertificateBot runs as a **Windows Service** in a Windows Server. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to a Windows hosting machine.
 
 ## Automatically Renew SSL/TLS Certificates
 
-You can use RCL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL Portal** using the the following creation options :
+You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
 - Azure DNS (including SAN) - **Recommended**
 
-**'Stand Alone' certificates are not supported by RCL CertificateBot.**
+**'Stand Alone' certificates are not supported by RCL SSL CertificateBot.**
 
-# Install RCL CertificateBot
+# Install RCL SSL CertificateBot
 ## Download the Files
 
 - The Windows Service files (``certificatebot-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.CertificateBot/releases/tag/V6.0.10) section:
@@ -71,13 +71,13 @@ Get the **Subscription Id** in the RCL Portal.
 
 ![install](../images/autorenew_configure/add_subscriptionid2.png)
 
-### Register the AAD Application's ``Client Id`` in the RCL Portal
+### Register the AAD Application's ``Client Id`` in the RCL SSL Portal
 
-The AAD Application must be associated with a user's RCL subscription. This is achieved by registering the AAD Application's ``Client Id`` in the **RCL Portal**.
+The AAD Application must be associated with a user's RCL SSL subscription. This is achieved by registering the AAD Application's ``Client Id`` in the **RCL SSL Portal**.
 
 To add the AAD Application's ``Client Id`` to the portal, please follow the instructions in this link :
 
-- [Add the Client Id in the RCL Portal](../api/authorization#add-the-client-id-in-the-rcl-portal)
+- [Add the Client Id in the RCL SSL Portal](../api/authorization#add-the-client-id-in-the-rcl-portal)
 
 
 ### Add the Configuration variables
@@ -135,7 +135,7 @@ Example
   },
   "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/public",
-    "SourceApplication": "RCL CertificateBot Windows",
+    "SourceApplication": "RCL SSL CertificateBot Windows",
     "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
     "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
     "TenantId": "22cd4a8c-bc2c-3618-b1c3-4610c1b9b3e8",
@@ -173,7 +173,7 @@ sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.Windows.exe
 
 # View the Event Logs
 
-- Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.CertificateBot.Windows`` events
+- Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.SSL.CertificateBot.Windows`` events
 
 ![image](../images/certbot/winservice-events.PNG)
 
@@ -187,7 +187,7 @@ If you encounter error events for the service in the Event Viewer, please stop t
 
 Ensure the 'appsettings' configuration is correct for the AAD Application and the certificate save path settings point to a folder that exists. 
 
-Fix any other errors that are reported Then, re-install and restart the service.
+Fix any other errors that are reported then, re-install and restart the service.
 
 # Deleting the Windows Service
 
@@ -199,7 +199,7 @@ sc.exe delete CertificateBot
 
 # Installing Certificates in Web Servers
 
-RCL CertificateBot will automatically save renewed SSL/TLS certificate files to a folder in the server. You should then configure the web server to use these files to implement SSL/TLS in your website.
+RCL SSL CertificateBot will automatically save renewed SSL/TLS certificate files to a folder in the server. You should then configure the web server to use these files to implement SSL/TLS in your website.
 
 ## Certificate Files
 

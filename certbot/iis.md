@@ -1,26 +1,26 @@
 ---
 title: IIS
-description: RCL CertificateBot Windows Service for automatic SSL/TLS certificate installation and renewal in IIS
-parent: RCL CertificateBot
+description: RCL SSL CertificateBot Windows Service for automatic SSL/TLS certificate installation and renewal in IIS
+parent: RCL SSL CertificateBot
 nav_order: 4
 ---
 
-# RCL CertificateBot for IIS
-**V6.0.10**
+# RCL SSL CertificateBot for IIS
+**V7.0.0**
 
-RCL CertificateBot runs as a **Windows Service** in a Windows Server. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL Portal** to a Windows hosting machine.
+RCL SSL CertificateBot runs as a **Windows Service** in a Windows Server. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to a Windows hosting machine.
 
 Certificates will be automatically saved to the ``Local Machine`` certificate store in the  ``Trusted People`` folder. Certificates will also be automatically bound to the **IIS Web Server** on the hosting machine.
 
 ## Automatically Renew SSL/TLS Certificates
 
-You can use RCL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL Portal** using the the following creation options :
+You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
 - Azure DNS (including SAN) - **Recommended**
 
-**'Stand Alone' certificates are not supported by RCL CertificateBot.**
+**'Stand Alone' certificates are not supported by RCL SSL CertificateBot.**
 
-# Install RCL CertificateBot for IIS
+# Install RCL SSL CertificateBot for IIS
 ## Download the Files
 
 - The Windows Service files (``certificatebot-iis-win-xx``) are available in the [GitHub Project](https://github.com/icloudinfinity/ICI.SSL.CertificateBot) page in the [Releases](https://github.com/icloudinfinity/ICI.SSL.CertificateBot/releases) section:
@@ -65,7 +65,7 @@ follow the instructions in this link :
 
 ### Get the SubscriptionId
 
-Get the **Subscription Id** in the RCL Portal.
+Get the **Subscription Id** in the RCL SSL Portal.
 
 ![install](../images/autorenew_configure/add_subscriptionid.png)
 
@@ -73,13 +73,13 @@ Get the **Subscription Id** in the RCL Portal.
 
 ![install](../images/autorenew_configure/add_subscriptionid2.png)
 
-### Register the AAD Application's ``Client Id`` in the RCL Portal
+### Register the AAD Application's ``Client Id`` in the RCL SSL Portal
 
-The AAD Application must be associated with a user's RCL subscription. This is achieved by registering the AAD Application's ``Client Id`` in the **RCL Portal**.
+The AAD Application must be associated with a user's RCL SSL subscription. This is achieved by registering the AAD Application's ``Client Id`` in the **RCL SSL Portal**.
 
 To add the AAD Application's ``Client Id`` to the portal, please follow the instructions in this link :
 
-- [Add the Client Id in the RCL Portal](../api/authorization#add-the-client-id-in-the-rcl-portal)
+- [Add the Client Id in the RCL SSL Portal](../api/authorization#add-the-client-id-in-the-rcl-portal)
 
 ### Add the Configuration variables
 
@@ -126,7 +126,7 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 - ip - this is the IP address of the IIS website (you can use any (``*``))
 - port - the is the port number of the IIS website (you can use ``443``)
 - host - the the host name assigned to the IIS website
-- certificateName - this is the name of the certificate in the RCL Portal to be installed in the IIS website
+- certificateName - this is the name of the certificate in the RCL SSL Portal to be installed in the IIS website
 
 ![install](../images/certbot/iis.PNG)
 
@@ -149,7 +149,7 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
   },
   "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/public",
-    "SourceApplication": "RCL CertificateBot IIS",
+    "SourceApplication": "RCL SSL CertificateBot IIS",
     "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
     "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
     "TenantId": "22cd4a8c-bc2c-3618-b1c3-4610c1b9b3e8",
@@ -199,7 +199,7 @@ sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.IIS.exe
 
 # View the Event Logs
 
-- Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.CertificateBot.IIS`` events
+- Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.SSL.CertificateBot.IIS`` events
 
 ![image](../images/certbot/winservice-events.PNG)
 
