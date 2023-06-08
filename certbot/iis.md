@@ -16,7 +16,7 @@ Certificates will be automatically saved to the ``Local Machine`` certificate st
 
 You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
-- Azure DNS (including SAN) - **Recommended**
+- [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) - **Recommended**
 
 **'Stand Alone' certificates are not supported by RCL SSL CertificateBot.**
 
@@ -97,7 +97,7 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 - **Note : when setting the folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl``**
 
-- Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
+- Create the folder in the hosting machine and ensure it has read/write permissions so that the certificates can be saved to it. 
 
 - Configure the site bindings for each website that you want to bind a SSL/TLS certificate. You can have a single or multiple bindings.
 
@@ -122,13 +122,29 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 ]
 ```
 
-- siteName - this the the site name of the IIS website
-- ip - this is the IP address of the IIS website (you can use any (``*``))
-- port - the is the port number of the IIS website (you can use ``443``)
-- host - the the host name assigned to the IIS website
+- Example of a single binding :
+
+```
+"IISBindings": [
+  {
+    "ip": "*",
+    "port": "443",
+    "siteName": "Home",
+    "host": "shopneur.com",
+    "certificateName": "shopeneur.com,*.shopeneur.com"
+  }
+]
+```
+
+- siteName - this is the **Site** name of the IIS website
+- ip - this is the **IP Address** of the IIS website (you can use any (``*``))
+- port - the is the **Port** number of the IIS website (you can use ``443``)
+- host - the the **Host Name** assigned to the IIS website
 - certificateName - this is the name of the certificate in the RCL SSL Portal to be installed in the IIS website
 
 ![install](../images/certbot/iis.PNG)
+
+The image above illustrates a site hosted in IIS named 'Home' with multiple bindings. The site is bound to a naked apex domain, 'shopeneur.com', and a sub-domain 'www.shopeneur.com'. The website can be accessed publicly on the web with either of these domains. The site uses the same multi-domain [SAN](../portal/azure-dns-san.md) certificate named : 'shopeneur.com,*.shopeneur.com' to provide SSL/TLS for both the domains.
 
 ## Example of a configured **appsettings.json** file
 
@@ -181,12 +197,12 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 # Create the Windows Service
 
-- Open a **Command Prompt** in the Windows server as an **Administrator**
+- Open a **Command Prompt** in the Windows hosting machine as an **Administrator**
 
 - Run the following command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service zip files were extracted
 
 ```
-sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.IIS.exe
+sc.exe create CertificateBot binpath= <file-path>\RCL.SSL.CertificateBot.IIS.exe
 ```
 
 - After the service in installed, open **Services** in Windows, look for the ``CertificateBot`` service and **Start** the service
@@ -219,8 +235,8 @@ Fix any other errors that are reported Then, re-install and restart the service.
 
 # Deleting the Windows Service
 
-If you need to remove the Windows Service for any reason, run the command to delete the service
+If you need to remove the Windows Service for any reason, first stop the service, then run the command to delete the service
 
 ```
-sc.exe delete CertificateBot  
+sc.exe delete CertificateBot
 ```

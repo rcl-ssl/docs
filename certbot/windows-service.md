@@ -14,7 +14,7 @@ RCL SSL CertificateBot runs as a **Windows Service** in a Windows Server. The Wi
 
 You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
-- Azure DNS (including SAN) - **Recommended**
+- [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) - **Recommended**
 
 **'Stand Alone' certificates are not supported by RCL SSL CertificateBot.**
 

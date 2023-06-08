@@ -6,15 +6,15 @@ nav_order: 4
 ---
 
 ## Register an AAD Application
-**V6.0.10**
+**V7.0.0**
 
 **Authorization** is required for the following operations :
 
-- to access Azure Key Vault, DNS Zone and App Service
-- to use the [RCL AutoRenew](../autorenew/autorenew) Function app
-- to make authorized requests to the [RCL Renewal API](../api/api.md)
-- to use the [RCL Renewal SDK](../sdk/sdk.md)
-- to use the [RCL certificateBot](../certbot/certbot.md)
+- to access Azure Key Vault, DNS Zone and App Service in a user's Azure account
+- to use the [RCL SSL AutoRenew](../autorenew/autorenew) Function app
+- to make authorized requests to the [RCL SSL API](../api/api.md)
+- to use the [RCL SSL SDK](../sdk/sdk.md)
+- to use the [RCL SSL CertificateBot](../certbot/certbot.md)
 
  This authorization will be granted through an **AAD Application**.
 
@@ -56,5 +56,7 @@ In this section, the following credentials will be obtained from the AAD applica
 
 ## Related Articles
 - [Set Access Control for the AAD application](./access-control-app)
-- [AutoRenew Function](../autorenew/autorenew.md)
-- [CertificateBot](../certbot/certbot.md)
+- [RCL SSL AutoRenew Function](../autorenew/autorenew.md)
+- [RCL SSL CertificateBot](../certbot/certbot.md)
+- [RCL SSL API](../api/api.md)
+- [RCL SSL SDK](../sdk/sdk.md)

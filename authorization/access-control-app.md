@@ -6,7 +6,7 @@ nav_order: 5
 ---
 
 ## Set Access Control for the AAD application
-**V6.0.10**
+**V7.0.0**
 
 A user will need to provide **Access Control** to the [AAD Application](./aad-application) for it to manage the user's Azure Services (Key Vault, DNS Zone and App Services).
 
@@ -71,6 +71,9 @@ If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will ne
 
 ## Related Articles
 
-- [AutoRenew Function](../autorenew/autorenew.md)
-- [CertificateBot](../certbot/certbot.md)
+- [AAD Application](../authorization/aad-application.md)
+- [RCL SSL AutoRenew Function](../autorenew/autorenew.md)
+- [RCL SSL CertificateBot](../certbot/certbot.md)
+- [RCL SSL API](../api/api.md)
+- [RCL SSL SDK](../sdk/sdk.md)
 

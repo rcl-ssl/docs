@@ -1,18 +1,18 @@
 ---
 title: API Authorization
-description: Obtaining authorization tokens for the RCL Renewal API
-parent: RCL Renewal API
+description: Obtaining authorization tokens for the RCL SSL API
+parent: RCL SSL API
 nav_order: 2
 ---
 
 # Obtaining Access Tokens
-**V6.0.10**
+**V7.0.0**
 
 Steps in acquiring access tokens :
 
 - Step 1: Register an AAD Application
 - Step 2: Set Access Control for the AAD application to access resources in an Azure subscription
-- Step 3: Register the AAD Application's Client Id in the **RCL Portal**
+- Step 3: Register the AAD Application's Client Id in the **RCL SSL Portal**
 - Step 4: Make a POST request to the AAD Application-specific token endpoint to obtain the tokens
 
 ## Registering an AAD Application
@@ -39,11 +39,11 @@ A user must set access control for the AAD application to access resources in th
 
 - [Setting Access Control for the AAD Application](../authorization/access-control-app)
 
-## Add the Client Id in the RCL Portal
+## Add the Client Id in the RCL SSL Portal
 
-A user must add the **Client Id** in the **RCL Portal** in order to associate the AAD application with the user's RCL subscription.
+A user must add the **Client Id** in the **RCL SSL Portal** in order to associate the AAD application with the user's RCL SSL subscription.
 
-- Open the **RCL Portal**
+- Open the **RCL SSL Portal**
 
 - In the 'Subscription' section, click on 'API Client', then click the 'Register a Client Id' button
 
@@ -94,20 +94,24 @@ Content-Type: application/x-www-form-urlencoded
 grant_type=client_credentials&client_id=625bc9f6-3bf6-4b6d-94ba-e97cf07a22de&client_secret=qkDwDJlDfig2IpeuUZYKH1Wb8q1V0ju6sILxQQqhJ+s=&resource=https%3A%2F%2Fvault.azure.net
  ```
 
+ **Note : Azure Key Vault token is only required if you are saving the SSL/TLS certificate to an Azure Key Vault.**
+
 ## Service Response
 
 A success response contains a JSON response with an [AuthToken](./models.md#authtoken) in the body of the response. The Access Token can be acquired from the ``AuthToken``.
 
 ## Use the Access Tokens to Make a Request
 
-To make a request to the RCL Public API, **both access tokens** (Azure Resource Manager and Key Vault tokens) are set in the body of the request as a JSON using the [ResourceRequest](./models.md#resourcerequest) class.
+To make a request to the RCL SSL API, **both access tokens** (Azure Resource Manager and Key Vault tokens) are set in the body of the request as a JSON using the [ResourceRequest](./models.md#resourcerequest) class.
 
-The base URL for the RCL Public API is :
+ **Note : Azure Key Vault token is only required if you are saving the SSL/TLS certificate to an Azure Key Vault.**
+
+The base URL for the RCL SSL API is :
 ```
 https://rclapi.azure-api.net/public
 ```
 
-The following example illustrates how to make a **POST** request to the : ``/v1/subscription/{subscriptionid}/public/certificate/test`` API endpoint. This API tests for a valid authenticated connection to the RCL Public API.
+The following example illustrates how to make a **POST** request to the : ``/v1/subscription/{subscriptionid}/public/certificate/test`` API endpoint. This API tests for a valid authenticated connection to the RCL SSL API.
 
 Each request should include the **Subscription Id** of the subscription in the RCL Portal.
 
