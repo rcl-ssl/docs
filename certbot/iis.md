@@ -105,20 +105,11 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 ```
 "IISBindings": [
-  {
-    "ip": "*",
-    "port": "443",
-    "siteName": "Home",
-    "host": "shopneur.com",
-    "certificateName": "shopeneur.com,*.shopeneur.com"
-  },
-  {
-    "ip": "*",
-    "port": "443",
-    "siteName": "Home",
-    "host": "www.shopneur.com",
-    "certificateName": "shopeneur.com,*.shopeneur.com"
-  }
+  "siteName:Home;ip:*;port:443;host:shopneur.com;
+    certificateName:shopeneur.com,*.shopeneur.com",
+  
+  "siteName:Home;ip:*;port:443;host:www.shopneur.com;
+    certificateName:shopeneur.com,*.shopeneur.com"
 ]
 ```
 
@@ -126,13 +117,8 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 ```
 "IISBindings": [
-  {
-    "ip": "*",
-    "port": "443",
-    "siteName": "Home",
-    "host": "shopneur.com",
-    "certificateName": "shopeneur.com,*.shopeneur.com"
-  }
+  "siteName:Home;ip:*;port:443;host:shopneur.com;
+    certificateName:shopeneur.com,*.shopeneur.com"
 ]
 ```
 
@@ -174,22 +160,8 @@ The image above illustrates a site hosted in IIS named 'Home' with multiple bind
   "CertificateBot": {
     "IncludeCertificates":[],
     "SaveCertificatePath": "C:/ssl",
-    "IISBindings": [
-      {
-        "ip": "*",
-        "port": "443",
-        "siteName": "Home",
-        "host": "shopneur.com",
-        "certificateName": "shopeneur.com,*.shopeneur.com"
-      },
-      {
-        "ip": "*",
-        "port": "443",
-        "siteName": "Home",
-        "host": "www.shopneur.com",
-        "certificateName": "shopeneur.com,*.shopeneur.com"
-      }
-    ]
+    "IISBindings": ["siteName:Home;ip:*;port:443;host:shopneur.com;certificateName:shopeneur.com,*.shopeneur.com",
+    "siteName:Home;ip:*;port:443;host:www.shopneur.com;certificateName:shopeneur.com,*.shopeneur.com"]
   }
 }
 ```
