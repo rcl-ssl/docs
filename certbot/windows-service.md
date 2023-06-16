@@ -158,7 +158,7 @@ Example
 - Run the following command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service zip files were extracted
 
 ```
-sc.exe create CertificateBotWindows binpath= <file-path>\RCL.CertificateBot.Windows.exe
+sc.exe create CertificateBotWindows binpath= <file-path>\RCL.SSL.CertificateBot.Windows.exe
 ```
 
 - After the service in installed, open **Services** in Windows, look for the ``CertificateBot`` service and **Start** the service
