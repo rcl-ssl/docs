@@ -8,13 +8,13 @@ nav_order: 3
 # RCL CertificateBot for Windows
 **V7.0.0**
 
-RCL SSL CertificateBot runs as a **Windows Service** in a Windows Server. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to a Windows hosting machine.
+RCL SSL CertificateBot runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
 
 ## Automatically Renew SSL/TLS Certificates
 
 You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
-- [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) - **Recommended**
+- [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md))
 
 **'Stand Alone' certificates are not supported by RCL SSL CertificateBot.**
 
@@ -29,9 +29,9 @@ You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates c
   - [win-x64](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-win-x64.zip) 
   - [win-arm](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-win-arm.zip)
   
-  to match your Windows server bitness
+  to match your Windows bitness
 
-- Extract the zip file to a folder on your server after it is downloaded
+- Extract the zip file to a folder on your Windows hosting machine after it is downloaded
 
 ## Configure the Service
 
@@ -63,7 +63,7 @@ follow the instructions in this link :
 
 ### Get the SubscriptionId
 
-Get the **Subscription Id** in the RCL Portal.
+Get the **Subscription Id** in the RCL SSL Portal.
 
 ![install](../images/autorenew_configure/add_subscriptionid.png)
 
@@ -94,14 +94,14 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
   - saveCertificatePath
 
-- **Note : when setting the folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl``**
+- **Note : when setting the folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl`` .  Failure to do this will result in inability to run the windows service.**
 
 - Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
 
 - The ``includeCertificates`` settings will allow for including specific certificates by its name 
 (eg:  "contoso.com"  or "contoso.com, *.contoso.com" - for SAN) for the certificate(s) you want to save on the server. 
 
-- **Note: use forward slashes (/) when setting folder paths (eg: C:/ssl)**
+
 
 Example
 ```
@@ -112,7 +112,7 @@ Example
        "fabricam.com",
        "acme.com,*.acme.com",
        "adworks.com, www.adworks.com"
-       ],
+       ]
   },
 ```
 
@@ -142,11 +142,11 @@ Example
     "SubscriptionId": "879"
   },
   "CertificateBot": {
-    "IISBindings": [],
     "SaveCertificatePath": "C:/ssl",
     "IncludeCertificates": [
       "shopeneur.com,*.shopeneur.com"
-    ]
+    ],
+    "IISBindings": []
   }
 }
 ```
@@ -160,7 +160,7 @@ Example
 - Run the following command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service zip files were extracted
 
 ```
-sc.exe create CertificateBot binpath= <file-path>\RCL.CertificateBot.Windows.exe
+sc.exe create CertificateBotWindows binpath= <file-path>\RCL.CertificateBot.Windows.exe
 ```
 
 - After the service in installed, open **Services** in Windows, look for the ``CertificateBot`` service and **Start** the service
@@ -194,7 +194,7 @@ Fix any other errors that are reported then, re-install and restart the service.
 If you need to remove the Windows Service for any reason, run the command to delete the service
 
 ```
-sc.exe delete CertificateBot  
+sc.exe delete CertificateBotWindows  
 ```
 
 # Installing Certificates in Web Servers

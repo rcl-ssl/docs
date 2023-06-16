@@ -16,7 +16,7 @@ Certificates will be automatically saved to the ``Local Machine`` certificate st
 
 You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
-- [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) - **Recommended**
+- [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) 
 
 **'Stand Alone' certificates are not supported by RCL SSL CertificateBot.**
 
@@ -31,9 +31,9 @@ You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates c
   - [win-x64](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-iis-win-x64.zip) 
   - [win-arm](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-iis-win-arm.zip)
   
-  to match your Windows server bitness
+  to match your Windows bitness
 
-- Extract the zip file to a folder on your server after it is downloaded
+- Extract the zip file to a folder on your Windows hosting machine after it is downloaded
 
 ## Configure the Service
 
@@ -95,7 +95,7 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
   - saveCertificatePath
 
-- **Note : when setting the folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl``**
+- **Note : when setting the folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl``. Failure to do this will result in inability to run the windows service.**
 
 - Create the folder in the hosting machine and ensure it has read/write permissions so that the certificates can be saved to it. 
 
@@ -103,22 +103,36 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 - Example of multiple bindings :
 
-```
+```json
 "IISBindings": [
-  "siteName:Home;ip:*;port:443;host:shopneur.com;
-    certificateName:shopeneur.com,*.shopeneur.com",
-  
-  "siteName:Home;ip:*;port:443;host:www.shopneur.com;
-    certificateName:shopeneur.com,*.shopeneur.com"
+  {
+    "siteName":"Home",
+    "ip":"*",
+    "port":"443",
+    "host":"shopneur.com",
+    "certificateName":"shopeneur.com,*.shopeneur.com"
+  },
+  {
+    "siteName":"Home",
+    "ip":"*",
+    "port":"443",
+    "host":"www.shopneur.com",
+    "certificateName":"shopeneur.com,*.shopeneur.com"
+  }
 ]
 ```
 
 - Example of a single binding :
 
-```
+```json
 "IISBindings": [
-  "siteName:Home;ip:*;port:443;host:shopneur.com;
-    certificateName:shopeneur.com,*.shopeneur.com"
+  {
+    "siteName":"Home",
+    "ip":"*",
+    "port":"443",
+    "host":"shopneur.com",
+    "certificateName":"shopeneur.com,*.shopeneur.com"
+  }
 ]
 ```
 
@@ -134,7 +148,7 @@ The image above illustrates a site hosted in IIS named 'Home' with multiple bind
 
 ## Example of a configured **appsettings.json** file
 
-```
+```json
 {
   "Logging": {
     "LogLevel": {
@@ -160,8 +174,22 @@ The image above illustrates a site hosted in IIS named 'Home' with multiple bind
   "CertificateBot": {
     "IncludeCertificates":[],
     "SaveCertificatePath": "C:/ssl",
-    "IISBindings": ["siteName:Home;ip:*;port:443;host:shopneur.com;certificateName:shopeneur.com,*.shopeneur.com",
-    "siteName:Home;ip:*;port:443;host:www.shopneur.com;certificateName:shopeneur.com,*.shopeneur.com"]
+    "IISBindings": [
+      {
+        "siteName":"Home",
+        "ip":"*",
+        "port":"443",
+        "host":"shopneur.com",
+        "certificateName":"shopeneur.com,*.shopeneur.com"
+      },
+      {
+        "siteName":"Home",
+        "ip":"*",
+        "port":"443",
+        "host":"www.shopneur.com",
+        "certificateName":"shopeneur.com,*.shopeneur.com"
+      }
+    ]
   }
 }
 ```

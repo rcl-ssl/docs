@@ -14,11 +14,11 @@ It allows for automatic renewal of SSL/TLS certificates and installation of cert
 
 ## Linux Server
 
-RCL SSL CertificateBot runs as a **Daemon** in a Linux Server.
+RCL SSL CertificateBot runs as a **Daemon** in a Linux hosting machine.
 
 ## Windows Server
 
-RCL SSL CertificateBot runs as a **Windows Service** in a Windows Server.
+RCL SSL CertificateBot runs as a **Windows Service** in a Windows hosting machine.
 
 ## How it Works
 

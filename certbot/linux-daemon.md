@@ -8,13 +8,13 @@ nav_order: 2
 # RCL SSL CertificateBot for Linux
 **V7.0.0**
 
-RCL SSL CertificateBot runs as a **Daemon** in a Linux Server. The daemon will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to a Linux hosting machine.
+RCL SSL CertificateBot runs as a **Daemon** in a Linux hosting machine. The daemon will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Linux hosting machine.
 
 ## Automatically Renew SSL/TLS Certificates
 
 You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
-- [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) - **Recommended**
+- [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) 
 
 **'Stand Alone' certificates are not supported by RCL SSL CertificateBot.**
 
@@ -137,7 +137,7 @@ Example
        "fabricam.com",
        "acme.com,*.acme.com",
        "adworks.com, www.adworks.com"
-       ],
+       ]
   },
 ```
 
@@ -160,11 +160,11 @@ Example
     "SubscriptionId": "879"
   },
   "CertificateBot": {
-    "IISBindings": [],
     "SaveCertificatePath": "/etc/ssl/certificatebot",
     "IncludeCertificates": [
       "shopeneur.com,*.shopeneur.com"
-    ]
+    ],
+    "IISBindings": []
   }
 }
 ```
