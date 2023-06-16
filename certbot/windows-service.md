@@ -157,7 +157,7 @@ Example
 
 - Run the following command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service zip files were extracted
 
-```bash
+```
 sc.exe create CertificateBotWindows binpath= <file-path>\RCL.CertificateBot.Windows.exe
 ```
 
@@ -191,7 +191,7 @@ Fix any other errors that are reported then, re-install and restart the service.
 
 If you need to remove the Windows Service for any reason, run the command to delete the service
 
-```bash
+```
 sc.exe delete CertificateBotWindows  
 ```
 

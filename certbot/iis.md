@@ -201,7 +201,7 @@ The image above illustrates a site hosted in IIS named 'Home' with multiple bind
 
 - Run the following command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service zip files were extracted
 
-```bash
+```
 sc.exe create CertificateBotIIS binpath= <file-path>\RCL.SSL.CertificateBot.IIS.exe
 ```
 
@@ -237,6 +237,6 @@ Fix any other errors that are reported Then, re-install and restart the service.
 
 If you need to remove the Windows Service for any reason, first stop the service, then run the command to delete the service
 
-```bash
+```
 sc.exe delete CertificateBotIIS
 ```
