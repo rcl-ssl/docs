@@ -129,7 +129,7 @@ sudo mkdir -m 777 /etc/ssl/certificatebot
 (eg:  "contoso.com"  or "contoso.com, *.contoso.com" - for SAN) for the certificate(s) you want to save on the server. 
 
 Example
-```
+```json
   "CertificateBot": {
     "saveCertificatePath": "/etc/ssl/certificatebot",
      "includeCertificates": [
@@ -143,7 +143,7 @@ Example
 
 ## Example of a configured **appsettings.json** file
 
-```
+```json
 {
   "Logging": {
     "LogLevel": {

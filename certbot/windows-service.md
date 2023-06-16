@@ -101,10 +101,8 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 - The ``includeCertificates`` settings will allow for including specific certificates by its name 
 (eg:  "contoso.com"  or "contoso.com, *.contoso.com" - for SAN) for the certificate(s) you want to save on the server. 
 
-
-
 Example
-```
+```json
   "CertificateBot": {
     "saveCertificatePath": "C:/ssl",
      "includeCertificates": [
@@ -118,7 +116,7 @@ Example
 
 ## Example of a configured **appsettings.json** file
 
-```
+```json
 {
   "Logging": {
     "LogLevel": {
@@ -159,7 +157,7 @@ Example
 
 - Run the following command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service zip files were extracted
 
-```
+```bash
 sc.exe create CertificateBotWindows binpath= <file-path>\RCL.CertificateBot.Windows.exe
 ```
 
@@ -193,7 +191,7 @@ Fix any other errors that are reported then, re-install and restart the service.
 
 If you need to remove the Windows Service for any reason, run the command to delete the service
 
-```
+```bash
 sc.exe delete CertificateBotWindows  
 ```
 
