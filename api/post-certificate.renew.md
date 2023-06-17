@@ -1,7 +1,7 @@
 ---
 title: POST Certificate Renew
 description: RCL Renewal API - POST Certificate Renew
-parent: RCL Renewal API
+parent: API
 nav_order: 6
 ---
 

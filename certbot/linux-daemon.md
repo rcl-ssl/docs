@@ -1,7 +1,7 @@
 ---
 title: Linux Daemon
 description: RCL SSL CertificateBot Linux Daemon for automatic SSL/TLS certificate installation and renewal in a Linux server 
-parent: RCL SSL CertificateBot
+parent: CertificateBot
 nav_order: 2
 ---
 

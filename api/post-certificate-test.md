@@ -1,7 +1,7 @@
 ---
 title: POST Certificate Test
 description: RCL Renewal API - POST Certificate Test
-parent: RCL Renewal API
+parent: API
 nav_order: 3
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: RCL Renewal API Models
 description: The models for the RCL Renewal API
-parent: RCL Renewal API
+parent: API
 nav_order: 100
 ---
 
