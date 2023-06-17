@@ -1,14 +1,14 @@
 ﻿---
-title: Configure the Function
+title: Configure
 description: Configuring the RCL AutoRenew Function
-parent: RCL AutoRenew Function
+parent: AutoRenew Function
 nav_order: 2
 ---
 
-# Configure the RCL AutoRenew Function App
-**V6.0.10**
+# Configure the RCL SSL AutoRenew Function App
+**V7.0.0**
 
-In this section, you will configure the [RCL AutoRenew Function](../autorenew/autorenew.md) app.
+In this section, you will configure the [RCL SSL AutoRenew Function](../autorenew/autorenew.md) app.
 
 ## Register an AAD Application
 
@@ -18,7 +18,7 @@ An Azure Active Directory (AAD) application must be registered to obtain permiss
 
 ## Set Access Control for the AAD application
 
-Access control must be set for the AAD application to access resources in a user's Azure subscription. Please refer to the following link for instructions:
+Access control must be set for the AAD application to access resources in a user's Azure subscription (Key Vault, DNS Zone, App Services). Please refer to the following link for instructions:
 
 - [Setting Access Control for the AAD Application](../authorization/access-control-app)
 
@@ -48,7 +48,7 @@ Update the following configuration entries with the credentials from the AAD app
 
 ![install](../images/autorenew_configure/func2.PNG)
 
-- In the [RCL Portal](../portal/portal.md), open the 'Subscription Detials' page
+- In the [RCL SSL Portal](../portal/portal.md), open the 'Subscription Details' page
 
 ![install](../images/autorenew_configure/add_subscriptionid.png)
 
@@ -65,17 +65,15 @@ Update the following configuration entries with the credentials from the AAD app
 
 ## Add the Client Id in the RCL Portal
 
-The AAD Application must be registered in the [RCL Portal](../portal/portal.md) to associate the AAD application to a user's subscription.
-
-The [RCL AutoRenew](../autorenew/autorenew.md) function app uses the RCL Public API to execute its operations.
+The AAD Application must be registered in the [RCL SSL Portal](../portal/portal.md) to associate the AAD application to a user's RCL SSL subscription.
 
 To add the AAD Application's ``Client Id`` to the portal, please follow the instructions in this link :
 
-- [Add the Client Id in the RCL Portal](../api/authorization.md#add-the-client-id-in-the-rcl-portal)
+- [Add the Client Id in the RCL SSL Portal](../api/authorization.md#add-the-client-id-in-the-rcl-portal)
 
 ## Next Step
 
-- [Testing the AutoRenew Function](./test.md)
+- [Testing the RCL SSL AutoRenew Function](./test.md)
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: RCL SSL CertificateBot
+title: CertificateBot
 description: RCL SSL CertificateBot for automatic SSL/TLS certificate installation and renewal in Linux and Windows servers
 has_children: true
 nav_order: 8

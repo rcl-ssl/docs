@@ -1,14 +1,14 @@
 ﻿---
-title: Install the Function
-description: Installing the RCL Auto Renew Function
-parent: RCL AutoRenew Function
+title: Install
+description: Installing the RCL SSL Auto Renew Function
+parent: AutoRenew Function
 nav_order: 1
 ---
 
-# Installing AutoRenew Function
-**V6.0.10**
+# Installing RCL SSL AutoRenew Function
+**V7.0.0**
 
-In this section, you will learn how to install the [RCL AutoRenew Function](../autorenew/autorenew.md) in an Azure account.
+In this section, you will learn how to install the [RCL SSL AutoRenew Function](../autorenew/autorenew.md) in an Azure account.
 
 If you have an older version of the AutoRenew function installed in your Azure account, you should delete the function and its dependencies (storage account and consumption plan) before you re-install the AutoRenew function.
 
@@ -18,7 +18,7 @@ If you have an older version of the AutoRenew function installed in your Azure a
 
 ![install](../images/autorenew_installation/azure_deploy.PNG)
 
-- Create a new **Resource Group** and install the function app. Do not edit the 'Auto' generated settings.
+- Create a new **Resource Group** and install the function app. **Do not edit the 'Auto' generated settings**.
 
 ![install](../images/autorenew_installation/azure_deploy2.PNG)
 

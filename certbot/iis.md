@@ -1,7 +1,7 @@
 ---
 title: IIS
 description: RCL SSL CertificateBot Windows Service for automatic SSL/TLS certificate installation and renewal in IIS
-parent: RCL SSL CertificateBot
+parent: CertificateBot
 nav_order: 4
 ---
 

@@ -1,14 +1,14 @@
 ﻿---
-title: Test the Function
-description: Testing the RCL AutoRenew Function
-parent: RCL AutoRenew Function
+title: Test
+description: Testing the RCL SSL AutoRenew Function
+parent: AutoRenew Function
 nav_order: 3
 ---
 
-## Testing the AutoRenew Function
-**V6.0.10**
+## Testing the RCL SSL AutoRenew Function
+**V7.0.0**
 
-In this section, you will learn how to test the RCL AutoRenew function. 
+In this section, you will learn how to test the RCL SSL AutoRenew function. 
 
 - In the Azure portal, open the function app and click the 'Functions' link
 
@@ -66,7 +66,7 @@ If you get the following error when testing :
 TEST FAILED: The request is Unauthorized. Please check the configuration for the auth credentials. Also, check the configuration for the SubscriptionId.
 ```
 
-This may indicate that the Client ID of the AAD Application is not registered in the RCL Portal in the subscription section.
+This may indicate that the Client ID of the AAD Application is not registered in the RCL SSL Portal in the subscription section.
 
 ### Access Control not set
 
@@ -105,8 +105,8 @@ This may indicate the you have not set the Access Control for the AAD Applicatio
 
 ## Related Articles
 
-- [Installing AutoRenew Function](./installation.md)
-- [Configuring AutoRenew Function](./configure.md)
+- [Installing RCL SSL AutoRenew Function](./installation.md)
+- [Configuring RCL SSL AutoRenew Function](./configure.md)
 
 
 
