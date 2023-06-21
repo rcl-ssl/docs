@@ -8,13 +8,13 @@ nav_order: 4
 # RCL SSL CertificateBot for IIS
 **V7.0.0**
 
-RCL SSL CertificateBot runs as a **Windows Service** in a Windows Server. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to a Windows hosting machine.
+RCL SSL CertificateBot for IIS runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
 
 Certificates will be automatically saved to the ``Local Machine`` certificate store in the  ``Trusted People`` folder. Certificates will also be automatically bound to the **IIS Web Server** on the hosting machine.
 
 ## Automatically Renew SSL/TLS Certificates
 
-You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
+You can use RCL SSL CertificateBot for IIS to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
 - [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) 
 
@@ -23,13 +23,13 @@ You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates c
 # Install RCL SSL CertificateBot for IIS
 ## Download the Files
 
-- The Windows Service files (``certificatebot-iis-win-xx``) are available in the [GitHub Project](https://github.com/icloudinfinity/ICI.SSL.CertificateBot) page in the [Releases](https://github.com/icloudinfinity/ICI.SSL.CertificateBot/releases) section:
+- The Windows Service files (``certificatebot-iis-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.0) section:
 
 - Download the zip file with bitness :
 
-  - [win-x86](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-iis-win-x86.zip)
-  - [win-x64](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-iis-win-x64.zip) 
-  - [win-arm](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-iis-win-arm.zip)
+  - [win-x64](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-iis-win-x64.zip) 
+  - [win-x86](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-iis-win-x86.zip)
+  - [win-arm](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-iis-win-arm.zip)
   
   to match your Windows bitness
 
@@ -209,7 +209,7 @@ sc.exe create CertificateBotIIS binpath= <file-path>\RCL.SSL.CertificateBot.IIS.
 
 ![image](../images/certbot/winservice-start.png)
 
-- Set the **Properties** of the service to start automatically when the server starts
+- Set the **Properties** of the service to start automatically when the hosting machine starts
 
 ![image](../images/certbot/winservice-automatic.png)
 
@@ -240,3 +240,19 @@ If you need to remove the Windows Service for any reason, first stop the service
 ```
 sc.exe delete CertificateBotIIS
 ```
+
+# Updating the Service
+
+If you need to update the service to include other IIS bindings and certificates, follow these steps:
+
+- Stop the service and delete it
+- Change the ``appsettings.json`` file to include updated IIS bindings and certificates
+- Re-create the service and start it
+
+# Reset the Service
+
+If you need to reset the service because of a error or corrupted certificate renewal, follow these steps :
+
+- Stop the service and delete it
+- Delete all certificates and their folders in the directory in which certificates are saved
+- Re-create the service and start it

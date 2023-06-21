@@ -12,6 +12,11 @@ RCL SSL CertificateBot is installed in a hosting machine.
 
 It allows for automatic renewal of SSL/TLS certificates and installation of certificates in the hosting machine for a **web server** to use.
 
+You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
+
+- [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) 
+
+
 ## Linux Server
 
 RCL SSL CertificateBot runs as a **Daemon** in a Linux hosting machine.

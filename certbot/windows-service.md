@@ -21,13 +21,13 @@ You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates c
 # Install RCL SSL CertificateBot
 ## Download the Files
 
-- The Windows Service files (``certificatebot-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.CertificateBot/releases/tag/V6.0.10) section:
+- The Windows Service files (``certificatebot-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.0) section:
 
 - Download the zip file with bitness
 
-  - [win-x86](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-win-x86.zip)
-  - [win-x64](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-win-x64.zip) 
-  - [win-arm](https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-win-arm.zip)
+  - [win-x64](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-win-x64.zip) 
+  - [win-x86](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-win-x86.zip)
+  - [win-arm](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-win-arm.zip)
   
   to match your Windows bitness
 
@@ -165,7 +165,7 @@ sc.exe create CertificateBotWindows binpath= <file-path>\RCL.SSL.CertificateBot.
 
 ![image](../images/certbot/winservice-start.png)
 
-- Set the **Properties** of the service to start automatically when the server starts
+- Set the **Properties** of the service to start automatically when the hosting machine starts
 
 ![image](../images/certbot/winservice-automatic.png)
 
@@ -195,9 +195,25 @@ If you need to remove the Windows Service for any reason, run the command to del
 sc.exe delete CertificateBotWindows  
 ```
 
+# Updating the Service
+
+If you need to update the service to include other certificates, follow these steps:
+
+- Stop the service and delete it
+- Change the ``appsettings.json`` file to include additional certificates
+- Re-create the service and start it
+
+# Reset the Service
+
+If you need to reset the service because of a error or corrupted certificate renewal, follow these steps :
+
+- Stop the service and delete it
+- Delete all certificates and their folders in the directory in which certificates are saved
+- Re-create the service and start it
+
 # Installing Certificates in Web Servers
 
-RCL SSL CertificateBot will automatically save renewed SSL/TLS certificate files to a folder in the server. You should then configure the web server to use these files to implement SSL/TLS in your website.
+RCL SSL CertificateBot will automatically save renewed SSL/TLS certificate files to a folder in the hosting machine. You should then configure the web server to use these files to implement SSL/TLS in your website.
 
 ## Certificate Files
 

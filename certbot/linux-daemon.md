@@ -22,7 +22,7 @@ You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates c
 
 ## Download and Extract the Daemon Files to the Linux Server
 
-In this section, you will download the files from the RCL SSL CertificateBot [GitHub Project Page](https://github.com/rcl-ssl/RCL.CertificateBot) in the [Releases](https://github.com/rcl-ssl/RCL.CertificateBot/releases) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
+In this section, you will download the files from the RCL SSL CertificateBot [GitHub Project Page](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.0) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
 
 - In your Linux server, navigate to the ``/usr/sbin`` folder
 
@@ -33,13 +33,13 @@ cd /usr/sbin
 - Run the command in the folder to download and extract the ``linux-x64`` files:
 
 ```bash
-wget -c https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V6.0.10/certificatebot-linux-x64.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-linux-x64.tar.gz -O - | sudo tar -xz
 ```
 
 or ``linux-arm`` files :
 
 ```bash
-wget -c https://github.com/rcl-ssl/RCL.CertificateBot/releases/download/V2.1/certificatebot-linux-arm.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-linux-arm.tar.gz -O - | sudo tar -xz
 ```
 
 ## Configure the Daemon
@@ -115,7 +115,7 @@ sudo nano appsettings.json
   - TenantId
   - SubscriptionId
 
-- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : /etc/ssl/certificatebot
+- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : ``/etc/ssl/certificatebot``
 
   - saveCertificatePath
 
@@ -273,6 +273,24 @@ If you encounter errors in the logs for the daemon, please stop the daemon. Ensu
 The folder to save the certificate must have read/write access. 
 
 Reload and restart the daemon after you make changes and check if the errors were resolved.
+
+# Updating the Daemon
+
+If you need to update the service to include other certificates, follow these steps:
+
+- Stop the daemon
+- Change the ``appsettings.json`` file to include additional certificates
+- Re-load the daemon
+- Re-start the daemon
+
+# Reset the Daemon
+
+If you need to reset the service because of a error or corrupted certificate renewal, follow these steps :
+
+- Stop the daemon
+- Delete all certificates and their folders in the directory in which certificates are saved
+- Re-load the daemon
+- Re-start the daemon
 
 # Installing Certificates in Web Servers
 

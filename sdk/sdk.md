@@ -37,11 +37,11 @@ Configure the application consuming the SDK by using the app's configuration fil
   "RCLSDK:TenantId": "23fdvrxffc-bc3c-4323-b4c2-4502c3b9b0e6",
   "RCLSDK:SubscriptionId": "879",
   "RCLSDK:ApiBaseUrl": "https://rclapi.azure-api.net/public",
-  "RCLSDK:SourceApplication": "RCL SDK"
+  "RCLSDK:SourceApplication": "RCL SSL SDK"
 }
 ```
 
-The configuration must be changed to match the **User's AAD Application** credentials.
+The configuration must be changed to match the **User's AAD Application** credentials as explained below.
 
 ## Register an AAD Application
 
@@ -65,7 +65,7 @@ follow the instructions in this link :
 
 ## Get the SubscriptionId
 
-Get the **Subscription Id** in the RCL Portal.
+Get the **Subscription Id** in the RCL SSL Portal.
 
 ![install](../images/autorenew_configure/add_subscriptionid.png)
 
@@ -81,13 +81,13 @@ Please refer to the following link for instructions :
 
 - [Set Access Control for the AAD application](../authorization/access-control-app)
 
-## Register the AAD Application's ``Client Id`` in the RCL Portal
+## Register the AAD Application's ``Client Id`` in the RCL SSL Portal
 
-The AAD Application must be associated with a user's RCL subscription. This is achieved by registering the AAD Application's ``Client Id`` in the **RCL Portal**.
+The AAD Application must be associated with a user's RCL SSL subscription. This is achieved by registering the AAD Application's ``Client Id`` in the **RCL SSL Portal**.
 
 To add the AAD Application's ``Client Id`` to the portal, please follow the instructions in this link :
 
-- [Add the Client Id in the RCL Portal](../api/authorization#add-the-client-id-in-the-rcl-lets-encrypt-portal)
+- [Add the Client Id in the RCL SSL Portal](../api/authorization#add-the-client-id-in-the-rcl-lets-encrypt-portal)
 
 ## Add the Services
 
@@ -215,6 +215,6 @@ await _certificateRequestService.RenewCertificateAsync(certificate);
 
 ## Production Apps
 
-The following productions apps were built with the RCL SDK :
+The following productions apps were built with the RCL SSL SDK :
 
-- [RCL AutoRenew Function](../autorenew/autorenew.md)
+- [RCL SSL AutoRenew Function](../autorenew/autorenew.md)
