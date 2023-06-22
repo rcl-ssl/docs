@@ -108,12 +108,14 @@ To make a request to the RCL SSL API, **both access tokens** (Azure Resource Man
 
 The base URL for the RCL SSL API is :
 ```
-https://rclapi.azure-api.net/public
+https://rclapi.azure-api.net
 ```
 
-The following example illustrates how to make a **POST** request to the : ``/v1/subscription/{subscriptionid}/public/certificate/test`` API endpoint. This API tests for a valid authenticated connection to the RCL SSL API.
+The following example illustrates how to make a **POST** request to the : ``/public/v1/subscription/{subscriptionid}/public/certificate/test`` API endpoint. 
 
-Each request should include the **Subscription Id** of the subscription in the RCL Portal.
+This API tests for a valid authenticated connection to the RCL SSL API.
+
+Each request should include the **Subscription Id** of the subscription in the RCL SSL Portal.
 
 ![install](../images/autorenew_configure/add_subscriptionid.png)
 

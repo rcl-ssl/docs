@@ -20,7 +20,7 @@ Represents an authorization token
 | expires_in |How long the access token is valid (in seconds). | string |
 | expires_on |The time when the access token expires. The date is represented as the number of seconds from 1970-01-01T0:0:0Z UTC until the expiration time. This value is used to determine the lifetime of cached tokens. | string |
 | not_before |The time from which the access token becomes usable. The date is represented as the number of seconds from 1970-01-01T0:0:0Z UTC until time of validity for the token.| string |
-| resource |The App ID URI of the receiving web service. The RCL resource. | string |
+| resource |The resource to be accessed. | string |
 
 ## Example
 
