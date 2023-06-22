@@ -72,11 +72,7 @@ Content-Type: application/json
     "accessToken" : "eyJ0eXAiOiJk....ww",
     "accessTokenKeyVault" : "eyJ0eXAiOZ....DQ",
     "certificate" : {
-        "certificateName": "shopeneur.com",
-        "target": "Azure Key Vault + DNS",
-        "renewal": "Automatic",
-        "id": 3673,
-        "subscriptionId": 889
+        "certificateName": "shopeneur.com"
     }
 }
 ```

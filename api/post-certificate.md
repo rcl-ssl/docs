@@ -6,7 +6,7 @@ nav_order: 4
 ---
 
 # POST Certificate 
-**V6.0.10**
+**V7.0.0**
 
 The **Certificate API** will get a certificate by its name.
 
