@@ -21,6 +21,9 @@ You can use RCL SSL CertificateBot for IIS to automatically renew SSL/TLS certif
 **'Stand Alone' certificates are not supported by RCL SSL CertificateBot.**
 
 # Install RCL SSL CertificateBot for IIS
+
+If you have an older version of the RCL CertificateBot for IIS installed in your hosting machine, you should delete it and install the new service.
+
 ## Download the Files
 
 - The Windows Service files (``certificatebot-iis-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.0) section:

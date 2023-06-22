@@ -20,6 +20,8 @@ You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates c
 
 # Installing RCL SSL CertificateBot
 
+If you have an older version of the RCL CertificateBot installed in your hosting machine, you should completely delete it and install the new one.
+
 ## Download and Extract the Daemon Files to the Linux Server
 
 In this section, you will download the files from the RCL SSL CertificateBot [GitHub Project Page](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.0) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:

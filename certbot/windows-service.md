@@ -19,6 +19,9 @@ You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates c
 **'Stand Alone' certificates are not supported by RCL SSL CertificateBot.**
 
 # Install RCL SSL CertificateBot
+
+If you have an older version of the RCL CertificateBot installed in your hosting machine, you should completely delete it and install the new one.
+
 ## Download the Files
 
 - The Windows Service files (``certificatebot-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.0) section:
