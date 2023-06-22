@@ -24,13 +24,13 @@ Access control must be set for the AAD application to access resources in a user
 
 ## Get the AAD Credentials 
 
-Please refer to the following link to get the AAD credentials :
+Please refer to the link  below to get the following AAD credentials :
 
     - Client Id
     - Client Secret
     - Tenant Id
 
-to configure the function app :
+To configure the function app :
 
 - [Get the AAD Application Credentials](../authorization/aad-application#get-the-aad-application-credentials)
 
