@@ -131,7 +131,6 @@ Represents the download URLs for various certificate formats
 | crtUrl |The download url for the .CRT format. | string |
 | txtUrl |The download url for the .TXT format. | string |
 | keyUrl |The download url for the private key in .KEY format. | string |
-| keyTxtUrl |The download url for the private key in .TXT format. | string |
 | certCrtUrl |The download url for the Certificate in .CRT format. | string |
 | cabundleCrtUrl |The download url for the Certificate Bundle in .CRT format. | string |
 | fullchainCrtUrl |The download url for the Full Chain Certificate  in .CRT format. | string |
