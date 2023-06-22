@@ -137,6 +137,5 @@ Content-Type: application/json
 
 ## Related Articles
 
-- [Introduction to RCL API](./introduction.md)
-- [Post Certificate Test](./post-certificate-renewal.md)
+- [Introduction to RCL SSL API](./introduction.md)
 

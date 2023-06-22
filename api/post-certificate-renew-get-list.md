@@ -1,12 +1,12 @@
 ---
 title: POST Certificate Renew Get List
-description: RCL Renewal API - POST Certificate Renew Get List
+description: RCL SSL API - POST Certificate Renew Get List
 parent: API
 nav_order: 5
 ---
 
 # POST Certificate Renew Get List 
-**V6.0.10**
+**V7.0.0**
 
 The **Certificate Renew Get List API** will return a list of certificates that will expire in the next 20 days.
 
@@ -30,7 +30,7 @@ Each request must include the **Subscription Id** of the user's subscription in 
 
 The base URI for the RCL Public API is :
 ```
-https://rclapi.azure-api.net/public
+https://rclapi.azure-api.net
 ```
 
 # API Endpoint
@@ -38,10 +38,10 @@ https://rclapi.azure-api.net/public
 The endpoint for the **POST Certificate Renew Get List** API is :
 
 ```
-/v1/subscription/{subscriptionid}/public/certificate/renew/getlist
+/public/v1/subscription/{subscriptionid}/public/certificate/renew/getlist
 ```
 
-where the placeholder : {subscriptionid} is the **Subscription Id** of the subscription in the RCL Portal.
+where the placeholder : {subscriptionid} is the **Subscription Id** of the subscription in the RCL SSL Portal.
 
 # Request Body
 
@@ -52,10 +52,6 @@ The request body should include a JSON of the [ResourceRequest](./models.md#reso
 ## 200 Ok
 
 This represents success in making an authorized request to the RCL Public API. An **Array** of [Certificate](./models.md#certificate) that are about to expire is provided in the **body** of the response in JSON format.
-
-## 404 Notfound
-
-If no certificates were found that matches the renewal criteria.
 
 ## 401 Unauthorized
 

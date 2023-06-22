@@ -1,14 +1,14 @@
 ---
 title: POST Certificate Test
-description: RCL Renewal API - POST Certificate Test
+description: RCL SSL API - POST Certificate Test
 parent: API
 nav_order: 3
 ---
 
 # POST Certificate Test
-**V6.0.10**
+**V7.0.0**
 
-The **Certificate Test API** will test the authorized connectivity to the RCL Public API.
+The **Certificate Test API** will test the authorized connectivity to the RCL SSL API.
 
 # Authorization
 
@@ -18,7 +18,7 @@ Authorization tokens for **Azure Resource Manager** and **Azure Key Vault** must
 
 # Subscription Id
 
-Each request must include the **Subscription Id** of the user's subscription in the RCL Portal as a parameter in the request url. You can acquire the Subscription Id in the **Subscription Details** section in the RCL Portal.
+Each request must include the **Subscription Id** of the user's subscription in the RCL Portal as a parameter in the request url. You can acquire the Subscription Id in the **Subscription Details** section in the RCL SSL Portal.
 
 ![install](../images/autorenew_configure/add_subscriptionid.png)
 
@@ -28,9 +28,9 @@ Each request must include the **Subscription Id** of the user's subscription in 
 
 # Base URI
 
-The base URI for the RCL Public API is :
+The base URI for the RCL SSL API is :
 ```
-https://rclapi.azure-api.net/public
+https://rclapi.azure-api.net
 ```
 
 # API Endpoint
@@ -38,10 +38,10 @@ https://rclapi.azure-api.net/public
 The endpoint for the **POST Certificate Test** API is :
 
 ```
-/v1/subscription/{subscriptionid}/public/certificate/test
+/public/v1/subscription/{subscriptionid}/public/certificate/test
 ```
 
-where the placeholder : {subscriptionid} is the **Subscription Id** of the subscription in the RCL Portal.
+where the placeholder : {subscriptionid} is the **Subscription Id** of the subscription in the RCL SSL Portal.
 
 # Request Body
 
@@ -51,7 +51,7 @@ The request body should include a JSON of the [ResourceRequest](./models.md#reso
 
 ## 200 Ok
 
-This represents success in making an authorized connection to the RCL Public API.
+This represents success in making an authorized connection to the RCL SSL API.
 
 ## 401 Unauthorized
 

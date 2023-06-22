@@ -1,5 +1,5 @@
 ---
-title: RCL Renewal API Models
+title: RCL SSL API Models
 description: The models for the RCL Renewal API
 parent: API
 nav_order: 100
@@ -7,7 +7,7 @@ nav_order: 100
 
 # Model Classes
 
-This section contain the model classes for the RCL Renewal API.
+This section contain the model classes for the RCL SSL API.
 
 # AuthToken
 
@@ -36,7 +36,7 @@ Represents an authorization token
 
 # ResourceRequest
 
-Represents a request for a resource in the RCL Public API
+Represents a request for a resource in the RCL SSL API
 
 | Parameter | Description | Type
 | --- | --- |--- |
@@ -68,13 +68,13 @@ Represents a SSL/TLS certificate
 | expiryDate |The expiry date of the certificate. | DateTime |
 | target |The certificate target type. | string |
 | renewal |The certificate renewal ('Automatic' or 'Manual'). | string |
-| subscriptionId |The subscription id of the account in the RCL Portal. | int |
+| subscriptionId |The subscription id of the account in the RCL SSL Portal. | int |
 | password |The password for the certificate. | string |
 | pfxString |The string format of the PFX certificate. | string |
 | azureSubscriptionId |The Azure subscription id of the user's azure account. | string |
 | dnsZoneResourceGroup |The Azure DNS Zone resource group. | string |
 | keyVaultName |The Azure Key Vault name. | string |
-| keyVaultName |The Azure Key Vault Certificate Name. | string |
+| keyVaultCertificateName |The Azure Key Vault Certificate Name. | string |
 | siteId |An id to identify the Azure App Service site. | int |
 | certificateDownloadUrl |The download urls for various certificate formats. | [CertificateDownloadUrl](#certificatedownloadurl) |
 
@@ -131,6 +131,7 @@ Represents the download URLs for various certificate formats
 | crtUrl |The download url for the .CRT format. | string |
 | txtUrl |The download url for the .TXT format. | string |
 | keyUrl |The download url for the private key in .KEY format. | string |
+| keyTxtUrl |The download url for the private key in .TXT format. | string |
 | certCrtUrl |The download url for the Certificate in .CRT format. | string |
 | cabundleCrtUrl |The download url for the Certificate Bundle in .CRT format. | string |
 | fullchainCrtUrl |The download url for the Full Chain Certificate  in .CRT format. | string |

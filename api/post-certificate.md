@@ -1,6 +1,6 @@
 ---
 title: POST Certificate 
-description: RCL Renewal API - POST Certificate 
+description: RCL SSSL API - POST Certificate 
 parent: API
 nav_order: 4
 ---
@@ -30,7 +30,7 @@ Each request must include the **Subscription Id** of the user's subscription in 
 
 The base URI for the RCL Public API is :
 ```
-https://rclapi.azure-api.net/public
+https://rclapi.azure-api.net
 ```
 
 # API Endpoint
@@ -38,10 +38,10 @@ https://rclapi.azure-api.net/public
 The endpoint for the **POST Certificate** API is :
 
 ```
-/v1/subscription/{subscriptionid}/public/certificate
+/public/v1/subscription/{subscriptionid}/public/certificate
 ```
 
-where the placeholder : {subscriptionid} is the **Subscription Id** of the subscription in the RCL Portal.
+where the placeholder : {subscriptionid} is the **Subscription Id** of the subscription in the RCL SSL Portal.
 
 # Request Body
 
@@ -51,11 +51,7 @@ The request body should include a JSON of the [CertificateRequest](./models.md#c
 
 ## 200 Ok
 
-This represents success in making an authorized request to the RCL Public API and returns a [Certificate](./models.md#certificate) in JSON format in the **body** of the response. 
-
-## 404 Notfound
-
-If the certificate was not found.
+This represents success in making an authorized request to the RCL SSL API and returns a [Certificate](./models.md#certificate) in JSON format in the **body** of the response. 
 
 ## 401 Unauthorized
 

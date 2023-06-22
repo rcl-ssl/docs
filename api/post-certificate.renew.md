@@ -1,12 +1,12 @@
 ---
 title: POST Certificate Renew
-description: RCL Renewal API - POST Certificate Renew
+description: RCL SSL API - POST Certificate Renew
 parent: API
 nav_order: 6
 ---
 
 # POST Certificate Renew
-**V6.0.10**
+**V7.0.0**
 
 The **Certificate Renew API** will schedule a certificate for renewal. The certificate will be renewed within an hour.
 
@@ -30,7 +30,7 @@ Each request must include the **Subscription Id** of the user's subscription in 
 
 The base URI for the RCL Public API is :
 ```
-https://rclapi.azure-api.net/public
+https://rclapi.azure-api.net
 ```
 
 # API Endpoint
@@ -38,10 +38,10 @@ https://rclapi.azure-api.net/public
 The endpoint for the **POST Certificate Renew** API is :
 
 ```
-/v1/subscription/{subscriptionid}/public/certificate/renew
+/public/v1/subscription/{subscriptionid}/public/certificate/renew
 ```
 
-where the placeholder : {subscriptionid} is the **Subscription Id** of the subscription in the RCL Portal.
+where the placeholder : {subscriptionid} is the **Subscription Id** of the subscription in the RCL SSL Portal.
 
 # Request Body
 
