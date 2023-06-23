@@ -47,9 +47,6 @@ You can access the RCL Portal app that you have subscribed to in the Azure porta
 ![image](../images/subscription/unsubscribe.PNG)
 
 
-
-
-
 - Once you cancel a subscription, your data will be scheduled for deletion within the next few days
 
 **Download your certificates before your data is deleted. A cancelled subscription cannot be re-activated. You will need to wait a few days to create a new subscription. Your data will not be restored.**
