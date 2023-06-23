@@ -6,11 +6,11 @@ nav_order: 2
 ---
 
 # Azure Marketplace Subscription
-**V6.0.10**
+**V7.0.0**
 
-- You will subscribe to [RCL Portal](../portal/portal.md) app in the Azure portal or in the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=overview)
+- You will subscribe to [RCL SSL Portal](../portal/portal.md) app in the Azure portal or in the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=overview)
 
-- In the Azure portal, search for the RCL application. Click on the ‘Setup+Subscribe’ button to add a subscription
+- In the Azure portal, search for the RCL SSL application. Click on the ‘Setup+Subscribe’ button to add a subscription
 
 ![image](../images/subscription/marketplace-subscribe.png)
 
@@ -40,11 +40,15 @@ You can access the RCL Portal app that you have subscribed to in the Azure porta
 
 - You can now view the details of the application
 
-![image](../images/subscription/unsubscribe.PNG)
-
 - In the SaaS application, click on the ‘Cancel subscription’ link to unsubscribe
 
-_ After, you can Delete the subscription
+- After, you can Delete the subscription
+
+![image](../images/subscription/unsubscribe.PNG)
+
+
+
+
 
 - Once you cancel a subscription, your data will be scheduled for deletion within the next few days
 
