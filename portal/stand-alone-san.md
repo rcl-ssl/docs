@@ -6,25 +6,25 @@ nav_order: 3
 ---
 
 # SAN Certificates - Stand Alone
-**V6.0.10**
+**V7.0.0**
 
 A Subject Alternative Name (SAN) SSL/TLS certificate will contain multiple domains in a single certificate.
 
 # HTTP SAN Certificate
 
-A SAN certificate created with the HTTP Challenge will contain the naked apex domain (e.g. contoso.com) and the www subdomain (e.g. www.contoso.com) in a single SSL/TLS certificate.
+A SAN certificate created with the HTTP Challenge will contain the domain (e.g. contoso.com) and the www subdomain (e.g. www.contoso.com) in a single SSL/TLS certificate.
 
 # DNS SAN Certificate
 
-A SAN certificate created with the DNS Challenge will contain the naked apex domain (e.g. contoso.com) and a wild card domain (e.g. *.contoso.com) in a single SSL/TLS certificate.
+A SAN certificate created with the DNS Challenge will contain the domain (e.g. contoso.com) and a wild card domain (e.g. *.contoso.com) in a single SSL/TLS certificate.
 
-# Single Apex Domains
+# Single Domains
 
-SAN certificates only allow a single apex domain. For instance the two different domains, eg.  'fabricam.com' and 'contoso.com', are not allowed in a SAN multi-domain certificate.
+SAN certificates only allow a single domain. For instance the two different domains, eg.  'fabricam.com' and 'contoso.com', are not allowed in a SAN multi-domain certificate.
 
 # Creating Stand Alone SAN SSL/TLS Certificates
 
-In the RCL Portal, you can create Stand Alone SAN SSL/TLS certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
+In the [RCL SSL Portal](../portal), you can create Stand Alone SAN SSL/TLS certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
 
 You will need to manually download and install the certificate in your web server. The following web servers are supported :
 
@@ -57,9 +57,9 @@ You can create a SSL/TLS certificate by using either the :
 
 # HTTP Challenge
 
-RCL uses the HTTP-01 challenge type to create a certificate that includes the following domains in a single SSL/TLS certificate:
+RCL SSL uses the HTTP-01 challenge type to create a certificate that includes the following domains in a single SSL/TLS certificate:
 
-- naked apex domain (e.g. contoso.com)
+- domain (e.g. contoso.com)
 - www subdomain (e.g. www.contoso.com)
 
 To validate your domain with the HTTP challenge, you will be required to place files in the root of your website and ensure that these files can be accessed publicly on the web.
@@ -68,25 +68,35 @@ To validate your domain with the HTTP challenge, you will be required to place f
 
 ![image](../images/portal/stand-alone-san-http.PNG)
 
-- The Hostname is the single Apex Domain (eg: 'contoso.com') you are requesting the certificate for. Only a single domain is allowed. The additional www subdomain will be automatically included in the certificate.
+- The Hostname is the Domain (eg: 'contoso.com') you are requesting the certificate for. Only a single domain is allowed. The additional www subdomain will be automatically included in the certificate.
 
-- In this case, we are requesting a SSL/TLS certificate for the naked apex domain, ‘shopeneur.com’. The www subdomain, 'www.shopeneur.com' will be automatically included in the certificate.
+- In this case, we are requesting a SSL/TLS certificate for the domain, ‘shopeneur.com’. The www subdomain, 'www.shopeneur.com' will be automatically included in the certificate.
+
+- The root domain is the ‘apex’ domain. For instance, the root domain for the hostname: ‘shop.contoso.com’ is ‘contoso.com’. Similarly, the root domain for the hostname : ‘contoso.com’ is ‘contoso.com’ and '*.contoso.com' is 'contoso.com'.
 
 - Click the **Create** button when you are done
+
+## Reachable Website
+
+Your website must be publicly accessible in a web browser at the domain (eg. contoso.com) and the www domain (eg. www.contoso.com). If the website is not reachable at these two domains the validation will fail.
     
 ## Completing the HTTP Challenge
 
 To validate your domain, you will be required to place **two (2)** files in the root of your website.
 
-In your hosted website, you will need to create a folder named: .well-known/acme-challenge (note the dot at the start) in the root of your website.
+In your hosted website, create a folder named: .well-known/acme-challenge (note the dot at the start) in the root of your website.
 
 Add a extension-less file with the file name identified in the HTTP Validation page. To this file, add the content identified in the HTTP Validation page.
 
+![image](../images/portal/stand-alone-san-http-validation.PNG)
+
+
 Ensure you can access the files publicly in the web browser by clicking on the links in the HTTP validation page. 
+
+![image](../images/portal/stand-alone-http-validation-test.PNG)
 
 When you click on a link, you should see the validation content in the file displayed in the browser. If you do not see the content or the link is in-accessible the domain validation will fail. 
 
-![image](../images/portal/stand-alone-san-http-validation.PNG)
 
 - The following example image illustrates one of the files in the web root directory
 
@@ -112,9 +122,9 @@ Click on the 'Validate' button when you are done.
 
 # DNS Challenge
 
-RCL uses the DNS-01 challenge to create a certificate that includes the following domains in a single SSL/TLS certificate:
+RCL SSL uses the DNS-01 challenge to create a certificate that includes the following domains in a single SSL/TLS certificate:
 
-- naked apex domain (e.g. contoso.com)
+- domain (e.g. contoso.com)
 - wildcard (e.g. *.contoso.com)
 
 To validate your domain with the DNS challenge, you will be required to create a DNS TXT record in your domain settings with your domain registrar.
@@ -123,7 +133,9 @@ Add the data to create the certificate. The image below illustrates data for a s
 
 ![image](../images/portal/stand-alone-san-dns.PNG)
 
-- The Hostname is the single Apex Domain (eg: 'contoso.com') you are requesting the certificate for. Only a single domain is allowed. The additional wildcard domain (eg: '*.contoso.com') will be automatically included in the certificate.
+- The Hostname is the Domain (eg: 'contoso.com') you are requesting the certificate for. Only a single domain is allowed. The additional wildcard domain (eg: '*.contoso.com') will be automatically included in the certificate.
+
+- The root domain is the ‘apex’ domain. For instance, the root domain for the hostname: ‘shop.contoso.com’ is ‘contoso.com’. Similarly, the root domain for the hostname : ‘contoso.com’ is ‘contoso.com’ and '*.contoso.com' is 'contoso.com'.
 
 - In this case, we are requesting a SSL/TLS certificate for the naked apex domain, ‘shopeneur.com’. The wild card domain, '*.shopeneur.com', will be automatically included in the certificate.
 
