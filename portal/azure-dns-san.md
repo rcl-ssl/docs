@@ -6,13 +6,13 @@ nav_order: 5
 ---
 
 # SAN Certificates - Azure DNS
-**V6.0.10**
+**V7.0.0**
 
-A Subject Alternative Name (SAN) TLS/SSL certificate will contain multiple domains in a single certificate. SAN certificates created with an Azure DNS Zone will contain the naked apex domain (e.g. contoso.com) and the wild card domain (e.g. *.contoso.com) in a single TLS/SSL certificate.
+A Subject Alternative Name (SAN) TLS/SSL certificate will contain multiple domains in a single certificate. SAN certificates created with an Azure DNS Zone will contain the domain (e.g. contoso.com) and the wild card domain (e.g. *.contoso.com) in a single TLS/SSL certificate.
 
 # Single Apex Domains
 
-SAN certificates only allow a single apex domain. For instance, the two domains 'fabricam.com' and 'contoso.com' are not allowed in a SAN multi-domain certificate.
+SAN certificates only allow a single domain. For instance, the two domains 'fabricam.com' and 'contoso.com' are not allowed in a SAN multi-domain certificate.
 
 # Access Control
 
@@ -24,13 +24,13 @@ If you try to manage an Azure DNS with a MSA account you will get the following 
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for the RCL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
 
 - [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
 
 ## Set Access Control
 
-To create certificates for Azure DNS, the Azure AAD organizational account that you use to login to the RCL Portal must either be :
+To create certificates for Azure DNS, the Azure AAD organizational account that you use to login to the RCL SSL Portal must either be :
 
 - An administrator to the subscription containing the Azure DNS Zone(s)
 
@@ -52,7 +52,7 @@ To set up access control for your AAD account, follow the instructions in the li
 
 RCL uses the DNS-01 challenge type to issue SAN certificates for :
 
-- naked apex domain (e.g. contoso.com)
+- domain (e.g. contoso.com)
 - wild card domain (e.g. *.contoso.com)
 - both domains are included in a single TLS/SSL certificate
 
@@ -66,7 +66,7 @@ Follow the instructions in the link below to set up your DNS Zone and delegate t
 
 - [Delegate DNS Zone](https://docs.microsoft.com/bs-latn-ba/azure/dns/dns-delegate-domain-azure-dns)
 
-# Create SSL/TLS Certificate
+# Create TLS/SSL Certificate
 
 - In the ‘Certificates’ module of the portal, click on the **Create New SSL/TLS Certificate** link
 
@@ -80,21 +80,21 @@ Follow the instructions in the link below to set up your DNS Zone and delegate t
 
 ![image](../images/portal/azure-dns-san-create.png)
 
-- The Hostname is the single Apex Domain (eg: 'contoso.com') you are requesting the certificate for. Only a single domain is allowed. The additional wildcard domain (eg: *.contoso.com) will be automatically added to the certificate.
+- The Hostname is the Domain (eg: 'contoso.com') you are requesting the certificate for. Only a single domain is allowed. The additional wildcard domain (eg: *.contoso.com) will be automatically added to the certificate.
 
-- In the case above, we are requesting a SAN SSL/TLS certificate for the naked apex domain, ‘shopeneur.com’. The wild card domain '*.shopeneur.com' will be automatically included in the certificate.
+- In the case above, we are requesting a SAN TLS/SSL certificate for the domain, ‘shopeneur.com’. The wild card domain '*.shopeneur.com' will be automatically included in the certificate.
 
-- The Host Name must be valid for the DNS Zone. For instance, the naked apex domain ‘shopeneur.com’ is valid for the DNS Zone ‘shopeneur.com’.
+- The Host Name must be valid for the DNS Zone. For instance, the domain ‘shopeneur.com’ is valid for the DNS Zone ‘shopeneur.com’.
 
-- You will need to wait up to 10 mins to validate the site and install the certificate. When this is done, the SSL/TLS certificate will be displayed in the certificates list.
+- You will need to wait up to 10 mins to validate the site and install the certificate.
 
 ![image](../images/portal/certificate-ordered.PNG)
 
-- When this is done, the SSL/TLS certificate will be displayed in the certificates list.
+- When this is done, the TLS/SSL certificate will be displayed in the certificates list.
 
 ![image](../images/portal/certificate-list.PNG)
 
-# Manually Installing TLS/SSL Certificates in Web Servers
+# Manually Installing SSL/TLS Certificates in Web Servers
 
 - To access the certificate, click the **Details** button in the **Manage** menu in the certificates list page.
 
@@ -115,7 +115,7 @@ Follow the instructions in the link below to set up your DNS Zone and delegate t
 
 ## Certificate Installation
 
-You will need to manually download and install your certificate in your web server. The following links provides instructions on how to install the certificate in a web server
+You can download and install your certificate in your web server. The following links provides instructions on how to install the certificate in a web server
 
 - [Installing SSL/TLS Certificates in Web Servers and Hosting Services](../installations/web-servers)
 - [Installing SSL/TLS Certificates in Apache Server](../installations/apache)
@@ -128,6 +128,10 @@ You will need to manually download and install your certificate in your web serv
 SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the certificates list to update a certificate.
 
 ![image](../images/portal/azure-dns-update.PNG)
+
+# Automatically Renewing SSL/TLS Certificates
+
+You can automatically renew certificates using the [RCL SSL CertificateBot](../certbot/certbot.md) or the [RCL SSL AutoRenew Function](../autorenew/autorenew.md)
 
 # Rate Limits
 
