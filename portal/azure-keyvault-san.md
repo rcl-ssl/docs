@@ -6,15 +6,15 @@ nav_order: 8
 ---
 
 # SAN Certificate - Azure Key Vault
-**V6.0.10**
+**V7.0.0**
 
-RCL creates TLS/SSL certificates using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records) and automatically saves them to [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts).
+RCL SSL creates TLS/SSL certificates using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records) and automatically saves them to [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts).
 
-A Subject Alternative Name (SAN) TLS/SSL certificate will contain multiple domains in a single certificate. SAN certificates created with an **Azure DNS Zone** will contain the naked apex domain (e.g. contoso.com) and the wild card domain (e.g. *.contoso.com) in a single TLS/SSL certificate.
+A Subject Alternative Name (SAN) TLS/SSL certificate will contain multiple domains in a single certificate. SAN certificates created with an **Azure DNS Zone** will contain the domain (e.g. contoso.com) and the wild card domain (e.g. *.contoso.com) in a single TLS/SSL certificate.
 
-# Single Apex Domains
+# Single Domains
 
-SAN certificates only allow a single apex domain. For instance, the two domains 'fabricam.com' and 'contoso.com' are not allowed in a SAN multi-domain certificate.
+SAN certificates only allow a single domain. For instance, the two domains 'fabricam.com' and 'contoso.com' are not allowed in a SAN multi-domain certificate.
 
 # Access Control
 
@@ -26,13 +26,13 @@ If you try to manage Azure DNS / Key Vault with a MSA account you will get the f
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for the RCL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
 
 - [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
 
 ## Set Access Control
 
-To create certificates for Azure DNS / Key Vault, the Azure AAD organizational account that you use to login to the RCL Portal must either be :
+To create certificates for Azure DNS / Key Vault, the Azure AAD organizational account that you use to login to the RCL SSL Portal must either be :
 
 - An administrator to the subscription containing the Azure DNS Zone(s) / Key Vault(s)
 
@@ -52,7 +52,7 @@ To set up access control for your AAD account, follow the instructions in the li
 
 # Create a SSL/TLS Certificate using DNS-01
 
-RCL uses the DNS-01 challenge type to issue certificates for :
+RCL SSL uses the DNS-01 challenge type to issue certificates for :
 
 - primary domains (e.g. contoso.net)
 - subdomains (e.g. store.contoso.net)
@@ -82,7 +82,7 @@ You must have security access to the Azure Key Vault certificate operations.
 
 **If you do not set the access policy for Key Vault, you will experience 'Access Denied' or 'Forbidden' errors when you try to create a certificate.**
 
-This access policy is required to import the SSL/TLS certificate in a Key Vault in your Azure account. If you have not yet created an access policy for your certificates, then follow these steps.
+This access policy is required to import the TLS/SSL certificate in a Key Vault in your Azure account. If you have not yet created an access policy for your certificates, then follow these steps.
 
 - In your Azure Key Vault, click on the ‘Access policies’ link. Then click on ‘Add Access Policy’.
 
@@ -90,7 +90,7 @@ This access policy is required to import the SSL/TLS certificate in a Key Vault 
 
 - Select all the permissions for the ‘Certificate permissions’ (all 16 permissions). Ensure you include the **purge** permission.
 
-- Select a service principal : search for the Azure Active Directory organizational account that you use to login to the RCL Portal
+- Select a service principal : search for the Azure Active Directory organizational account that you use to login to the RCL SSL Portal
 
 - Click the ‘Select’ button
 
@@ -114,13 +114,13 @@ This access policy is required to import the SSL/TLS certificate in a Key Vault 
 
 - Add the data to create the certificate. The image below illustrates sample data.
 
-- The Hostname is the single Apex Domain (eg: 'contoso.com') you are requesting the certificate for. Only a single domain is allowed. The additional wildcard domain (eg: *.contoso.com) will be automatically added to the certificate.
+- The Hostname is the single Domain (eg: 'contoso.com') you are requesting the certificate for. Only a single domain is allowed. The additional wildcard domain (eg: *.contoso.com) will be automatically added to the certificate.
 
-- In the case above, we are requesting a SAN SSL/TLS certificate for the naked apex domain, ‘shopeneur.com’. The wild card domain '*.shopeneur.com' will be automatically included in the certificate.
+- In the case above, we are requesting a SAN SSL/TLS certificate for the domain, ‘shopeneur.com’. The wild card domain '*.shopeneur.com' will be automatically included in the certificate.
 
 - Select the Key Vault name.
 
-- The Host Name must be valid for the DNS Zone. For instance, the naked apex domain ‘shopeneur.com’ is valid for the DNS Zone ‘shopeneur.com’
+- The Host Name must be valid for the DNS Zone. For instance, the domain ‘shopeneur.com’ is valid for the DNS Zone ‘shopeneur.com’
 
 ![image](../images/portal/azure-keyvault-san-create.PNG)
 
@@ -130,7 +130,7 @@ This access policy is required to import the SSL/TLS certificate in a Key Vault 
 
 ![image](../images/portal/certificate-ordered.PNG)
 
-- When this is done, the SSL/TLS certificate will be displayed in the certificates list.
+- When this is done, the TLS/SSL certificate will be displayed in the certificates list.
 
 ![image](../images/portal/certificate-list.PNG)
 
@@ -138,7 +138,7 @@ This access policy is required to import the SSL/TLS certificate in a Key Vault 
 
 ![image](../images/portal/certificate-keyvault-azure.png)
 
-# Manually Renewing SSL/TLS Certificates
+# Manually Renewing TLS/SSL Certificates
 
 SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the 'Manage' menu in the certificates list to update a certificate.
 
@@ -146,11 +146,11 @@ SSL/TLS certificates will expire in 90 days. You can manually renew a certificat
 
 # Automatic Certificate Renewal and Installation
 
-You can use the [RCL AutoRenew Function](../autorenew/autorenew) to automatically renew certificates in Azure Key Vault.
+You can use the [RCL SSL AutoRenew Function](../autorenew/autorenew) to automatically renew certificates in Azure Key Vault.
 
 Follow the instructions in the link to use the AutoRenew function :
 
-- [RCL AutoRenew Function](../autorenew/autorenew)
+- [RCL SSL AutoRenew Function](../autorenew/autorenew)
 
 # Rate Limits
 
