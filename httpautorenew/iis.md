@@ -8,7 +8,7 @@ nav_order: 4
 # RCL SSL HTTP AutoRenew for IIS
 **V7.0.0**
 
-RCL SSL AutoRenew for IIS runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
+RCL SSL HTTP AutoRenew for IIS runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
 
 Certificates will be automatically saved to the ``Local Machine`` certificate store in the  ``Trusted People`` folder. Certificates will also be automatically bound to the **IIS Web Server** on the hosting machine.
 
@@ -16,7 +16,7 @@ Certificates will be automatically saved to the ``Local Machine`` certificate st
 
 You can use the service for IIS to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
-- [Stand Alone](../portal/stand-alone.md) (including [SAN](../portal/stand-alone-san.md)) using the [HTTP Challenge](../portal/stand-alone-san.md#completing-the-http-challenge) type.
+- [Stand Alone](../portal/stand-alone.md) (including [SAN](../portal/stand-alone-san.md)) using the [HTTP Challenge](../portal/stand-alone.md#completing-the-http-challenge) type.
 
 # Installation
 
@@ -40,10 +40,9 @@ If you have an older version of the service installed on your hosting machine, y
 
 ### Create an API Key
 
-Follow the instruction in the following link to create an Api Key.
+The service uses the [RCL SSL Core API](../apicore/api.md) and [RCL SDK](../sdk/) to renew certificates. You must create an Api Key to make authorized requests to the API. Follow the instruction in the following link to create an Api Key.
 
-[Create an Api Key](../authorization/apikey.md)
-
+[Create an Api Key](../apicore/authorization.md)
 
 ### Get the SubscriptionId
 

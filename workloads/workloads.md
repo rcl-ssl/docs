@@ -2,7 +2,7 @@
 title: Workloads
 description: The various workloads for installing SSL/TLS Certificates
 has_children: true
-nav_order: 10
+nav_order: 11
 ---
 
 # Workloads

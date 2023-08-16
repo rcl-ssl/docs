@@ -1,7 +1,7 @@
 ---
 title: API Authorization
 description: Obtaining authorization tokens for the RCL SSL API
-parent: API
+parent: RCL SSL API
 nav_order: 2
 ---
 
