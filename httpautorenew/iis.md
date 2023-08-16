@@ -81,7 +81,7 @@ Get the **Subscription Id** in the RCL SSL Portal.
     "CertificateBot" : {
         "IncludeCertificates":[],
         "SaveCertificatePath": "C:/ssl",
-        ...
+        
     }
   ```
 
@@ -132,9 +132,9 @@ Get the **Subscription Id** in the RCL SSL Portal.
 - siteName - this is the **Site** name of the IIS website
 - ip - this is the **IP Address** of the IIS website (you can use any (``*``))
 - port - the is the **Port** number of the IIS website (you can use ``443``)
-- host - the the **Host Name** assigned to the IIS website
+- host - the the **Host (Domain) Name** assigned to the IIS website
 - certificateName - this is the name of the certificate in the RCL SSL Portal to be installed in the IIS website
-- validationPath - the root path to the folder where your website is hosted 
+- validationPath - the root path to the folder where your website is hosted. This is where the validation tokens will be saved for the HTTP challenge
 
 ![install](../images/certbot/iis.PNG)
 
@@ -201,11 +201,11 @@ sc.exe create HttpAutoRenewIIS binpath= <file-path>\RCL.SSL.HTTP.AutoRenew.IIS.e
 
 - After the service in installed, open **Services** in Windows, look for the ``HttpAutoRenewIIS`` service and **Start** the service
 
-![image](../images/certbot/winservice-start.png)
+![image](../images/http_autorenew/winservice-iis-start.png)
 
 - Set the **Properties** of the service to start automatically when the hosting machine starts
 
-![image](../images/certbot/winservice-automatic.png)
+![image](../images/http_autorenew/winservice-iis-automatic.png)
 
 # View the Event Logs
 
