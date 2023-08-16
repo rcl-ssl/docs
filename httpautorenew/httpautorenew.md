@@ -11,7 +11,7 @@ nav_order: 7
 RCL SSL HTTP AutoRenew can be run as a Linux Daemon or a Windows Service in the web hosting machine for automatic certificate renewal. It is installed in the hosting machine. It provides the following functionality :
 
 - automatically renew certificates created in the RCL SSL Portal using the [Stand Alone](../portal/stand-alone.md)
-(including [SAN](../portal/stand-alone-san.md)) option using the HTTP Challenge type
+(including [SAN](../portal/stand-alone-san.md)) option using the [HTTP Challenge](../portal/stand-alone-san.md#completing-the-http-challenge) type
 - save SSL/TLS certificates in the hosting machine for a **web server** to use 
 
 The following web servers are supported:

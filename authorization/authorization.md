@@ -6,6 +6,6 @@ nav_order: 3
 ---
 
 # Authorization
-**V.6.0.10**
+**V.7.0.0**
 
-In this section, you will learn how to obtain authorization to access Azure resources for use in the RCL applications.
+In this section, you will learn how to obtain authorization to access resources for use in the RCL SSL applications.
