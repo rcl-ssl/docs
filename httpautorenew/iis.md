@@ -40,7 +40,7 @@ If you have an older version of the service installed on your hosting machine, y
 
 ### Create an API Key
 
-The service uses the [RCL SSL Core API](../apicore/api.md) and [RCL SDK](../sdk/) to renew certificates. You must create an Api Key to make authorized requests to the API. Follow the instruction in the following link to create an Api Key.
+The service uses the [RCL SSL Core API](../apicore/api.md) and [RCL SDK](../sdk/) to renew certificates. You must create an Api Key to make authorized requests to the API. Follow the instructions in the following link to create an Api Key.
 
 [Create an Api Key](../apicore/authorization.md)
 
@@ -68,8 +68,8 @@ Get the **Subscription Id** in the RCL SSL Portal.
 "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/public",
     "SourceApplication": "RCL HTTP AutoRenew CertificateBot IIS",
-    "ApiKey": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
-    "SubscriptionId": "879"
+    "ApiKey": "xxx",
+    "SubscriptionId": "xxx"
   }
 ```
 
@@ -160,8 +160,8 @@ The image above illustrates a site hosted in IIS named 'Home' with multiple bind
   "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/public",
     "SourceApplication": "RCL SSL HTTP AutoRenew IIS",
-    "ApiKey": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
-    "SubscriptionId": "879"
+    "ApiKey": "xxx",
+    "SubscriptionId": "xxx"
   },
   "CertificateBot": {
     "IncludeCertificates":[],
