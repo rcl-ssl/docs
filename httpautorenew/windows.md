@@ -242,7 +242,7 @@ The following files are downloaded and saved on the server :
 
 ## Configuring the Web Servers
 
-Please follow the links below to configure your web server:
+After, you have installed the Windows Service and renewed certificates have been downloaded to your specified folder.Please follow the links below to configure your web server to use the certificates :
 
 - [Installing SSL/TLS Certificates in Apache Server](../installations/apache)
 - [Installing SSL/TLS Certificates in Apache Tomcat](../installations/apache-tomcat)
