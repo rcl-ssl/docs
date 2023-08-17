@@ -108,7 +108,7 @@ Example of multiple certificates
           "validationPath": "C:/inetpub/fabricam/wwwroot"
         }
       ]
-  },
+  }
 ```
 
 Example of a single certificate
@@ -121,7 +121,7 @@ Example of a single certificate
           "validationPath": "C:/inetpub/adventureworks/wwwroot"
         }
       ]
-  },
+  }
 ```
 
 ## Example of a configured **appsettings.json** file
@@ -150,8 +150,10 @@ Example of a single certificate
   "CertificateBot": {
     "SaveCertificatePath": "C:/ssl",
     "IncludeCertificates": [
-      "certificateName": "adventureworks.com",
-      "validationPath": "C:/inetpub/adventureworks/wwwroot"
+      {
+        "certificateName": "adventureworks.com",
+        "validationPath": "C:/inetpub/adventureworks/wwwroot"
+      }
     ],
     "IISBindings": []
   }

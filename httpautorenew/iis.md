@@ -215,7 +215,7 @@ sc.exe create HttpAutoRenewIIS binpath= <file-path>\RCL.SSL.HTTP.AutoRenew.IIS.e
 
 - Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.SSL.HTTP.AutoRenew.IIS`` events
 
-![image](../images/http_autorenew/winservice-iis-event.PNG)
+![image](../images/http_autorenew/winservice-iis-event.png)
 
 - Ensure that there are no error events for the service. If there are error events, the service is misconfigured and will not function
 
