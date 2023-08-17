@@ -16,7 +16,7 @@ You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates c
 
 - [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md))
 
-**'Stand Alone' certificates are not supported by RCL SSL CertificateBot.**
+**'Stand Alone' certificates are not supported by RCL SSL CertificateBot. Use the [HTTP AutoRenew](../httpautorenew/httpautorenew.md) instead**
 
 # Install RCL SSL CertificateBot
 

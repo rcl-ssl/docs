@@ -40,7 +40,7 @@ If you have an older version of the service installed on your hosting machine, y
 
 ### Create an API Key
 
-The service uses the [RCL SSL Core API](../apicore/api.md) and [RCL SDK](../sdk/) to renew certificates. You must create an Api Key to make authorized requests to the API. Follow the instructions in the following link to create an Api Key.
+The service uses the [RCL SSL Core API](../apicore/api.md) and [RCL SDK](../sdk/) to renew certificates. You must create an Api Key to make authorized requests to the API. Follow the instructions in the following link to create an Api Key in the RCL SSL Portal.
 
 [Create an Api Key](../apicore/authorization.md)
 
@@ -64,10 +64,11 @@ Get the **Subscription Id** in the RCL SSL Portal.
   - Api Key
   - SubscriptionId
 
+Example
 ```json
 "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/public",
-    "SourceApplication": "RCL HTTP AutoRenew CertificateBot IIS",
+    "SourceApplication": "RCL HTTP AutoRenew IIS",
     "ApiKey": "xxx",
     "SubscriptionId": "xxx"
   }
@@ -77,7 +78,8 @@ Get the **Subscription Id** in the RCL SSL Portal.
 
   - saveCertificatePath
 
-  ```json
+Example
+```json
     "CertificateBot" : {
         "IncludeCertificates":[],
         "SaveCertificatePath": "C:/ssl",
@@ -93,6 +95,7 @@ Get the **Subscription Id** in the RCL SSL Portal.
 
 - Example of multiple bindings (using a [SAN](../portal/stand-alone-san.md) certificate):
 
+Example
 ```json
 "IISBindings": [
   {
@@ -116,6 +119,7 @@ Get the **Subscription Id** in the RCL SSL Portal.
 
 - Example of a single binding :
 
+Example
 ```json
 "IISBindings": [
   {
