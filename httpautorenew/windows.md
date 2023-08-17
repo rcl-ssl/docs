@@ -84,7 +84,7 @@ Example
     }
   ```
 
-- **Note : when setting the folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl`` .  Failure to do this will result in inability to run the windows service.**
+- **Note : when setting any folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl`` .  Failure to do this will result in inability to run the windows service.**
 
 - Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
 
@@ -101,11 +101,11 @@ Example of multiple certificates
      "includeCertificates": [
         {
           "certificateName": "contoso.com",
-          "validationPath": "C:/inetpub/contoso/wwwroot"
+          "validationPath": "C:/sites/contoso/wwwroot"
         },
         {
           "certificateName": "fabricam.com,www.fabricam.com",
-          "validationPath": "C:/inetpub/fabricam/wwwroot"
+          "validationPath": "C:/sites/fabricam/wwwroot"
         }
       ]
   }
@@ -118,7 +118,7 @@ Example of a single certificate
      "includeCertificates": [
         {
           "certificateName": "adventureworks.com",
-          "validationPath": "C:/inetpub/adventureworks/wwwroot"
+          "validationPath": "C:/sites/adventureworks/wwwroot"
         }
       ]
   }
@@ -174,17 +174,17 @@ sc.exe create HttpAutoRenewWindows binpath= <file-path>\RCL.SSL.HTTP.AutoRenew.W
 
 - After the service in installed, open **Services** in Windows, look for the ``HttpAutoRenewWindows`` service and **Start** the service
 
-![image](../images/certbot/winservice-start.png)
+![image](../images/http_autorenew/winservice-start.png)
 
 - Set the **Properties** of the service to start automatically when the hosting machine starts
 
-![image](../images/certbot/winservice-automatic.png)
+![image](../images/http_autorenew/winservice-automatic.png)
 
 # View the Event Logs
 
 - Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.SSL.HTTP.AutoRenew.Windows`` events
 
-![image](../images/certbot/winservice-events.PNG)
+![image](../images/http_autorenew//winservice-event.png)
 
 - Ensure that there are no error events for the service. If there are error events, the service is misconfigured and will not function
 

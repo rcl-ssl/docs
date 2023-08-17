@@ -87,7 +87,7 @@ Example
     }
   ```
 
-- **Note : when setting the folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl``. Failure to do this will result in inability to run the windows service.**
+- **Note : when setting any folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl``. Failure to do this will result in inability to run the windows service.**
 
 - Create the folder in the hosting machine and ensure it has read/write permissions so that the certificates can be saved to it. 
 
