@@ -16,9 +16,6 @@ You can use the service to automatically renew SSL/TLS certificates created in t
 
 - [Stand Alone](../portal/stand-alone.md) (including [SAN](../portal/stand-alone-san.md)) using the [HTTP Challenge](../portal/stand-alone.md#completing-the-http-challenge) type.
 
-{: .information }
-Before installing this service, you should have already configured your web server to use SSL certificates from a folder on your hosting machine. Use this same folder to automatically save your renewed certificates.
-
 # Installation
 
 If you have an older version of the service installed in your hosting machine, you should completely delete it and install the new one.
