@@ -74,7 +74,7 @@ Example
   }
 ```
 
-- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : C:/ssl
+- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. 
 
   - saveCertificatePath
 
@@ -89,7 +89,7 @@ Example
 
 - **Note : when setting any folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl``. Failure to do this will result in inability to run the windows service.**
 
-- Create the folder in the hosting machine and ensure it has read/write permissions so that the certificates can be saved to it. 
+- Ensure the folder has read/write permissions so that the certificates can be saved to it. 
 
 - Configure the site bindings for each website that you want to bind a SSL/TLS certificate. You can have a single or multiple bindings.
 

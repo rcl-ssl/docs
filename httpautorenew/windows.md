@@ -16,6 +16,9 @@ You can use the service to automatically renew SSL/TLS certificates created in t
 
 - [Stand Alone](../portal/stand-alone.md) (including [SAN](../portal/stand-alone-san.md)) using the [HTTP Challenge](../portal/stand-alone.md#completing-the-http-challenge) type.
 
+{: .information }
+Before installing this service, you should have already configured your web server to use SSL certificates from a folder on your hosting machine. Use this same folder to automatically save your renewed certificates.
+
 # Installation
 
 If you have an older version of the service installed in your hosting machine, you should completely delete it and install the new one.
@@ -71,7 +74,7 @@ Example
   }
 ```
 
-- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : C:/ssl
+- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates.
 
   - saveCertificatePath
 
@@ -86,7 +89,7 @@ Example
 
 - **Note : when setting any folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl`` .  Failure to do this will result in inability to run the windows service.**
 
-- Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
+- Ensure the folder has read/write permissions so that the certificates can be saved to it. 
 
 - The ``includeCertificates`` settings will allow for including specific certificates by its name 
 (eg:  "contoso.com"  or "contoso.com, www.contoso.com" - for SAN) for the certificate(s) you want to save on the server. 

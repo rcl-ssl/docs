@@ -53,13 +53,15 @@ sudo a2enmod ssl
 
 ### Windows :
 
-In the ```httpd.conf``` file, change the following lines by removing the leading # sign in order to uncomment the lines:
+In the ```conf/httpd.conf``` file, change the following lines by removing the leading # sign in order to uncomment the lines:
 
 ```#Loadmodule ssl_module modules/mod_ssl.so```
 
 ```#LoadModule socache_shmcb_module modules/mod_socache_shmcb.so```
 
 ```#Include conf/extra/httpd-default.conf```
+
+```#Include conf/extra/httpd-ssl.conf```
 
 
 ## Create a Virtual Host
@@ -101,11 +103,14 @@ Please see the Virtual host example below:
 
 Note : The ``SSLCertificateChainFile`` may be named ``SSLCACertificateFile`` in some apache installations.
 
-You can modify the names of the files and paths to match the location and filename that you used to save your certificate files:
+You can modify the paths to match the location that you used to save your certificate files:
 
 - **SSLCertificateFile** - should be your **Primary Certificate** file (.crt)
 - **SSLCertificateKeyFile** - should be the **Certificate Private Key** file (.key)
 - **SSLCertificateChainFile** - should be the **CA Bundle** (Intermediate Certificates) file (.crt)
+
+{: .information }
+Ensure the actual files exists at the path shown above. If the files do not exist, Apache will not be able to re-start.
 
 Ensure the Virtual host is enabled in Apache. 
 

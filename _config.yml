@@ -7,3 +7,7 @@ ga_tracking_anonymize_ip: true
 aux_links:
   "RCL SSL Docs on GitHub":
     - "https://github.com/rcl-ssl/docs"
+callouts:
+  information:
+    title: Information
+    color: blue
