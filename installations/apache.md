@@ -22,6 +22,14 @@ You can also use the [RCL SSL HTTP AutoRenew](../httpautorenew/httpautorenew.md)
 
 The certificate files will be saved on the hosting machine at the path you specified in the ``appsettings.json`` configuration file.
 
+The following files are downloaded and saved on the server :
+
+  - ``certificate.pfx`` - The PFX certificate file
+  - ``primaryCertificate.crt`` The Primary Certificate file
+  - ``fullChainCertificate.crt`` - The full chain certificate file
+  - ``caBundle.crt`` - The Intermediate Certificates (CA Bundle) file
+  - ``privateKey.key`` - The Certificate Private Key file
+
 ## Files Required
 
 The files required are :
@@ -36,7 +44,7 @@ After you have downloaded the certificate files, the next step is to edit your A
 
 It is assumed that you have Apache 2 already installed and hosting your website on your server. In addition, you have established your own custom domain name that points to your website.
 
-## Ensure the SSL module is enabled in apache.
+## Ensure the SSL module is enabled in Apache.
 
 ### Linux Command 
 ```
@@ -58,7 +66,7 @@ In the ```httpd.conf``` file, change the following lines by removing the leading
 
 In your server, create a **Virtual Host** entry or file for your domain under the recommended folder. Use it to enable SSL and include the certificate files as required. 
 
-If there is a SSL default template available in your apache server, then use the template to create the Virtual Host.
+If there is a SSL default template available in your Apache server, then use the template to create the Virtual Host.
 
 In **Linux**, the Virtual Host files are usually located at:
 
@@ -99,7 +107,7 @@ You can modify the names of the files and paths to match the location and filena
 - **SSLCertificateKeyFile** - should be the **Certificate Private Key** file (.key)
 - **SSLCertificateChainFile** - should be the **CA Bundle** (Intermediate Certificates) file (.crt)
 
-Ensure the Virtual host is enabled in apache. 
+Ensure the Virtual host is enabled in Apache. 
 
 **Linux** example command for 'mysite.conf' :
 
@@ -115,6 +123,6 @@ Reload the Apache service once you're done.
 sudo systemctl reload apache2
 ```
 
-In **Windows**, restart the Apache service.
+In **Windows**, save the virtual host file and restart the Apache service.
 
 Now you can confirm your domain SSL certificate using any of the SSL checker tools available. Or you can just browse the URL.
