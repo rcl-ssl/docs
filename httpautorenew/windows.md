@@ -5,7 +5,7 @@ parent: HTTP AutoRenew
 nav_order: 3
 ---
 
-# RCL  SSL HTTP AutoRenew for Windows
+# RCL SSL HTTP AutoRenew for Windows
 **V7.0.0**
 
 RCL SSL HTTP AutoRenew runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
