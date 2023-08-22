@@ -121,12 +121,18 @@ Example
     }
   ```
 
+- Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
+
+```bash
+sudo mkdir -m 777 /etc/ssl/httpautorenew
+```
+
 - The ``includeCertificates`` settings will allow for including specific certificates by its name 
 (eg:  "contoso.com"  or "contoso.com, www.contoso.com" - for SAN) for the certificate(s) you want to save on the server. 
 
-- ``certificateName`` - the name of the certificate in the RCL Portal to be included from automatic renewal
+  - ``certificateName`` - the name of the certificate in the RCL Portal to be included from automatic renewal
 
-- ``validationPath`` - the path to the root folder where the website is hosted from. The validations tokens for the [HTTP Challenge](../portal/stand-alone.md#completing-the-http-challenge) will be saved to the root of the website
+  - ``validationPath`` - the path to the root folder where the website is hosted from. The validations tokens for the [HTTP Challenge](../portal/stand-alone.md#completing-the-http-challenge) will be saved to the root of the website
 
 Example of multiple certificates
 ```json
@@ -143,7 +149,7 @@ Example of multiple certificates
         }
       ]
   }
-
+```
 Example of a single certificate
 ```json
   "CertificateBot": {
@@ -156,7 +162,6 @@ Example of a single certificate
       ]
   }
 ```
-
 ## Example of a configured **appsettings.json** file
 
 ```json
@@ -186,12 +191,6 @@ Example of a single certificate
 }
 ```
 - Save the updated **appsettings.json** file when you are done
-
-- Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
-
-```bash
-sudo mkdir -m 777 /etc/ssl/httpautorenew
-```
 
 # Add the Linux Daemon
 
