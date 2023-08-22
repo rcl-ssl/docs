@@ -2,7 +2,7 @@
 title: Windows Service
 description: RCL SSL HTTP AutoRenew Windows Service for automatic SSL/TLS certificate installation and renewal in a Windows server 
 parent: HTTP AutoRenew 
-nav_order: 3
+nav_order: 2
 ---
 
 # RCL SSL HTTP AutoRenew for Windows
