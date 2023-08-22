@@ -28,7 +28,7 @@ You can create a SSL/TLS certificate by using either the :
 - HTTP-01 Challenge or
 - DNS-01 Challenge
 
-# Create a SSL/TLS Certificate using HTTP-01
+# Create a SSL/TLS Certificate using HTTP
 
 The RCL Portal uses the HTTP-01 challenge type to issue certificates for : 
 
