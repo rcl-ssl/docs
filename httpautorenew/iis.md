@@ -254,3 +254,33 @@ If you need to reset the service because of a error or corrupted certificate ren
 - Stop the service and delete it
 - Delete all certificates and their folders in the directory in which certificates are saved
 - Re-create the service and start it
+
+# Testing Certificate Renewal
+
+## Force Certificate Expiration
+
+In order to test certificate renewal, you must first force certificate expiration in the RCL SSL Portal.
+
+- In the RCL SSL Portal, click on the **SSL/TLS Certificate > Certificates List** link in the side menu
+
+- In the certificates list, click the **Manage > Force Expiry** link
+
+- In the ``Force Expiry`` page, click the **Force Expiry** button
+
+- The certificate will be forced to expire in the next 14 days
+
+![Force Expiry](../images/http_autorenew/force-expiry.png)
+
+## Testing Renewal
+
+- Re-start the service to trigger the certificate renewal
+
+- Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.SSL.HTTP.AutoRenew.IIS`` events
+
+- Ensure that there are no error events for the service
+
+- If there are errors: fix the errors , restart the service to run the test again
+
+- Check that the certificate(s) are bound to the IIS website(s)
+
+- Once this test passes, the service will run every seven days to automatically renew certificates and bind them to the IIS websites

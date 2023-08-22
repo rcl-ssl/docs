@@ -344,9 +344,20 @@ sudo systemctl restart httpautorenew
 sudo journalctl -u httpautorenew --no-pager
 ```
 
-- Check the logs to ensure successful certificate renewal. If there are errors: fix the errors , restart the demon and run the test again
+- Check the logs to ensure successful certificate renewal.
 
-- Check that the certificate files are stored in the folder that you specified, eg. ``"/etc/ssl/httpautorenew"``
+```bash
+RCL.SSL.HTTP.AutoRenew.Linux[1405]: RCL.SSL.HTTP.AutoRenew.Linux.Worker[0] Found 1 certificate(s) to process locally.  Found 1 certificate(s) to renew.  Scheduling shopeneur.com for renewal.  Renewed shopeneur.com Successfully saved : shopeneur.com in local machine.
+```
+- If there are errors: fix the errors , restart the demon and run the test again
+
+- Check that the certificate files are stored in the folder that you specified
+
+ Example
+ ```bash
+ cd /etc/ssl/httpautorenew
+ ls
+ ```
 
 - Once this test passes, the daemon will run every seven days to automatically renew certificates and save the certificate files to a folder you specify
 
