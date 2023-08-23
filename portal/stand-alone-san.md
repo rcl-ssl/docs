@@ -1,6 +1,6 @@
 ---
 title: Stand Alone SAN
-description: Use the RCL portal to manually create multi-domain SAN SSL/TLS certificates 
+description: Use the RCL SSL portal to manually create multi-domain SAN SSL/TLS certificates 
 parent: Portal
 nav_order: 3
 ---
@@ -37,13 +37,18 @@ You will need to manually download and install the certificate in your web serve
 
 ![image](../images/portal/flow-manual.png)
 
-**When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the renewed certificate in your web server.**
-
-
 You can create a SSL/TLS certificate by using either the :
 
 - HTTP-01 Challenge or
 - DNS-01 Challenge
+
+# Manual Certificate Renewal
+
+When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the renewed certificate in your web server.
+
+# Automatic Certificate Renewal
+
+Automatic certificate renewal is only supported with the [HTTP Challenge Type](./stand-alone-san.md#completing-the-http-challenge). You can use [RCL SSL HTTP AutoRenew](/httpautorenew/httpautorenew.md) to automatically renew certificates created with the HTTP challenge.
 
 ## Create a SSL/TLS Certificate
 
@@ -72,7 +77,7 @@ To validate your domain with the HTTP challenge, you will be required to place f
 
 - In this case, we are requesting a SSL/TLS certificate for the domain, ‘shopeneur.com’. The www subdomain, 'www.shopeneur.com' will be automatically included in the certificate.
 
-- The root domain is the ‘apex’ domain. For instance, the root domain for the hostname: ‘shop.contoso.com’ is ‘contoso.com’. Similarly, the root domain for the hostname : ‘contoso.com’ is ‘contoso.com’ and '*.contoso.com' is 'contoso.com'.
+- The root domain is the ‘apex’ domain. For instance, the root domain for the hostname: ‘shop.contoso.com’ is ‘contoso.com’. Similarly, the root domain for the hostname : ‘contoso.com’ is ‘contoso.com’ and 'www.contoso.com' is 'contoso.com'.
 
 - Click the **Create** button when you are done
 
@@ -201,10 +206,6 @@ You will need to manually download and install your certificate in your web serv
 - [Installing SSL/TLS Certificates in Apache Tomcat](../installations/apache-tomcat)
 - [Installing SSL/TLS Certificates in NGINX](../installations/nginx)
 - [Installing SSL/TLS Certificates in IIS](../installations/iis)
-
-# Certificate Renewal
-
-When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the new certificate in the web server.
 
 # Rate Limits
 

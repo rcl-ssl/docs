@@ -6,9 +6,9 @@ nav_order: 1
 ---
 
 # SSL/TLS for Web Servers and Hosting Systems 
-**V6.0.10**
+**V7.0.0**
 
-This workload is applicable for the **manual creation, installation and renewal** of a SSL/TLS certificate in a web server.
+This workload is applicable for the **creation, installation and renewal** of a SSL/TLS certificate in a web server.
 
 The web servers may include : 
 
@@ -41,6 +41,14 @@ The web servers may include :
 
 SSL/TLS Certificates will expire within 90 days. Follow these instructions to renew the certificate.
 
-- Delete the SSL/TLS certificate in the RCL Portal
+### 3.1 Manual Renewal
+
+- Delete the SSL/TLS certificate in the RCL SSL Portal just before it expires
 - Create a new certificate using the 'Stand Alone' or 'Stand Alone SAN' option
 - Remove the old certificate and re-install the new one in your web server
+
+### 3.2 Automatic Renewal
+
+Automatic certificate renewal is only supported with the [HTTP Challenge Type](./stand-alone.md#completing-the-http-challenge). You can use [RCL SSL HTTP AutoRenew](/httpautorenew/httpautorenew.md) to automatically renew certificates created with the HTTP challenge.
+
+

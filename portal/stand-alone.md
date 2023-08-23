@@ -1,43 +1,49 @@
 ---
 title: Stand Alone 
-description: Use the RCL portal to manually create single-domain SSL/TLS certificates 
+description: Use the RCL SSL portal to manually create single-domain SSL/TLS certificates 
 parent: Portal
 nav_order: 2
 ---
 
 # Creating Stand Alone SSL/TLS Certificates
-**V6.0.10**
+**V7.0.0**
 
-In the RCL Portal, you can create Stand Alone single-domain SSL/TLS certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
+In the RCL SSL Portal, you can create Stand Alone single-domain SSL/TLS certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
 
-You will need to manually download and install the certificate in your web server. The following web servers are supported :
+You will need to download and install the certificate in your web server. The following web servers are supported :
 
 - Apache
 - Apache Tomcat
 - NGINX
 - IIS
 - cPanel, Plesk, etc
-- Any hosting system that supports upload of SSL/TLS certificates
+- Any hosting system that supports the upload of SSL/TLS certificates
 
 ![image](../images/portal/flow-manual.png)
 
-**When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the renewed certificate in your web server.**
-
 You can create a SSL/TLS certificate by using either the :
 
-- HTTP-01 Challenge or
-- DNS-01 Challenge
+- HTTP Challenge or
+- DNS Challenge
+
+# Manual Certificate Renewal
+
+When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the renewed certificate in your web server.
+
+# Automatic Certificate Renewal
+
+Automatic certificate renewal is only supported with the [HTTP Challenge Type](./stand-alone.md#completing-the-http-challenge). You can use [RCL SSL HTTP AutoRenew](/httpautorenew/httpautorenew.md) to automatically renew certificates created with the HTTP challenge.
 
 # Create a SSL/TLS Certificate using HTTP
 
-The RCL Portal uses the HTTP-01 challenge type to issue certificates for : 
+The RCL SSL Portal uses the HTTP-01 challenge type to issue certificates for : 
 
 - primary domains (e.g. contoso.net)
 - subdomains (e.g. store.contoso.net, www.contoso.net, etc.)
 
 To validate your domain with the HTTP challenge, you will be required to place a file in the root of your website and ensure that this file can be accessed publicly on the web.
 
-**Wildcard subdomains (e.g. \*.contoso.net) are NOT supported with the HTTP-01 challenge type. Use the DNS-01 challenge type for wildcard certificates instead.**
+**Wildcard subdomains (e.g. \*.contoso.net) are NOT supported with the HTTP-01 challenge type.**
 
 ## Create a SSL/TLS Certificate
 
@@ -51,11 +57,11 @@ To validate your domain with the HTTP challenge, you will be required to place a
 
 - Add the data to create the certificate. The image below illustrates data for a sample site.
 
-    - The **Host Name** is the primary domain (eg: contoso.com) or subdomain (eg: store.contoso.com) that your are requesting the SSL/TLS certificate for.
+    - The **Host Name** is the primary domain (eg: contoso.com) or subdomain (eg: www.contoso.com) that your are requesting the SSL/TLS certificate for.
 
     - In this case, we are requesting a SSL/TLS certificate for the primary domain, ‘shopeneur.com’
 
-    - The root domain is the ‘apex’ domain. For instance, the root domain for the hostname: ‘shop.contoso.com’ is ‘contoso.com’. Similarly, the root domain for the hostname : ‘contoso.com’ is ‘contoso.com’ and '*.contoso.com' is 'contoso/com'.
+    - The root domain is the ‘apex’ domain. For instance, the root domain for the hostname: ‘shop.contoso.com’ is ‘contoso.com’. Similarly, the root domain for the hostname : ‘contoso.com’ is ‘contoso.com’ and '*.contoso.com' is 'contoso.com'.
 
 ![image](../images/portal/stand-alone-create.PNG)
 
@@ -107,9 +113,9 @@ To validate your domain with the HTTP challenge, you will be required to place a
 
 - You can download the SSL/TLS certificate or the relevant certificates files for installation in your webserver is the **Certificate Details** page.
 
-# Create a SSL/TLS Certificate using DNS-01
+# Create a SSL/TLS Certificate using DNS
 
-RCL uses the DNS-01 challenge type to issue certificates for :
+The RCL SSL Portal uses the DNS-01 challenge type to issue certificates for :
 
 - primary domains (e.g. contoso.net)
 - subdomains (e.g. store.contoso.net, www.contoso.net, etc.)
@@ -117,7 +123,7 @@ RCL uses the DNS-01 challenge type to issue certificates for :
 
 ## Add a SSL/TLS Certificate
 
-- In the ‘Certificates’ module of the RCL Portal , click on the 'Create New SSL/TLS Certificate' link.
+- In the ‘Certificates’ module of the RCL SSL Portal , click on the 'Create New SSL/TLS Certificate' link.
 
 ![image](../images/portal/create-new.PNG)
 
@@ -198,9 +204,6 @@ You will need to manually download and install your certificate in your web serv
 - [Installing SSL/TLS Certificates in NGINX](../installations/nginx)
 - [Installing SSL/TLS Certificates in IIS](../installations/iis)
 
-# Certificate Renewal
-
-When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the new certificate in the web server.
 
 # Rate Limits
 
