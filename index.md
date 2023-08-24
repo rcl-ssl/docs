@@ -35,21 +35,21 @@ The RCL SSL Portal is a simple-to-use online Web UI and allows you to :
 
 ## RCL SSL HTTP AutoRenew
 
-The [RCL SSL HTTP AutoRenew](./httpautorenew/httpautorenew.md) runs as a [Windows Service](../certbot/windows-service) in a Windows hosting machine and a [Linux Daemon](../certbot/linux-daemon) in a Linux hosting machine. The primary purpose of service is to automatically renew SSL/TLS certificates created in the RCL portal using the [Stand Alone](./portal/stand-alone.md) (including [SAN](./portal/stand-alone-san.md)) option and save them to a folder in the hosting machine. The web server must be configured to use the certificates files from the folder. In this way, the installation and renewal of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated. RCL SSL HTTP AutoRenew is an open-source project and is available on [GitHub](https://github.com/rcl-ssl/RCL.SSL.CertificateBot).
+The [RCL SSL HTTP AutoRenew](./httpautorenew/httpautorenew.md) runs as a [Windows Service](../certbot/windows-service) in a Windows hosting machine and a [Linux Daemon](../certbot/linux-daemon) in a Linux hosting machine. The primary purpose of service is to automatically renew SSL/TLS certificates created in the [RCL SSL Portal](./portal/portal.md) using the [Stand Alone](./portal/stand-alone.md) (including [SAN](./portal/stand-alone-san.md)) option and save them to a folder in the hosting machine. The web server must be configured to use the certificates files from the folder. In this way, the installation and renewal of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated. RCL SSL HTTP AutoRenew is an open-source project and is available on [GitHub](https://github.com/rcl-ssl/RCL.SSL.CertificateBot).
 
 ## RCL SSL CertificateBot
 
-The [RCL SSL CertificateBot](../certbot/certbot) runs as a [Windows Service](../certbot/windows-service) in a Windows hosting machine and a [Linux Daemon](../certbot/linux-daemon) in a Linux hosting. The primary purpose of CertificateBot is to automatically renew SSL/TLS certificates created in the RCL portal using the Azure DNS (including SAN) option and save them to a folder in the hosting machine (Virtual Machine). The web server must be configured to use the certificates files from the folder. In this way, the [Installation and Renewal](../installations/installations) of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated. RCL SSL CertificateBot is an open-source project and is available on [GitHub](https://github.com/rcl-ssl/RCL.SSL.CertificateBot).
+The [RCL SSL CertificateBot](../certbot/certbot) runs as a [Windows Service](../certbot/windows-service) in a Windows hosting machine and a [Linux Daemon](../certbot/linux-daemon) in a Linux hosting machine. The primary purpose of CertificateBot is to automatically renew SSL/TLS certificates created in the [RCL SSL Portal](./portal/portal.md) using the [Azure DNS](./portal/azure-dns.md) (including [SAN](./portal/azure-dns-san.md)) option and save them to a folder in the hosting machine (Virtual Machine). The web server must be configured to use the certificates files from the folder. In this way, the [Installation and Renewal](../installations/installations) of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated. RCL SSL CertificateBot is an open-source project and is available on [GitHub](https://github.com/rcl-ssl/RCL.SSL.CertificateBot).
 
 ## RCL SSL AutoRenew Function
 
-The [RCL SSL AutoRenew](/autorenew/autorenew) function is an Azure Function app that runs in an [Azure Consumption Plan](https://docs.microsoft.com/en-us/azure/azure-functions/consumption-plan). The primary purpose of the RCL SSL AutoRenew Function is to automate the renewal and installation of certificates created in the RCL SSL Portal for an **Azure App Service** , **Azure Key Vault** or **Azure DNS**. The RCL SSL AutoRenew function is an open-source project and can be directly deployed to a user's Azure Account from the [GitHub](https://github.com/rcl-ssl/RCL.SSL.AutoRenew.Function) project page.
+The [RCL SSL AutoRenew](/autorenew/autorenew) function is an Azure Function app that runs in an [Azure Consumption Plan](https://docs.microsoft.com/en-us/azure/azure-functions/consumption-plan). The primary purpose of the RCL SSL AutoRenew Function is to automate the renewal and installation of certificates created in the [RCL SSL Portal](./portal/portal.md) for an [Azure App Service](./portal/azure-appservice.md) , [Azure Key Vault](./portal/azure-keyvault.md) or [Azure DNS](./portal/azure-dns.md). The RCL SSL AutoRenew function is an open-source project and can be directly deployed to a user's Azure Account from the [GitHub](https://github.com/rcl-ssl/RCL.SSL.AutoRenew.Function) project page.
 
 # REST API 
 
 ## RCL SSL Core API
 
-The [RCL SSL Core API](./apicore/) is a REST API service to get and renew SSL/TLS certificates created in the [RCL SSL Portal](./portal/portal.md). It is primarily focused on automating the renewal of certificates. It applies to certificates created with the following options :
+The [RCL SSL Core API](./apicore/) is a REST API service to get and renew SSL/TLS certificates created in the [RCL SSL Portal](./portal/portal.md). It is primarily focused on automating the renewal of certificates. It applies to certificates created with the following option :
 
 - [Stand Alone](./portal/stand-alone.md) (Including [SAN](./portal/stand-alone-san.md))
 
@@ -69,7 +69,7 @@ You can use the API to create your own applications to automate the installation
 
 ## RCL SSL SDK
 
-The [RCL SSL SDK](https://github.com/rcl-ssl/RCL.SDK) provides a C# .NET Core library to make authorized requests to the [RCL SSL Core API](./apicore/api.md) and [RCL SSL API](./api/api.md). The SDK can be used to renew certificates created in th [RCL SSL Portal](./portal/portal.md).
+The [RCL SSL SDK](https://github.com/rcl-ssl/RCL.SDK) provides a C# .NET Core library to use the [RCL SSL Core API](./apicore/api.md) and [RCL SSL API](./api/api.md). The SDK can be used to renew certificates created in th [RCL SSL Portal](./portal/portal.md).
 
 
 
