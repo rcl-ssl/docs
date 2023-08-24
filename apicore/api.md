@@ -2,7 +2,7 @@
 title: Core API
 description: Using the RCL Core SSL API to get and renew certificates created in the RCL SSL portal
 has_children: true
-nav_order: 9
+nav_order: 8
 ---
 
 # RCL SSL Core API
