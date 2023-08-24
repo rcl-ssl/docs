@@ -1,8 +1,8 @@
 ---
 title: Authorization
 description: Learn how create a Api Key to obtain authorized access to resources in the RCL SSL applications
-parent: Authorization
-nav_order: 2
+parent: Core API
+nav_order: 1
 ---
 
 ## Authorization

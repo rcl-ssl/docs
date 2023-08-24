@@ -1,7 +1,7 @@
 ---
 title: RCL SSL API Models
 description: The models for the RCL Renewal API
-parent: RCL SSL API
+parent: API
 nav_order: 100
 ---
 

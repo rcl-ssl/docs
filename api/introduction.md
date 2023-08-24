@@ -1,7 +1,7 @@
 ---
 title: Introducing the RCL SSL API
 description: Using the RCL SSL API to get and renew certificates created in the RCL SSL portal
-parent: RCL SSL API
+parent: API
 nav_order: 1
 ---
 
