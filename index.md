@@ -10,7 +10,7 @@ nav_order: 1
 
 The RCL client for *Let's Encrypt*<sup>TM</sup> allows you to create free SSL/TLS certificates for your web sites / applications using the popular *Let's Encrypt*<sup>TM</sup> V2 API.
 
-<sub>Let's Encrypt is a trademark of the [Internet Security Research Group](https://www.abetterinternet.org/). All rights reserved.</sub>
+![image](./images/portal/rcl_ssl_200.png)
 
 Use the various RCL SSL Apps to create and renew single or multiple-domain SSL/TLS certificates for your web sites / applications. The following domains are supported
 
@@ -18,6 +18,8 @@ Use the various RCL SSL Apps to create and renew single or multiple-domain SSL/T
 - Sub-domains (e.g. store.contoso.com, www.contoso.com)
 - Wild card domains (e.g. *.contoso.com) 
 - Subject Alternative Name (SAN) mutli-domains (multiple domains in a single certificate) 
+
+<sub>Let's Encrypt is a trademark of the [Internet Security Research Group](https://www.abetterinternet.org/). All rights reserved.</sub>
 
 # RCL SSL Portal
 
