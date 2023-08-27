@@ -6,13 +6,13 @@ nav_order: 6
 ---
 
 # Creating SSL/TLS Certificates for App Services
-**V6.0.10**
+**V7.0.0**
 
 You can use RCL to create and install SSL/TLS certificates in your app services.
 
-SSL/TLS certificates are created using either the HTTP-01 or DNS-01 challenge types.
+SSL/TLS certificates are created using either the HTTP or DNS challenge types.
 
-Wild card certificates (eg: *.mydomain.com) are supported with the DNS-01 challenge type in an Azure DNS Zone.
+Wild card certificates (eg: *.mydomain.com) are supported with the DNS challenge type in an Azure DNS Zone.
 
 # Access Control
 
@@ -24,13 +24,13 @@ If you try to manage an Azure App service with a MSA account you will get the fo
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for the RCL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
 
-- [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
+- [Sign-In Accounts for RCL SSL Portal](../authorization/sign-in-accounts)
 
 ## Set Access Control
 
-To create certificates for Azure App service, the Azure AAD organizational account that you use to login to RCL must either be :
+To create certificates for Azure App service, the Azure AAD organizational account that you use to login to the RCL SSL Portal must either be :
 
 - An administrator to the subscription containing the Azure App Service
 
@@ -46,7 +46,17 @@ To set up access control for your AAD account, follow the instructions in the li
 
 - [Set Access Control for the AAD user](../authorization/access-control-user)
 
-# Create a SSL/TLS Certificate using HTTP-01
+# Add a Custom Domain to your App Service
+
+If you registered a domain name, add a custom domain (or sub domain) to your app service following the instructions in this link:
+
+- [Add a custom domain to an app service](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain)
+
+# Prerequisites
+
+If your app service site has a previous SSL binding, it is recommended that you delete the binding and the SSL certificates for the domain. Failure to do so may lead to errors when creating the new SSL certificate and site binding.
+
+# Create a SSL/TLS Certificate using HTTP
 
 You can use the HTTP-01 challenge type with any domain registrar.
 
@@ -59,9 +69,16 @@ RCL uses the HTTP-01 challenge type to issue certificates for :
 
 Wildcard subdomains (e.g. *.contoso.net) are **NOT Supported** with the HTTP-01 challenge type. Use the DNS-01 challenge type for wildcard certificates instead.
 
-## HTTP Validation Requirements
 
-Normally, the HTTP validation is performed automatically and you are not required to make any configuration changes to your app service. However, if the HTTP validation should fail, the following recommendations may resolve the situation :
+
+## HTTP Validation Precautions
+
+Normally, the HTTP validation is performed automatically and you are not required to make any configuration changes to your app service. 
+
+{: .information }
+> Only perform the following steps if the HTTP validation fails
+
+If the HTTP validation should fail, the following recommendations may resolve the situation :
 
 - For HTTP validation, an extension-less validation file will be automatically added to the root of your website at path : '/.well-known/acme-challenge/' . You must ensure that your website allows the folder and file to be created in your website root (/site/wwwroot) by providing the necessary read/write permissions. Alternatively, you can manually create the validation folder and path in your website root and provide the necessary read/write permissions using the 'App Service Editor'.
 
@@ -73,11 +90,19 @@ Normally, the HTTP validation is performed automatically and you are not require
 
 - You can test the validation by publicly browsing a file at the validation path in the browser and ensuring a valid response in the browser. The content of the extension-less file should be displayed in the browser.
 
-## Add a Custom Domain to your App Service
+- Extension-less files are not served by default. To solve this, add the following ``web.config`` file to the ``acme-challenge`` folder.
 
-If you registered a domain name, add a custom domain (or sub domain) to your app service following the instructions in this link:
+```
+<configuration>
+    <system.webServer>
+        <staticContent>
+            <mimeMap fileExtension="." mimeType="text/plain"/>
+        </staticContent>
+    </system.webServer>
+</configuration>
+```
 
-- [Add a custom domain to an app service](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain)
+
 
 # Create SSL/TLS Certificate
 
@@ -103,7 +128,7 @@ If you registered a domain name, add a custom domain (or sub domain) to your app
 
 - Click on the Create button when you are done.
 
-# Create a SSL/TLS Certificate using DNS-01
+# Create a SSL/TLS Certificate using DNS
 
 RCL uses the DNS-01 challenge type to issue certificates for :
 

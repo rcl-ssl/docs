@@ -6,9 +6,9 @@ nav_order: 2
 ---
 
 # Azure Active Directory Organization Account
-**V6.0.10**
+**V7.0.0**
 
-An Azure Active Directory (AAD) organization account is required to sign in to the [RCL Portal](../portal/portal.md) to manage Azure resources (App Services, DNS, Key Vault, etc.). An organization account is also called a **‘Work or School’ account**. Follow these steps to use an AAD account in the RCL Portal.
+An Azure Active Directory (AAD) organization account is required to sign in to the [RCL SSL Portal](../portal/portal.md) to manage Azure resources (App Services, DNS, Key Vault, etc.). An organization account is also called a **‘Work or School’ account**. Follow these steps to use an AAD account in the RCL SSL Portal.
 
 - In the Azure Portal, search for the **Azure Active Directory** and open it
 
@@ -20,13 +20,13 @@ An Azure Active Directory (AAD) organization account is required to sign in to t
 
 # Use an Exiting User Account
 
-You can select an exiting user account who is a **member** of the tenant to login to RCL. **Guest users cannot be used.**
+You can select an exiting user account who is a **member** of the tenant to login to the RCL SSL Portal. **Guest users cannot be used.**
 
 ![image](../images/authorization_signin/subscribe-aad-user-member.png)
 
 # Create a New User Account
 
-You can also create a new user account to sign in to the RCL Portal.
+You can also create a new user account to sign in to the RCL SSL Portal.
 
 - Click the ‘New user’ link to create a new user
 
@@ -46,7 +46,7 @@ You can also create a new user account to sign in to the RCL Portal.
 
 You should now sign in to the Azure Portal using the existing or new AAD Work or School account.
 
-It is strongly recommended that you sign in with this AAD Work or School account in the Azure Portal when you subscribe to the RCL Portal App in the Azure Marketplace.
+It is strongly recommended that you sign in with this AAD Work or School account in the Azure Portal when you subscribe to the RCL SSL Portal in the Azure Marketplace.
 
 # Access Control
 

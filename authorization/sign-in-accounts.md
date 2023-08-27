@@ -5,10 +5,10 @@ parent: Authorization
 nav_order: 1
 ---
 
-# Sign-In Accounts for RCL
-**V6.0.10**
+# Sign-In Accounts for RCL SSL Portal
+**V7.0.00**
 
-You can subscribe to and sign in to the [RCL Portal](../portal/portal.md) with a :
+You can subscribe to and sign in to the [RCL SSL Portal](../portal/portal.md) with a :
 
 - Microsoft personal account (MSA)
 - Azure Active Directory organization account (Work or School)
@@ -37,7 +37,7 @@ If you try to manage an Azure Resource with a MSA account you will get the follo
 
 # Associating a Work or School Account to a Subscription
 
-If you subscribed to [RCL Portal](../portal/portal.md) with an MSA account, you must associate the subscription with an AAD Work or School account to manage Azure resources.
+If you subscribed to [RCL SSL Portal](../portal/portal.md) with an MSA account, you must associate the subscription with an AAD Work or School account to manage Azure resources.
 
 This will allow you to login to your subscription with the AAD Work or School account.
 
@@ -55,7 +55,7 @@ To associate an AAD Work or School account follow these steps.
 
 ![image](../images/authorization_signin/signin-aad-associate.png)
 
-- After the account is associated with your subscription, sign in with the Work or School account in the RCL Portal.
+- After the account is associated with your subscription, sign in with the Work or School account in the RCL SSL Portal.
 
 # Access Control
 
