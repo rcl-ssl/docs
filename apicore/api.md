@@ -8,4 +8,4 @@ nav_order: 8
 # RCL SSL Core API
 **V7.0.0**
 
-The RCL SSL Core API is used to renew certificates created in the **RCL SSL Portal** using the [Stand Alone](../portal/stand-alone.md) (including [SAN](../portal/stand-alone-san.md)) creation option using the [HTTP Challenge](../portal/stand-alone.md/#completing-the-http-challenge) type.
+The RCL SSL Core API is used to programmatically renew certificates created in the **RCL SSL Portal**.
