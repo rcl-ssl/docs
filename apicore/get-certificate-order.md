@@ -2,7 +2,7 @@
 title: GET Certificate Order
 description: Get a certificate order from the Let's Encrypt V2 API using the RCL SSL Core API
 parent: Core API
-nav_order: 3
+nav_order: 4
 ---
 
 # GET Certificate Order
