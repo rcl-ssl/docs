@@ -22,7 +22,7 @@ Use the [GET Certificate](./get-certificate.md) API to get a certificate by its 
 
 ## Step 2 : Create a Certificate Order
 
-For each certificate identified to be renewed, use the [GET Certificate Order](./get-certificate-order.md) API to create an order for a new certificate. In the API response , you will get the validations tokens to validate the certificate order and prove that have control of your domain.
+For each certificate identified to be renewed, use the [GET Certificate Order](./get-certificate-order.md) API to create an order for a new certificate. In the API response , you will get the validations tokens to validate the certificate order and prove that you have control of your domain.
 
 ## Step 3 : Validate the Certificate Order
 
