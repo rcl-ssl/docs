@@ -29,18 +29,30 @@ Represents a SSL/TLS certificate
 
 ## Example
 
-```
+```json
 {
-    "certificateName":"shopeneur.com",
-    "rootDomain":null,
-    "email":null,
-    "challengeType":null,
-    "orderUri":null,
-    "issueDate":"2022-05-10T03:31:32.2585666",
-    "expiryDate":"2022-05-28T23:33:01.5479202",
-    "password":null,
-    "pfxString":null,
-    "certificateDownloadUrl":null
+    "certificateName": "shopeneur.com",
+    "rootDomain": "shopeneur.com",
+    "email": "support@mail.com",
+    "challengeType": "DNS",
+    "orderUri": "https://acme-v02.api.letsencrypt.org/acme/order/116443104/10561456874",
+    "issueDate": "2023-08-28T16:54:45.7728501",
+    "expiryDate": "2023-11-26T16:54:45.7729979",
+    "id": 341,
+    "password": "pwd1234",
+    "pfxString": "MIACAQ..SwQUa6VcuNGqfAd9OKA7LC2PjJGFH+oCAgQAAAA=",
+    "certificateDownloadUrl": {
+        "pemUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.pem",
+        "pfxUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.pfx",
+        "cerUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.cer",
+        "crtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.crt",
+        "txtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4-certdownload.txt",
+        "keyUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.key",
+        "keyTxtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.txt",
+        "certCrtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4-cert.crt",
+        "cabundleCrtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4-cabundle.crt",
+        "fullchainCrtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4-fullchain.crt"
+    }
 }
 ```
 
@@ -60,6 +72,23 @@ Represents the download URLs for various certificate formats
 | cabundleCrtUrl |The download url for the Certificate Bundle in .CRT format. | string |
 | fullchainCrtUrl |The download url for the Full Chain Certificate  in .CRT format. | string |
 
+## Example
+
+```json
+{
+    "pemUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.pem",
+    "pfxUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.pfx",
+    "cerUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.cer",
+    "crtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.crt",
+    "txtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4-certdownload.txt",
+    "keyUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.key",
+    "keyTxtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4.txt",
+    "certCrtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4-cert.crt",
+    "cabundleCrtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4-cabundle.crt",
+    "fullchainCrtUrl": "https://path/153c904c-0832-4381-bbf9-20f2324ce8f4-fullchain.crt"
+}
+```
+
 # Order
 
 Represents a SSL/TLS certificate order
@@ -71,6 +100,24 @@ Represents a SSL/TLS certificate order
 | orderUri |The URI or the order in Let's Encrypt. | string |
 | certificateUri |The URI to download the certificate from Let's Encrypt. | string |
 
+## Example
+
+```json
+{
+    "status": "pending",
+    "validationTokens": [
+        {
+            "tokenName": "_acme-challenge",
+            "tokenValue": "pder_53er44PhE-keudgge45630",
+            "challengeType": "DNS",
+            "domain": "shopeneur.com"
+        }
+    ],
+    "orderUri": "https://acme-v02.api.letsencrypt.org/acme/order/116443104/10567267084",
+    "certificateUri": null
+}
+```
+
 # ValidationToken
 
 Represents a token to validate (prove ownership of a domain) a certificate order
@@ -81,3 +128,14 @@ Represents a token to validate (prove ownership of a domain) a certificate order
 | tokenValue |The value of the token. For a DNS Challenge, it will be the ``value`` of the TXT record to place in the the DNS provider. For the HTTP Challenge, it is the ``value`` to place at the root folder of the website  | string |
 | challengeType |The Challenge Type for the validation (``DNS`` or ``HTTP``)  | string |
 | domain |The domain (certificate name or Hostname) for which the certificate is sought | string |
+
+## Example
+
+```json
+{
+    "tokenName": "_acme-challenge",
+    "tokenValue": "pder_53er44PhE-keudgge45630",
+    "challengeType": "DNS",
+    "domain": "shopeneur.com"
+}
+```

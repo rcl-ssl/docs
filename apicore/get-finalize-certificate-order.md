@@ -12,7 +12,7 @@ The ``GET Finalize Certificate Order`` API will finalize a certificate order onc
 
 Once the order is successfully finalized, a new certificate will be created and saved to the RCL SSL Portal. Any existing certificates with the same name will be replaced with the new certificate in the RCL SSL Portal. The API will return the certificate with links to download the certificate files to install in a web sever. 
 
-This API is normally used when a certificate is the RCL SSL Portal it nearing its expiration date. Once a [Certificate Order](./get-certificate-order.md) is created for the certificate and the order is [Validated](), the order id **finalized** to create a new certificate to replace the expiring certificate.
+This API is normally used when a certificate is the RCL SSL Portal it nearing its expiration date. Once a [Certificate Order](./get-certificate-order.md) is created for the certificate and the order is [Validated](./api.md#step-3--validate-the-certificate-order), the order must be **finalized** to create a new certificate to replace the expiring certificate.
 
 # Authorization
 

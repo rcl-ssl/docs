@@ -10,7 +10,7 @@ nav_order: 4
 
 The ``GET Certificate Order`` API will create an order for a certificate by its name from the Let's Encrypt V2 API. The order will be created using the properties of the certificate in the RCL SSL Portal.
 
-This API is normally used when a certificate is the RCL SSL Portal it nearing its expiration date. A certificate order is created for the certificate with the intention of finalizing the order to create a new certificate to replace the expiring certificate.
+This API is normally used when a certificate in the RCL SSL Portal it nearing its expiration date. A certificate order is created for the certificate with the intention of finalizing the order to create a new certificate to replace the expiring certificate.
 
 # Authorization
 
@@ -94,8 +94,8 @@ Authorization: Bearer 45ref546-67rf-65ytr-65tr-546trfred
             "challengeType": "DNS",
             "domain": "shopeneur.com"
         }
-    ]
-    "orderUri": "https://acme-staging-v02.api.letsencrypt.org/acme/order/116443104/10567267084",
+    ],
+    "orderUri": "https://acme-v02.api.letsencrypt.org/acme/order/116443104/10567267084",
     "certificateUri": null
 }
 ```
