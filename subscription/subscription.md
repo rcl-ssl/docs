@@ -2,7 +2,7 @@
 title: Subscription
 description: Learn how to subscribe to the RCL application in the Azure Marketplace or Azure Portal 
 has_children: true
-nav_order: 2
+nav_order: 4
 ---
 
 # Azure Marketplace Subscription
