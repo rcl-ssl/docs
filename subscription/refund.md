@@ -7,7 +7,7 @@ nav_order: 3
 
 # No Refunds
 
-All subscription payments are final for all the soctware applications and services provide by  Ray Consulting Limited and RCL Global LLC, which include:
+All subscription payments are final for all the software applications and services provide by  Ray Consulting Limited and RCL Global LLC, which include:
 
 - RCL SSL Portal
 - RCL SSL HTTP AutoRenew
