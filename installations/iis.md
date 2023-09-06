@@ -6,15 +6,19 @@ nav_order: 5
 ---
 
 # Installing TLS/SSL Certificates in IIS
-**V6.0.10**
+**V7.0.0**
 
 This article assumes that you have experience with IIS.
 
-# Get the Certificate Files Manually
+## Get the Certificate Files Manually
 
-You can download the files required to install the TLS/SSL certificate in IIS from the **RCL Portal** on the **Certificate Details** page.
+You can download the files required to install the TLS/SSL certificate in IIS from the **RCL SSL Portal** on the **Certificate Details** page.
 
 ![image](../images/certificate_installations/installation_files_pfx.png)
+
+## Get the Certificate Files Automatically
+
+You can also use the [RCL SSL HTTP AutoRenew](../httpautorenew/httpautorenew.md) or [RCL CertificateBot](../certbot/certbot.md) to automatically renew and download the files required to install the TLS/SSL certificate in the IIS web server. 
 
 ## Files Required
 
@@ -48,9 +52,9 @@ Step 9 : Right click on the “Personal" certificates store folder.
 
 Step 10 : Choose “ALL TASKS” then select “Import”.
 
-Step 11 : Follow the “Certificate Import Wizard” to import your “Certificate” from the .PFX file saved on your hosting machine.
+Step 11 : Follow the “Certificate Import Wizard” to import your “Certificate” from the .PFX file that you downloaded from the RCCL SSL Portal and  saved on your hosting machine.
 
-Step 12 : Browse to the .PFX and enter the associated password when prompted. Enter the certificate password you assigned when creating the certificate in the RCL portal. You can find this password in the **Certificate Details** page (```Certificate Password``) of the **RCL Portal**.
+Step 12 : Browse to the .PFX and enter the associated password when prompted. Enter the certificate password you assigned when creating the certificate in the RCL SSL portal. You can find this password in the **Certificate Details** page (```Certificate Password``) of the RCL SSL Portal.
 
 Step 13 : If desired, check the box to “Mark This Key As Exportable”. We recommend choosing this option.
 
