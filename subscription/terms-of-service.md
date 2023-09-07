@@ -21,7 +21,7 @@ These Terms of Service applies to all users who subscribe to or use the RCL SSL 
 
 ## General Conditions
 
-You may not use the RCL SSL Apps for any illegal or unauthorized purpose nor may you, in the use of the Apps, violate any laws in your jurisdiction (including but not limited to copyright laws), the laws applicable to you in your customer’s jurisdiction. You will comply with all applicable laws, rules and regulations in your use of the Service.
+You may not use the RCL SSL Apps for any illegal or unauthorized purpose nor may you, in the use of the RCL SSL Apps, violate any laws in your jurisdiction (including but not limited to copyright laws), the laws applicable to you in your customer’s jurisdiction. You will comply with all applicable laws, rules and regulations in your use of the Service.
 
 ## Our Rights
 
@@ -37,7 +37,7 @@ You expressly understand and agree that Ray Consulting Limited and RCL Global LL
 
 In no event shall we or our suppliers be liable for lost profits or any special, incidental or consequential damages arising out of or in connection with the RCL SSL Apps or these Terms of Service. 
 
-You agree to indemnify and hold Ray Consulting Limited and RCL Global LLC, our parent, subsidiaries, affiliates, partners, officers, directors, agents, employees, and suppliers harmless from any claim or demand, including attorneys’ fees, made by you or any third party due to or arising out of your use of the RCL SSL Apps. Your use of the RCL SSL Apps is at your sole risk. The RCL SSL Apps is provided on an “as is” and “as available” basis without any warranty or condition, express, implied or statutory. We do not warrant that the RCL SSL Apps will be uninterrupted, timely, secure, or error-free. We do not warrant that the results that may be obtained from the use of the RCL SSL Apps will be accurate or reliable. We do not warrant that the quality of any products, services, information, or other materials purchased or obtained by you through the RCL SSL Apps will meet your expectations, or that any errors in the RCL SSL Apps will be corrected. We are not responsible if you break the law, breach this agreement or go against the rights of a third party, especially if you get sued. RCL SSL Apps are “as is” so it may have errors or interruptions and we provide no warranties.
+You agree to indemnify and hold Ray Consulting Limited and RCL Global LLC, our parent, subsidiaries, affiliates, partners, officers, directors, agents, employees, and suppliers harmless from any claim or demand, including attorneys’ fees, made by you or any third party due to or arising out of your use of the RCL SSL Apps. Your use of the RCL SSL Apps is at your sole risk. The RCL SSL Apps are provided on an “as is” and “as available” basis without any warranty or condition, express, implied or statutory. We do not warrant that the RCL SSL Apps will be uninterrupted, timely, secure, or error-free. We do not warrant that the results or outputs that may be obtained from the use of the RCL SSL Apps will be accurate or reliable. We do not warrant that the quality of any products, services, information, or other materials purchased or obtained by you through the RCL SSL Apps will meet your expectations, or that any errors in the RCL SSL Apps will be corrected. We are not responsible if you break the law, breach this agreement or go against the rights of a third party, especially if you get sued. RCL SSL Apps are “as is” so it may have errors or interruptions and we provide no warranties.
 
 ## Payment Of Fees
 
