@@ -2,7 +2,7 @@
 title: AutoRenew Function
 description: Using the RCL SSL AutoRenew Function to renew SSL/TLS certificates created in the RCL SSL portal
 has_children: true
-nav_order: 5
+nav_order: 7
 ---
 
 # RCL SSL AutoRenew Function
