@@ -12,7 +12,7 @@ The RCL SSL Core API is used to programmatically renew certificates created in t
 
 # Scope
 
-The RCL Core API is used for certificates created with the following options:
+The RCL SSL Core API is used for certificates created with the following options:
 
 - [Stand Alone](../portal/stand-alone.md)
 - [Stand Alone SAN](../portal/stand-alone-san.md)

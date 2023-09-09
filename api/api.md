@@ -12,7 +12,7 @@ In this section, you will learn how to use the **RCL SSL API** to get SSL/TLS ce
 
 # Scope
 
-The RCL Core API is used for certificates created with the following options:
+The RCL SSL API is used for certificates created with the following options:
 
 - [Azure DNS](../portal/azure-dns.md)
 - [Azure DNS SAN](../portal/azure-dns-san.md)
