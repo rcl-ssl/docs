@@ -75,6 +75,8 @@ To validate your domain with the HTTP challenge, you will be required to place a
 
 - Add a extension-less file with the file name identified in the HTTP Validation page. To this file, add the file content identified in the **HTTP Validation Page**.
 
+**Note:** - In Windows, you must also remove the extension on the validation file. It should not contain a .txt or other file name extension.
+
 ![image](../images/portal/stand-alone-http-validation.PNG)
 
 - The following example image illustrates the file in the web root directory
@@ -120,6 +122,8 @@ The RCL SSL Portal uses the DNS-01 challenge type to issue certificates for :
 - primary domains (e.g. contoso.net)
 - subdomains (e.g. store.contoso.net, www.contoso.net, etc.)
 - wild card subdomains (e.g. *.contoso.net)
+
+To validate your domain with the DNS challenge, you will be required to add a DNS TXT Record to your domain settings with your domain provider.
 
 ## Add a SSL/TLS Certificate
 
