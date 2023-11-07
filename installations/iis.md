@@ -70,11 +70,11 @@ The SSL Certificate, Private Key and any Intermediate Certificates should now be
 
 Once the SSL Certificate has been imported, it is important to now bind the SSL Certificate to your website so that the website functions correctly. Your SSL Certificate will not function until the following steps are completed.
 
-Step 1 : In “Start”, find and open “Administrative Tools”. Then, choose **Internet Information Services (IIS) Manager**.
+Step 1 : Open **Internet Information Services (IIS) Manager**.
 
 Step 2 : Click on the server name and expand the “Sites” folder.
 
-Step 3 : Locate your website (usually this will be called “Default Web Site”) and click on it.
+Step 3 : Locate your website (usually this will be called “Default Web Site” or a name that you assigned to your website) and click on it.
 
 Step 4 : From the “Actions” menu (on the right) click on “Edit Site > Bindings” or similar.
 
