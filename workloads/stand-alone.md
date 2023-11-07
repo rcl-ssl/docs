@@ -1,6 +1,6 @@
 ---
-title: Web Servers and Hosting Systems 
-description: Using RCL to install SSL/TLS certificates
+title: Apache,Tomcat,NGINX,IIS,etc. 
+description: Using RCL SSL to create and install SSL/TLS certificates
 parent: Workloads
 nav_order: 1
 ---
@@ -22,7 +22,7 @@ The web servers may include :
 
 ## Step 1 : Create the SSL/TLS Certificate
 
-- Create the SSL/TLS certificate in the RCL Portal by using either the :
+- Create the SSL/TLS certificate in the RCL SSL Portal by using either the :
     - [Stand Alone](../portal/stand-alone.md) option
     - [Stand Alone SAN](../portal/stand-alone-san.md) option
 
@@ -49,6 +49,8 @@ SSL/TLS Certificates will expire within 90 days. Follow these instructions to re
 
 ### 3.2 Automatic Renewal
 
-Automatic certificate renewal is only supported with the [HTTP Challenge Type](./stand-alone.md#completing-the-http-challenge). You can use [RCL SSL HTTP AutoRenew](/httpautorenew/httpautorenew.md) to automatically renew certificates created with the HTTP challenge.
+Automatic certificate renewal is only supported with the [HTTP Challenge Type](./stand-alone.md#completing-the-http-challenge). 
+
+You can use [RCL SSL HTTP AutoRenew](/httpautorenew/httpautorenew.md) to automatically renew certificates created with the HTTP challenge.
 
 
