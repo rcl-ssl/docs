@@ -96,7 +96,7 @@ Add a extension-less file with the file name identified in the HTTP Validation p
 ![image](../images/portal/stand-alone-san-http-validation.PNG)
 
 
-Ensure you can access the files publicly in the web browser by clicking on the links in the HTTP validation page. 
+Ensure you can access the files **publicly** in the web browser by clicking on the links in the HTTP validation page. 
 
 ![image](../images/portal/stand-alone-http-validation-test.PNG)
 

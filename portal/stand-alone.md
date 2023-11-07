@@ -65,7 +65,7 @@ To validate your domain with the HTTP challenge, you will be required to place a
 
 ![image](../images/portal/stand-alone-create.PNG)
 
-- **The website must exist at the domain you entered, eg. in our example, the website can be accessed at 'http://shopeneur.com' in a web browser**
+- **The website must exist at the domain you entered, eg. in our example, the website can be accessed publicly on the web at 'http://shopeneur.com' in a web browser.**
 
 - Click the **Create** button when you are done
 
@@ -95,7 +95,7 @@ To validate your domain with the HTTP challenge, you will be required to place a
 </configuration>
 ```
 
-- Ensure the website and ‘well known’ file can be accessed publicly on the web. On the **HTTP Validation Page**, click on the link to test your validation file 
+- Ensure the website and ‘well known’ file can be accessed **publicly** on the web. On the **HTTP Validation Page**, click on the link to test your validation file 
 
 - For a successful test, you should see the validation value in the web browser.
 
