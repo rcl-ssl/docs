@@ -95,6 +95,8 @@ Add a extension-less file with the file name identified in the HTTP Validation p
 
 ![image](../images/portal/stand-alone-san-http-validation.PNG)
 
+**Note:** - In Windows, you must remove the extension on the validation file. It should not contain a .txt or other file name extension.
+
 
 Ensure you can access the files **publicly** in the web browser by clicking on the links in the HTTP validation page. 
 

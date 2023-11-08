@@ -75,13 +75,13 @@ To validate your domain with the HTTP challenge, you will be required to place a
 
 - Add a extension-less file with the file name identified in the HTTP Validation page. To this file, add the file content identified in the **HTTP Validation Page**.
 
-**Note:** - In Windows, you must also remove the extension on the validation file. It should not contain a .txt or other file name extension.
+**Note:** - In Windows, you must remove the extension on the validation file. It should not contain a .txt or other file name extension.
 
 ![image](../images/portal/stand-alone-http-validation.PNG)
 
 - The following example image illustrates the file in the web root directory
 
-![image](../images/portal/stand-alone-http-token.PNG)
+![image](../images/portal/stand-alone-san-http-token.PNG)
 
 **Note:** - for sites hosted in a Windows Server in IIS, extension-less files are not served by default. To solve this, add the following ``web.config`` file to the ``acme-challenge`` folder.
 
