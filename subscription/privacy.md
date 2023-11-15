@@ -9,7 +9,9 @@ nav_order: 2
 
 ## Cookies
 
-When you visit our various RCL SSL Apps, we use cookies to collect standard internet login information and details about the behavior of visitors to our sites.
+When you visit our various RCL SSL Apps, we use cookies to collect standard internet login information and details about the behavior of visitors to our sites. The RCL SSL Apps include the following:
+
+- RCL SSL Portal
 
 We do this to find out things such as the number of visitors to the various parts of our site and to provide you
 with a better experience.
