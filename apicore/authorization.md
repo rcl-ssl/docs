@@ -20,6 +20,6 @@ You can use an Api Key to obtain authorized access to resources on the [RCL SSL 
 
 ## Related Articles
 
-- [HTTP AutoRenew](../httpautorenew/httpautorenew.md)
+- [RCL HTTP AutoRenew](../httpautorenew/httpautorenew.md)
 - [RCL SSL Core API](../apicore/api.md)
 - [RCL SDK](../sdk/sdk.md)

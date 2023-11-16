@@ -89,6 +89,8 @@ Example
 
 - **Note : when setting any folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl``. Failure to do this will result in inability to run the windows service.**
 
+- Create the folder on your hosting machine at the path you specified to save the certificates.
+
 - Ensure the folder has read/write permissions so that the certificates can be saved to it. 
 
 - Configure the site bindings for each website that you want to bind a SSL/TLS certificate. You can have a single or multiple bindings.
