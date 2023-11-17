@@ -38,7 +38,7 @@ If you have an older version of the service installed in your hosting machine, y
 
 ### Create an API Key
 
-The service uses the [RCL SSL Core API](../apicore/api.md) and [RCL SDK](../sdk/) to renew certificates. You must create an Api Key to make authorized requests to the API. Follow the instructions in the following link to create an Api Key in the RCL SSL Portal.
+The service uses the [RCL SSL Core API](../apicore/api.md) to renew certificates. You must create an Api Key to make authorized requests to the API. Follow the instructions in the following link to create an Api Key in the RCL SSL Portal.
 
 [Create an Api Key](../apicore/authorization.md)
 
@@ -84,7 +84,9 @@ Example
     }
   ```
 
-- **Note : when setting any folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl`` .  Failure to do this will result in inability to run the windows service.**
+ **Note : when setting any folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl`` .  Failure to do this will result in inability to run the windows service.**
+
+- Create the folder on your hosting machine at the path you specified to save the certificates.
 
 - Ensure the folder has read/write permissions so that the certificates can be saved to it. 
 

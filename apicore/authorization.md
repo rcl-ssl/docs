@@ -8,7 +8,7 @@ nav_order: 1
 ## Authorization
 **V7.0.0**
 
-You can use an Api Key to obtain authorized access to resources on the [RCL SSL Core API](../apicore/api.md), [RCL SSL SDK](../sdk/sdk.md) and [RCL SSL HTTP AutoRenew](../httpautorenew/httpautorenew.md).
+You can use an Api Key to obtain authorized access to resources on the [RCL SSL Core API](../apicore/api.md) and [RCL SSL HTTP AutoRenew](../httpautorenew/httpautorenew.md).
 
 ## Create an Api Key
 
@@ -20,6 +20,5 @@ You can use an Api Key to obtain authorized access to resources on the [RCL SSL 
 
 ## Related Articles
 
-- [RCL HTTP AutoRenew](../httpautorenew/httpautorenew.md)
+- [RCL SSL HTTP AutoRenew](../httpautorenew/httpautorenew.md)
 - [RCL SSL Core API](../apicore/api.md)
-- [RCL SDK](../sdk/sdk.md)
