@@ -22,13 +22,23 @@ You can also use the [RCL SSL HTTP AutoRenew](../httpautorenew/httpautorenew.md)
 
 The certificate files will be saved on the hosting machine at the path you specified in the ``appsettings.json`` configuration file.
 
-The following files are downloaded and saved on the server :
+For each certificate, the following files are downloaded and saved on the server with the following file names:
 
   - ``certificate.pfx`` - The PFX certificate file
   - ``primaryCertificate.crt`` The Primary Certificate file
   - ``fullChainCertificate.crt`` - The full chain certificate file
   - ``caBundle.crt`` - The Intermediate Certificates (CA Bundle) file
   - ``privateKey.key`` - The Certificate Private Key file
+
+  The files are saved in a folder based on the certificate name following these conventions :
+
+  |Type               |Example Certificate Name         |Example Folder Name
+  |-------------------|---------------------------------|---------------------
+  |Apex Domain        |shopeneur.com                    |shopeneur-com
+  |Sub-domain         |store.shopeneur.com              |store-shopeneur-com
+  |Wildcard domain    |*.shopeneur.com                  |wcard-shopeneur-com
+  |SAN HTTP Challenge |shopeneur.com,www.shopeneur.com  |shopeneur-com-san-www
+  |SAN DNS Challenge  |shopeneur.com,*.shopeneur.com    |shopeneur-com-san-wcard
 
 ## Files Required
 
