@@ -38,6 +38,20 @@ The files required are :
 - Primary Certificate (.crt)
 - Intermediate Certificates (CA Bundle) (.crt)
 
+Download the files to a suitable folder in your hosting machine.
+
+### Linux Command :
+```
+wget https://url-of-the-file -O /folder/to/save/filename.extension
+```
+
+In Linux you can use the ```wget``` command to download the file
+
+### Windows :
+```
+Download the file to a folder in the hosting machine
+```
+
 ## Assigning the TLS/SSL certificate to Apache
 
 After you have downloaded the certificate files, the next step is to edit your Apache configuration file to use them.
