@@ -28,10 +28,10 @@ Download the files to a suitable folder in your hosting machine.
 
 #### Linux Command :
 ```
-wget https://url-of-the-file -O /folder/to/save/filename.extension
+wget https://url-of-the-file -O filename.extension
 ```
 
-In Linux you can use the ```wget``` command to download the file
+In Linux, you can use the ```wget``` command to download the file. Run the command for each file you want to download.
 
 #### Windows :
 ```

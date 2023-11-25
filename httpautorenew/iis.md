@@ -101,20 +101,28 @@ Example
 ```json
 "IISBindings": [
   {
-    "siteName":"Home",
+    "siteName":"Contoso",
     "ip":"*",
     "port":"443",
-    "host":"shopneur.com",
-    "certificateName":"shopeneur.com,www.shopeneur.com",
-    "validationPath": "C:/inetpub/wwwroot"
+    "host":"contoso.com",
+    "certificateName":"contoso.com,www.contoso.com",
+    "validationPath": "C:/inetpub/contoso/wwwroot"
   },
   {
-    "siteName":"Home",
+    "siteName":"Contoso",
     "ip":"*",
     "port":"443",
-    "host":"www.shopneur.com",
-    "certificateName":"shopeneur.com,www.shopeneur.com",
-    "validationPath": "C:/inetpub/wwwroot"
+    "host":"www.contoso.com",
+    "certificateName":"contoso.com,www.contoso.com",
+    "validationPath": "C:/inetpub/contoso/wwwroot"
+  },
+  {
+    "siteName":"Fabricam",
+    "ip":"*",
+    "port":"443",
+    "host":"fabricam.com",
+    "certificateName":"fabricam.com",
+    "validationPath": "C:/inetpub/fabricam/wwwroot"
   }
 ]
 ```
@@ -125,12 +133,12 @@ Example
 ```json
 "IISBindings": [
   {
-    "siteName":"Home",
+    "siteName":"AdventureWorks",
     "ip":"*",
     "port":"443",
-    "host":"shopneur.com",
-    "certificateName":"shopeneur.com",
-    "validationPath": "C:/inetpub/wwwroot"
+    "host":"adventureworks.com",
+    "certificateName":"adventureworks.com",
+    "validationPath": "C:/inetpub/adventureworks/wwwroot"
   }
 ]
 ```
