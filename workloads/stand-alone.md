@@ -51,6 +51,4 @@ SSL/TLS Certificates will expire within 90 days. Follow these instructions to re
 
 Automatic certificate renewal is only supported with the [HTTP Challenge Type](./stand-alone.md#completing-the-http-challenge). 
 
-You can use [RCL SSL HTTP AutoRenew](/httpautorenew/httpautorenew.md) to automatically renew certificates created with the HTTP challenge.
-
 
