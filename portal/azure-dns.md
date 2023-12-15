@@ -56,7 +56,7 @@ wild card subdomains (e.g. *.contoso.net)
 
 # Create a DNS Zone and Configure Name Server
 
-If you bought your domain with a domain registrar, you must set up your Azure DNS Zone to manage the records for your domain.
+You must set up your Azure DNS Zone to manage the records for your domain.
 
 ![image](../images/portal/dns-zone-setup.png)
 
