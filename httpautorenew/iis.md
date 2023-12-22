@@ -40,7 +40,7 @@ If you have an older version of the service installed on your hosting machine, y
 
 ### Create an API Key
 
-The service uses the [RCL SSL Core API](../apicore/api.md) to renew certificates. You must create an Api Key to make authorized requests to the API. Follow the instructions in the following link to create an Api Key in the RCL SSL Portal.
+The service uses the RCL SSL Core API to renew certificates. You must create an Api Key to make authorized requests to the API. Follow the instructions in the following link to create an Api Key in the RCL SSL Portal.
 
 [Create an Api Key](../apicore/authorization.md)
 
