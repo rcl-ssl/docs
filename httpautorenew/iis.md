@@ -244,30 +244,6 @@ Ensure the ``appsettings`` configuration is correct for the ``Api Key`` and the 
 
 Fix any other errors that are reported. Then, re-install and restart the service.
 
-# Deleting the Windows Service
-
-If you need to remove the Windows Service for any reason, first stop the service, then run the command to delete the service
-
-```
-sc.exe delete HttpAutoRenewIIS
-```
-
-# Updating the Service
-
-If you need to update the service to include other IIS bindings and certificates, follow these steps:
-
-- Stop the service and delete it
-- Change the ``appsettings.json`` file to include updated IIS bindings and certificates
-- Re-create the service and start it
-
-# Reset the Service
-
-If you need to reset the service because of a error or corrupted certificate renewal, follow these steps :
-
-- Stop the service and delete it
-- Delete all certificates and their folders in the directory in which certificates are saved
-- Re-create the service and start it
-
 # Testing Certificate Renewal
 
 ## Force Certificate Expiration
@@ -297,3 +273,29 @@ In order to test certificate renewal, you must first force certificate expiratio
 - Check that the certificate(s) are bound to the IIS website(s)
 
 - Once this test passes, the service will run every seven days to automatically renew certificates and bind them to the IIS websites
+
+# Deleting the Windows Service
+
+If you need to remove the Windows Service for any reason, first stop the service, then run the command to delete the service
+
+```
+sc.exe delete HttpAutoRenewIIS
+```
+
+# Updating the Service
+
+If you need to update the service to include other IIS bindings and certificates, follow these steps:
+
+- Stop the service and delete it
+- Change the ``appsettings.json`` file to include updated IIS bindings and certificates
+- Re-create the service and start it
+
+# Reset the Service
+
+If you need to reset the service because of a error or corrupted certificate renewal, follow these steps :
+
+- Stop the service and delete it
+- Delete all certificates and their folders in the directory in which certificates are saved
+- Re-create the service and start it
+
+
