@@ -6,11 +6,11 @@ nav_order: 4
 ---
 
 # RCL SSL HTTP AutoRenew for IIS
-**V7.0.0**
+**V7.1.0**
 
 RCL SSL HTTP AutoRenew for IIS runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
 
-Certificates will be automatically saved to the ``Local Machine`` certificate store in the  ``Trusted People`` folder. Certificates will also be automatically bound to the **IIS Web Server** on the hosting machine.
+Certificates will be automatically saved to the ``Local Machine`` certificate store in the  ``Personal`` folder. Certificates will also be automatically bound to the **IIS Web Server** on the hosting machine.
 
 ## Automatically Renew SSL/TLS Certificates
 
@@ -24,13 +24,13 @@ If you have an older version of the service installed on your hosting machine, y
 
 ## Download the Files
 
-- The Windows Service files (``http-autorenew-iis-win-xxx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.1) section:
+- The Windows Service files (``http-autorenew-iis-xxx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.1) section:
 
 - Download the zip file with bitness :
 
-  - [win-x64](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.1/http-autorenew-iis-win-x64.zip) 
-  - [win-x86](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.1/http-autorenew-iis-win-x86.zip)
-  - [win-arm](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.1/http-autorenew-iis-win-arm.zip)
+  - [win-x64](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/http-autorenew-iis-x64.zip) 
+  - [win-x86](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/http-autorenew-iis-x86.zip)
+  - [win-arm](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/http-autorenew-iis-arm.zip)
   
   to match your Windows bitness
 
@@ -67,7 +67,7 @@ Get the **Subscription Id** in the RCL SSL Portal.
 Example
 ```json
 "RCLSDK": {
-    "ApiBaseUrl": "https://rclapi.azure-api.net/public",
+    "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
     "SourceApplication": "RCL HTTP AutoRenew IIS",
     "ApiKey": "xxx",
     "SubscriptionId": "xxx"
@@ -97,7 +97,25 @@ Example
 
 - Example of multiple bindings (using a [SAN](../portal/stand-alone-san.md) certificate):
 
+
+- Example of a single binding :
+
 Example
+```json
+"IISBindings": [
+  {
+    "siteName":"AdventureWorks",
+    "ip":"*",
+    "port":"443",
+    "host":"adventureworks.com",
+    "certificateName":"adventureworks.com",
+    "validationPath": "C:/inetpub/adventureworks/wwwroot"
+  }
+]
+```
+
+- Example of multiple bindings :
+
 ```json
 "IISBindings": [
   {
@@ -127,21 +145,6 @@ Example
 ]
 ```
 
-- Example of a single binding :
-
-Example
-```json
-"IISBindings": [
-  {
-    "siteName":"AdventureWorks",
-    "ip":"*",
-    "port":"443",
-    "host":"adventureworks.com",
-    "certificateName":"adventureworks.com",
-    "validationPath": "C:/inetpub/adventureworks/wwwroot"
-  }
-]
-```
 
 - siteName - this is the **Site** name of the IIS website
 - ip - this is the **IP Address** of the IIS website (you can use any (``*``))
@@ -172,7 +175,7 @@ The image above illustrates a site hosted in IIS named 'Home' with multiple bind
     }
   },
   "RCLSDK": {
-    "ApiBaseUrl": "https://rclapi.azure-api.net/public",
+    "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
     "SourceApplication": "RCL SSL HTTP AutoRenew IIS",
     "ApiKey": "xxx",
     "SubscriptionId": "xxx"

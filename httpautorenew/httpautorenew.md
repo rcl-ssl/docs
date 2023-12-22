@@ -6,7 +6,7 @@ nav_order: 5
 ---
 
 # RCL SSL HTTP AutoRenew
-**V7.0.0**
+**V7.1.0**
 
 RCL SSL HTTP AutoRenew can be run as a Linux Daemon or a Windows Service in the web hosting machine for automatic certificate renewal. It is installed in the hosting machine. It provides the following functionality :
 
