@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 # RCL SSL HTTP AutoRenew for Windows
-**V7.0.0**
+**V7.1.0**
 
 RCL SSL HTTP AutoRenew runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
 
@@ -22,13 +22,13 @@ If you have an older version of the service installed in your hosting machine, y
 
 ## Download the Files
 
-- The Windows Service files (``http-autorenew-win-xxx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.1) section:
+- The Windows Service files (``http-autorenew-win-xxx``) are available in the [GitHub Project](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal) page in the [Releases](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/tag/V7.1.0) section:
 
 - Download the zip file with bitness
 
-  - [win-x64](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.1/http-autorenew-win-x64.zip) 
-  - [win-x86](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.1/http-autorenew-win-x86.zip)
-  - [win-arm](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.1/http-autorenew-win-arm.zip)
+  - [win-x64](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/http-autorenew-win-x64.zip) 
+  - [win-x86](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/http-autorenew-win-x86.zip)
+  - [win-arm](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/http-autorenew-win-arm.zip)
   
   to match your Windows bitness
 
@@ -64,7 +64,7 @@ Get the **Subscription Id** in the RCL SSL Portal.
 Example
 ```json
 "RCLSDK": {
-    "ApiBaseUrl": "https://rclapi.azure-api.net/public",
+    "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
     "SourceApplication": "RCL HTTP AutoRenew Windows",
     "ApiKey": "xxx",
     "SubscriptionId": "xxx"
@@ -95,6 +95,20 @@ Example
 - ``certificateName`` - the name of the certificate in the RCL Portal to be included for automatic renewal
 - ``validationPath`` - the path to the root folder where the website is hosted from. The validations tokens for the [HTTP Challenge](../portal/stand-alone.md#completing-the-http-challenge) will be saved to the root of the website
 
+Example of a single certificate
+```json
+  "CertificateBot": {
+    "saveCertificatePath": "C:/ssl",
+     "includeCertificates": [
+        {
+          "certificateName": "adventureworks.com",
+          "validationPath": "C:/sites/adventureworks/wwwroot"
+        }
+      ]
+  }
+  
+```
+
 Example of multiple certificates
 ```json
   "CertificateBot": {
@@ -112,18 +126,7 @@ Example of multiple certificates
   }
 ```
 
-Example of a single certificate
-```json
-  "CertificateBot": {
-    "saveCertificatePath": "C:/ssl",
-     "includeCertificates": [
-        {
-          "certificateName": "adventureworks.com",
-          "validationPath": "C:/sites/adventureworks/wwwroot"
-        }
-      ]
-  }
-```
+
 
 ## Example of a configured **appsettings.json** file
 
@@ -143,10 +146,10 @@ Example of a single certificate
     }
   },
   "RCLSDK": {
-    "ApiBaseUrl": "https://rclapi.azure-api.net/public",
+    "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
     "SourceApplication": "RCL HTTP AutoRenew Windows",
-    "ApiKey": "xxx",
-    "SubscriptionId": "xxx"
+    "ApiKey": "abc123",
+    "SubscriptionId": "2345"
   },
   "CertificateBot": {
     "SaveCertificatePath": "C:/ssl",
@@ -249,7 +252,7 @@ In order to test certificate renewal, you must first force certificate expiratio
 
 - If there are errors: fix the errors , restart the service to run the test again
 
-- Check that the certificate files are stored in the folder that you specified. Review the section below to learn how the service saves certificate files.
+- Check that the certificate files are stored in the folder that you specified. Review the section below to learn how the service saves certificate files
 
 - Once this test passes, the service will run every seven days to automatically renew certificates and save the certificate files to the folder.
 
