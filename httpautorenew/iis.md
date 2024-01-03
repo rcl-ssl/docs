@@ -24,7 +24,7 @@ If you have an older version of the service installed on your hosting machine, y
 
 ## Download the Files
 
-- The Windows Service files (``http-autorenew-iis-xxx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.1) section:
+- The Windows Service files (``http-autorenew-iis-xxx``) are available in the [GitHub Project](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal) page in the [Releases](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/tag/V7.1.0) section:
 
 - Download the zip file with bitness :
 
@@ -177,8 +177,8 @@ The image above illustrates a site hosted in IIS named 'Home' with multiple bind
   "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
     "SourceApplication": "RCL SSL HTTP AutoRenew IIS",
-    "ApiKey": "xxx",
-    "SubscriptionId": "xxx"
+    "ApiKey": "abc123",
+    "SubscriptionId": "ergt546"
   },
   "CertificateBot": {
     "IncludeCertificates":[],

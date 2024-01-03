@@ -6,7 +6,7 @@ nav_order: 3
 ---
 
 # RCL SSL HTTP AutoRenew for Linux
-**V7.0.0**
+**V7.1.0**
 
 RCL SSL HTTP AutoRenew for Linux runs as a **Daemon** in a Linux hosting machine. The daemon will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Linux hosting machine.
 
@@ -22,7 +22,7 @@ If you have an older version of the daemon installed in your hosting machine, yo
 
 ## Download and Extract the Daemon Files to the Linux Server
 
-In this section, you will download the files from the [GitHub Project Page](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.1) section. Then, extract it to your Linux Server in the ``/usr/sbin`` folder:
+In this section, you will download the files from the [GitHub Project Page](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal) in the [Releases](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/tag/V7.1.0) section. Then, extract it to your Linux Server in the ``/usr/sbin`` folder:
 
 - In your Linux server, navigate to the ``/usr/sbin`` folder
 
@@ -33,19 +33,19 @@ cd /usr/sbin
 - Run the command in the folder to download and extract the ``linux-x64`` files:
 
 ```bash
-wget -c https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.1/http-autorenew-linux-x64.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/http-autorenew-linux-x64.tar.gz -O - | sudo tar -xz
 ```
 
 or ``linux-arm`` files :
 
 ```bash
-wget -c https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.1/http-autorenew-linux-arm.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/http-autorenew-linux-arm.tar.gz -O - | sudo tar -xz
 ```
 
 or ``linux-arm64`` files :
 
 ```bash
-wget -c https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.1/http-autorenew-linux-arm64.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/http-autorenew-linux-arm64.tar.gz -O - | sudo tar -xz
 ```
 
 ## Configure the Daemon
@@ -101,7 +101,7 @@ sudo nano appsettings.json
 Example
 ```json
 "RCLSDK": {
-    "ApiBaseUrl": "https://rclapi.azure-api.net/public",
+    "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
     "SourceApplication": "RCL HTTP AutoRenew Linux",
     "ApiKey": "xxx",
     "SubscriptionId": "xxx"
@@ -173,10 +173,10 @@ Example of a single certificate
     }
   },
   "RCLSDK": {
-    "ApiBaseUrl": "https://rclapi.azure-api.net/public",
+    "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
     "SourceApplication": "RCL HTTP AutoRenew Linux",
-    "ApiKey": "xxx",
-    "SubscriptionId": "xxx"
+    "ApiKey": "abc123",
+    "SubscriptionId": "erft567"
   },
   "CertificateBot": {
     "SaveCertificatePath": "/etc/ssl/httpautorenew",
