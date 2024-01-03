@@ -153,6 +153,8 @@ Example
 - certificateName - this is the name of the certificate in the RCL SSL Portal to be installed in the IIS website
 - validationPath - the root path to the folder where your website is hosted. This is where the validation tokens will be saved for the HTTP challenge
 
+> The website must be actively served by the web server from the ``validationPath`` and the site must be publicly accessible on the web in a web browser. If these conditions are not met, the SSL/TLS certificate update will fail for the HTTP challenge.
+
 ![install](../images/certbot/iis.PNG)
 
 The image above illustrates a site hosted in IIS named 'Home' with multiple bindings. The site is bound to a naked apex domain, 'shopeneur.com', and a sub-domain 'www.shopeneur.com'. The website can be accessed publicly on the web with either of these domains. The site uses the same multi-domain [SAN](../portal/azure-dns-san.md) certificate named : 'shopeneur.com,www.shopeneur.com' to provide SSL/TLS for both the domains.
