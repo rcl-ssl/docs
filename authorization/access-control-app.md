@@ -6,9 +6,9 @@ nav_order: 5
 ---
 
 ## Set Access Control for the AAD application
-**V7.0.0**
+**V7.1.0**
 
-A user will need to provide **Access Control** to the [AAD Application](./aad-application) for it to manage the user's Azure Services (Key Vault, DNS Zone and App Services).
+A user will need to provide **Access Control** to an [AAD Application](./aad-application) for the application to manage the user's Azure Services (Key Vault, DNS Zone and App Services).
 
 - Go to Azure **Subscriptions**, and open the subscription that contains your Azure Key Vault, DNS Zone, App Services
 
@@ -43,7 +43,7 @@ If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will ne
 
 **This step is not required, if SSL/TLS certificates are not being created for Key Vault.**
 
-- In **Key Vault**, click on 'Access policies' and 'Add Access Policy'
+- In Azure **Key Vault**, click on 'Access policies' and 'Add Access Policy'
 
 ![install](../images/authorization_access_control/key_vault.PNG)
 
@@ -74,6 +74,4 @@ If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will ne
 - [AAD Application](../authorization/aad-application.md)
 - [RCL SSL AutoRenew Function](../autorenew/autorenew.md)
 - [RCL SSL CertificateBot](../certbot/certbot.md)
-- [RCL SSL API](../api/api.md)
-- [RCL SSL SDK](../sdk/sdk.md)
 
