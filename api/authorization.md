@@ -1,7 +1,7 @@
 ---
 title: API Authorization
 description: Adding the Client Id to a subscription
-parent: RCL Renewal API
+parent: API
 nav_order: 2
 ---
 

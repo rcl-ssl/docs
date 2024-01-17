@@ -221,7 +221,7 @@ The image above illustrates a site hosted in IIS named 'Home' with multiple bind
 sc.exe create CertificateBotIIS binpath= <file-path>\RCL.SSL.CertificateBot.IIS.exe
 ```
 
-- After the service in installed, open **Services** in Windows, look for the ``CertificateBot`` service and **Start** the service
+- After the service is installed, open **Services** in Windows, look for the ``CertificateBot`` service and **Start** the service
 
 ![image](../images/certbot/winservice-start.png)
 
@@ -247,7 +247,7 @@ If you encounter error events for the service in the Event Viewer, please stop t
 
 Ensure the ``appsettings`` configuration is correct for the AAD Application and the certificate save path settings point to a folder that exists. 
 
-Fix any other errors that are reported Then, re-install and restart the service.
+Fix any other errors that are reported. Then, re-install and restart the service.
 
 # Deleting the Windows Service
 
@@ -295,12 +295,10 @@ In order to manually test certificate renewal, you must first force certificate 
 
 - Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.SSL.HTTP.AutoRenew.IIS`` events
 
-- Ensure that there are no error events for the service
-
-- If there are errors: fix the errors , restart the service to run the test again
+- Ensure that the certificate has been scheduled for renewal
 
 - Re-start the services again to save the certificate to the local machine and bind it to the IIS Web Server
 
 - Check that the certificate(s) are bound to the IIS website(s)
 
-- Once this test passes, the service will run automatically every seven days to renew certificates and bind them to the IIS website(s)
+- Once this test passes, the service will run automatically every seven days to renew certificate(s) and bind them to the IIS website(s)
