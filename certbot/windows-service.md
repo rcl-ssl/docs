@@ -106,14 +106,19 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 Example
 ```json
   "CertificateBot": {
-    "saveCertificatePath": "C:/ssl",
-     "includeCertificates": [
-       "contoso.com",
-       "fabricam.com",
-       "acme.com,*.acme.com",
-       "adworks.com, www.adworks.com"
-       ]
-  },
+    "IncludeCertificates": [
+      {
+        "certificateName": "contoso.com",
+        "validationPath": "-undefined-"
+      },
+      {
+        "certificateName": "acme.com,*.acme.com",
+        "validationPath": "-undefined-"
+      }
+    ],
+    "SaveCertificatePath": "-undefined-",
+    "IISBindings": []
+  }
 ```
 
 ## Example of a configured **appsettings.json** file
@@ -142,10 +147,13 @@ Example
     "SubscriptionId": "879"
   },
   "CertificateBot": {
-    "SaveCertificatePath": "C:/ssl",
     "IncludeCertificates": [
-      "shopeneur.com,*.shopeneur.com"
+      {
+        "certificateName": "shopeneur.com,*.shopeneur.com",
+        "validationPath": "-undefined-"
+      }
     ],
+    "SaveCertificatePath": "C:/ssl",
     "IISBindings": []
   }
 }
