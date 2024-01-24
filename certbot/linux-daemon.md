@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 # RCL SSL CertificateBot for Linux
-**V7.0.0**
+**V7.1.0**
 
 RCL SSL CertificateBot runs as a **Daemon** in a Linux hosting machine. The daemon will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Linux hosting machine.
 
@@ -16,15 +16,13 @@ You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates c
 
 - [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) 
 
-**'Stand Alone' certificates are not supported by RCL SSL CertificateBot. Use the [HTTP AutoRenew](../httpautorenew/httpautorenew.md) instead**
-
 # Installing RCL SSL CertificateBot
 
 If you have an older version of the RCL CertificateBot installed in your hosting machine, you should completely delete it and install the new one.
 
 ## Download and Extract the Daemon Files to the Linux Server
 
-In this section, you will download the files from the RCL SSL CertificateBot [GitHub Project Page](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.0) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
+In this section, you will download the files from the RCL SSL CertificateBot [GitHub Project Page](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal) in the [Releases](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/tag/V7.1.0) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
 
 - In your Linux server, navigate to the ``/usr/sbin`` folder
 
@@ -35,13 +33,19 @@ cd /usr/sbin
 - Run the command in the folder to download and extract the ``linux-x64`` files:
 
 ```bash
-wget -c https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-linux-x64.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-linux-x64.tar.gz -O - | sudo tar -xz
 ```
 
 or ``linux-arm`` files :
 
 ```bash
-wget -c https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-linux-arm.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-linux-arm.tar.gz -O - | sudo tar -xz
+```
+
+or ``linux-arm64`` files :
+
+```bash
+wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-linux-arm64.tar.gz -O - | sudo tar -xz
 ```
 
 ## Configure the Daemon
@@ -105,6 +109,12 @@ or for ``arm``
 cd /usr/sbin/certificatebot-linux-arm
 ```
 
+or for ``arm64``
+
+```bash
+cd /usr/sbin/certificatebot-linux-arm64
+```
+
 - Use nano (or other text editor) to edit the **appsettings.json** file in the folder
 
 ```bash
@@ -127,14 +137,19 @@ sudo nano appsettings.json
 Example
 ```json
   "CertificateBot": {
-    "saveCertificatePath": "/etc/ssl/certificatebot",
-     "includeCertificates": [
-       "contoso.com",
-       "fabricam.com",
-       "acme.com,*.acme.com",
-       "adworks.com, www.adworks.com"
-       ]
-  },
+    "IncludeCertificates": [
+      {
+        "certificateName": "contoso.com",
+        "validationPath": "-undefined-"
+      },
+      {
+        "certificateName": "acme.com,*.acme.com",
+        "validationPath": "-undefined-"
+      }
+    ],
+    "SaveCertificatePath": "/etc/ssl/certificatebot",
+    "IISBindings": []
+  }
 ```
 
 ## Example of a configured **appsettings.json** file
@@ -148,7 +163,7 @@ Example
     }
   },
   "RCLSDK": {
-    "ApiBaseUrl": "https://rclapi.azure-api.net/public",
+    "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
     "SourceApplication": "RCL SSL CertificateBot Linux",
     "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
     "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
@@ -156,10 +171,13 @@ Example
     "SubscriptionId": "879"
   },
   "CertificateBot": {
-    "SaveCertificatePath": "/etc/ssl/certificatebot",
     "IncludeCertificates": [
-      "shopeneur.com,*.shopeneur.com"
+      {
+        "certificateName": "shopeneur.com,*.shopeneur.com",
+        "validationPath": "-undefined-"
+      }
     ],
+    "SaveCertificatePath": "/etc/ssl/certificatebot",
     "IISBindings": []
   }
 }
@@ -210,7 +228,7 @@ WantedBy=multi-user.target
 
 ```
 
-If you installed the ``arm`` version, change the directory to the arm path ``/usr/sbin/certificatebot-linux-arm`` instead of ``/usr/sbin/certificatebot-linux-x64`` in the 'WorkingDirectory' and 'ExecStart' settings
+If you installed the ``arm`` version, change the directory to the arm path ``/usr/sbin/certificatebot-linux-arm`` or ``/usr/sbin/certificatebot-linux-arm64``  instead of ``/usr/sbin/certificatebot-linux-x64`` in the 'WorkingDirectory' and 'ExecStart' settings
 
 - Save the file when you are done
 
@@ -293,6 +311,96 @@ If you need to reset the service because of a error or corrupted certificate ren
 - Delete all certificates and their folders in the directory in which certificates are saved
 - Re-load the daemon
 - Re-start the daemon
+
+# Testing Certificate Renewal
+
+## Force Certificate Expiration
+
+In order to test certificate renewal, you must first force certificate expiration in the RCL SSL Portal.
+
+- In the RCL SSL Portal, click on the **SSL/TLS Certificate > Certificates List** link in the side menu
+
+- In the certificates list, click the **Manage > Force Expiry** link
+
+- In the ``Force Expiry`` page, click the **Force Expiry** button
+
+- The certificate will be forced to expire in the next 14 days
+
+![Force Expiry](../images/http_autorenew/force-expiry.png)
+
+## Testing Renewal
+
+- Re-start the daemon to trigger the certificate renewal
+
+```bash
+sudo systemctl restart certificatebot
+```
+
+- Run the command to view the daemon's detailed logs
+
+```bash
+sudo journalctl -u certificatebot --no-pager
+```
+
+- Check the logs to ensure the certificate is scheduled for renewal.
+
+```bash
+Found 1 certificate(s) to process locally.  Found 1 certificate(s) to renew.  Scheduling shopeneur.com for renewal. 
+```
+
+- Re-start the services again to save the certificate to the local machine
+
+```bash
+sudo systemctl restart certificatebot
+```
+
+- Run the command to view the daemon's detailed logs
+
+```bash
+sudo journalctl -u certificatebot --no-pager
+```
+
+- Check the logs to ensure the certificate is scheduled for renewal.
+
+```bash
+Successfully saved : shopeneur.com in local machine.
+
+```
+
+- Check that the certificate files are stored in the folder that you specified. Review the section below to learn how the daemon saves certificate files
+
+ Example
+ ```bash
+ cd /etc/ssl/certificatebot
+ ls
+ ```
+
+- Once this test passes, the daemon will run every seven days to automatically renew certificates and save the certificate files to a folder you specify
+
+# Certificate Files
+
+The SSL/TLS certificate files will be stored at the path you specified in the ``appsettings.json`` configuration file. In this example, we used the path ``/etc/ssl/certificatebot`` to store the certificate files.
+
+At this path, a folder is generated by the service based on the certificate name. All the files for the certificate will be stored in this folder.
+
+For each certificate, the following files are downloaded and saved on the hosting machine with the following file names:
+
+  - ``certificate.pfx`` - The PFX certificate file
+  - ``primaryCertificate.crt`` - The Primary Certificate file
+  - ``fullChainCertificate.crt`` - The full chain certificate file
+  - ``caBundle.crt`` - The Intermediate Certificates (CA Bundle) file
+  - ``privateKey.key`` - The Certificate Private Key file
+
+   The files are saved in a folder generated by the daemon based on the certificate name following these conventions :
+
+  |Type               |Example Certificate Name         |Example Folder Name
+  |-------------------|---------------------------------|---------------------
+  |Apex Domain        |shopeneur.com                    |shopeneur-com
+  |Sub-domain         |store.shopeneur.com              |store-shopeneur-com
+  |Wildcard domain    |*.shopeneur.com                  |wcard-shopeneur-com
+  |SAN HTTP Challenge |shopeneur.com,www.shopeneur.com  |shopeneur-com-san-www
+  |SAN DNS Challenge  |shopeneur.com,*.shopeneur.com    |shopeneur-com-san-wcard
+
 
 # Installing Certificates in Web Servers
 
