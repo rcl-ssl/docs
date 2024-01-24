@@ -5,8 +5,8 @@ parent: CertificateBot
 nav_order: 3
 ---
 
-# RCL CertificateBot for Windows
-**V7.0.0**
+# RCL SSL CertificateBot for Windows
+**V7.1.0**
 
 RCL SSL CertificateBot runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
 
@@ -16,23 +16,22 @@ You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates c
 
 - [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md))
 
-**'Stand Alone' certificates are not supported by RCL SSL CertificateBot. Use the [HTTP AutoRenew](../httpautorenew/httpautorenew.md) instead**
 
 # Install RCL SSL CertificateBot
 
-If you have an older version of the RCL CertificateBot installed in your hosting machine, you should completely delete it and install the new one.
+If you have an older version of the RCL SSL CertificateBot installed in your hosting machine, you should completely delete it and install the new one.
 
 ## Download the Files
 
-- The Windows Service files (``certificatebot-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/RCL.SSL.CertificateBot) page in the [Releases](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/tag/V7.0.0) section:
+- The Windows Service files (``certificatebot-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal) page in the [Releases](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/tag/V7.1.0) section:
 
 - Download the zip file with bitness
 
-  - [win-x64](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-win-x64.zip) 
-  - [win-x86](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-win-x86.zip)
-  - [win-arm](https://github.com/rcl-ssl/RCL.SSL.CertificateBot/releases/download/V7.0.0/certificatebot-win-arm.zip)
+  - [win-x64](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-win-x64.zip) 
+  - [win-x86](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-win-x86.zip)
+  - [win-arm](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-win-arm.zip)
   
-  to match your Windows bitness
+  to match the bitness of your Windows hosting machine
 
 - Extract the zip file to a folder on your Windows hosting machine after it is downloaded
 
@@ -135,7 +134,7 @@ Example
     }
   },
   "RCLSDK": {
-    "ApiBaseUrl": "https://rclapi.azure-api.net/public",
+    "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
     "SourceApplication": "RCL SSL CertificateBot Windows",
     "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
     "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
@@ -188,7 +187,7 @@ If you encounter error events for the service in the Event Viewer, please stop t
 
 Ensure the 'appsettings' configuration is correct for the AAD Application and the certificate save path settings point to a folder that exists. 
 
-Fix any other errors that are reported then, re-install and restart the service.
+Fix any other errors that are reported then re-install and restart the service.
 
 # Deleting the Windows Service
 
@@ -214,30 +213,65 @@ If you need to reset the service because of a error or corrupted certificate ren
 - Delete all certificates and their folders in the directory in which certificates are saved
 - Re-create the service and start it
 
-# Installing Certificates in Web Servers
+# Testing Certificate Renewal
 
-RCL SSL CertificateBot will automatically save renewed SSL/TLS certificate files to a folder in the hosting machine. You should then configure the web server to use these files to implement SSL/TLS in your website.
+## Force Certificate Expiration
 
-## Certificate Files
+In order to test certificate renewal, you must first force certificate expiration in the RCL SSL Portal.
+
+- In the RCL SSL Portal, click on the **SSL/TLS Certificate > Certificates List** link in the side menu
+
+- In the certificates list, click the **Manage > Force Expiry** link
+
+- In the ``Force Expiry`` page, click the **Force Expiry** button
+
+- The certificate will be forced to expire in the next 14 days
+
+![Force Expiry](../images/http_autorenew/force-expiry.png)
+
+## Testing Renewal
+
+- Re-start the service to trigger the certificate renewal
+
+- Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.SSL.HTTP.AutoRenew.Windows`` events
+
+- Ensure that the certificate has been scheduled for renewal
+
+- Re-start the services again to save the certificate to the local machine
+
+- Check that the certificate files are stored in the folder that you specified. Review the section below to learn how the service saves certificate files
+
+- Once this test passes, the service will run every seven days to automatically renew certificates and save the certificate files to the folder.
+
+# Certificate Files
 
 The SSL/TLS certificate files will be stored at the path you specified in the ``appsettings.json`` configuration file. In this example, we used the path ``C:/ssl`` to store the certificate files.
 
-When configuring the web servers, you will reference the specific certificate files stored at that path in a folder generated by CertificateBot for a specified domain.
+At this path, a folder is generated by the service based on the certificate name. All the files for the certificate will be stored in this folder.
 
-The following files are downloaded and saved on the server :
+For each certificate, the following files are downloaded and saved on the hosting machine with the following file names:
 
   - ``certificate.pfx`` - The PFX certificate file
-  - ``primaryCertificate.crt`` The primary certificate file
+  - ``primaryCertificate.crt`` - The Primary Certificate file
   - ``fullChainCertificate.crt`` - The full chain certificate file
-  - ``caBundle.crt`` - The intermediate certificate file
-  - ``privateKey.key`` - The certificate's private key file
+  - ``caBundle.crt`` - The Intermediate Certificates (CA Bundle) file
+  - ``privateKey.key`` - The Certificate Private Key file
 
-## Configuring the Web Servers
+   The files are saved in a folder generated by the service based on the certificate name following these conventions :
 
-Please follow the links below to configure your web server:
+  |Type               |Example Certificate Name         |Example Folder Name
+  |-------------------|---------------------------------|---------------------
+  |Apex Domain        |shopeneur.com                    |shopeneur-com
+  |Sub-domain         |store.shopeneur.com              |store-shopeneur-com
+  |Wildcard domain    |*.shopeneur.com                  |wcard-shopeneur-com
+  |SAN HTTP Challenge |shopeneur.com,www.shopeneur.com  |shopeneur-com-san-www
+  |SAN DNS Challenge  |shopeneur.com,*.shopeneur.com    |shopeneur-com-san-wcard
+
+# Configuring the Web Servers
+
+After, you have installed the Windows Service and the renewed certificates have been downloaded to the specified folder. Please follow the links below to configure your web server to use the certificates files in the folder generated by the service :
 
 - [Installing SSL/TLS Certificates in Apache Server](../installations/apache)
 - [Installing SSL/TLS Certificates in Apache Tomcat](../installations/apache-tomcat)
 - [Installing SSL/TLS Certificates in NGINX](../installations/nginx)
 - [Installing SSL/TLS Certificates in Web Servers and Hosting Services](../installations/web-servers)
-
