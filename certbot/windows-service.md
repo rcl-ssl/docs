@@ -171,9 +171,9 @@ Example
 sc.exe create CertificateBotWindows binpath= <file-path>\RCL.SSL.CertificateBot.Windows.exe
 ```
 
-- After the service in installed, open **Services** in Windows, look for the ``CertificateBot`` service and **Start** the service
+- After the service in installed, open **Services** in Windows, look for the ``CertificateBotWindows`` service and **Start** the service
 
-![image](../images/certbot/winservice-start.png)
+![image](../images/certbot/winservice-start.PNG)
 
 - Set the **Properties** of the service to start automatically when the hosting machine starts
 
