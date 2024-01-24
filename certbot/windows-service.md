@@ -116,7 +116,7 @@ Example
         "validationPath": "-undefined-"
       }
     ],
-    "SaveCertificatePath": "-undefined-",
+    "SaveCertificatePath": "C:/ssl",
     "IISBindings": []
   }
 ```
