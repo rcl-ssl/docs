@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 # Installing RCL SSL AutoRenew Function
-**V7.0.0**
+**V7.1.0**
 
 In this section, you will learn how to install the [RCL SSL AutoRenew Function](../autorenew/autorenew.md) in an Azure account.
 
@@ -14,7 +14,7 @@ If you have an older version of the AutoRenew function installed in your Azure a
 
 ## Install in Azure
 
-- Open the [Github Project Page ](https://github.com/rcl-ssl/RCL.SSL.AutoRenewFunction) for the AutoRenew function , and in the **master** branch, click on the 'Deploy to Azure' button on the **README** page
+- Open the [Github Project Page ](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal?tab=readme-ov-file#rcl-ssl-autorenew-function) for the AutoRenew function , and in the **main** branch, click on the 'Deploy to Azure' button on the **README** page
 
 ![install](../images/autorenew_installation/azure_deploy.PNG)
 
@@ -28,7 +28,7 @@ The following Azure resources will be installed in the Resource Group :
 - Consumption plan - the function app will run on a [consumption plan](https://docs.microsoft.com/en-us/azure/azure-functions/consumption-plan) and the user will pay only when the function is running
 - Storage account - required by the function app
 
-The estimated cost for these Azure resources may be a **few cents** per month based on the number of certificates in a user's subscription.
+The estimated cost for these Azure resources may be a **few cents or dollars** per month based on the number of certificates in a user's subscription.
 
 ![install](../images/autorenew_installation/azure_deploy3.PNG)
 

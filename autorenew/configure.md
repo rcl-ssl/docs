@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 # Configure the RCL SSL AutoRenew Function App
-**V7.0.0**
+**V7.1.0**
 
 In this section, you will configure the [RCL SSL AutoRenew Function](../autorenew/autorenew.md) app.
 
@@ -60,6 +60,27 @@ Update the following configuration entries with the credentials from the AAD app
 
 ![install](../images/autorenew_configure/add_subscriptionid3.png)
 
+- In the Function App configuration page, add the certificates that you would like to renew in the **CertificateBot:IncludeCertificates** configuration entry
+
+- You can add a single certificate by its name, or multiple certificates separated by semi-colons (;)
+
+Example single certificate
+
+```bash
+CertificateBot:IncludeCertificates      acme.com
+```
+
+Example single SAN certificate
+
+```bash
+CertificateBot:IncludeCertificates      acme.com,*.acme.com
+```
+
+Example multiple certificates
+
+```bash
+CertificateBot:IncludeCertificates      acme.com,*.acme.com;contoso.com;fabricam.com
+```
 
 - Click the 'Save' button when you are done
 

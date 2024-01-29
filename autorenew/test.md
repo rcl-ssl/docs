@@ -6,7 +6,7 @@ nav_order: 3
 ---
 
 ## Testing the RCL SSL AutoRenew Function
-**V7.0.0**
+**V7.1.0**
 
 In this section, you will learn how to test the RCL SSL AutoRenew function. 
 
@@ -80,6 +80,22 @@ This may indicate the you have not set the Access Control for the AAD Applicatio
 
 
 ## Manually Test the Certificate Renewal Process
+
+### Force Certificate Expiration
+
+In order to test certificate renewal, you must first force certificate expiration in the RCL SSL Portal.
+
+- In the RCL SSL Portal, click on the **SSL/TLS Certificate > Certificates List** link in the side menu
+
+- In the certificates list, click the **Manage > Force Expiry** link
+
+- In the ``Force Expiry`` page, click the **Force Expiry** button
+
+- The certificate will be forced to expire in the next 14 days
+
+![Force Expiry](../images/http_autorenew/force-expiry.png)
+
+### Test Certificate Renewal
 
  - To manually test the certificate renewal process, open the 'Certificate-Renew-Manual' function
 
