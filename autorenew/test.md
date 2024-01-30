@@ -116,6 +116,9 @@ In order to test certificate renewal, you must first force certificate expiratio
 
 ![install](../images/autorenew_test/certificate-renew-3.png)
 
+- In the RCL Portal, verify that the certificate was updated.
+
+![install](../images/autorenew_test/certificate-renew-4.png)
 
 **Note: The 'Certificate-Renew-Automatic' function will automatically run on a weekly basis and automatically renew certificates that are about to expire. There is no need to manually run the 'Certificate-Renew-Manual' function apart from manual testing**
 
