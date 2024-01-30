@@ -1,7 +1,7 @@
 ﻿---
 title: Introduction
 description: The RCL SSL client for Let's Encrypt allows you to create SSL/TLS certificates for your web sites / applications using the popular Let's Encrypt V2 API.
-has_children: false
+has_children: true
 nav_order: 1
 ---
 
