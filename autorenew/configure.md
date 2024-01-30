@@ -82,7 +82,7 @@ Example multiple certificates
 CertificateBot:IncludeCertificates      acme.com,*.acme.com;contoso.com;fabricam.com
 ```
 
-![install](../images/autorenew_configure/func3.PNG)
+![install](../images/autorenew_configure/func3.png)
 
 - Click the 'Save' button when you are done
 
