@@ -1,6 +1,6 @@
 ---
 title: CSR Info
-description: Use the RCL portal to create CSR information
+description: Use the RCL SSL portal to create CSR information
 parent: Portal
 nav_order: 1
 ---

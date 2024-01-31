@@ -1,6 +1,6 @@
 ---
 title: Portal
-description: Use the RCL portal to create SSL/TLS certificates for web sites / applications
+description: Use the RCL SSL portal to create SSL/TLS certificates for web sites / applications
 has_children: true
 nav_order: 4
 ---

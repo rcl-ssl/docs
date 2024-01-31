@@ -1,6 +1,6 @@
 ---
 title: Azure Key Vault SAN
-description: Use the RCL portal to create Multi-Domain SAN SSL/TLS certificates using an Azure DNS Zone and automatically install it in Azure Key Vault
+description: Use the RCL SSL portal to create Multi-Domain SAN SSL/TLS certificates using an Azure DNS Zone and automatically install it in Azure Key Vault
 parent: Portal
 nav_order: 8
 ---

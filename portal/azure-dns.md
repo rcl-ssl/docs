@@ -1,6 +1,6 @@
 ---
 title: Azure DNS
-description: Use the RCL portal to create Single-Domain SSL/TLS certificates using an Azure DNS Zone
+description: Use the RCL SSL portal to create Single-Domain SSL/TLS certificates using an Azure DNS Zone
 parent: Portal
 nav_order: 4
 ---

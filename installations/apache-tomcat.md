@@ -1,6 +1,6 @@
 ---
 title: Apache Tomcat Server
-description: Using RCL to install SSL/TLS certificates in Apache Tomcat Server
+description: Using RCL SSL to install SSL/TLS certificates in Apache Tomcat Server
 parent: Certificate Installations
 nav_order: 3
 ---

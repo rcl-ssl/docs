@@ -1,6 +1,6 @@
 ---
 title: Automatic Renewal
-description: Automatic renewal of SSL/TLS certificates created in the RCL portal
+description: Automatic renewal of SSL/TLS certificates created in the RCL SSL portal
 parent: Portal
 nav_order: 9
 ---
