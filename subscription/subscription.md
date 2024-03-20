@@ -58,12 +58,3 @@ You can access the RCL Portal app that you have subscribed to in the Azure porta
 
 {: .warning }
 Download your certificates before your data is deleted. A cancelled subscription cannot be re-activated. You will need to wait a few days to create a new subscription. Your data will not be restored.
-
-
-
-
-
-
-
-
-
