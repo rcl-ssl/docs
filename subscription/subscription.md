@@ -28,7 +28,7 @@ nav_order: 2
 
 # Accessing the Application
 
-You can access the RCL Portal app that you have subscribed to in the Azure portal.
+You can access the RCL SSL Portal app that you have subscribed to in the Azure portal.
 
 - In the Azure portal, search for Software as a Service (SaaS) and open it
 
@@ -42,7 +42,7 @@ You can access the RCL Portal app that you have subscribed to in the Azure porta
 
 ![image](../images/subscription/subscribe-saas-apps2.png)
 
-- Sin in with your Microsoft Account and start using the application
+- Sign in with your Microsoft Account and start using the application
 
 ![image](../images/subscription/subscribe-saas-apps3.png)
 
@@ -52,7 +52,7 @@ You can access the RCL Portal app that you have subscribed to in the Azure porta
 
 ![image](../images/subscription/subscribe-saas-apps2.png)
 
-- After, you can Delete the subscription
+- After, you can `Delete` the subscription
 
 - Once you cancel a subscription, your data will be scheduled for deletion within the next few days
 
