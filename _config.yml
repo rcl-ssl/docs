@@ -11,3 +11,6 @@ callouts:
   information:
     title: Information
     color: blue
+  warning:
+    title: Warning
+    color: red

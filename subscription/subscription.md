@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 # Azure Marketplace Subscription
-**V7.0.0**
+**V7.1.0**
 
 - You will subscribe to [RCL SSL Portal](../portal/portal.md) app in the Azure portal or in the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=overview)
 
@@ -26,7 +26,7 @@ nav_order: 2
 
 ![image](../images/subscription/configure-rcl.png)
 
-# Unsubscribe 
+# Accessing the Application
 
 You can access the RCL Portal app that you have subscribed to in the Azure portal.
 
@@ -38,18 +38,26 @@ You can access the RCL Portal app that you have subscribed to in the Azure porta
 
 ![image](../images/subscription/subscribe-saas-apps.png)
 
-- You can now view the details of the application
+- Click on the `Open SaaS Account on publisher’s site` link to open the application 
+
+![image](../images/subscription/subscribe-saas-apps2.png)
+
+- Sin in with your Microsoft Account and start using the application
+
+![image](../images/subscription/subscribe-saas-apps3.png)
+
+# Unsubscribe 
 
 - In the SaaS application, click on the ‘Cancel subscription’ link to unsubscribe
 
+![image](../images/subscription/subscribe-saas-apps2.png)
+
 - After, you can Delete the subscription
-
-![image](../images/subscription/unsubscribe.PNG)
-
 
 - Once you cancel a subscription, your data will be scheduled for deletion within the next few days
 
-**Download your certificates before your data is deleted. A cancelled subscription cannot be re-activated. You will need to wait a few days to create a new subscription. Your data will not be restored.**
+{: .warning }
+Download your certificates before your data is deleted. A cancelled subscription cannot be re-activated. You will need to wait a few days to create a new subscription. Your data will not be restored.
 
 
 
