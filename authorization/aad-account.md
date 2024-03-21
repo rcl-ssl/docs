@@ -6,9 +6,9 @@ nav_order: 2
 ---
 
 # Azure Active Directory Organization Account
-**V7.0.0**
+**V7.1.0**
 
-An Azure Active Directory (AAD) organization account is required to sign in to the [RCL SSL Portal](../portal/portal.md) to manage Azure resources (App Services, DNS, Key Vault, etc.). An organization account is also called a **‘Work or School’ account**. Follow these steps to use an AAD account in the RCL SSL Portal.
+An Azure Active Directory (AAD) organization account is required to sign in to the [RCL SSL Portal](../portal/portal.md) to manage Azure Resources (App Services, DNS, Key Vault, etc.) in a Subscription. An organization account is also called a **‘Work or School’ account**. Follow these steps to use an AAD account in the RCL SSL Portal.
 
 - In the Azure Portal, search for the **Azure Active Directory** and open it
 
@@ -40,17 +40,11 @@ You can also create a new user account to sign in to the RCL SSL Portal.
 
 ![image](../images/authorization_signin/subscribe-aad-user-member.png)
 
-- You can use this new AAD organization account to login in to any of the RCL Portal.
-
-# Sign In
-
-You should now sign in to the Azure Portal using the existing or new AAD Work or School account.
-
-It is strongly recommended that you sign in with this AAD Work or School account in the Azure Portal when you subscribe to the RCL SSL Portal in the Azure Marketplace.
+- You will need to associate this new AAD organization account to login in to the RCL SSL Portal.
 
 # Access Control
 
-To access resources in you Microsoft Azure account a further step is required. Your AAD Work or School account must be an 'Administrator' or 'Owner' on the subscription containing your azure resources. 
+To access resources in you Microsoft Azure account a further step is required. Your AAD Work or School account must be an 'Administrator' or 'Owner' in the Subscription containing your azure resources. 
 
 Refer to the following link for more information :
 

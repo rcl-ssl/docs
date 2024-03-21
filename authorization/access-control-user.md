@@ -6,14 +6,14 @@ nav_order: 3
 ---
 
 # Set Access Control for the AAD user
-**V7.0.0**
+**V7.1.0**
 
 The Azure Active Directory (AAD) organization (Work or School) account that you use to login to the [RCL SSL Portal](../portal/portal.md)  must either be :
 
-- An 'Administrator' or 'Owner' to your Azure subscription
+- An 'Owner' to your Azure subscription
 - Have a role of ‘Owner’ or ‘Contributor’ to your Azure subscription
 
-If either of these requirements are not met, you will not be able to use the RCL SSL Portal to manage your Azure resources (App Services, DNS, Key Vault, etc).
+If either of these requirements are not met, you will not be able to use the RCL SSL Portal to manage your Azure resources (App Services, DNS, Key Vault, etc) in the subscription.
 
 You may also experience an error message.
 
@@ -27,31 +27,37 @@ You can select or create a new **AAD user account** in your AAD tenant to sign i
 
 # Subscription Administrator
 
-You can determine if your AAD organization account is an 'Administrator' or 'Owner' on the Azure subscription by logging in to the Azure portal with the same AAD account that you use to login to to the the RCL SSL Portal.
+You can determine if your AAD organization account is an 'Owner' on the Azure subscription by logging in to the Azure portal with the same AAD account that you use to login to to the the RCL SSL Portal.
 
 - In the Azure portal, search for 'Subscriptions' and navigate to it
 
 ![image](../images/authorization_signin/access-control-subscriptions-search.png)
 
-- Select a subscription
+- Select a subscription that contain your Azure resources
 
 ![image](../images/authorization_signin/access-control-subscription-select.png)
 
 - After you select a subscription, click on the ‘My permissions’ link for the subscription
 
-- Here , you can determine if you are an 'Administrator' on the subscription
+- Here , you can determine if you are an 'Owner' on the subscription
 
 ![image](../images/authorization_signin/access-control-mypermissions.png)
 
 # Set Owner or Contributor roles
 
-If the AAD account that you use to log in to the RCL SSL Portal is not an 'Administrator' in the Azure subscription, you need to add the AAD account as an ‘Owner’ or ‘Contributor’ to the Azure subscription.
+If the AAD account that you use to log in to the RCL SSL Portal is not an 'Owner' in the Azure subscription, you need to add the AAD account as an ‘Owner’ or ‘Contributor’ to the Azure subscription.
 
 - Click on the the ‘Access Control (IAM)’ link in the Subscription section
 
-- Click on the ‘Add’ link at the top to add a new role
+- In the subscription, click on 'Access control (IAM)' and add a new **role assignment**
 
-- Select 'Contributor' or 'Owner', then click on 'Select Member'
+![install](../images/authorization_access_control/add_role.PNG)
+
+- Click on the **Privileged administrator role** link
+
+- Select the 'Contributor' role and click the 'Next' button
+
+![install](../images/authorization_access_control/add_role2.PNG)
 
 - Search for and select the AAD user account that you use to login to the RCL SSL Portal
 
@@ -63,11 +69,38 @@ If the AAD account that you use to log in to the RCL SSL Portal is not an 'Admin
 
 **You must do this for each Azure subscription that you want to use in the RCL SSL Portal.**
 
-# Test Access Control
+## Access Policies for Key Vault
 
-Once access control is properly set up for the AAD account that you use to login to the RCL SSL Portal, you can open any page that requires subscription access to test it.
+If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will need to set **Access policies** for the certificate in Key Vault. 
 
-If the access control was correctly set, you will see the subscription in the drop down list.
+{: .information }
+This step is not required, if SSL/TLS certificates are not being created for Key Vault.
+
+- In Azure **Key Vault**, click on 'Access policies' and 'Add Access Policy'
+
+![install](../images/authorization_access_control/key_vault.PNG)
+
+- In the 'Certificate permissions' dropdown, select all **16 permissions**, including 'Purge' permission.
+
+![install](../images/authorization_access_control/key_vault2.PNG)
+
+- Then , click on 'Select principal'
+
+- Search for the user that was registered and click the 'Select' button to select it 
+
+![install](../images/authorization_access_control/key_vault3.PNG)
+
+- Click the 'Add' button when you are done
+
+![install](../images/authorization_access_control/key_vault4.PNG)
+
+- Click the 'Save' button to save the access policy
+
+![install](../images/authorization_access_control/key_vault5.PNG)
+
+- The newly added access policy will be displayed
+
+![install](../images/authorization_access_control/key_vault6.PNG)
 
 
 

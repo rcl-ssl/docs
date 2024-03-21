@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 # Sign-In Accounts for RCL SSL Portal
-**V7.0.00**
+**V7.1.0**
 
 You can subscribe to and sign in to the [RCL SSL Portal](../portal/portal.md) with a :
 
@@ -29,7 +29,8 @@ The AAD Work or School account is issued to users by an organization from their 
 
 # Account Limitations
 
-MSA accounts cannot be used to Manage Azure Resources such as App Services, Key Vault, DNS, etc. You must use an AAD Work or School Account to manage these services.
+{: .warning }
+MSA accounts cannot be used to Manage Azure Resources in a Subscription such as App Services, Key Vault, DNS, etc. You must use an AAD Work or School Account to manage these services.
 
 If you try to manage an Azure Resource with a MSA account you will get the following error.
 
