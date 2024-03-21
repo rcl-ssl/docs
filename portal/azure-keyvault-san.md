@@ -6,7 +6,7 @@ nav_order: 8
 ---
 
 # SAN Certificate - Azure Key Vault
-**V7.0.0**
+**V7.1.0**
 
 RCL SSL creates TLS/SSL certificates using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records) and automatically saves them to [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts).
 
@@ -20,25 +20,24 @@ SAN certificates only allow a single domain. For instance, the two domains 'fabr
 
 ## AAD Accounts
 
-**Personal and Microsoft Accounts are not supported for Azure DNS. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.**
+{: .warning }
+Personal Microsoft Accounts (MSA) are not supported for Azure resources in a subscription. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
 
-If you try to manage Azure DNS / Key Vault with a MSA account you will get the following error.
+If you try to manage an Azure DNS / Key Vault with a MSA account you will get the following error.
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your RCL SSL subscription:
 
-- [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
+- [Sign-In Accounts for RCL SSL Portal](../authorization/sign-in-accounts)
 
 ## Set Access Control
 
-To create certificates for Azure DNS / Key Vault, the Azure AAD organizational account that you use to login to the RCL SSL Portal must either be :
-
-- An administrator to the subscription containing the Azure DNS Zone(s) / Key Vault(s)
+To create certificates for Azure DNS / Key Vault, the Azure AAD organizational account that you use to login to RCL SSL Portal must either be :
 
 - Have a role of ‘Owner’ or ‘Contributor’ to the subscription containing the Azure DNS Zone(s) / Key Vault(s)
 
-If either of these requirements are not met, the ‘subscriptions’, 'Key Vault' and ‘DNS Zone’ lists will be empty when you try to create a certificate.
+If either of these requirements are not met, the ‘Subscriptions’, 'Key Vault' and ‘DNS Zone’ lists will be empty when you try to create a certificate.
 
 ![image](../images/portal/access-control-subscriptions_dns_empty.png)
 
@@ -78,31 +77,40 @@ If you do not have an Azure Key Vault, follow the steps in this link to create o
 
 # Set Access Policy for Key Vault
 
-You must have security access to the Azure Key Vault certificate operations.
+{: .warning }
+If you do not set the access policy for Key Vault, you will experience 'Access Denied' or 'Forbidden' errors when you try to create a certificate.
 
-**If you do not set the access policy for Key Vault, you will experience 'Access Denied' or 'Forbidden' errors when you try to create a certificate.**
+![image](../images/portal/key-vault-access-error.png)
 
-This access policy is required to import the TLS/SSL certificate in a Key Vault in your Azure account. If you have not yet created an access policy for your certificates, then follow these steps.
+This access policy is required to import the SSL/TLS certificate in a Key Vault in your Azure account. If you have not yet created an access policy for your certificates, then follow these steps.
 
-- In your Azure Key Vault, click on the ‘Access policies’ link. Then click on ‘Add Access Policy’.
+- In your Azure Key Vault, click on the ‘Access policies’ link. Then click on ‘Create’.
 
 ![image](../images/portal/certificate-keyvault-access-policy-add.png)
 
-- Select all the permissions for the ‘Certificate permissions’ (all 16 permissions). Ensure you include the **purge** permission.
+- Select all the permissions for the ‘Certificate Management Operations’ (select all). Ensure you include the **purge** permission.
 
-- Select a service principal : search for the Azure Active Directory organizational account that you use to login to the RCL SSL Portal
+- Select all the permissions for the ‘Secret Management Operations’ (select all). Ensure you include the **purge** permission.
 
-- Click the ‘Select’ button
+![image](../images/portal/certificate-keyvault-access-policy-add2.png)
 
-- Click the ‘Add’ button when you are done
+- Click the 'Next' button when you are done
+
+- Select a service principal : search for the Azure Active Directory organizational user account that you use to login to the RCL SSL portal
 
 ![image](../images/portal/certificate-keyvault-access-policy-sp.png)
 
+- Click the ‘Next’ button
+
+- Click the ‘Create’ button when you are done
+
+![image](../images/portal/certificate-keyvault-access-policy-sp2.png)
+
 - The new access policy will be added
 
-- Click the ‘Save’ icon at the top to save the access policy
-
 ![image](../images/portal/certificate-keyvault-permission.png)
+
+# Create the SSL/TLS Certificate
 
 - In the ‘Certificates’ module of the portal, click on the **Create New SSL/TLS Certificate** link
 

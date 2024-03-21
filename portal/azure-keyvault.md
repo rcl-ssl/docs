@@ -6,33 +6,32 @@ nav_order: 7
 ---
 
 # Creating SSL/TLS Certificates for Azure Key Vault
-**V6.0.10**
+**V7.1.0**
 
-RCL creates TLS/SSL certificates using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records) and automatically saves them to [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts).
+RCL SSL creates TLS/SSL certificates using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records) and automatically saves them to [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts).
 
 # Access Control
 
 ## AAD Accounts
 
-**Personal and Microsoft Accounts are not supported for Azure DNS. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.**
+{: .warning }
+Personal Microsoft Accounts (MSA) are not supported for Azure resources in a subscription. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
 
 If you try to manage an Azure DNS / Key Vault with a MSA account you will get the following error.
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for the RCL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your RCL SSL subscription:
 
-- [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
+- [Sign-In Accounts for RCL SSL Portal](../authorization/sign-in-accounts)
 
 ## Set Access Control
 
-To create certificates for Azure DNS / Key Vault, the Azure AAD organizational account that you use to login to RCL must either be :
-
-- An administrator to the subscription containing the Azure DNS Zone(s) / Key Vault(s)
+To create certificates for Azure DNS / Key Vault, the Azure AAD organizational account that you use to login to RCL SSL Portal must either be :
 
 - Have a role of ‘Owner’ or ‘Contributor’ to the subscription containing the Azure DNS Zone(s) / Key Vault(s)
 
-If either of these requirements are not met, the ‘subscriptions’, 'Key Vault' and ‘DNS Zone’ lists will be empty when you try to create a certificate.
+If either of these requirements are not met, the ‘Subscriptions’, 'Key Vault' and ‘DNS Zone’ lists will be empty when you try to create a certificate.
 
 ![image](../images/portal/access-control-subscriptions_dns_empty.png)
 
@@ -70,7 +69,7 @@ If you do not have an Azure Key Vault, follow the steps in this link to create o
 
 - [Create an Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal)
 
-# Set Access Policy for Key Vault
+## Set Access Policy for Key Vault
 
 {: .warning }
 If you do not set the access policy for Key Vault, you will experience 'Access Denied' or 'Forbidden' errors when you try to create a certificate.
@@ -104,6 +103,8 @@ This access policy is required to import the SSL/TLS certificate in a Key Vault 
 - The new access policy will be added
 
 ![image](../images/portal/certificate-keyvault-permission.png)
+
+# Create the SSL/TLS Certificate
 
 - In the ‘Certificates’ module of the portal, click on the **Create New SSL/TLS Certificate** link
 
