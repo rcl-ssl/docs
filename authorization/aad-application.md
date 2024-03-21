@@ -10,9 +10,9 @@ nav_order: 4
 
 **Authorization** is required for the following operations :
 
-- to access Key Vault, DNS Zone and App Service in a user's Azure account
+- to access Key Vault, DNS Zone and App Service in a user's Azure Subscription
 - to use the [RCL SSL AutoRenew](../autorenew/autorenew) Function app
-- to use the [RCL SSL CertificateBot](../certbot/certbot.md)
+
 
  This authorization will be granted through an **AAD Application**.
 

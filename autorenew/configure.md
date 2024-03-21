@@ -12,13 +12,13 @@ In this section, you will configure the [RCL SSL AutoRenew Function](../autorene
 
 ## Register an AAD Application
 
-An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources (Key Vault, DNS Zone, App Services). Please refer to the following link for instructions on how to register the AAD application:
+An Azure Active Directory (AAD) application must be registered to obtain permission to access a user's Azure resources (Key Vault, DNS Zone, App Services) in a Subscription. Please refer to the following link for instructions on how to register the AAD application:
 
 - [Registering an AAD Application](../authorization/aad-application)
 
 ## Set Access Control for the AAD application
 
-Access control must be set for the AAD application to access resources in a user's Azure subscription (Key Vault, DNS Zone, App Services). Please refer to the following link for instructions:
+Access control must be set for the AAD application to access resources in a user's Azure Subscription (Key Vault, DNS Zone, App Services). Please refer to the following link for instructions:
 
 - [Setting Access Control for the AAD Application](../authorization/access-control-app)
 
