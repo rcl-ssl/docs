@@ -7,7 +7,7 @@ nav_order: 3
 
 # SSL/TLS for Azure App Service
 
-**V6.0.10**
+**V7.1.0**
 
 This workload allows for the **automatic creation, installation and renewal** of a SSL/TLS certificate in an [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/) (Web App, Function App, API App, Mobile App, etc.). This workload also supports apps in slots.
 
@@ -26,7 +26,7 @@ This workload allows for the **automatic creation, installation and renewal** of
 
 SSL/TLS Certificates will expire within 90 days. Follow these instructions to automatically renew the certificate.
 
-- Use the [RCL AutoRenew Function](../autorenew/introduction.md) to automatically renew certificates 
+- Use the [RCL SSL AutoRenew Function](../autorenew/introduction.md) to automatically renew certificates 
 - The certificates will be automatically renewed , installed in the App Service Plan and bound to the App Service without any user interaction being required
 
 

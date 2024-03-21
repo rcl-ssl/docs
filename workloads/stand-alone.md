@@ -5,10 +5,10 @@ parent: Workloads
 nav_order: 1
 ---
 
-# SSL/TLS for Web Servers and Hosting Systems 
-**V7.0.0**
+# SSL/TLS for Single-Instance Azure VM 
+**V7.1.0**
 
-This workload is applicable for the **creation, installation and renewal** of a SSL/TLS certificate in a web server.
+This workload is applicable for the **creation, installation and renewal** of a SSL/TLS certificate in a Single-Instance Azure VM (Linux or Windows) running a web server.
 
 The web servers may include : 
 
@@ -49,6 +49,6 @@ SSL/TLS Certificates will expire within 90 days. Follow these instructions to re
 
 ### 3.2 Automatic Renewal
 
-Automatic certificate renewal is only supported with the [HTTP Challenge Type](./stand-alone.md#completing-the-http-challenge). 
+Automatic certificate renewal is supported with the [HTTP Challenge Type](../portal/stand-alone.md#completing-the-http-challenge) using [RCL SSL Http AutoRenew](../httpautorenew/httpautorenew.md). 
 
 
