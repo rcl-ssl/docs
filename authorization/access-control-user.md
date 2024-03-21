@@ -67,7 +67,8 @@ If the AAD account that you use to log in to the RCL SSL Portal is not an 'Owner
 
 ![image](../images/authorization_signin/access-control-list.png)
 
-**You must do this for each Azure subscription that you want to use in the RCL SSL Portal.**
+{: .information }
+You must do this for each Azure subscription that you want to use in the RCL SSL Portal.
 
 ## Access Policies for Key Vault
 
