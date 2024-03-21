@@ -1,5 +1,5 @@
 ---
-title: Apache,Tomcat,NGINX,IIS,etc. 
+title: Single-Instance Azure VM
 description: Using RCL SSL to create and install SSL/TLS certificates
 parent: Workloads
 nav_order: 1
