@@ -72,29 +72,36 @@ If you do not have an Azure Key Vault, follow the steps in this link to create o
 
 # Set Access Policy for Key Vault
 
-You must have security access to the Azure Key Vault certificate operations.
+{: .warning }
+If you do not set the access policy for Key Vault, you will experience 'Access Denied' or 'Forbidden' errors when you try to create a certificate.
 
-**If you do not set the access policy for Key Vault, you will experience 'Access Denied' or 'Forbidden' errors when you try to create a certificate.**
+![image](../images/portal/key-vault-access-error.png)
 
 This access policy is required to import the SSL/TLS certificate in a Key Vault in your Azure account. If you have not yet created an access policy for your certificates, then follow these steps.
 
-- In your Azure Key Vault, click on the ‘Access policies’ link. Then click on ‘Add Access Policy’.
+- In your Azure Key Vault, click on the ‘Access policies’ link. Then click on ‘Create’.
 
 ![image](../images/portal/certificate-keyvault-access-policy-add.png)
 
-- Select all the permissions for the ‘Certificate permissions’ (select all 16). Ensure you include the **purge** permission.
+- Select all the permissions for the ‘Certificate Management Operations’ (select all). Ensure you include the **purge** permission.
 
-- Select a service principal : search for the Azure Active Directory organizational account that you use to login to the RCL portal
+- Select all the permissions for the ‘Secret Management Operations’ (select all). Ensure you include the **purge** permission.
 
-- Click the ‘Select’ button
+![image](../images/portal/certificate-keyvault-access-policy-add2.png)
 
-- Click the ‘Add’ button when you are done
+- Click the 'Next' button when you are done
+
+- Select a service principal : search for the Azure Active Directory organizational user account that you use to login to the RCL SSL portal
 
 ![image](../images/portal/certificate-keyvault-access-policy-sp.png)
 
-- The new access policy will be added
+- Click the ‘Next’ button
 
-- Click the ‘Save’ icon at the top to save the access policy
+- Click the ‘Create’ button when you are done
+
+![image](../images/portal/certificate-keyvault-access-policy-sp2.png)
+
+- The new access policy will be added
 
 ![image](../images/portal/certificate-keyvault-permission.png)
 

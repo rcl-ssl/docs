@@ -76,31 +76,31 @@ If a user is creating SSL/TLS certificates for **Azure Key Vault**, they will ne
 {: .information }
 This step is not required, if SSL/TLS certificates are not being created for Key Vault.
 
-- In Azure **Key Vault**, click on 'Access policies' and 'Add Access Policy'
+- In your Azure Key Vault, click on the ‘Access policies’ link. Then click on ‘Create’.
 
-![install](../images/authorization_access_control/key_vault.PNG)
+![image](../images/portal/certificate-keyvault-access-policy-add.png)
 
-- In the 'Certificate permissions' dropdown, select all **16 permissions**, including 'Purge' permission.
+- Select all the permissions for the ‘Certificate Management Operations’ (select all). Ensure you include the **purge** permission.
 
-![install](../images/authorization_access_control/key_vault2.PNG)
+- Select all the permissions for the ‘Secret Management Operations’ (select all). Ensure you include the **purge** permission.
 
-- Then , click on 'Select principal'
+![image](../images/portal/certificate-keyvault-access-policy-add2.png)
 
-- Search for the user that was registered and click the 'Select' button to select it 
+- Click the 'Next' button when you are done
 
-![install](../images/authorization_access_control/key_vault3.PNG)
+- Select a service principal : search for the Azure Active Directory organizational user account that you use to login to the RCL SSL portal
 
-- Click the 'Add' button when you are done
+![image](../images/portal/certificate-keyvault-access-policy-sp.png)
 
-![install](../images/authorization_access_control/key_vault4.PNG)
+- Click the ‘Next’ button
 
-- Click the 'Save' button to save the access policy
+- Click the ‘Create’ button when you are done
 
-![install](../images/authorization_access_control/key_vault5.PNG)
+![image](../images/portal/certificate-keyvault-access-policy-sp2.png)
 
-- The newly added access policy will be displayed
+- The new access policy will be added
 
-![install](../images/authorization_access_control/key_vault6.PNG)
+![image](../images/portal/certificate-keyvault-permission.png)
 
 
 
