@@ -6,13 +6,13 @@ nav_order: 6
 ---
 
 # Creating SSL/TLS Certificates for App Services
-**V7.0.0**
+**V7.1.0**
 
-You can use RCL to create and install SSL/TLS certificates in your app services.
+You can use RCL SSL to create and install SSL/TLS certificates in your app services.
 
 SSL/TLS certificates are created using either the HTTP or DNS challenge types.
 
-Wild card certificates (eg: *.mydomain.com) are supported with the DNS challenge type in an Azure DNS Zone.
+Wild card certificates (eg: *.mydomain.com) are supported with the DNS challenge type in an **Azure DNS Zone**.
 
 # Access Control
 
@@ -30,13 +30,11 @@ If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA),
 
 ## Set Access Control
 
-To create certificates for Azure App service, the Azure AAD organizational account that you use to login to the RCL SSL Portal must either be :
-
-- An administrator to the subscription containing the Azure App Service
+To create certificates for Azure App service, the Azure AAD organizational account that you use to login to the RCL SSL Portal must :
 
 - Have a role of ‘Owner’ or ‘Contributor’ to the subscription containing the Azure App Service
 
-If either of these requirements are not met, the ‘subscriptions’ and list will be empty when you try to create a certificate.
+If this requirement is met, the ‘subscriptions’ and list will be empty when you try to create a certificate.
 
 You may also experience an error message.
 
@@ -62,7 +60,7 @@ You can use the HTTP-01 challenge type with any domain registrar.
 
 You do not need an Azure DNS Zone to use the HTTP-01 challenge type.
 
-RCL uses the HTTP-01 challenge type to issue certificates for :
+RCL SSL uses the HTTP-01 challenge type to issue certificates for :
 
 - primary domains (e.g. contoso.net)
 - subdomains (e.g. store.contoso.net)
@@ -82,6 +80,10 @@ If the HTTP validation should fail, the following recommendations may resolve th
 
 - For HTTP validation, an extension-less validation file will be automatically added to the root of your website at path : '/.well-known/acme-challenge/' . You must ensure that your website allows the folder and file to be created in your website root (/site/wwwroot) by providing the necessary read/write permissions. Alternatively, you can manually create the validation folder and path in your website root and provide the necessary read/write permissions using the 'App Service Editor'.
 
+- Ensure the ``SCM Basic Auth Publishing Credentials`` is set to ``On`` in the app service configuration to allow for basic authorization.
+
+![image](../images/portal/azure-appservice-basi-auth.png)
+
 - Your website must be able to serve the validation file publicly on the web from this path. If this fails, a 404 response will be returned. 
 
 - There should be no authorization requirement (resulting in a 403 or 401) to view a file at this path. 
@@ -90,9 +92,9 @@ If the HTTP validation should fail, the following recommendations may resolve th
 
 - You can test the validation by publicly browsing a file at the validation path in the browser and ensuring a valid response in the browser. The content of the extension-less file should be displayed in the browser.
 
-- Extension-less files are not served by default. To solve this, add the following ``web.config`` file to the ``acme-challenge`` folder.
+- Extension-less files are not served by default in IIS. To solve this, add the following ``web.config`` file to the ``acme-challenge`` folder.
 
-```
+```xml
 <configuration>
     <system.webServer>
         <staticContent>
@@ -190,6 +192,10 @@ Follow the instructions in the link below to set up your DNS Zone and delegate t
 SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the certificates list to update a certificate.
 
 ![image](../images/portal/azure-dns-update.PNG)
+
+The certificate will be automatically bound to the app service.
+
+![image](../images/portal/azure-appservice-ssl-binding.png)
 
 # Automatic Certificate Renewal and Installation
 
