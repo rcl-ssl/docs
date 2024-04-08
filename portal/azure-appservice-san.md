@@ -8,13 +8,13 @@ nav_order: 7
 # SAN Certificate - Azure App Services
 **V7.1.0**
 
-RCL SSL creates a SAN TLS/SSL certificates using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records) and automatically binds it to a **App Service**.
+RCL SSL creates a SAN TLS/SSL certificate using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records) and automatically binds it to an **App Service**.
 
-A Subject Alternative Name (SAN) TLS/SSL certificate will contain multiple domains in a single certificate. SAN certificates created with an **Azure DNS Zone** will contain the domain (e.g. contoso.com) and the wild card domain (e.g. *.contoso.com) in a single TLS/SSL certificate.
+A Subject Alternative Name (SAN) TLS/SSL certificate will contain multiple host names  in a single certificate. SAN certificates created with an **Azure DNS Zone** will contain the host name (e.g. contoso.com) and the wild card host name (e.g. *.contoso.com) in a single TLS/SSL certificate.
 
 # Single Domains
 
-SAN certificates only allow a single domain. For instance, the two domains 'fabricam.com' and 'contoso.com' are not allowed in a SAN multi-domain certificate.
+SAN certificates only allow a single domain. For instance, the two different domains 'fabricam.com' and 'contoso.com' are not allowed in a SAN multi-domain certificate.
 
 # Access Control
 
@@ -36,7 +36,7 @@ To create certificates for Azure App service, the Azure AAD organizational accou
 
 - Have a role of ‘Owner’ or ‘Contributor’ to the subscription containing the Azure App Service
 
-If this requirement is met, the ‘subscriptions’ and list will be empty when you try to create a certificate.
+If this requirement is not  met, the ‘subscriptions list’ will be empty when you try to create a certificate.
 
 You may also experience an error message.
 
@@ -92,7 +92,7 @@ Follow the instructions in the link below to set up your DNS Zone and delegate t
 
 ![image](../images/portal/azure-appservice-san-create1.png)
 
-- Select the ‘App Services’ option.
+- Select the ‘Azure App Services SAN’ option.
 
 ![image](../images/portal/azure-appservice-san-create2.png)
 
@@ -104,7 +104,7 @@ Follow the instructions in the link below to set up your DNS Zone and delegate t
 
 ![image](../images/portal/azure-appservice-san-create4.png)
 
-- In this case, we are requesting a SAN SSL/TLS certificate for the domain, ‘shopeneur.com’, this will include the wildcard domain ‘*.shopeneur.com’ in the certificate
+- In this case, we are requesting a SAN SSL/TLS certificate for the domain, ‘shopeneur.com’. The wildcard domain ‘*.shopeneur.com’ will be automatically included in the certificate
 
 # Certificate Creation
 
@@ -128,7 +128,7 @@ SSL/TLS certificates will expire in 90 days. You can manually renew a certificat
 
 # Automatic Certificate Renewal and Installation
 
-You can use the [RCL AutoRenew Function](../autorenew/autorenew) to automatically renew certificates in Azure App Service.
+You can use the [RCL AutoRenew Function](../autorenew/autorenew) to automatically renew certificates in Azure App Service SAN.
 
 Follow the instructions in the link to use the AutoRenew function :
 
