@@ -186,16 +186,16 @@ Follow the instructions in the link below to set up your DNS Zone and delegate t
 
 ![image](../images/portal/certificate-list.PNG)
 
+The certificate will be automatically bound to the app service.
+
+![image](../images/portal/azure-appservice-ssl-binding.png)
+
 
 # Manually Renewing SSL/TLS Certificates
 
 SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the certificates list to update a certificate.
 
 ![image](../images/portal/azure-dns-update.PNG)
-
-The certificate will be automatically bound to the app service.
-
-![image](../images/portal/azure-appservice-ssl-binding.png)
 
 # Automatic Certificate Renewal and Installation
 
