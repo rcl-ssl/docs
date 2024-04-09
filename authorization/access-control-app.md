@@ -42,7 +42,7 @@ You must repeat these steps for each Azure Subscription to access Azure Resource
 
 ## Access Policies for Key Vault
 
-If SSL/TLS certificates ae being created for **Azure Key Vault**, they will need to set **Access policies** for the certificate in Key Vault. 
+If SSL/TLS certificates are being created for **Azure Key Vault**, you will need to set **Access policies** for the certificate in Key Vault. 
 
 {: .information }
 This step is not required, if SSL/TLS certificates are not being created for Key Vault.
@@ -59,7 +59,7 @@ This step is not required, if SSL/TLS certificates are not being created for Key
 
 - Click the 'Next' button when you are done
 
-- Select a service principal : search for the Azure Active Directory application you use created
+- Select a service principal : search for the Azure Active Directory application you use created previously
 
 ![install](../images/authorization_access_control/key_vault3.PNG)
 

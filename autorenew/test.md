@@ -97,9 +97,9 @@ In order to test certificate renewal, you must first force certificate expiratio
 
 ### Test Certificate Renewal
 
- - To manually test the certificate renewal process, open the 'Certificate-Renew-Manual' function
+ - To manually test the certificate renewal process, open the 'Certificate-Schedule-Renewals-Manual' function
 
-- In the **Certificate-Renew-Manual** function, click on 'Code + Test', and expand the 'Logs' window
+- In the **Certificate-Schedule-Renewals-Manual** function, click on 'Code + Test', and expand the 'Logs' window
 
 - Switch to **Filesystem Logs** instead of **App Insights Logs**
 
@@ -116,11 +116,12 @@ In order to test certificate renewal, you must first force certificate expiratio
 
 ![install](../images/autorenew_test/certificate-renew-3.png)
 
-- In the RCL Portal, verify that the certificate was updated.
+- In the RCL Portal, wait for at least 10  ins and verify that the certificate was updated.
 
 ![install](../images/autorenew_test/certificate-renew-4.png)
 
-**Note: The 'Certificate-Renew-Automatic' function will automatically run on a weekly basis and automatically renew certificates that are about to expire. There is no need to manually run the 'Certificate-Renew-Manual' function apart from manual testing**
+{: .information }
+The 'Certificate-Schedule-Renewal-Automatic' function will automatically run on a weekly basis and automatically renew certificates that are about to expire. There is no need to manually run the 'Certificate-Schedule-Renewals-Manual' function apart from manual testing.
 
 ## Related Articles
 

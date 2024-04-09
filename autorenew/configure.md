@@ -60,26 +60,26 @@ Update the following configuration entries with the credentials from the AAD app
 
 ![install](../images/autorenew_configure/add_subscriptionid3.png)
 
-- In the Function App configuration page, add the certificate(s) that you would like to renew in the **CertificateBot:IncludeCertificates** configuration entry
+- In the Function App configuration page, add the certificate(s) that you would like to renew in the **CertificateBot:IncludeCertificatesArray** configuration entry
 
 - You can add a single certificate by its name, or multiple certificates separated by semi-colons (;)
 
 Example single certificate
 
 ```bash
-CertificateBot:IncludeCertificates      acme.com
+CertificateBot:IncludeCertificatesArray      acme.com
 ```
 
 Example single SAN certificate
 
 ```bash
-CertificateBot:IncludeCertificates      acme.com,*.acme.com
+CertificateBot:IncludeCertificatesArray      acme.com,*.acme.com
 ```
 
 Example multiple certificates
 
 ```bash
-CertificateBot:IncludeCertificates      acme.com,*.acme.com;contoso.com;fabricam.com
+CertificateBot:IncludeCertificatesArray      acme.com,*.acme.com;contoso.com;fabricam.com
 ```
 
 ![install](../images/autorenew_configure/func3.png)

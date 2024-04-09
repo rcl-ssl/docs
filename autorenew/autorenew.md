@@ -16,7 +16,7 @@ You can use the function app to automatically renew SSL/TLS certificates created
 
 - [Azure Key Vault + DNS](../portal/azure-keyvault.md) (including [SAN](../portal/azure-keyvault-san.md))
 - [Azure DNS](../portal/azure-dns.md) (including [SAN](../portal/azure-dns-san.md))
-- [Azure App Services](../portal/azure-appservice.md) 
+- [Azure App Services](../portal/azure-appservice.md)P(including [SAN] (../portal/azure-appservice-san.md)) 
 
 
 The function app will run once a week and automatically update certificates that are about to expire.
