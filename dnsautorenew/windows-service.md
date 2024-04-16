@@ -112,7 +112,7 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 - Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
 
 - The ``IncludeCertificatesArray`` settings will allow for including specific certificates by its name 
-(eg:  "contoso.com"  or "contoso.com, *.contoso.com" - for SAN) for the certificate(s) you want to save on the server. Multiple certificates must be separated by a semi-colon (;), eg. shopeneur.com;acme.com;contoso.com,*. contoso.com
+(eg:  "contoso.com"  or "contoso.com, * .contoso.com" - for SAN) for the certificate(s) you want to save on the server. Multiple certificates must be separated by a semi-colon (;), eg. shopeneur.com;acme.com;contoso.com,* .contoso.com
 
   - IncludeCertificatesArray
 
