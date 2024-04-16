@@ -345,7 +345,7 @@ sudo journalctl -u dnsautorenew --no-pager
 Found 1 certificate(s) to process locally.  Found 1 certificate(s) to renew.  Scheduling shopeneur.com for renewal. 
 ```
 
-- Re-start the services again to save the certificate to the local machine
+- After about 15 mins, re-start the services to save the certificate to the local machine
 
 ```bash
 sudo systemctl restart dnsautorenew
