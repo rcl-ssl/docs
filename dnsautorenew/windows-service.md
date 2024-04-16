@@ -1,35 +1,35 @@
 ---
 title: Windows Service
-description: RCL SSL CertificateBot Windows Service for automatic SSL/TLS certificate installation and renewal in a Windows server 
-parent: CertificateBot
+description: RCL SSL DNS AutoRenew Windows Service for automatic SSL/TLS certificate installation and renewal in a Windows server 
+parent: DNS AutoRenew
 nav_order: 1
 ---
 
-# RCL SSL CertificateBot for Windows
+# RCL SSL DNS AutoRenew for Windows
 **V7.1.0**
 
-RCL SSL CertificateBot runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
+RCL SSL DNS AutoRenew runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
 
 ## Automatically Renew SSL/TLS Certificates
 
-You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
+You can use RCL SSL DNS AutoRenew to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
 - [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md))
 
 
-# Install RCL SSL CertificateBot
+# Install RCL SSL DNS AutoRenew
 
-If you have an older version of the RCL SSL CertificateBot installed in your hosting machine, you should completely delete it and install the new one.
+If you have an older version of the RCL SSL DNS AutoRenew installed in your hosting machine, you should completely delete it and install the new one.
 
 ## Download the Files
 
-- The Windows Service files (``certificatebot-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal) page in the [Releases](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/tag/V7.1.0) section:
+- The Windows Service files (``dns-autorenew-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal) page in the [Releases](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/tag/V7.1.0) section:
 
 - Download the zip file with bitness
 
-  - [win-x64](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-win-x64.zip) 
-  - [win-x86](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-win-x86.zip)
-  - [win-arm](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-win-arm.zip)
+  - [win-x64](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/dns-autorenew-win-x64.zip) 
+  - [win-x86](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/dns-autorenew-win-x86.zip)
+  - [win-arm](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/dns-autorenew-win-arm.zip)
   
   to match the bitness of your Windows hosting machine
 
@@ -92,6 +92,17 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
   - TenantId
   - SubscriptionId
 
+```json
+    "RCLSDK": {
+    "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
+    "SourceApplication": "RCL SSL DNS AutoRenew Windows",
+    "ClientId": "23568fghjrtr3",
+    "ClientSecret": "7466rggvvdggdff",
+    "TenantId": "1103984664",
+    "SubscriptionId": "890"
+  }
+```
+
 - In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : C:/ssl
 
   - saveCertificatePath
@@ -100,25 +111,17 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 - Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
 
-- The ``includeCertificates`` settings will allow for including specific certificates by its name 
-(eg:  "contoso.com"  or "contoso.com, *.contoso.com" - for SAN) for the certificate(s) you want to save on the server. 
+- The ``IncludeCertificatesArray`` settings will allow for including specific certificates by its name 
+(eg:  "contoso.com"  or "contoso.com, *.contoso.com" - for SAN) for the certificate(s) you want to save on the server. Multiple certificates must be separated by a semi-colon (;), eg. shopeneur.com;acme.com;contoso.com,*. contoso.com
+
+  - IncludeCertificatesArray
 
 Example
 ```json
-  "CertificateBot": {
-    "IncludeCertificates": [
-      {
-        "certificateName": "contoso.com",
-        "validationPath": "-undefined-"
-      },
-      {
-        "certificateName": "acme.com,*.acme.com",
-        "validationPath": "-undefined-"
-      }
-    ],
-    "SaveCertificatePath": "C:/ssl",
-    "IISBindings": []
-  }
+"CertificateBot": {
+  "IncludeCertificatesArray": "shopeneur.com",
+  "SaveCertificatePath": "C:/ssl"
+}
 ```
 
 ## Example of a configured **appsettings.json** file
@@ -140,21 +143,15 @@ Example
   },
   "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
-    "SourceApplication": "RCL SSL CertificateBot Windows",
-    "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
-    "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
-    "TenantId": "22cd4a8c-bc2c-3618-b1c3-4610c1b9b3e8",
-    "SubscriptionId": "879"
+    "SourceApplication": "RCL SSL DNS AutoRenew Windows",
+    "ClientId": "23568fghjrtr3",
+    "ClientSecret": "7466rggvvdggdff",
+    "TenantId": "1103984664",
+    "SubscriptionId": "890"
   },
   "CertificateBot": {
-    "IncludeCertificates": [
-      {
-        "certificateName": "shopeneur.com,*.shopeneur.com",
-        "validationPath": "-undefined-"
-      }
-    ],
-    "SaveCertificatePath": "C:/ssl",
-    "IISBindings": []
+  "IncludeCertificatesArray": "shopeneur.com",
+  "SaveCertificatePath": "C:/ssl"
   }
 }
 ```
@@ -168,10 +165,10 @@ Example
 - Run the following command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service zip files were extracted
 
 ```
-sc.exe create CertificateBotWindows binpath= <file-path>\RCL.SSL.CertificateBot.Windows.exe
+sc.exe create DNSAutoRenew binpath= <file-path>\RCL.SSL.DNS.AutoRenew.Windows.exe
 ```
 
-- After the service in installed, open **Services** in Windows, look for the ``CertificateBotWindows`` service and **Start** the service
+- After the service in installed, open **Services** in Windows, look for the ``DNSAutoRenew`` service and **Start** the service
 
 ![image](../images/certbot/winservice-start.PNG)
 
@@ -202,7 +199,7 @@ Fix any other errors that are reported then re-install and restart the service.
 If you need to remove the Windows Service for any reason, run the command to delete the service
 
 ```
-sc.exe delete CertificateBotWindows  
+sc.exe delete DNSAutoRenew  
 ```
 
 # Updating the Service
@@ -241,11 +238,11 @@ In order to test certificate renewal, you must first force certificate expiratio
 
 - Re-start the service to trigger the certificate renewal
 
-- Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.SSL.HTTP.AutoRenew.Windows`` events
+- Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.SSL.DNS.AutoRenew.Windows`` events
 
 - Ensure that the certificate has been scheduled for renewal
 
-- Re-start the services again to save the certificate to the local machine
+- Wait for 15 mins and re-start the services to save the certificate to the local machine
 
 - Check that the certificate files are stored in the folder that you specified. Review the section below to learn how the service saves certificate files
 
