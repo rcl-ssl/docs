@@ -1,28 +1,28 @@
 ---
 title: Linux Daemon
-description: RCL SSL CertificateBot Linux Daemon for automatic SSL/TLS certificate installation and renewal in a Linux server 
-parent: CertificateBot
+description: RCL SSL DNS AutoRenew Linux Daemon for automatic SSL/TLS certificate installation and renewal in a Linux server 
+parent: DNS AutoRenew
 nav_order: 2
 ---
 
-# RCL SSL CertificateBot for Linux
+# RCL SSL DNS AutoRenew for Linux
 **V7.1.0**
 
-RCL SSL CertificateBot runs as a **Daemon** in a Linux hosting machine. The daemon will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Linux hosting machine.
+RCL SSL DNS AutoRenew runs as a **Daemon** in a Linux hosting machine. The daemon will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Linux hosting machine.
 
 ## Automatically Renew SSL/TLS Certificates
 
-You can use RCL SSL CertificateBot to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
+You can use RCL SSL DNS AutoRenew to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
 - [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) 
 
-# Installing RCL SSL CertificateBot
+# Installing RCL SSL DNS AutoRenew
 
-If you have an older version of the RCL SSL CertificateBot installed in your hosting machine, you should completely delete it and install the new one.
+If you have an older version of the RCL DNS AutoRenew installed in your hosting machine, you should completely delete it and install the new one.
 
 ## Download and Extract the Daemon Files to the Linux Server
 
-In this section, you will download the files from the RCL SSL CertificateBot [GitHub Project Page](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal) in the [Releases](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/tag/V7.1.0) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
+In this section, you will download the files from the RCL SSL Automatic Certificate Renewal [GitHub Project Page](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal) in the [Releases](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/tag/V7.1.0) section; and extract it to your Linux Server in the ``/usr/sbin`` folder:
 
 - In your Linux server, navigate to the ``/usr/sbin`` folder
 
@@ -33,19 +33,19 @@ cd /usr/sbin
 - Run the command in the folder to download and extract the ``linux-x64`` files:
 
 ```bash
-wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-linux-x64.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/dns-autorenew-linux-x64.tar.gz -O - | sudo tar -xz
 ```
 
 or ``linux-arm`` files :
 
 ```bash
-wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-linux-arm.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/dns-autorenew-linux-arm.tar.gz -O - | sudo tar -xz
 ```
 
 or ``linux-arm64`` files :
 
 ```bash
-wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-linux-arm64.tar.gz -O - | sudo tar -xz
+wget -c https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/dns-autorenew-linux-arm64.tar.gz -O - | sudo tar -xz
 ```
 
 ## Configure the Daemon
@@ -100,19 +100,19 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 - Navigate to the folder you downloaded and extracted the daemon files :
 
 ```bash
-cd /usr/sbin/certificatebot-linux-x64
+cd /usr/sbin/dns-autorenew-linux-x64
 ```
 
 or for ``arm``
 
 ```bash
-cd /usr/sbin/certificatebot-linux-arm
+cd /usr/sbin/dns-autorenew-linux-arm
 ```
 
 or for ``arm64``
 
 ```bash
-cd /usr/sbin/certificatebot-linux-arm64
+cd /usr/sbin/dns-autorenew-linux-arm64
 ```
 
 - Use nano (or other text editor) to edit the **appsettings.json** file in the folder
@@ -127,29 +127,32 @@ sudo nano appsettings.json
   - TenantId
   - SubscriptionId
 
-- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : ``/etc/ssl/certificatebot``
+  ```json
+    "RCLSDK": {
+    "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
+    "SourceApplication": "RCL SSL DNS AutoRenew Linux",
+    "ClientId": "23568fghjrtr3",
+    "ClientSecret": "7466rggvvdggdff",
+    "TenantId": "1103984664",
+    "SubscriptionId": "890"
+  }
+  ```
 
-  - saveCertificatePath
+- In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : ``/etc/ssl/rcl``
 
-- The ``includeCertificates`` settings will allow for including specific certificates by its name 
-(eg:  "contoso.com"  or "contoso.com, *.contoso.com" - for SAN) for the certificate(s) you want to save on the server. 
+  - SaveCertificatePath
+
+- The ``IncludeCertificatesArray`` settings will allow for including specific certificates by its name 
+(eg:  "contoso.com"  or "contoso.com, * .contoso.com" - for SAN) for the certificate(s) you want to save on the server. Multiple certificates must be separated by a semi-colon (;), eg. shopeneur.com;acme.com;contoso.com,*. contoso.com
+
+  - IncludeCertificatesArray
 
 Example
 ```json
-  "CertificateBot": {
-    "IncludeCertificates": [
-      {
-        "certificateName": "contoso.com",
-        "validationPath": "-undefined-"
-      },
-      {
-        "certificateName": "acme.com,*.acme.com",
-        "validationPath": "-undefined-"
-      }
-    ],
-    "SaveCertificatePath": "/etc/ssl/certificatebot",
-    "IISBindings": []
-  }
+"CertificateBot": {
+  "IncludeCertificatesArray": "shopeneur.com",
+  "SaveCertificatePath": "/etc/ssl/rcl"
+}
 ```
 
 ## Example of a configured **appsettings.json** file
@@ -164,21 +167,15 @@ Example
   },
   "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
-    "SourceApplication": "RCL SSL CertificateBot Linux",
-    "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
-    "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
-    "TenantId": "22cd4a8c-bc2c-3618-b1c3-4610c1b9b3e8",
-    "SubscriptionId": "879"
+    "SourceApplication": "RCL SSL DNS AutoRenew Linux",
+    "ClientId": "23568fghjrtr3",
+    "ClientSecret": "7466rggvvdggdff",
+    "TenantId": "1103984664",
+    "SubscriptionId": "890"
   },
-  "CertificateBot": {
-    "IncludeCertificates": [
-      {
-        "certificateName": "shopeneur.com,*.shopeneur.com",
-        "validationPath": "-undefined-"
-      }
-    ],
-    "SaveCertificatePath": "/etc/ssl/certificatebot",
-    "IISBindings": []
+"CertificateBot": {
+  "IncludeCertificatesArray": "shopeneur.com",
+  "SaveCertificatePath": "/etc/ssl/rcl"
   }
 }
 ```
@@ -187,7 +184,7 @@ Example
 - Create the folder in the server and ensure it has read/write permissions so that the certificates can be saved to it. 
 
 ```bash
-sudo mkdir -m 777 /etc/ssl/certificatebot
+sudo mkdir -m 777 /etc/ssl/rcl
 ```
 
 # Add the Linux Daemon
@@ -203,32 +200,32 @@ cd /etc/systemd/system
 - Create the daemon file
 
 ```bash
-sudo touch certificatebot.service
+sudo touch dnsautorenew.service
 ```
 
 - Use nano (or other text editor) to edit the service file 
 
 ```bash
-sudo nano certificatebot.service
+sudo nano dnsautorenew.service
 ```
 
 - Add the following code to the file
 
 ```bash
 [Unit]
-Description=RCL CertificateBot
+Description=RCL SSL DNS AutoRenew
 
 [Service]
 Type=notify
-WorkingDirectory=/usr/sbin/certificatebot-linux-x64
-ExecStart=/usr/sbin/certificatebot-linux-x64/RCL.SSL.CertificateBot.Linux
+WorkingDirectory=/usr/sbin/dns-autorenew-linux-x64
+ExecStart=/usr/sbin/dns-autorenew-linux-x64/RCL.SSL.DNS.AutoRenew.Linux
 
 [Install]
 WantedBy=multi-user.target
 
 ```
 
-If you installed the ``arm`` version, change the directory to the arm path ``/usr/sbin/certificatebot-linux-arm`` or ``/usr/sbin/certificatebot-linux-arm64``  instead of ``/usr/sbin/certificatebot-linux-x64`` in the 'WorkingDirectory' and 'ExecStart' settings
+If you installed the ``arm`` version, change the directory to the arm path ``/usr/sbin/dns-autorenew-linux-arm`` or ``/usr/sbin/dns-autorenew-linux-arm64``  instead of ``/usr/sbin/dns-autorenew-linux-x64`` in the 'WorkingDirectory' and 'ExecStart' settings
 
 - Save the file when you are done
 
@@ -245,7 +242,7 @@ sudo systemctl daemon-reload
 - Run the code to start the daemon
 
 ```bash
-sudo systemctl start certificatebot
+sudo systemctl start dnsautorenew
 ```
 
 ## View the Status of the Daemon
@@ -253,7 +250,7 @@ sudo systemctl start certificatebot
 - Run the code to view the status of the daemon
 
 ```bash
-sudo systemctl status certificatebot
+sudo systemctl status dnsautorenew
 ```
 
 - You will see the status of the daemon. The most recent logs will also be displayed. 
@@ -265,13 +262,13 @@ sudo systemctl status certificatebot
 - Run the command to view the daemon's detailed logs
 
 ```bash
-sudo journalctl -u certificatebot --no-pager
+sudo journalctl -u dnsautorenew --no-pager
 ```
 
 - If the application is working correctly you should see messages similar to the one below :
 
 ```bash
-RCL.SSL.CertificateBot.Linux.Worker[0] Found 1 certificate(s) to save locally.  Successfully saved : shopeneur.com,*.shopeneur.com.  Did not find any certificates to renew.
+RCL.SSL.DNS.AutoRenew.Linux.Worker[0] Found 1 certificate(s) to save locally.  Successfully saved : shopeneur.com,*.shopeneur.com.  Did not find any certificates to renew.
 ```
 
 ## If you need to Stop the Daemon
@@ -283,7 +280,7 @@ When the daemon is stopped, CertificateBot will discontinue certificate renewals
 **Note: You need to keep the daemon running to automatically renew certificates.**
 
 ```bash
-sudo systemctl stop certificatebot
+sudo systemctl stop dnsautorenew
 ```
 
 # Fixing Errors
@@ -333,13 +330,13 @@ In order to test certificate renewal, you must first force certificate expiratio
 - Re-start the daemon to trigger the certificate renewal
 
 ```bash
-sudo systemctl restart certificatebot
+sudo systemctl restart dnsautorenew
 ```
 
 - Run the command to view the daemon's detailed logs
 
 ```bash
-sudo journalctl -u certificatebot --no-pager
+sudo journalctl -u dnsautorenew --no-pager
 ```
 
 - Check the logs to ensure the certificate is scheduled for renewal.
@@ -351,13 +348,13 @@ Found 1 certificate(s) to process locally.  Found 1 certificate(s) to renew.  Sc
 - Re-start the services again to save the certificate to the local machine
 
 ```bash
-sudo systemctl restart certificatebot
+sudo systemctl restart dnsautorenew
 ```
 
 - Run the command to view the daemon's detailed logs
 
 ```bash
-sudo journalctl -u certificatebot --no-pager
+sudo journalctl -u dnsautorenew --no-pager
 ```
 
 - Check the logs to ensure the certificate is scheduled for renewal.
@@ -371,7 +368,7 @@ Successfully saved : shopeneur.com in local machine.
 
  Example
  ```bash
- cd /etc/ssl/certificatebot
+ cd /etc/ssl/rcl
  ls
  ```
 
@@ -379,7 +376,7 @@ Successfully saved : shopeneur.com in local machine.
 
 # Certificate Files
 
-The SSL/TLS certificate files will be stored at the path you specified in the ``appsettings.json`` configuration file. In this example, we used the path ``/etc/ssl/certificatebot`` to store the certificate files.
+The SSL/TLS certificate files will be stored at the path you specified in the ``appsettings.json`` configuration file. In this example, we used the path ``/etc/ssl/rcl`` to store the certificate files.
 
 At this path, a folder is generated by the service based on the certificate name. All the files for the certificate will be stored in this folder.
 
@@ -404,28 +401,7 @@ For each certificate, the following files are downloaded and saved on the hostin
 
 # Installing Certificates in Web Servers
 
-RCL SSL CertificateBot will automatically save renewed SSL/TLS certificate files to a folder in the server. You should then configure the web server to use these files to implement SSL/TLS in your website.
-
-## Certificate Files
-
-The SSL/TLS certificate files will be stored at the path you specified in the ``appsettings.json`` configuration file. In this example, we used the path ``/etc/ssl/certificatebot`` to store the certificate files.
-
-To view the files
-
-```bash
-cd /etc/ssl/certificatebot
-ls
-```
-
-When configuring the web servers, you will reference the specific certificate files stored at that path in a folder generated by CertificateBot for a specified domain.
-
-The following files are downloaded and saved on the server :
-
-  - ``certificate.pfx`` - The PFX certificate file
-  - ``primaryCertificate.crt`` The primary certificate file
-  - ``fullChainCertificate.crt`` - The full chain certificate file
-  - ``caBundle.crt`` - The intermediate certificate file
-  - ``privateKey.key`` - The certificate's private key file
+RCL SSL DNS AutoRenew will automatically save renewed SSL/TLS certificate files to a folder in the server. You should then configure the web server to use these files to implement SSL/TLS in your website.
 
 ## Configuring the Web Servers
 
