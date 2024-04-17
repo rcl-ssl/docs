@@ -235,17 +235,17 @@ sc.exe create DNSAutoRenewIIS binpath= <file-path>\RCL.SSL.DNS.AutoRenew.IIS.exe
 
 - After the service is installed, open **Services** in Windows, look for the ``DNSAutoRenewIIS`` service and **Start** the service
 
-![image](../images/certbot/winservice-start.png)
+![image](../images/certbot/winservice-iis-start.png)
 
 - Set the **Properties** of the service to start automatically when the hosting machine starts
 
-![image](../images/certbot/winservice-automatic.png)
+![image](../images/certbot/winservice-iis-automatic.png)
 
 # View the Event Logs
 
 - Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.SSL.CertificateBot.IIS`` events
 
-![image](../images/certbot/winservice-events.PNG)
+![image](../images/certbot/winservice-iis-events.png)
 
 - Ensure that there are no error events for the service. If there are error events, the service is misconfigured and will not function
 
