@@ -93,7 +93,7 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
   - SubscriptionId
 
 ```json
-    "RCLSDK": {
+"RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
     "SourceApplication": "RCL SSL DNS AutoRenew Windows",
     "ClientId": "23568fghjrtr3",

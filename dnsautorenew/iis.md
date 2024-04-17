@@ -1,37 +1,37 @@
 ---
 title: IIS
-description: RCL SSL CertificateBot Windows Service for automatic SSL/TLS certificate installation and renewal in IIS
-parent: CertificateBot
+description: RCL SSL DNS AutoRenew Windows Service for automatic SSL/TLS certificate installation and renewal in IIS
+parent: DNS AutoRenew
 nav_order: 3
 ---
 
-# RCL SSL CertificateBot for IIS
+# RCL SSL DNS AutoRenew for IIS
 **V7.1.0**
 
-RCL SSL CertificateBot for IIS runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
+RCL SSL DNS AutoRenew for IIS runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
 
 Certificates will be automatically saved to the ``Local Machine`` certificate store in the  ``Personal`` folder. Certificates will also be automatically bound to the **IIS Web Server** on the hosting machine.
 
 ## Automatically Renew SSL/TLS Certificates
 
-You can use RCL SSL CertificateBot for IIS to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
+You can use RCL SSL DNS AutoRenew for IIS to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
 
 - [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) 
 
 
-# Install RCL SSL CertificateBot for IIS
+# Install RCL SSL DNS AutoRenew for IIS
 
-If you have an older version of the RCL CertificateBot for IIS installed in your hosting machine, you should delete it and install the new service.
+If you have an older version of the RCL DNS AutoRenew for IIS installed in your hosting machine, you should delete it and install the new service.
 
 ## Download the Files
 
-- The Windows Service files (``certificatebot-iis-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal) page in the [Releases](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/tag/V7.1.0) section:
+- The Windows Service files (``dns-autorenew-iis-win-xx``) are available in the [GitHub Project](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal) page in the [Releases](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/tag/V7.1.0) section:
 
 - Download the zip file with bitness :
 
-  - [win-x64](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-iis-win-x64.zip) 
-  - [win-x86](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/certificatebot-iis-win-x86.zip)
-  - [win-arm](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/http-autorenew-iis-arm.zip)
+  - [win-x64](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/dns-autorenew-iis-x64.zip) 
+  - [win-x86](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/dns-autorenew-iis-x86.zip)
+  - [win-arm](https://github.com/rcl-ssl/rcl-ssl-automatic-renewal/releases/download/V7.1.0/dns-autorenew-iis-arm.zip)
   
   to match the Windows bitness of your hosting machine
 
@@ -93,15 +93,28 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
   - TenantId
   - SubscriptionId
 
+```json
+"RCLSDK": {
+    "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
+    "SourceApplication": "RCL SSL DNS AutoRenew IIS",
+    "ClientId": "23568fghjrtr3",
+    "ClientSecret": "7466rggvvdggdff",
+    "TenantId": "1103984664",
+    "SubscriptionId": "890"
+  }
+```
+
 - In the **CertificateBot** section, set a folder path to save the SSL/TLS certificates. Recommended path : C:/ssl
 
-  - saveCertificatePath
+  - SaveCertificatePath
 
 - **Note : when setting the folder path , use forward slashes(``/``) in the path name, eg. ``C:/ssl``. Failure to do this will result in inability to run the windows service.**
 
 - Create the folder in the hosting machine and ensure it has read/write permissions so that the certificates can be saved to it. 
 
 - Configure the site bindings for each website that you want to bind a SSL/TLS certificate. You can have a single or multiple bindings.
+
+  - IISBindings
 
 - Example of multiple bindings :
 
@@ -181,14 +194,13 @@ The image above illustrates a site hosted in IIS named 'Home' with multiple bind
   },
   "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
-    "SourceApplication": "RCL SSL CertificateBot IIS",
-    "ClientId": "35ca82aa-9ff3-5a67-bb7f-c3c71027eecf",
-    "ClientSecret": "hdytev539dgw~_8-g4lNI84V01.yIDUMHh",
-    "TenantId": "22cd4a8c-bc2c-3618-b1c3-4610c1b9b3e8",
-    "SubscriptionId": "879"
+    "SourceApplication": "RCL SSL DNS AutoRenew IIS",
+    "ClientId": "23568fghjrtr3",
+    "ClientSecret": "7466rggvvdggdff",
+    "TenantId": "1103984664",
+    "SubscriptionId": "890"
   },
   "CertificateBot": {
-    "IncludeCertificates":[],
     "SaveCertificatePath": "C:/ssl",
     "IISBindings": [
       {
@@ -218,10 +230,10 @@ The image above illustrates a site hosted in IIS named 'Home' with multiple bind
 - Run the following command to install the Windows Service. Replace the < file-path > placeholder with the actual path where your windows service zip files were extracted
 
 ```
-sc.exe create CertificateBotIIS binpath= <file-path>\RCL.SSL.CertificateBot.IIS.exe
+sc.exe create DNSAutoRenewIIS binpath= <file-path>\RCL.SSL.DNS.AutoRenew.IIS.exe
 ```
 
-- After the service is installed, open **Services** in Windows, look for the ``CertificateBot`` service and **Start** the service
+- After the service is installed, open **Services** in Windows, look for the ``DNSAutoRenewIIS`` service and **Start** the service
 
 ![image](../images/certbot/winservice-start.png)
 
@@ -254,7 +266,7 @@ Fix any other errors that are reported. Then, re-install and restart the service
 If you need to remove the Windows Service for any reason, first stop the service, then run the command to delete the service
 
 ```
-sc.exe delete CertificateBotIIS
+sc.exe delete DNSAutoRenewIIS
 ```
 
 # Updating the Service
@@ -297,7 +309,7 @@ In order to manually test certificate renewal, you must first force certificate 
 
 - Ensure that the certificate has been scheduled for renewal
 
-- Re-start the services again to save the certificate to the local machine and bind it to the IIS Web Server
+- Wait for 15 mins , then, re-start the services to save the certificate to the local machine and bind it to the IIS Web Server
 
 - Check that the certificate(s) are bound to the IIS website(s)
 
