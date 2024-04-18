@@ -65,7 +65,7 @@ Example
 ```json
 "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
-    "SourceApplication": "RCL HTTP AutoRenew Windows",
+    "SourceApplication": "RCL SSL HTTP AutoRenew Windows",
     "ApiKey": "xxx",
     "SubscriptionId": "xxx"
   }
@@ -149,7 +149,7 @@ Example of multiple certificates
   },
   "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
-    "SourceApplication": "RCL HTTP AutoRenew Windows",
+    "SourceApplication": "RCL SSL HTTP AutoRenew Windows",
     "ApiKey": "abc123",
     "SubscriptionId": "2345"
   },
