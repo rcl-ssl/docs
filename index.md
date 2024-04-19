@@ -23,7 +23,7 @@ Use the RCL SSL Portal and the various RCL SSL Apps to create and renew single o
 
 # RCL SSL Portal
 
-The [RCL SSL Portal](../portal/portal) is the **primary application**. It is a SaaS application that you can subscribe for in Microsoft Azure Marketplace.
+The [RCL SSL Portal](../portal/portal) is the **primary application**. It is a SaaS application that you can [subscribe](./subscription/subscription.md) for in Microsoft Azure Marketplace.
 
 ![image](./images/portal/portal.PNG)
 
@@ -41,11 +41,11 @@ The [RCL SSL AutoRenew](/autorenew/autorenew) function is an Azure Function app 
 
 ## RCL SSL HTTP AutoRenew
 
-The [RCL SSL HTTP AutoRenew](./httpautorenew/httpautorenew.md) runs as a [Windows Service](../certbot/windows-service) in a Windows hosting machine and a [Linux Daemon](../certbot/linux-daemon) in a Linux hosting machine. The primary purpose of service is to automatically renew SSL/TLS certificates created in the [RCL SSL Portal](./portal/portal.md) using the [Stand Alone](./portal/stand-alone.md) (including [SAN](./portal/stand-alone-san.md)) option and save them to a folder in the hosting machine. The web server must be configured to use the certificates files from the folder. In this way, the installation and renewal of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated.
+The [RCL SSL HTTP AutoRenew](./httpautorenew/httpautorenew.md) runs as a [Windows Service](./dnsautorenew/windows-service.md) in a Windows hosting machine and a [Linux Daemon](./dnsautorenew/linux-daemon.md) in a Linux hosting machine. The primary purpose of service is to automatically renew SSL/TLS certificates created in the [RCL SSL Portal](./portal/portal.md) using the [Stand Alone](./portal/stand-alone.md) (including [SAN](./portal/stand-alone-san.md)) option and save them to a folder in the hosting machine. The web server must be configured to use the certificates files from the folder. In this way, the installation and renewal of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated.
 
 ## RCL SSL DNS AutoRenew
 
-The [RCL SSL DNS AutoRenew](./dnsautorenew/dnsautorenew.md) runs as a [Windows Service](./dnsautorenew/windows-service.md) in a Windows hosting machine and a [Linux Daemon](./dnsautorenew/linux-daemon.md) in a Linux hosting machine. The primary purpose of CertificateBot is to automatically renew SSL/TLS certificates created in the [RCL SSL Portal](./portal/portal.md) using the [Azure DNS](./portal/azure-dns.md) (including [SAN](./portal/azure-dns-san.md)) option and save them to a folder in the hosting machine. The web server must be configured to use the certificates files from the folder. In this way, the installation and renewal of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated.
+The [RCL SSL DNS AutoRenew](./dnsautorenew/dnsautorenew.md) runs as a [Windows Service](./dnsautorenew/windows-service.md) in a Windows hosting machine and a [Linux Daemon](./dnsautorenew/linux-daemon.md) in a Linux hosting machine. The primary purpose of RCL SSL AutoRenew is to automatically renew SSL/TLS certificates created in the [RCL SSL Portal](./portal/portal.md) using the [Azure DNS](./portal/azure-dns.md) (including [SAN](./portal/azure-dns-san.md)) option and save them to a folder in the hosting machine. The web server must be configured to use the certificates files from the folder. In this way, the installation and renewal of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated.
 
 
 
