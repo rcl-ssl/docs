@@ -117,7 +117,6 @@ Example
     "CertificateBot" : {
         "IncludeCertificates":[],
         "SaveCertificatePath": "/etc/ssl/httpautorenew",
-        
     }
   ```
 
@@ -342,7 +341,7 @@ In order to test certificate renewal, you must first force certificate expiratio
 sudo systemctl restart httpautorenew
 ```
 
-- Run the command to view the daemon's detailed logs
+- Wait a few minutes and run the command to view the daemon's detailed logs
 
 ```bash
 sudo journalctl -u httpautorenew --no-pager
