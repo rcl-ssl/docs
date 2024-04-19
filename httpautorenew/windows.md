@@ -260,6 +260,8 @@ In order to test certificate renewal, you must first force certificate expiratio
 
 - Open **Event Viewer**, under 'Windows Logs > Application', look for the ``RCL.SSL.HTTP.AutoRenew.Windows`` events
 
+- Ensure the certificate is renewed
+
 - Ensure that there are no error events for the service
 
 - If there are errors: fix the errors , restart the service to run the test again
