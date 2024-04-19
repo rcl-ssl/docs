@@ -285,11 +285,12 @@ RCL.SSL.HTTP.AutoRenew.Linux[1508]: RCL.SSL.HTTP.AutoRenew.Linux.Worker[0] Found
 
 When the daemon is stopped, the daemon will discontinue certificate renewals and installation in the server.
 
-**Note: You need to keep the daemon running to automatically renew certificates.**
-
 ```bash
 sudo systemctl stop httpautorenew
 ```
+
+{: .warning }
+You need to keep the daemon running to automatically renew certificates.
 
 # Fixing Errors
 
