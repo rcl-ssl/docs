@@ -168,6 +168,16 @@ Example
 sc.exe create DNSAutoRenew binpath= <file-path>\RCL.SSL.DNS.AutoRenew.Windows.exe
 ```
 
+## Allow the Service through Microsoft Defender Antivirus
+
+Microsoft Defender Antivirus may block the service. You must add the folder that you stored the service files to the ``Exclusions`` list in Microsoft Defender Antivirus Scans
+
+![alt text](../images/certbot/windows-defender.png)
+
+Alternatively, you can run a custom antivirus scan on the folder before you run the service.
+
+## Starting the Service
+
 - After the service in installed, open **Services** in Windows, look for the ``DNSAutoRenew`` service and **Start** the service
 
 ![image](../images/certbot/winservice-start.PNG)
