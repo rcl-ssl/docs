@@ -68,7 +68,7 @@ Example
 ```json
 "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
-    "SourceApplication": "RCL HTTP AutoRenew IIS",
+    "SourceApplication": "RCL SSL HTTP AutoRenew IIS",
     "ApiKey": "xxx",
     "SubscriptionId": "xxx"
   }
@@ -81,9 +81,7 @@ Example
 Example
 ```json
     "CertificateBot" : {
-        "IncludeCertificates":[],
-        "SaveCertificatePath": "C:/ssl",
-        
+        "SaveCertificatePath": "C:/ssl"
     }
   ```
 
@@ -94,9 +92,6 @@ Example
 - Ensure the folder has read/write permissions so that the certificates can be saved to it. 
 
 - Configure the site bindings for each website that you want to bind a SSL/TLS certificate. You can have a single or multiple bindings.
-
-- Example of multiple bindings (using a [SAN](../portal/stand-alone-san.md) certificate):
-
 
 - Example of a single binding :
 
@@ -183,7 +178,6 @@ The image above illustrates a site hosted in IIS named 'Home' with multiple bind
     "SubscriptionId": "ergt546"
   },
   "CertificateBot": {
-    "IncludeCertificates":[],
     "SaveCertificatePath": "C:/ssl",
     "IISBindings": [
       {
