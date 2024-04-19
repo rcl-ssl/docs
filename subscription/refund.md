@@ -6,18 +6,19 @@ nav_order: 3
 ---
 
 # No Refunds
+**V7.1.0**
 
 All subscription payments are final for all the software applications and services provide by  Ray Consulting Limited and RCL Global LLC, which include:
 
 - RCL SSL Portal
-- RCL SSL HTTP AutoRenew
-- RCL SSL CerificateBot
 - RCL SSL AutoRenew Function
-- RCL SSL Core API
-- RCL SSL API
-- RCL SSL SDK
+- RCL SSL DNS AutoRenew
+- RCL SSL HTTP AutoRenew
 
- Ray Consulting Limited and RCL Global LLC does not offer any money-back guarantees. **You recognize and agree that you shall not be entitled to a refund for any purchase under any circumstances.**
+ Ray Consulting Limited and RCL Global LLC does not offer any money-back guarantees. 
+ 
+ {: .information }
+ You recognize and agree that you shall not be entitled to a refund for any purchase under any circumstances.
 
 # No Warranties 
 

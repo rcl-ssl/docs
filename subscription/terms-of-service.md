@@ -6,18 +6,16 @@ nav_order: 1
 ---
 
 # Terms of Service
+**V7.1.0**
 
 ## Introduction
 
 These Terms of Service applies to all users who subscribe to or use the RCL SSL Apps developed by Ray Consulting Limited and RCL Global LLC. The RCL SSL Apps include the following:
 
 - RCL SSL Portal
-- RCL SSL HTTP AutoRenew
-- RCL SSL CerificateBot
 - RCL SSL AutoRenew Function
-- RCL SSL Core API
-- RCL SSL API
-- RCL SSL SDK
+- RCL SSL DNS AutoRenew
+- RCL SSL HTTP AutoRenew
 
 ## General Conditions
 

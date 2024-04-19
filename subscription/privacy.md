@@ -6,12 +6,16 @@ nav_order: 2
 ---
 
 # Privacy Policy
+**V7.1.0**
 
 ## Cookies
 
 When you visit our various RCL SSL Apps (RCL Client for Let's Encrypt), we use cookies to collect standard internet login information and details about the behavior of visitors to our sites. The RCL SSL Apps include the following:
 
 - RCL SSL Portal
+- RCL SSL AutoRenew Function
+- RCL SSL DNS AutoRenew
+- RCL SSL HTTP AutoRenew
 
 We do this to find out things such as the number of visitors to the various parts of our site and to provide you
 with a better experience.
