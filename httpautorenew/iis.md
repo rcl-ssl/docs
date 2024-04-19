@@ -148,7 +148,8 @@ Example
 - certificateName - this is the name of the certificate in the RCL SSL Portal to be installed in the IIS website
 - validationPath - the root path to the folder where your website is hosted. This is where the validation tokens will be saved for the HTTP challenge
 
-> The website must be actively served by the web server from the ``validationPath`` and the site must be publicly accessible on the web in a web browser. If these conditions are not met, the SSL/TLS certificate update will fail for the HTTP challenge.
+{: .information }
+The website must be actively served by the web server from the ``validationPath`` and the site must be publicly accessible on the web in a web browser. If these conditions are not met, the SSL/TLS certificate update will fail for the HTTP challenge.
 
 ![install](../images/certbot/iis.PNG)
 
