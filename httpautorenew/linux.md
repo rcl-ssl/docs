@@ -102,7 +102,7 @@ Example
 ```json
 "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
-    "SourceApplication": "RCL HTTP AutoRenew Linux",
+    "SourceApplication": "RCL SSL HTTP AutoRenew Linux",
     "ApiKey": "xxx",
     "SubscriptionId": "xxx"
   }
@@ -134,7 +134,8 @@ sudo mkdir -m 777 /etc/ssl/httpautorenew
 
   - ``validationPath`` - the path to the root folder where the website is hosted from. The validations tokens for the [HTTP Challenge](../portal/stand-alone.md#completing-the-http-challenge) will be saved to the root of the website
 
-  > The website must be actively served by the web server from the ``validationPath`` and the site must be publicly accessible on the web in a web browser. If these conditions are not met, the SSL/TLS certificate update will fail for the HTTP challenge.
+{: .information }
+The website must be actively served by the web server from the ``validationPath`` and the site must be publicly accessible on the web in a web browser. If these conditions are not met, the SSL/TLS certificate update will fail for the HTTP challenge.
 
 
 Example of multiple certificates
@@ -177,7 +178,7 @@ Example of a single certificate
   },
   "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
-    "SourceApplication": "RCL HTTP AutoRenew Linux",
+    "SourceApplication": "RCL SSL HTTP AutoRenew Linux",
     "ApiKey": "abc123",
     "SubscriptionId": "erft567"
   },
@@ -188,8 +189,7 @@ Example of a single certificate
           "certificateName": "adventureworks.com",
           "validationPath": "/var/www/adventureworks"
         }
-      ],
-    "IISBindings": []
+      ]
   }
 }
 ```

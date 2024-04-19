@@ -127,7 +127,7 @@ sudo nano appsettings.json
   - TenantId
   - SubscriptionId
 
-  ```json
+```json
 "RCLSDK": {
     "ApiBaseUrl": "https://rclapi.azure-api.net/v2",
     "SourceApplication": "RCL SSL DNS AutoRenew Linux",
