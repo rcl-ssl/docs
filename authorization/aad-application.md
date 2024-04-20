@@ -12,6 +12,7 @@ nav_order: 4
 
 - to access Key Vault, DNS Zone and App Service in a user's Azure Subscription
 - to use the [RCL SSL AutoRenew](../autorenew/autorenew) Function app
+- to use the [RCL SSL DNS AutoRenew](../dnsautorenew/dnsautorenew.md) app
 
 
  This authorization will be granted through an **AAD Application**.
