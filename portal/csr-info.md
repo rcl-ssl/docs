@@ -22,8 +22,9 @@ The Certificate Signing Request (CSR) provides information about the holder of t
 
 - The CSR Info may only contain words with common and capital letters (a-z, A-Z) and numbers (0 - 9).
 
-- Commas (,) are allowed in addresses only. Do NOT use fullstops or hyphens (-, _).
+- Commas (,) are allowed in addresses only. Do NOT use fullstops (.) or hyphens (-, _).
 
 - Do NOT use characters such as accents (à), tildes(ã), special characters (&,$,#,etc.), language specific character (eg: ç , ô , å , etc.).
 
-**Failure to comply with this will result in an invalid X509 name.**
+{: .warning }
+Failure to comply with the above requirements will result in an invalid X509 name.
