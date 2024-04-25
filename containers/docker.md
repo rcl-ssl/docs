@@ -74,7 +74,6 @@ docker run -d \
 --env RCLSDK__ClientSecret=your-client-secret \
 --env RCLSDK__TenantId=your-tenant-id \
 --env RCLSDK__SubscriptionId=your-subscription-id \
---env RCLSDK__SubscriptionId=your-subscription-id \
 --env CertificateBot__SaveCertificatePath=/etc/ssl/rcl \
 --env CertificateBot__IncludeCertificatesArray=shopeneur.com \
 --mount source=rclssl-certs,target=/etc/ssl/rcl \
@@ -90,7 +89,7 @@ Run the following Docker Compose file to create and run a docker container:
 version: '3'
 services:
   rclssldnsautorenew:
-    image: rclssl/rclssldnsautorenewdocker:7.1.0
+    image: rclssl/dns-autorenew:7.1.0
     environment:
       - RCLSDK__ClientId=your-client-id
       - RCLSDK__ClientSecret=your-client-secret
@@ -102,6 +101,7 @@ services:
       - rclssl-certs:/etc/ssl/rcl
 volumes:
   rclssl-certs:
+    driver: local
 ```
 
 ## Notes
@@ -130,7 +130,7 @@ docker logs containerid
 - The logs should resemble the sample shown below:
 
 ```bash
-RCL.SSL.DNS.AutoRenew.Linux.Worker[0] Found 1 certificate(s) to save locally.  Successfully saved : shopeneur.com,*.shopeneur.com.  Did not find any certificates to renew.
+Message received at : 04/25/2024 20:38:52.  Found 1 certificate(s) to process locally.   Retrieved certificate shopeneur.com.  Saved shopeneur.com locally.  Did not find any certificates to renew.
 ```
 
 # Fixing Errors
@@ -177,7 +177,7 @@ docker logs containerid
 - The logs should resemble the sample shown below:
 
 ```bash
-Found 1 certificate(s) to process locally.  Found 1 certificate(s) to renew.  Scheduling shopeneur.com for renewal. 
+Message received at : 04/25/2024 21:53:54.  Found 1 certificate(s) to process locally.   Retrieved certificate shopeneur.com.  Saved shopeneur.com locally.  Found certificate : shopeneur.com to renew.   Successfully scheduled certificate shopeneur.com for renewal.
 ```
 
 - After about 15 mins, stop and re-start the container to save the certificate to the volume
@@ -198,14 +198,15 @@ docker logs containerid
 - The logs should resemble the sample shown below:
 
 ```bash
-Successfully saved : shopeneur.com in local machine.
-
+Message received at : 04/25/2024 21:57:48.  Found 1 certificate(s) to process locally.   Retrieved certificate shopeneur.com.  Saved shopeneur.com locally.  Did not find any certificates to renew.
 ```
 
 - Check that the certificate files are stored in the volume that you specified. 
 
+- Specify the volume-name
+
  ```bash
-docker volume inspect rclssl-certs
+docker volume inspect vloume-name
  ```
 
 - Once this test passes, the container will run every seven days to automatically renew certificates and save the certificate files to a volume you specify
