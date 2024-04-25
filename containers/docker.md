@@ -77,7 +77,7 @@ docker run -d \
 --env RCLSDK__SubscriptionId=your-subscription-id \
 --env CertificateBot__SaveCertificatePath=/etc/ssl/rcl \
 --env CertificateBot__IncludeCertificatesArray=shopeneur.com \
--- mount source=rclssl-certs,target=/etc/ssl/rcl 
+--mount source=rclssl-certs,target=/etc/ssl/rcl \
 rclssl/dns-autorenew:7.1.0 
 
 ```
