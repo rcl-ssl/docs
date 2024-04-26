@@ -108,7 +108,7 @@ volumes:
 docker compose -f compose.yaml -d
 ```
 
-- View the [Log Files](./docker.md#view-the-logs) to see it there are any errors in the RCL SSL DNS AutoRenew service
+- View the [Log Files](./docker.md#view-the-logs) to see if there are any errors in the RCL SSL DNS AutoRenew service
 
 - Ensure the SSL/TLS is successfully installed in NGINX by viewing your website in a browser and checking the SSL/TLS certificate
 
