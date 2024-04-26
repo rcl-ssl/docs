@@ -7,7 +7,10 @@ nav_order: 2
 
 # RCL SSL DNS AutoRenew for Docker and NGINX
 
-NGINX can use SSL/TLS certificates saved to a volume by RCL SSL DNS for Docker. In this way, you can enable SSL/TLS for a web application hosted with docker.
+NGINX can use SSL/TLS certificates saved to a volume by RCL SSL DNS AutoRenew for Docker. In this way, you can enable SSL/TLS for a web application hosted with docker.
+
+{: .information }
+Before you can use [RCL SSL DNS AutoRenew for Docker](./docker.md), you must have already created your certificate(s) in the RCL SSL Portal using the [Azure DNS](../portal/azure-dns.md) or [Azure DNS SAN](../portal/azure-dns-san.md) option. The certificate(s) that you would like to install must be specified in your [configuration](./docker.md#notes) of RCL DNS AutoRenew for Docker.
 
 # Prerequisites
 
@@ -47,7 +50,7 @@ server {
 
 - Replace ``example.com`` with your domain name
 
-- RCL SSL DNS AutoRenew will auto generate folder names to store certificate files. In this case, for the domain ``example.com``, the full chain certificate and private key files are stored in a folder named ``example-com`` following a folder naming convention. For your domain, follow the [Folder Naming Convention](./docker.md#certificate-files) described in this link.
+- RCL SSL DNS AutoRenew will auto generate folder names to store certificate files. In this case, for the domain ``example.com``, the full chain certificate and private key files are stored in a folder named ``example-com`` following a folder naming convention. For your domain, follow the [Folder Naming Convention](./docker.md#certificate-files) described in this link
 
 ## Create a Docker Compose file
 
@@ -85,21 +88,21 @@ volumes:
     driver: local
 ```
 
-- Firstly, the RCL SSL DNS AutoRenew container is deployed. It will save TLS/SSL certificates from the RCL SSL Portal to a docker volume shared with NGINX
+- Firstly, the RCL SSL DNS AutoRenew service is deployed. It will save TLS/SSL certificates from the RCL SSL Portal to a docker volume shared with NGINX
 
--  Then, the NGINX container is deployed, it uses the ``nginx.conf`` file to accept SSL/TLS connections
+-  Then, the NGINX service is deployed, it uses the ``nginx.conf`` file we created to accept SSL/TLS connections
 
-- NGINX uses the SSL/TLS files stored on the docker volume that were saved by RCL SSL DNS AutoRenew
+- NGINX uses the SSL/TLS certificate files stored on the docker volume that were saved by RCL SSL DNS AutoRenew
 
-- You should add you own [Configuration Values](./docker.md#configuration-prerequisite) for RCL SSL DNS AutoRenew 
+- You should add you own [Configuration Values](./docker.md#configuration-prerequisite) eg, client-id, etc. for RCL SSL DNS AutoRenew service
 
-- In addition. replace ``example.com`` with you own domain name
+- Replace ``example.com`` with you own domain name
 
-# Deploy the Containers
+# Deploy the Container
 
 - Open a terminal window in your folder
 
-- Run the following command to create the container
+- Run the following command to deploy the container
 
 ```bash
 docker compose -f compose.yaml -d
