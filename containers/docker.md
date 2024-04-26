@@ -64,11 +64,11 @@ To add the AAD Application's ``Client Id`` to the portal, please follow the inst
 
 - [Add the Client Id in the RCL SSL Portal](../api/authorization#add-the-client-id-in-the-rcl-portal)
 
-# Creating and Running the Docker Container
+# Deploy the Container
 
 ## Docker Command
 
-Run the following command to create and run a docker container:
+Run the following command to deploy a docker container:
 
 ```bash
 docker run -d \
@@ -85,7 +85,7 @@ rclssl/dns-autorenew:7.1.0
 
 ## Docker Compose
 
-Run the following Docker Compose file to create and run a docker container:
+Run the following Docker Compose file to deploy a docker container:
 
 ```yaml
 version: '3'
