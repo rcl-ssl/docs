@@ -16,6 +16,8 @@ You can use RCL SSL DNS AutoRenew for Docker to automatically renew SSL/TLS cert
 
 - [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md))
 
+Certificates will be save to a volume on the host machine for a web server to use.
+
 # Configuration Prerequisite
 
 ## AAD Application
