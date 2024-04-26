@@ -8,7 +8,7 @@ nav_order: 1
 # RCL SSL DNS AutoRenew for Docker
 **V7.1.0**
 
-In this section, we will learn how to use the RCL SSL DNS AutoRenew docker image to renew SSL/TLS certificates created in the [RCL SSL Portal](../portal//portal.md).
+In this section, we will learn how to use the RCL SSL DNS AutoRenew docker image to install and renew SSL/TLS certificates created in the [RCL SSL Portal](../portal//portal.md) in a docker host.
 
 # Automatically Install and Renew SSL/TLS Certificates
 
