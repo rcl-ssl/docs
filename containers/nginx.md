@@ -36,6 +36,12 @@ Firstly, we will create a configuration file for NGINX to accept SSL/TLS connect
 server {
   listen 80;
   server_name example.com;
+
+  location / {
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+        try_files $uri $uri/ /index.html;
+  }
 }
 
 server {
@@ -43,6 +49,12 @@ server {
     server_name         example.com;
     ssl_certificate     /etc/ssl/rcl/example-com/fullChainCertificate.crt;
     ssl_certificate_key /etc/ssl/rcl/example-com/privateKey.key;
+
+    location / {
+      root /usr/share/nginx/html;
+      index index.html index.htm;
+      try_files $uri $uri/ /index.html;
+    }
 }
 ```
 
@@ -88,9 +100,9 @@ volumes:
     driver: local
 ```
 
-- Firstly, the RCL SSL DNS AutoRenew service is deployed. It will save SSL/TLS certificates from the RCL SSL Portal to a docker volume shared with NGINX
+- Firstly, the RCL SSL DNS AutoRenew container is deployed. It will save SSL/TLS certificates from the RCL SSL Portal to a docker volume shared with NGINX
 
--  Then, the NGINX service is deployed, it uses the ``nginx.conf`` file we created to accept SSL/TLS connections
+-  Then, the NGINX container is deployed, it uses the ``nginx.conf`` file we created to accept SSL/TLS connections
 
 - NGINX uses the SSL/TLS certificate files stored on the docker volume that were saved by RCL SSL DNS AutoRenew
 
@@ -98,17 +110,17 @@ volumes:
 
 - Replace ``example.com`` with you own domain name
 
-# Deploy the Container
+# Deploy the Containers
 
 - Open a terminal window in your folder
 
-- Run the following command to deploy the container
+- Run the following command to deploy the containers
 
 ```bash
-docker compose -f compose.yaml -d
+docker compose -f compose.yaml up -d
 ```
 
-- View the [Log Files](./docker.md#view-the-logs) to see if there are any errors in the RCL SSL DNS AutoRenew service
+- View the [Log Files](./docker.md#view-the-logs) to see if there are any errors in the RCL SSL DNS AutoRenew container
 
 - Ensure the SSL/TLS is successfully installed in NGINX by viewing your website in a browser and checking the SSL/TLS certificate
 
