@@ -10,6 +10,9 @@ nav_order: 1
 
 RCL SSL DNS AutoRenew runs as a **Windows Service** in a Windows hosting machine. The Windows Service will run every seven (7) days to automatically renew and save SSL/TLS certificates from a user's subscription in the **RCL SSL Portal** to the Windows hosting machine.
 
+{: .information }
+Before you can use RCL SSL DNS AutoRenew, you must have already created your certificate(s) in the RCL SSL Portal using the [Azure DNS](../portal/azure-dns.md) or [Azure DNS SAN](../portal/azure-dns-san.md) option. The certificate(s) that you would like to install must be specified in your [configuration](#add-the-configuration-variables) of RCL SSL DNS AutoRenew.
+
 ## Automatically Renew SSL/TLS Certificates
 
 You can use RCL SSL DNS AutoRenew to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :

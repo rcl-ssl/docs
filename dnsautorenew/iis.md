@@ -12,6 +12,9 @@ RCL SSL DNS AutoRenew for IIS runs as a **Windows Service** in a Windows hosting
 
 Certificates will be automatically saved to the ``Local Machine`` certificate store in the  ``Personal`` folder. Certificates will also be automatically bound to the **IIS Web Server** on the hosting machine.
 
+{: .information }
+Before you can use RCL SSL DNS AutoRenew, you must have already created your certificate(s) in the RCL SSL Portal using the [Azure DNS](../portal/azure-dns.md) or [Azure DNS SAN](../portal/azure-dns-san.md) option. The certificate(s) that you would like to install must be specified in your [configuration](#add-the-configuration-variables) of RCL SSL DNS AutoRenew.
+
 ## Automatically Renew SSL/TLS Certificates
 
 You can use RCL SSL DNS AutoRenew for IIS to automatically renew SSL/TLS certificates created in the **RCL SSL Portal** using the the following creation options :
