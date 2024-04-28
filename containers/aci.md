@@ -7,7 +7,7 @@ nav_order: 3
 
 # SSL/TLS for Azure Container Instance
 
-In this section, you will learn how to set up SSL/TLS in an Azure Container Instance. In this sample app, we will create a container group in Azure with the the following containers :
+In this section, you will learn how to set up SSL/TLS in an Azure Container Instance. In this sample app, we will create a container group with the the following containers :
 
 - An application container that runs a simple web app using the public Microsoft ``aci-helloworld`` image
 
@@ -24,9 +24,9 @@ Follow the instructions in the link below to learn how to configure, install and
 
 - [RCL SSL DNS AutoRenew for Docker](./docker.md)
 
-# Create and Azure File Share
+# Create an Azure File Share
 
-A volume is mounted for RCL SSL AutoRenew to save SSL/TLS certificate files. These certificates files are used from the volume by NGINX.
+A volume is mounted for RCL SSL DNS AutoRenew to save SSL/TLS certificate files. These certificates files are used from this shared volume by NGINX.
 
 Create an Azure Storage Account. Add two ``File shares`` as follows :
 
@@ -60,7 +60,7 @@ server {
 
 - This is a minimalist configuration file, you can amend it with additional configuration to meet your requirements
 
-- Replace ``myaci.example.com`` with your own custom domain name. You must create a custom domain for your container group to use SSL/TLS. In your DNS provider, create a CNAME records that maps to the FQDN of your container group. Create a SSL/TLS certificate for the custom domain in the RCL SSL Portal using the [Azure DNS](../portal/azure-dns.md) or Azure [DNS SAN](../portal/azure-dns-san.md) option
+- Replace ``myaci.example.com`` with your own custom domain name. You must create a custom domain for your container group to use SSL/TLS. In your DNS provider, create a CNAME record that maps to the FQDN of your container group. Create a SSL/TLS certificate for your custom domain in the RCL SSL Portal using the [Azure DNS](../portal/azure-dns.md) or Azure [DNS SAN](../portal/azure-dns-san.md) option
 
 - RCL SSL DNS AutoRenew will auto generate folder names to store certificate files. In this case, for the domain ``myaci.example.com``, the full chain certificate and private key files are stored in a folder named ``myaci-example-com`` following a folder naming convention. For your domain, follow the [Folder Naming Convention](./docker.md#certificate-files) described in the link to set the folder name for your domain
 
