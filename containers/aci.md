@@ -11,7 +11,7 @@ In this section, you will learn how to set up SSL/TLS in an Azure Container Inst
 
 - An application container that runs a simple web app using the public Microsoft ``aci-helloworld`` image
 
-- A sidecar container running the public NGINX image, configured to use SSL/TLS
+- A sidecar container running the public NGINX image, configured to use SSL/TLS. NGINX will act as a reverse proxy, forwarding public requests to the container group of port 443(HTTPS) to the web app that listens on port 80 (HTTP) on ``localhost``
 
 - A sidecar container running RCL SSL DNS AutoRenew for Docker to provide SSL/TLS certificates for NGINX to use
 
