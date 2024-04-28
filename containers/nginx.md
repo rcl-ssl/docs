@@ -14,7 +14,7 @@ Before you can use [RCL SSL DNS AutoRenew for Docker](./docker.md), you must hav
 
 # Prerequisites
 
-Follow the instructions in the link below to configure, install and test RCL SSL DNS AutoRenew for Docker.
+Follow the instructions in the link below to learn how to configure, install and test RCL SSL DNS AutoRenew for Docker.
 
 - [RCL SSL DNS AutoRenew for Docker](./docker.md)
 
