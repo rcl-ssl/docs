@@ -7,9 +7,9 @@ nav_order: 3
 
 # SSL/TLS for Azure Container Instance
 
-In this section, you will set up a container group in Azure with the the following containers :
+In this section, you will learn how to set up SSL/TLS in an Azure Container Instance. In this sample app, we will create a container group in Azure with the the following containers :
 
-- An application container that runs a simple web app using the public Microsoft aci-helloworld image
+- An application container that runs a simple web app using the public Microsoft ``aci-helloworld`` image
 
 - A sidecar container running the public NGINX image, configured to use SSL/TLS
 
