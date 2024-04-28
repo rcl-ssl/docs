@@ -60,7 +60,7 @@ server {
 
 - This is a minimalist configuration file, you can amend it with additional configuration to meet your requirements
 
-- Replace ``myaci.example.com`` with your own custom domain name. You must create a custom domain for your container group to use SSL/TLS. In your DNS provider, create a CNAME record that maps to the FQDN of your container group. Create a SSL/TLS certificate for your custom domain in the RCL SSL Portal using the [Azure DNS](../portal/azure-dns.md) or Azure [DNS SAN](../portal/azure-dns-san.md) option
+- Replace ``myaci.example.com`` with your own custom domain name. You must create a custom domain for your container group to use SSL/TLS. In your DNS provider, create a CNAME record that maps to the FQDN of your container group. Create a SSL/TLS certificate for your custom domain in the RCL SSL Portal using the [Azure DNS](../portal/azure-dns.md) or Azure [DNS SAN](../portal/azure-dns-san.md) option. You must configure RCL SSL DNS AutoRenew to use this certificate for your custom domain name.
 
 - RCL SSL DNS AutoRenew will auto generate folder names to store certificate files. In this case, for the domain ``myaci.example.com``, the full chain certificate and private key files are stored in a folder named ``myaci-example-com`` following a folder naming convention. For your domain, follow the [Folder Naming Convention](./docker.md#certificate-files) described in the link to set the folder name for your domain
 
