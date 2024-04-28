@@ -62,7 +62,7 @@ server {
 
 - Replace ``example.com`` with your domain name
 
-- RCL SSL DNS AutoRenew will auto generate folder names to store certificate files. In this case, for the domain ``example.com``, the full chain certificate and private key files are stored in a folder named ``example-com`` following a folder naming convention. For your domain, follow the [Folder Naming Convention](./docker.md#certificate-files) described in the link
+- RCL SSL DNS AutoRenew will auto generate folder names to store certificate files. In this case, for the domain ``example.com``, the full chain certificate and private key files are stored in a folder named ``example-com`` following a folder naming convention. For your domain, follow the [Folder Naming Convention](./docker.md#certificate-files) described in the link to set the folder name for your domain
 
 ## Create a Docker Compose file
 
