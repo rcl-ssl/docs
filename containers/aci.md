@@ -41,7 +41,7 @@ Create an Azure Storage Account. Add two ``File shares`` as follows :
 You can download the files used in this sample from GitHub:
 [ACI with SSL/TLS](https://github.com/rcl-ssl/nginx-with-ssl-docker)
 
-Firstly, we will create a configuration file for NGINX to accept public incoming SSL/TLS connections on port 443 to the container group. NGINX will act as a reverse proxy for the web app which listens on port 80 on localhost.
+Firstly, we will create a configuration file for NGINX to accept public incoming SSL/TLS connections on port 443(HTTPS) to the container group. NGINX will act as a reverse proxy and forward public requests to the web app which listens on port 80 (HTTP) on localhost.
 
 Create a file named ``default.conf`` and add the following configuration :
 
