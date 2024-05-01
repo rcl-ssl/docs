@@ -15,11 +15,11 @@ Before you can use RCL SSL DNS AutoRenew for Docker, you must have already creat
 
 # Automatically Install and Renew SSL/TLS Certificates
 
-You can use RCL SSL DNS AutoRenew for Docker to automatically install and renew SSL/TLS certificates created in the **RCL SSL Portal** in a docker host using the the following creation options:
+You can use RCL SSL DNS AutoRenew for Docker to automatically install and renew SSL/TLS certificates in a docker host created in the **RCL SSL Portal** using the the following creation options:
 
 - [Azure DNS](../portal//azure-dns.md) (including [SAN](../portal/azure-dns-san.md))
 
-Certificates will be save to a volume on the host machine for a web server to use.
+Certificates will be save to a volume on the host machine for an ingress controller to use.
 
 # Configuration Prerequisite
 

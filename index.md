@@ -49,7 +49,7 @@ The [RCL SSL DNS AutoRenew](./dnsautorenew/dnsautorenew.md) runs as a [Windows S
 
 ## RCL SSL DNS AutoRenew for Docker
 
-[RCL SSL DNS AutoRenew for Docker](./containers/containers.md) is a docker image hosted on [Docker Hub](https://hub.docker.com/r/rclssl/dns-autorenew). You can use RCL SSL DNS AutoRenew for Docker to automatically install and renew SSL/TLS certificates created in the RCL SSL Portal in a docker host using the the following creation option:
+[RCL SSL DNS AutoRenew for Docker](./containers/containers.md) is a docker image hosted on [Docker Hub](https://hub.docker.com/r/rclssl/dns-autorenew). You can use RCL SSL DNS AutoRenew for Docker to automatically install and renew SSL/TLS certificates in a docker host created in the RCL SSL Portal using the the following creation option:
 
 - [Azure DNS](./portal/azure-dns.md) (including [SAN](./portal/azure-dns-san.md))
 
