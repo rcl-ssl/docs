@@ -11,7 +11,7 @@ In this section, you will learn how to set up SSL/TLS in an Azure Container Inst
 
 - An application container that runs a simple web app using the public Microsoft ``aci-helloworld`` image
 
-- A sidecar container running the public NGINX image, configured to use SSL/TLS. NGINX will act as a reverse proxy, forwarding public requests on port 443(HTTPS) to the container group to the web app that listens internally on port 80 (HTTP) on ``localhost`` in the container group
+- A sidecar container running the public NGINX image, configured to use SSL/TLS. NGINX will act as a reverse proxy, forwarding public requests on port 443(HTTPS) to the container group to the web app that listens internally on port 80(HTTP) on ``localhost`` in the container group
 
 - A sidecar container running RCL SSL DNS AutoRenew for Docker to provide SSL/TLS certificates for NGINX to use
 
@@ -156,7 +156,7 @@ There are three containers in this container group :
 
 A volume mount, ``nginx-config`` is used to store the NGINX configuration file. Another volume mount ``rcl-certs`` shared with NGINX and RCL SSL DNS AutoRenew is used to store the SSL/TLS certificate files. These volume mounts use the Azure Storage Account. Add the ``storageAccountName`` and ``storageAccountKey``.
 
-The container group uses a FQDN with a dns label ``myaci``. Since the public IP of the container group is not static, a FQDN will be used to map a custom domain. A CNAME record should be created to map your domain name to the FQDN of the container group. In this case , ``myaci.example.com`` uses a CNAME DNS record to map to ``myaci.westus.azurecontainer.io``. You can use your own ``dnsNameLablel``.
+The container group uses a FQDN with a dns label ``myaci``. Since the public IP of the container group is not static, a FQDN will be used to map a custom domain. A CNAME record should be created to map your custom domain name to the FQDN of the container group. In this case , ``myaci.example.com`` uses a CNAME DNS record to map to ``myaci.westus.azurecontainer.io``. You can use your own ``dnsNameLablel``.
 
 The container group listens on port 443 to public SSL/TLS requests.
 
