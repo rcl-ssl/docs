@@ -9,7 +9,7 @@ nav_order: 4
 
 In this section, you will learn how to set up SSL/TLS in Azure Kubernetes Service (AKS). The steps are as follows :
 
-- Crate SSL/TLS certificate(s) in the RCL SSL Portal using the [Key Vault](../portal/azure-keyvault.md) or [Key Vault SAN](../portal/azure-keyvault-san.md) option
+- Create SSL/TLS certificate(s) in the RCL SSL Portal using the [Key Vault](../portal/azure-keyvault.md) or [Key Vault SAN](../portal/azure-keyvault-san.md) option
 
 - Use the NGINX application routing add-on as an ingress controller in your AKS cluster
 
