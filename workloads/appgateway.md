@@ -1,6 +1,6 @@
 ---
 title: Application Gateway
-description: Using RCL to automatically create, install and renew a SSL/TLS certificates in Application Gateway
+description: Using RCL SSL to automatically create, install and renew a SSL/TLS certificates in an Azure Application Gateway
 parent: Workloads
 nav_order: 3
 ---

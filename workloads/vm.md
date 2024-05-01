@@ -1,6 +1,6 @@
 ---
 title: Azure Virtual Machines
-description: Using RCL SSL to create and install SSL/TLS certificates
+description: Using RCL SSL to automatically create, install and renew a SSL/TLS certificates in an Azure Virtual Machine
 parent: Workloads
 nav_order: 1
 ---
@@ -27,7 +27,7 @@ The web servers running in the VM may include :
     - [Azure DNS](../portal/azure-dns.md)
     - [Azure DNS SAN](../portal/azure-dns-san.md)
 
-- The SAN options allow for two domains on a single certificate, whereas, the other option only allows one domain on the certificate.
+- The SAN options allow for two domains on a single certificate, whereas, the other option only allows one domain on the certificate
 
 # Install the SSL/TLS Certificate in a Web Server
 

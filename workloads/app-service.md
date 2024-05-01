@@ -1,6 +1,6 @@
 ---
 title: App Service
-description: Using RCL to automatically create, install and renew a SSL/TLS certificates in an Azure App Service
+description: Using RCL SSL to automatically create, install and renew a SSL/TLS certificates in an Azure App Service
 parent: Workloads
 nav_order: 4
 ---
@@ -13,8 +13,12 @@ This workload allows for the **automatic creation, installation and renewal** of
 
 # Create the SSL/TLS Certificate
 
-- Create the SSL/TLS certificate in the RCL Portal by using the:
+- Create the SSL/TLS certificate in the RCL Portal by using either the:
+
     - [Azure App Service](../portal/azure-appservice.md) option
+    - [Azure App Service SAN](../portal/azure-appservice-san.md) option
+
+- The SAN options allow for two domains on a single certificate, whereas, the other option only allows one domain on the certificate
 
 # Certificate Automatically Bound to the App Service
 

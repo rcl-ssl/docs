@@ -1,6 +1,6 @@
 ---
 title: Virtual Machine Scale Sets
-description: Using RCL to automatically create, install and renew a SSL/TLS certificates in an Azure VM using Key Vault, DNS and Application Gateway
+description: Using RCL SSL to automatically create, install and renew a SSL/TLS certificates in an Azure Virtual Machine Scale Set
 parent: Workloads
 nav_order: 2
 ---
