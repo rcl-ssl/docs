@@ -47,6 +47,18 @@ The [RCL SSL HTTP AutoRenew](./httpautorenew/httpautorenew.md) runs as a [Window
 
 The [RCL SSL DNS AutoRenew](./dnsautorenew/dnsautorenew.md) runs as a [Windows Service](./dnsautorenew/windows-service.md) in a Windows hosting machine and a [Linux Daemon](./dnsautorenew/linux-daemon.md) in a Linux hosting machine. The primary purpose of RCL SSL AutoRenew is to automatically renew SSL/TLS certificates created in the [RCL SSL Portal](./portal/portal.md) using the [Azure DNS](./portal/azure-dns.md) (including [SAN](./portal/azure-dns-san.md)) option and save them to a folder in the hosting machine. The web server must be configured to use the certificates files from the folder. In this way, the installation and renewal of certificates in a web server (eg. Apache, Tomcat, NGINX, IIS, Express, etc) is fully automated.
 
+## RCL SSL DNS AutoRenew for Docker
+
+[RCL SSL DNS AutoRenew for Docker](./containers/containers.md) is a docker image hosted on [Docker Hub](https://hub.docker.com/r/rclssl/dns-autorenew). You can use RCL SSL DNS AutoRenew for Docker to automatically install and renew SSL/TLS certificates created in the RCL SSL Portal in a docker host using the the following creation option:
+
+- [Azure DNS](./portal/azure-dns.md) (including [SAN](./portal/azure-dns-san.md))
+
+Certificates will be saved to a volume on the host machine for an ingress controller to use. RCL SSL DNS AutoRenew for Docker can be used to provide SSL/TLS certificates for :
+
+- [Docker Deployments](./containers/docker.md)
+- [Azure Container Instance](./containers/aci.md)
+- [NGINX Ingress Controller](./containers//nginx.md)
+
 
 
 

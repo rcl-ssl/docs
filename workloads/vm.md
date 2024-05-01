@@ -29,7 +29,7 @@ The web servers running in the VM may include :
 
 - The SAN options allow for two domains on a single certificate, whereas, the other option only allows one domain on the certificate.
 
-## Step 2 : Install the SSL/TLS Certificate in a Web Server
+# Install the SSL/TLS Certificate in a Web Server
 
 - Install the SSL/TLS Certificate in a web server running in the VM :
 
