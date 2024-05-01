@@ -5,9 +5,9 @@ parent: Containers
 nav_order: 2
 ---
 
-# RCL SSL DNS AutoRenew for Docker and NGINX Ingress Controller
+# RCL SSL DNS AutoRenew for Docker and NGINX
 
-NGINX Ingress Controller can use SSL/TLS certificates saved to a volume by RCL SSL DNS AutoRenew for Docker. In this way, you can enable SSL/TLS for a web application hosted with docker using NGINX.
+NGINX can use SSL/TLS certificates saved to a volume by RCL SSL DNS AutoRenew for Docker. In this way, you can enable SSL/TLS for a web application hosted with docker using NGINX.
 
 {: .information }
 Before you can use [RCL SSL DNS AutoRenew for Docker](./docker.md), you must have already created your certificate(s) in the RCL SSL Portal using the [Azure DNS](../portal/azure-dns.md) or [Azure DNS SAN](../portal/azure-dns-san.md) option. The certificate(s) that you would like to install must be specified in your [configuration](./docker.md#notes) of RCL SSL DNS AutoRenew for Docker.
