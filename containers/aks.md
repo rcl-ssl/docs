@@ -15,7 +15,7 @@ In this section, you will learn how to set up SSL/TLS in Azure Kubernetes Servic
 
 - Terminate HTTPS traffic in the managed NGINX ingress controller with the TLS/SSL certificate(s) from Azure Key Vault
 
-- Use the [RCL SSL AutoRenew Function](../autorenew/autorenew.md) to automatically renew certificates in Azure Key Vault before they expire
+- Use the [RCL SSL AutoRenew Function](../autorenew/autorenew.md) app to automatically renew certificates in Azure Key Vault before they expire
 
 {: .information }
 Before you progress further, you must have already created your certificate(s) in the RCL SSL Portal using the [Azure Key Vault](../portal/azure-keyvault.md) or [Azure Key Vault SAN](../portal/azure-keyvault-san.md) option.
@@ -35,7 +35,6 @@ Follow the instruction in the link to terminate HTTPS traffic with certificate(s
 The following deployment file shows a sample set up for SSL/TLS in AKS using Azure Key Vault and the managed NGINX application routing add-on for AKS:
 
 ```yaml
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -98,12 +97,10 @@ spec:
   - hosts:
     - example.com
     secretName: keyvault-aspnetapp-ingress
-
-
 ```
 
 # Automatically Renew SSL/TLS Certificates
 
-Follow the instructions in the link to automatically renew certificates in Azure Key Vault using the RCL SSL AutoRenew Function
+Follow the instructions in the link to automatically renew certificates in Azure Key Vault before they expire using the RCL SSL AutoRenew Function app
 
 - [RCL SSL AutoRenew Function](../autorenew/autorenew.md)
