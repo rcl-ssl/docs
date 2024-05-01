@@ -57,7 +57,7 @@ You can follow the instructions in this link to install SSL/TLS certificates in 
 
 ## Creating a Custom VM Image with RCL SSL
 
-You can also create a custom VM image to use for your VM Scale Set the include one of RCL SSL Apps to automatically install and renew the certificate in the VM. You can install the following RCL apps in the custom VM image :
+You can also create a custom VM image to use for your VM Scale Set, then, include one of RCL SSL Apps to automatically install and renew the certificate in the VM. You can install the following RCL apps in the custom VM image :
 
 - [RCL SSL HTTP AutoRenew](../httpautorenew/)
 - [RCL SSL DNS AutoRenew](../dnsautorenew/)
