@@ -13,5 +13,5 @@ This workload allows for the **automatic creation, installation and renewal** of
 
 Follow the instructions in the link to set up SSL/TLS for a Azure Container Instance
 
-- [Azure Container Instance](./aci.md)
+- [Azure Container Instance](../containers/aci.md)
 

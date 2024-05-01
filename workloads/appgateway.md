@@ -1,5 +1,5 @@
 ---
-title: Application Gateway
+title: Azure Application Gateway
 description: Using RCL SSL to automatically create, install and renew a SSL/TLS certificates in an Azure Application Gateway
 parent: Workloads
 nav_order: 3
