@@ -1,5 +1,5 @@
 ---
-title: Virtual Machine Scale Sets
+title: Virtual Machine Scale Set
 description: Using RCL SSL to automatically create, install and renew a SSL/TLS certificates in an Azure Virtual Machine Scale Set
 parent: Workloads
 nav_order: 2

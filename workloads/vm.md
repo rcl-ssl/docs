@@ -1,5 +1,5 @@
 ---
-title: Azure Virtual Machines
+title: Azure Virtual Machine
 description: Using RCL SSL to automatically create, install and renew a SSL/TLS certificates in an Azure Virtual Machine
 parent: Workloads
 nav_order: 1
