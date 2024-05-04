@@ -6,6 +6,7 @@ nav_order: 4
 ---
 
 # SSL/TLS for Azure Kubernetes Service (AKS)
+**V7.1.0**
 
 In this section, you will learn how to set up SSL/TLS in Azure Kubernetes Service (AKS). The steps are as follows :
 

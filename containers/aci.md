@@ -6,6 +6,7 @@ nav_order: 3
 ---
 
 # SSL/TLS for Azure Container Instance
+**V7.1.0**
 
 In this section, you will learn how to set up SSL/TLS in an Azure Container Instance. In this sample app, we will create a container group with the the following containers :
 
