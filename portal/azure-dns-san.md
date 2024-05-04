@@ -6,7 +6,7 @@ nav_order: 5
 ---
 
 # SAN Certificates - Azure DNS
-**V7.0.0**
+**V7.1.0**
 
 A Subject Alternative Name (SAN) TLS/SSL certificate will contain multiple domains in a single certificate. SAN certificates created with an Azure DNS Zone will contain the domain (e.g. contoso.com) and the wild card domain (e.g. *.contoso.com) in a single TLS/SSL certificate.
 
@@ -18,13 +18,14 @@ SAN certificates only allow a single domain. For instance, the two domains 'fabr
 
 ## AAD Accounts
 
-**Personal and Microsoft Accounts are not supported for Azure DNS. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.**
+{: .information }
+Personal and Microsoft Accounts are not supported for Azure DNS SAN. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
 
-If you try to manage an Azure DNS with a MSA account you will get the following error.
+If you try to create a certificate with Azure DNS SAN with a MSA account you will get the following error.
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL SSL Portal with a Personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
 
 - [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
 
@@ -62,9 +63,9 @@ If you bought your domain with a domain registrar, you must set up your Azure DN
 
 ![image](../images/portal/dns-zone-setup.png)
 
-Follow the instructions in the link below to set up your DNS Zone and delegate the name server (NS) records for your domain :
+Follow the instructions in the link below to set up your Azure DNS Zone and delegate the name server (NS) records for your domain :
 
-- [Delegate DNS Zone](https://docs.microsoft.com/bs-latn-ba/azure/dns/dns-delegate-domain-azure-dns)
+- [Delegate Azure DNS Zone](https://docs.microsoft.com/bs-latn-ba/azure/dns/dns-delegate-domain-azure-dns)
 
 # Create TLS/SSL Certificate
 
@@ -129,9 +130,17 @@ SSL/TLS certificates will expire in 90 days. You can manually renew a certificat
 
 ![image](../images/portal/azure-dns-update.PNG)
 
-# Automatically Renewing SSL/TLS Certificates
+# Automatic Certificate Renewal
 
-You can automatically renew certificates using the [RCL SSL CertificateBot](../certbot/certbot.md) or the [RCL SSL AutoRenew Function](../autorenew/autorenew.md)
+You can use [RCL SSL DNS AutoRenew](../dnsautorenew/dnsautorenew.md) to automatically renew and install certificates in a web server.
+
+# SSL/TLS for Containers
+
+You can use certificates created with the Azure DNS SAN option, to provide SSL/TLS for container applications. Please refer to the following links for more information :
+
+- [SSL/TLS for Docker](../containers/docker.md)
+- [SSL/TLS for NGINX](../containers/nginx.md)
+- [SSL/TLS for Azure Container Instance](../containers/aci.md)
 
 # Rate Limits
 

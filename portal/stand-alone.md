@@ -208,6 +208,18 @@ You will need to manually download and install your certificate in your web serv
 - [Installing SSL/TLS Certificates in NGINX](../installations/nginx)
 - [Installing SSL/TLS Certificates in IIS](../installations/iis)
 
+# Manually Renewing SSL/TLS Certificates
+
+SSL/TLS certificates will expire in 90 days. You can manually renew a certificate by following these steps :
+
+- Delete the old certificate
+- Create a new certificate
+- Remove the old certificate from the web server and install the new certificate
+
+# Automatic Certificate Renewal
+
+If the certificate was created using the [HTTP Challenge](#completing-the-http-challenge) type, you can use [RCL SSL HTTP AutoRenew](../httpautorenew/httpautorenew.md) to automatically renew and install certificates in a web server.
+
 
 # Rate Limits
 

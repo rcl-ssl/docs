@@ -7,22 +7,23 @@ nav_order: 4
 
 # Creating SSL/TLS Certificates with Azure DNS
 
-**V6.0.10**
+**V7.1.0**
 
-RCL creates SSL/TLS certificates using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records).
+In this section, you will learn how to create a SSL/TLS certificate in the RCL SSL Portal using an  [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records).
 
 
 # Access Control
 
 ## AAD Accounts
 
-**Personal and Microsoft Accounts are not supported for Azure DNS. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.**
+{: .information }
+Personal and Microsoft Accounts are not supported for Azure DNS. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
 
-If you try to manage an Azure DNS with a MSA account you will get the following error.
+If you try to create a certificate with Azure DNS with a MSA account you will get the following error.
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for the RCL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL SSL Portal with a Personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
 
 - [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
 
@@ -48,7 +49,7 @@ To set up access control for your AAD account, follow the instructions in the li
 
 # Create a SSL/TLS Certificate using DNS-01
 
-RCL uses the DNS-01 challenge type to issue certificates for :
+RCL SSL uses the DNS-01 challenge type to issue certificates for :
 
 primary domains (e.g. contoso.net)
 subdomains (e.g. store.contoso.net, www.contoso.net) and
@@ -60,9 +61,9 @@ You must set up your Azure DNS Zone to manage the records for your domain.
 
 ![image](../images/portal/dns-zone-setup.png)
 
-Follow the instructions in the link below to set up your DNS Zone and delegate the name server (NS) records for your domain :
+Follow the instructions in the link below to set up your Azure DNS Zone and delegate the name server (NS) records for your domain :
 
-- [Delegate DNS Zone](https://docs.microsoft.com/bs-latn-ba/azure/dns/dns-delegate-domain-azure-dns)
+- [Delegate Azure DNS Zone](https://docs.microsoft.com/bs-latn-ba/azure/dns/dns-delegate-domain-azure-dns)
 
 # Create SSL/TLS Certificate
 
@@ -129,7 +130,19 @@ SSL/TLS certificates will expire in 90 days. You can manually renew a certificat
 
 ![image](../images/portal/azure-dns-update.PNG)
 
-# Rate Limits
+# Automatic Certificate Renewal
+
+You can use [RCL SSL DNS AutoRenew](../dnsautorenew/dnsautorenew.md) to automatically renew and install certificates in a web server.
+
+# SSL/TLS for Containers
+
+You can use certificates created with the Azure DNS option, to provide SSL/TLS for container applications. Please refer to the following links for more information :
+
+- [SSL/TLS for Docker](../containers/docker.md)
+- [SSL/TLS for NGINX](../containers/nginx.md)
+- [SSL/TLS for Azure Container Instance](../containers/aci.md)
+
+# Rate Limit
 
 **There is a rate limit of 50 SSL/TLS certificates per subscription.**
 
