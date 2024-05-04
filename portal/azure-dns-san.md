@@ -75,11 +75,11 @@ Follow the instructions in the link below to set up your Azure DNS Zone and dele
 
 - Select the ‘Azure DNS SAN’ option.
 
-![image](../images/portal/azure-dns-san-select.png)
+![image](../images/portal/azure-dns-san-select.PNG)
 
 - Add the data to create the certificate. The image below illustrates sample data.
 
-![image](../images/portal/azure-dns-san-create.png)
+![image](../images/portal/azure-dns-san-create.PNG)
 
 - The Hostname is the Domain (eg: 'contoso.com') you are requesting the certificate for. Only a single domain is allowed. The additional wildcard domain (eg: *.contoso.com) will be automatically added to the certificate.
 
