@@ -18,7 +18,7 @@ SAN certificates only allow a single domain. For instance, the two domains 'fabr
 
 ## AAD Accounts
 
-{: .information }
+{: .warning }
 Personal and Microsoft Accounts are not supported for Azure DNS SAN. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
 
 If you try to create a certificate with Azure DNS SAN with a MSA account you will get the following error.
@@ -27,7 +27,7 @@ If you try to create a certificate with Azure DNS SAN with a MSA account you wil
 
 If you signed up for the RCL SSL Portal with a Personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
 
-- [Sign-In Accounts for RCL](../authorization/sign-in-accounts)
+- [Sign-In Accounts for RCL SSL Portal](../authorization/sign-in-accounts)
 
 ## Set Access Control
 

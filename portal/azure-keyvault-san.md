@@ -65,9 +65,9 @@ If you bought your domain with a domain registrar, you must set up your Azure DN
 
 ![image](../images/portal/dns-zone-setup.png)
 
-Follow the instructions in the link below to set up your DNS Zone and delegate the name server (NS) records for your domain :
+Follow the instructions in the link below to set up your Azure DNS Zone and delegate the name server (NS) records for your domain :
 
-- [Delegate DNS Zone](https://docs.microsoft.com/bs-latn-ba/azure/dns/dns-delegate-domain-azure-dns)
+- [Delegate Azure DNS Zone](https://docs.microsoft.com/bs-latn-ba/azure/dns/dns-delegate-domain-azure-dns)
 
 # Azure Key Vault
 
@@ -159,6 +159,18 @@ You can use the [RCL SSL AutoRenew Function](../autorenew/autorenew) to automati
 Follow the instructions in the link to use the AutoRenew function :
 
 - [RCL SSL AutoRenew Function](../autorenew/autorenew)
+
+# Azure Key Vault with Application Gateway
+
+You can use Azure Key Vault certificates with an Azure Application Gateway.
+
+- [SSL/TLS for Azure Application Gateway](../workloads/appgateway.md)
+
+# Azure Key Vault with Azure Kubernetes Service
+
+You can use Azure Key Vault certificates with Azure Kubernetes Service.
+
+- [SSL/TLS for Azure Kubernetes Service](../workloads/aks.md)
 
 # Rate Limits
 
