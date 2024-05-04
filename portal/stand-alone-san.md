@@ -6,7 +6,7 @@ nav_order: 3
 ---
 
 # SAN Certificates - Stand Alone
-**V7.0.0**
+**V7.1.0**
 
 A Subject Alternative Name (SAN) SSL/TLS certificate will contain multiple domains in a single certificate.
 
@@ -113,7 +113,7 @@ Perform the same steps for the second validation file.
 
 ![image](../images/portal/stand-alone-san-http-validation2.PNG)
 
-**Note:** - for sites hosted in Azure App Service in a Windows Server, or the site is hosted in IIS, extension-less files are not served by default. To solve, this add the following ``web.config`` file to the ``acme-challenge`` folder.
+**Note:** - for sites hosted in IIS, extension-less files are not served by default. To solve, this add the following ``web.config`` file to the ``acme-challenge`` folder.
 
 ```
 <configuration>

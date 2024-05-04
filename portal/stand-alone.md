@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 # Creating Stand Alone SSL/TLS Certificates
-**V7.0.0**
+**V7.1.0**
 
 In the RCL SSL Portal, you can create Stand Alone single-domain SSL/TLS certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
 
