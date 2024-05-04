@@ -18,13 +18,14 @@ Wild card certificates (eg: *.mydomain.com) are supported with the DNS challenge
 
 ## AAD Accounts
 
-**Personal and Microsoft Accounts are not supported for Azure App Service. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.**
+{: .warning }
+Personal and Microsoft Accounts are not supported for Azure App Service. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
 
 If you try to manage an Azure App service with a MSA account you will get the following error.
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL SSL Portal with a Personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
 
 - [Sign-In Accounts for RCL SSL Portal](../authorization/sign-in-accounts)
 
@@ -74,7 +75,7 @@ Wildcard subdomains (e.g. *.contoso.net) are **NOT Supported** with the HTTP-01 
 Normally, the HTTP validation is performed automatically and you are not required to make any configuration changes to your app service. 
 
 {: .information }
-> Only perform the following steps if the HTTP validation fails
+Only perform the following steps if the HTTP validation fails
 
 If the HTTP validation should fail, the following recommendations may resolve the situation :
 
@@ -146,9 +147,9 @@ If you bought your domain with a domain registrar, you must set up your Azure DN
 
 ![image](../images/portal/dns-zone-setup.png)
 
-Follow the instructions in the link below to set up your DNS Zone and delegate the name server (NS) records for your domain :
+Follow the instructions in the link below to set up your Azure DNS Zone and delegate the name server (NS) records for your domain :
 
-- [Delegate DNS Zone](https://docs.microsoft.com/bs-latn-ba/azure/dns/dns-delegate-domain-azure-dns)
+- [Delegate Azure DNS Zone](https://docs.microsoft.com/bs-latn-ba/azure/dns/dns-delegate-domain-azure-dns)
 
 # Create SSL/TLS Certificate
 

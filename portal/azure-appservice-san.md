@@ -20,7 +20,8 @@ SAN certificates only allow a single domain. For instance, the two different dom
 
 ## AAD Accounts
 
-**Personal and Microsoft Accounts are not supported for Azure App Service. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.**
+{: .warning }
+Personal and Microsoft Accounts are not supported for Azure App Service. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
 
 If you try to manage an Azure App service with a MSA account you will get the following error.
 
@@ -82,9 +83,9 @@ If you bought your domain with a domain registrar, you must set up your Azure DN
 
 ![image](../images/portal/dns-zone-setup.png)
 
-Follow the instructions in the link below to set up your DNS Zone and delegate the name server (NS) records for your domain :
+Follow the instructions in the link below to set up your Azure DNS Zone and delegate the name server (NS) records for your domain :
 
-- [Delegate DNS Zone](https://docs.microsoft.com/bs-latn-ba/azure/dns/dns-delegate-domain-azure-dns)
+- [Delegate Azure DNS Zone](https://docs.microsoft.com/bs-latn-ba/azure/dns/dns-delegate-domain-azure-dns)
 
 # Create SSL/TLS Certificate
 
