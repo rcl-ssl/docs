@@ -6,7 +6,7 @@ nav_order: 5
 ---
 
 # Installing TLS/SSL Certificates in IIS
-**V7.0.0**
+**V7.1.0**
 
 This article assumes that you have experience with IIS.
 
@@ -60,7 +60,7 @@ Importing a PFX (PKCS12) file into Windows IIS is generally a straight-forward p
 
 - Step 16 : Close the MMC console. It is not necessary to save any changes that you have made to the MMC console.
 
-The SSL Certificate, Private Key and any Intermediate Certificates should now be imported into your hosting machine in the certificates store. You must now follow the instructions below to bind your SSL Certificate to your website.
+The SSL Certificate, Private Key and any Intermediate Certificates should now be imported into your hosting machine in the "Personal" certificates store. You must now follow the instructions below to bind your SSL Certificate to your website.
 
 # How To Bind A SSL Certificate In IIS
 

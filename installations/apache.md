@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 # Installing TLS/SSL Certificates in Apache Server
-**V7.0.0**
+**V7.1.0**
 
 This article assumes that you have experience with Apache 2 and configuring Virtual Hosts in Linux or Windows.
 
@@ -40,7 +40,7 @@ Download the file to a folder in the hosting machine
 
 ## Get the Certificate Files Automatically
 
-You can also use the [RCL SSL HTTP AutoRenew](../httpautorenew/httpautorenew.md) or [RCL CertificateBot](../certbot/certbot.md) to automatically renew and download the files required to install the SSL/TLS certificate in the Apache web server. 
+You can also use the [RCL SSL HTTP AutoRenew](../httpautorenew/httpautorenew.md) or [RCL SSL DNS AutoRenew](../dnsautorenew/dnsautorenew.md) to automatically renew and download the files required to install the SSL/TLS certificate in the Apache web server. 
 
 The SSL/TLS certificate files will be stored at the path you specified in the ``appsettings.json`` configuration file. 
 

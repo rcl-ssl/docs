@@ -6,9 +6,9 @@ nav_order: 1
 ---
 
 # Installing SSL/TLS Certificates in Web Servers and Hosting Systems
-**V6.0.10**
+**7.1.0**
 
-In this section, we will discuss a general approach to installing SSL/TLS certificates in web servers or web hosting systems. This is applicable if you host your website in a web server in a Windows or Linux Server (Virtual Machine). This may also be applicable if you host your website with a hosting provider or system.
+In this section, we will discuss a general approach to installing SSL/TLS certificates in web servers or web hosting systems. This is applicable if you host your website in a web server in a Windows or Linux Server. This may also be applicable if you host your website with a hosting provider or system.
 
 ## General Approach
 
@@ -31,7 +31,8 @@ Web Servers or Hosting Systems may need one or more of the following certificate
 
 - **PKCS#12** (.pfx or .p12) - this is a single file that contains the primary certificate and intermediate certificate files. It also contains the private key and may also be password protected. This is an archive file and uses the '.pfx' or '.p12' file extension.
 
-**All of the above certificate files are provided in the RCL portal in the 'Details' page for the Certificate.**
+{: .information }
+All of the above certificate files are provided in the RCL SSL Portal in the 'Details' page for the Certificate.
 
 ## Installing the Certificate Files
 
@@ -45,6 +46,10 @@ The .PFX certificate archive is usually 'extracted' and saved to a **Certificate
 ### Text 
 
 Some systems may allow you to paste the required certificate files as text. You will need to open each file in a text editor, copy the text and paste it into the system
+
+### Uploading Files
+
+Some systems may allow you to upload the required certificate files in the system. 
 
 ## Testing SSL/TLS
 

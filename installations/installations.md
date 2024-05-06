@@ -6,7 +6,7 @@ nav_order: 11
 ---
 
 # Certificate Installations
-**V6.0.10**
+**V7.1.0**
 
-In this section you will learn how to install TLS/SSL certificates in popular web servers.
+In this section you will learn how to install TLS/SSL certificates in popular web servers and hosting systems.
 
