@@ -31,7 +31,7 @@ The RCL SSL Portal is a simple-to-use online Web UI and allows you to :
 
 - Create [Single](../portal/stand-alone) and [Multi-Domain SAN](../portal/stand-alone-san) SSL/TLS certificates. You can download the certificates and manually install them in your web servers. It is ideal for web applications hosted in web servers (eg. Apache, Tomcat, NGINX, IIS, Express, etc.).
 
-- Automatically create and install SSL/TLS certificates in Microsoft Azure Services such as [Azure Key Vault](./portal/azure-keyvault.md) and [Azure App Services](./portal/azure-appservice.md).
+- Automatically create and install SSL/TLS certificates in Microsoft Azure Services such as [Azure Virtual Machines](./workloads/vm.md), [Azure Key Vault](./workloads/keyvault.md), [Azure Application Gateway](./workloads/appgateway.md) and [Azure App Services](./workloads/app-service.md).
 
 # The Other RCL Apps
 
