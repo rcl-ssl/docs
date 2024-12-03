@@ -5,22 +5,15 @@ parent: API
 nav_order: 2
 ---
 
-# Add a Client ID
-**V7.1.0**
+## Authorization
+**V8.0**
 
-## Add the Client Id in the RCL Portal
+You will use the Api Key to obtain authorized access to API resources.
 
-A user must add the **Client Id** in the **RCL Portal** in order to associate the AAD application with the user's RCL subscription.
+## Create an Api Key
 
-- Open the **RCL Portal**
+- In the [RCL SSL Portal](../portal/portal.md) side menu, click on **Subscription > API Key**
 
-- In the 'Subscription' section, click on 'API Client', then click the 'Register a Client Id' button
+- In the ``API Key`` page, you can view the API Key
 
-![install](../images/api_authorization/client_id.PNG)
-
-- Add the **Client Id** for the AAD application. (To obtain the Client Id from the AAD application, please refer to : [Get the AAD Application Credentials](../authorization/aad-application#get-the-aad-application-credentials)
-
-![install](../images/api_authorization/client_id2.PNG)
-
-- Click the 'Submit' button when you are done.
-
+![image](../images/api_authorization/api-key.png)
