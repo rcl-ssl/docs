@@ -10,7 +10,7 @@ nav_order: 2
 
 You will use the Api Key to obtain authorized access to API resources.
 
-## Create an Api Key
+## Get the Api Key
 
 - In the [RCL SSL Portal](../portal/portal.md) side menu, click on **Subscription > API Key**
 
