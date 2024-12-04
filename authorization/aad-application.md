@@ -5,19 +5,19 @@ parent: Authorization
 nav_order: 4
 ---
 
-## Register an AAD Application
-**V7.1.0**
+## Register a Microsoft Entra (formerly AAD) Application
+**V8.0**
 
-**Authorization** is required for the following operations :
+**Azure Authorization** is required for the following operations :
 
-- to access Key Vault, DNS Zone and App Service in a user's Azure Subscription
+- to access Azure resources such as Key Vault, DNS Zone and App Service in a user's Azure Subscription
 - to use the [RCL SSL AutoRenew](../autorenew/autorenew) Function app
 - to use the [RCL SSL DNS AutoRenew](../dnsautorenew/dnsautorenew.md) app
 
 
- This authorization will be granted through an **AAD Application**.
+ This authorization will be granted through an **Application**.
 
-- In your **Azure Active Directory (AAD)** tenant, add a new 'App registration'
+- In your **Microsoft Entra ID** tenant in Azure, add a new 'App registration'
 
 ![install](../images/authorization_aad_app/create.PNG)
 
@@ -27,18 +27,18 @@ nav_order: 4
 
 - Click the 'Register' button 
 
-## Get the AAD Application Credentials
+## Get the Application Credentials
 
-In this section, the following credentials will be obtained from the AAD application :
+In this section, the following credentials will be obtained from the application :
 
     - Client ID (Application ID)
     - Tenant ID (Directory ID)
     - Client Secret
     
 
-- In the Active Directory, open the application that was registered
+- In Microsoft Entra ID, open the application that was registered
 
-- Copy the **Application (client) ID** [Auth:client_id] and **Directory (tenant) ID** [Auth:tenantId] for configuration purposes
+- Copy the **Application (client) ID** [Auth:clientId] and **Directory (tenant) ID** [Auth:tenantId] for configuration purposes
 
 ![install](../images/authorization_aad_app/aad_app.PNG)
 
@@ -48,12 +48,6 @@ In this section, the following credentials will be obtained from the AAD applica
 
 ![install](../images/authorization_aad_app/aad_app3.PNG)
 
-- Copy the Client Secret **Value** [Auth:client_secret] for configuration purposes  
+- Copy the Client Secret **Value** [Auth:clientSecret] for configuration purposes  
 
 ![install](../images/authorization_aad_app/aad_app4.PNG)
-
-
-## Related Articles
-- [Set Access Control for the AAD application](./access-control-app)
-- [RCL SSL AutoRenew Function](../autorenew/autorenew.md)
-- [RCL SSL CertificateBot](../certbot/certbot.md)

@@ -28,7 +28,7 @@ You must include the API Key in the authorization header of a request as a **Bea
 
 The endpoint for making API requests is :
 
-- https://rclapi.azure-api.net/prod/v3
+- https://rclapi.azure-api.net
 
 ## Subscription
 
@@ -43,7 +43,7 @@ You will first need to create a certificate order before you can create a certif
 Send a **POST** request to :
 
 ```bash
-/ssl/certificate/subscription/{your-subscription}/order/create
+/prod/v3/ssl/certificate/subscription/{your-subscription}/order/create
 ```
 
 Include a [Certificate object](./certificate-object.md) in the body of the request in jSON format. The following example shows the required fields for the object.
@@ -119,7 +119,7 @@ Once you complete the validation, you can now send a request to create a certifi
 Send a **POST** request to :
 
 ```bash
-ssl/certificate/subscription/{your-subscription}/schedule/create
+/prod/v3ssl/certificate/subscription/{your-subscription}/schedule/create
 ```
 
 Include a [Certificate object](./certificate-object.md) in the body of the request in jSON format. The following example shows the required fields for the object.

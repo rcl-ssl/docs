@@ -8,7 +8,7 @@ nav_order: 3
 # Get a Certificate
 **V8.0**
 
-In this section, you will learn how to order and get a certificate by its name.
+In this section, you will learn how to get a certificate by its name.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ You must include the API Key in the authorization header of a request as a **Bea
 
 The endpoint for making API requests is :
 
-- https://rclapi.azure-api.net/prod/v3
+- https://rclapi.azure-api.net
 
 ## Subscription
 
@@ -41,7 +41,7 @@ To make a request to the API, you must use your subscription. You can obtain the
 Send a **GET** request to :
 
 ```bash
-ssl/certificate/subscription/{your-subscription}/get/certificatename/{your-certificate-name}
+/prod/v3/ssl/certificate/subscription/{your-subscription}/get/certificatename/{your-certificate-name}
 ```
 
 ### Example Request

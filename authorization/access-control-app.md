@@ -1,14 +1,14 @@
 ﻿---
-title: Access Control - AAD App
-description: Learn how to set Access Control for an Azure Active Directory application for use in RCL applications
+title: Access Control - App
+description: Learn how to set Access Control for a Microsoft Entra ID application for use in RCL applications
 parent: Authorization
 nav_order: 5
 ---
 
-## Set Access Control for the AAD application
-**V7.1.0**
+## Set Access Control for the Microsoft Entra ID (formerly AAD) application
+**V8.0**
 
-A user will need to provide **Access Control** to an [AAD Application](./aad-application) for the application to manage the user's Azure Services (Key Vault, DNS Zone and App Services) in a Subscription.
+A user will need to provide **Access Control** to an [Application](./aad-application) for the application to manage the user's Azure Services (Key Vault, DNS Zone and App Services) in a Subscription.
 
 - Go to Azure **Subscriptions**, and open the subscription that contains your Azure Key Vault, DNS Zone, App Services, etc.
 
@@ -24,7 +24,7 @@ A user will need to provide **Access Control** to an [AAD Application](./aad-app
 
 - Assign access to : 'User, groups or service principal' and click the 'Select members' link
 
-- Search for the AAD App that was registered and select it. (If you did not register an AAD app previously, please follow the instruction in this link : [Registering an AAD Application](../authorization/aad-application))
+- Search for the Microsoft Entra ID App that was registered and select it. (If you did not register an app previously, please follow the instruction in this link : [Registering an Application](../authorization/aad-application))
 
 
 ![install](../images/authorization_access_control/add_role3.PNG)
@@ -59,7 +59,7 @@ This step is not required, if SSL/TLS certificates are not being created for Key
 
 - Click the 'Next' button when you are done
 
-- Select a service principal : search for the Azure Active Directory application you use created previously
+- Select a service principal : search for the Microsoft Entra ID application you use created previously
 
 ![install](../images/authorization_access_control/key_vault3.PNG)
 
@@ -72,8 +72,3 @@ This step is not required, if SSL/TLS certificates are not being created for Key
 - The newly added access policy will be displayed
 
 ![image](../images/portal/certificate-keyvault-access-policy-add.png)
-
-## Related Articles
-
-- [AAD Application](../authorization/aad-application.md)
-- [RCL SSL AutoRenew Function](../autorenew/autorenew.md)

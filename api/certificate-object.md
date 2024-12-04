@@ -17,11 +17,13 @@ The certificate object is used to make requests to the RCL SSL API.
 | password            | string    | Set a password for the certificate                 | sgrtd$qwdd56  |
 | target              | string    | The certificate type <sup>3</sup>                  | Stand ALone   |
 | isSAN               | bool      | Whether the certificate is a SAN certificate       | false         |
-| orderUri            | string    | The URI to get details of an certificate order     | https:.../acme/order/135/2101         |
+| orderUri            | string    | The URI to get details of an certificate order     | https:./acme  |
 | subscriptionId      | int       | The id of the subscription that owns the certificate| 71           |
-| tokens          | List of ValidationToken    | A list of tokens to complete the challenge      |     |
+| tokens          | List of [ValidationToken](#validationtoken-object)    | A list of tokens to complete the challenge      |     |
 | pfxString            | string    | The pfx certificate in string format                | MbRu7Evm..   |
-| certificateDownloadUrl | CertificateDownloadUrl    | An object that provides the url to download certificate and key|   |
+| certificateDownloadUrl | [CertificateDownloadUrl](#certificatedownloadurl-object)    | An object that provides the url to download certificate and key|   |
+| issueDate           | string    | The date the certificate was issued                 | 2024-12-03T23:52:13.4471564   |
+| expiryDate          | string    | The date the certificate will expire                | 2024-12-03T23:52:13.4471564   |
 
 Notes
 
