@@ -1,8 +1,8 @@
 ---
-title: Stand Alone
+title: Create Stand Alone
 description: API for ordering and creating a Stand Alone Certificate
 parent: API
-nav_order: 2
+nav_order: 4
 ---
 
 # Stand Alone Certificate
