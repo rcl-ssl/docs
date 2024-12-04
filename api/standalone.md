@@ -8,14 +8,14 @@ nav_order: 2
 # Stand Alone Certificate
 **V8.0**
 
-In this section, you will learn how to order and create a [Stand Alone Certificate](/portal/stand-alone.md) (including [SAN](/portal/stand-alone-san.md)) using the [RCL SSL API](api.md).
+In this section, you will learn how to order and create a [Stand Alone Certificate](../portal/stand-alone.md) (including [SAN](../portal/stand-alone-san.md)) using the [RCL SSL API](./api.md).
 
 ## Prerequisites
 
 Before you can use the API you must first :
 
 - Obtain an [API Key](./authorization.md)
-- Create the [CSR Information](/portal/csr-info.md)
+- Create the [CSR Information](../portal/csr-info.md)
 
 ## Authorization
 
@@ -46,14 +46,14 @@ Send a **POST** request to :
 /ssl/certificate/subscription/{your-subscription}/order/create
 ```
 
-Include a [Certificate object](./certificate-object.md) in the body of the request in jSON format. The following example shows the required fields required for the object.
+Include a [Certificate object](./certificate-object.md) in the body of the request in jSON format. The following example shows the required fields for the object.
 
 ```json
 {
     "certificateName" : "shopeneur.com",
     "rootDomain" : "shopeneur.com",
     "challengeType" : "dns",
-    "email" : "rcl@rclapp.com",
+    "email" : "rcl@mail.com",
     "password" : "password123",
     "target": "Stand ALone",
     "isSAN": false
@@ -108,10 +108,10 @@ Content-Length: 229
 Once an order is created for a certificate, you will need to validate that you own or control the domain that 
 you are requesting the certificate for.
 
-To [validate the http challenge](/portal/stand-alone.md#completing-the-http-challenge) you will need to place 
+To [validate the http challenge](../portal/stand-alone.md#completing-the-http-challenge) you will need to place 
 a file at the root of your website.
 
-To [validate the dns challenge](/portal/stand-alone.md#completing-the-dns-challenge) you will need to add 
+To [validate the dns challenge](../portal/stand-alone.md#completing-the-dns-challenge) you will need to add 
 a TXT record in your DNS Registrar.
 
 Once you complete the validation, you can now send a request to create a certificate.
@@ -122,7 +122,7 @@ Send a **POST** request to :
 ssl/certificate/subscription/{your-subscription}/schedule/create
 ```
 
-Include a [Certificate object](./certificate-object.md) in the body of the request in jSON format. The following example shows the required fields required for the object.
+Include a [Certificate object](./certificate-object.md) in the body of the request in jSON format. The following example shows the required fields for the object.
 
 ```json
 {
@@ -160,7 +160,7 @@ Content-Length: 296
     "orderUri":"https://acme-staging-v02.api.letsencrypt.org/acme/order/135518893/20709585374"
 }
 ```
-After you make the post request, and ```200 OK``` response will be returned. 
+After you make the post request, a ```200 OK``` response will be returned. 
 
 ### Example Response
 
@@ -169,7 +169,7 @@ After you make the post request, and ```200 OK``` response will be returned.
 ```
 
 Your certificate will then be scheduled for creation at a later time. During this process, your domain will be validated based on the challenge you completed.
-Once the domain is validated your certificate will be created.
+Once the domain is validated, your certificate will be created.
 
 You can access your new certificate using the [RCL SSL API](TODO)
 

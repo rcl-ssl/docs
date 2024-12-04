@@ -17,9 +17,9 @@ The certificate object is used to make requests to the RCL SSL API.
 | password            | string    | Set a password for the certificate                 | sgrtd$qwdd56  |
 | target              | string    | The certificate type <sup>3</sup>                  | Stand ALone   |
 | isSAN               | bool      | Whether the certificate is a SAN certificate       | false         |
-| orderUri            | string    | The URI to get details of an certificate order     | https:.../acme/order/135518893/21015889444         |
-| subscriptionId      | int       | The id of the subscription that owns the certificate| false         |
-| tokens          | List<ValidationToken>    | The root domain for the hostname <sup>1</sup>      | contoso.com   |
+| orderUri            | string    | The URI to get details of an certificate order     | https:.../acme/order/135/2101         |
+| subscriptionId      | int       | The id of the subscription that owns the certificate| 71           |
+| tokens          | List of ValidationToken    | A list of tokens to complete the challenge      |     |
 
 Notes
 
