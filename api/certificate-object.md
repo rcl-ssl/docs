@@ -24,6 +24,9 @@ The certificate object is used to make requests to the RCL SSL API.
 | certificateDownloadUrl | [CertificateDownloadUrl](#certificatedownloadurl-object)    | An object that provides the url to download certificate and key|   |
 | issueDate           | string    | The date the certificate was issued                 | 2024-12-03T23:52:13.4471564   |
 | expiryDate          | string    | The date the certificate will expire                | 2024-12-03T23:52:13.4471564   |
+| azureSubscriptionId | string    | The Azure Subscription Id that contains your resources (eg. DNS Zone)| 650085hg4... |
+| accessToken         | string    | An Azure Access Token to access resources in your Azure subscription| eyJ0eXAiOiJKV1... |
+| dnsZoneResourceGroup| string    | The Azure Resource Group that contains your Azure DNS Zone| myRG |
 
 Notes
 

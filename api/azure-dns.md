@@ -2,17 +2,17 @@
 title: Create Azure DNS
 description: API for ordering and creating an Azure DNS Certificate
 parent: API
-nav_order: 4
+nav_order: 5
 ---
 
 # Azure DNS Certificate
 **V8.0**
 
-In this section, you will learn how to create a [Certificate using Azure DNS](../portal/azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) using the [RCL SSL API](./api.md).
+In this section, you will learn how to create a [Certificate using Azure DNS](../portal/azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) with the [RCL SSL API](./api.md).
 
 ## Prerequisites
 
-Before you can use the API you must first :
+Before you can use the API, you must first :
 
 - Obtain an [API Key](./authorization.md)
 - Create the [CSR Information](../portal/csr-info.md)
@@ -39,7 +39,7 @@ To make a request to the API, you must use your subscription. You can obtain the
 
 To access resources in your Azure account (eg. DNS Zone, Subscription, etc) , you must get an Azure Access Token.
 
-Register a [Microsoft Entra ID Application ](../authorization/aad-application.md) . Obtain the following credentials from the application :
+Register a [Microsoft Entra ID Application ](../authorization/aad-application.md) and obtain the following credentials from the application :
 
 ```bash
 - Client ID (Application ID)
@@ -50,11 +50,13 @@ Register a [Microsoft Entra ID Application ](../authorization/aad-application.md
 Set [Access Control](../authorization/access-control-app.md) for your application to your Azure Subscription that contains
 your Azure resources (eg. DNS Zone, etc)
 
-To obtain an access token, send a **POST** request to Microsoft endpoint :
+To obtain an access token, send a **POST** request to the Microsoft endpoint :
 
+```bash
 https://login.microsoftonline.com/{your-tenantid}/oauth2/token
+```
 
-Include your credentials in the body of your request as a x-www-form-urlencoded
+Include your credentials in the body of your request as x-www-form-urlencoded
 
 ```bash
 client_id={your-client-id}&resource=https://management.core.windows.net&client_secret={your-client-secret}&grant_type=client_credentials
@@ -89,7 +91,7 @@ You can now obtain the access token from the 'access_token' property in the resp
 
 ## Create a Certificate
 
-To create a certificate, send a **POST** request to :
+To create a certificate using RCL SSL API, send a **POST** request to :
 
 ```bash
 /prod/v3ssl/certificate/subscription/{your-subscription}/schedule/create
