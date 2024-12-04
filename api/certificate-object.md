@@ -20,6 +20,8 @@ The certificate object is used to make requests to the RCL SSL API.
 | orderUri            | string    | The URI to get details of an certificate order     | https:.../acme/order/135/2101         |
 | subscriptionId      | int       | The id of the subscription that owns the certificate| 71           |
 | tokens          | List of ValidationToken    | A list of tokens to complete the challenge      |     |
+| pfxString            | string    | The pfx certificate in string format                | MbRu7Evm..   |
+| certificateDownloadUrl | CertificateDownloadUrl    | An object that provides the url to download certificate and key|   |
 
 Notes
 
@@ -33,9 +35,25 @@ Notes
 
 The validation token object contains the token name and value to complete a 'http' or 'dns' challenge.
 
-| Property            | Data Type | Description                                        |Example|
+| Property            | Data Type | Description                                        |Example            |
 | ------------------- | --------- |----------------------------------------------------|-------------------|
 | tokenName           | string    | The name of the token                              | _acme-challenge   |
 | tokenValue          | string    | The token value                                    | iuH5jstOQLXk2hGs  |
 | challengeType       | string    | The challenge type, eg 'dns' or 'http'             | dns               |
 
+# CertificateDownloadUrl Object
+
+The certificate download url object will provide links to the certificate and its keys in various formats
+
+| Property            | Data Type | Description                                         |Example           |
+| ------------------- | --------- |-----------------------------------------------------|------------------|
+| pemUrl              | string    | The url to download the certificate in 'pem' format | "https://...rf   |
+| pfxUrl              | string    | The url to download the certificate in 'pfx' format | "https://...rf   |
+| cerUrl              | string    | The url to download the certificate in 'cer' format | "https://...rf   |
+| crtUrl              | string    | The url to download the certificate in 'crt' format | "https://...rf   |
+| txtUrl              | string    | The url to download the certificate in 'txt' format | "https://...rf   |
+| keyUrl              | string    | The url to download the private key in 'key' format | "https://...rf   |
+| keyTxtUrl           | string    | The url to download the private key in 'txt' format | "https://...rf   |
+| certCrtUrl          | string    | The url to download the primary certificate in 'crt' format | "https://...rf   |
+| cabundleCrtUrl      | string    | The url to download the intermediate certificates in 'crt' format | "https://...rf|
+| fullchainCrtUrl     | string    | The url to download the full chain certificate in 'crt' format | "https://...rf   |

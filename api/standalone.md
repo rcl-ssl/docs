@@ -171,13 +171,4 @@ After you make the post request, a ```200 OK``` response will be returned.
 Your certificate will then be scheduled for creation at a later time. During this process, your domain will be validated based on the challenge you completed.
 Once the domain is validated, your certificate will be created.
 
-You can access your new certificate using the [RCL SSL API](TODO)
-
-
-
-
-
-
-
-
-
+You can access your new certificate using the [Get Certificate API](get-certificate.md)
