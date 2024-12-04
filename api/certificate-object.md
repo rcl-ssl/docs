@@ -6,6 +6,7 @@ nav_order: 10
 ---
 
 # Certificate Object
+**V8.0**
 
 The certificate object is used to make requests to the RCL SSL API.
 
@@ -27,6 +28,7 @@ The certificate object is used to make requests to the RCL SSL API.
 | azureSubscriptionId | string    | The Azure Subscription Id that contains your resources (eg. DNS Zone)| 650085hg4... |
 | accessToken         | string    | An Azure Access Token to access resources in your Azure subscription| eyJ0eXAiOiJKV1... |
 | dnsZoneResourceGroup| string    | The Azure Resource Group that contains your Azure DNS Zone| myRG |
+| keyVaultName| string    | The name of your Azure Key Vault| mykeyvault |
 
 Notes
 

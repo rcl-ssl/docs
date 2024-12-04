@@ -1,14 +1,14 @@
 ---
-title: Create Azure DNS
-description: API for creating a certificate using and Azure DNS Zone
+title: Create Azure Key Vault
+description: API for creating a Certificate using an Azure DNS Zone and storing it in Azure Key Vault
 parent: API
-nav_order: 5
+nav_order: 6
 ---
 
-# Azure DNS Certificate
+# Azure Key Vault + DNS Certificate
 **V8.0**
 
-In this section, you will learn how to create a [Certificate using an Azure DNS Zone](../portal/azure-dns.md) (including [SAN](../portal/azure-dns-san.md)) with the [RCL SSL API](./api.md).
+In this section, you will learn how to create a [Certificate using an Azure DNS Zone](../portal/azure-keyvault.md) (including [SAN](../portal/azure-keyvault-san.md)) and store the certificate in Azure Key Vault with the [RCL SSL API](./api.md).
 
 ## Prerequisites
 
@@ -50,7 +50,11 @@ Register a [Microsoft Entra ID Application ](../authorization/aad-application.md
 Set [Access Control](../authorization/access-control-app.md) for your application to access your Azure Subscription that contains
 your Azure resources (eg. DNS Zone, etc)
 
-To obtain an access token, send a **POST** request to the Microsoft endpoint :
+Set [Access Control for Key Vault](../authorization/access-control-app.md#access-policies-for-key-vault) for your application to access your Key Vault
+
+### Access Token for Azure Resources
+
+To obtain an access token for azure resources (eg. Azure DNS Zone, etc), send a **POST** request to the Microsoft endpoint :
 
 ```bash
 https://login.microsoftonline.com/{your-tenantid}/oauth2/token
@@ -60,6 +64,11 @@ Include your credentials in the body of your request as x-www-form-urlencoded
 
 ```bash
 client_id={your-client-id}&resource=https://management.core.windows.net&client_secret={your-client-secret}&grant_type=client_credentials
+```
+Use the resource as :
+
+```bash
+https://management.core.windows.net
 ```
 
 ### Example Request
@@ -83,11 +92,58 @@ client_id=gjj5ng9-64yhd-laogr-yt45-bjfhatrn45&resource=https://management.core.w
     "expires_on": "1733332372",
     "not_before": "1733328472",
     "resource": "00000002-0000-0000-c000-000000000000",
-    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Inp4ZWcyV09OcFRrd041R21lWWN1VGR0QzZKMCIsImtpZCI6Inp4ZWcyV09OcFRrd041R21lWWN1VGR0QzZKMCJ9.eyJhdWQiOiIwMDAwMDAwMi0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczo"
+    "access_token": "eyJ0eXAiOiJK......"
 }
 ```
 
 You can now obtain the access token from the 'access_token' property in the response.
+
+### Access Token for Azure Key Vault
+
+To obtain an access token for Azure Key Vault, send a **POST** request to the Microsoft endpoint :
+
+```bash
+https://login.microsoftonline.com/{your-tenantid}/oauth2/token
+```
+
+Include your credentials in the body of your request as x-www-form-urlencoded
+
+```bash
+client_id={your-client-id}&resource=https://vault.azure.net&client_secret={your-client-secret}&grant_type=client_credentials
+```
+
+Use the resource as :
+
+```bash
+https://vault.azure.net
+```
+
+### Example Request
+
+```bash
+POST /547599-bc546-6574-hgf5-rtb-57ls8548hr/oauth2/token HTTP/1.1
+Host: login.microsoftonline.com
+Content-Type: application/x-www-form-urlencoded
+
+client_id=gjj5ng9-64yhd-laogr-yt45-bjfhatrn45&resource=https://management.core.windows.net&client_secret=djfFrD~7tyHFDSmf_jdfvepgn_hhdbrgr3uHSvd&grant_type=client_credentials
+
+```
+
+### Example Response
+
+```json
+{
+    "token_type": "Bearer",
+    "expires_in": "3599",
+    "ext_expires_in": "3599",
+    "expires_on": "1733332372",
+    "not_before": "1733328472",
+    "resource": "00000002-0000-0000-c000-000000000000",
+    "access_token": "eyJ0eXAiOiJKV1QiL...."
+}
+```
+
+You can now obtain the access token for Azure Key Vault from the 'access_token' property in the response.
 
 ## Create a Certificate
 
@@ -106,11 +162,13 @@ Include a [Certificate object](./certificate-object.md) in the body of the reque
     "challengeType" : "dns",
     "email" : "rcl@mail.com",
     "password" : "password123",
-    "target": "Azure DNS",
+    "target": "Azure Key Vault + DNS",
     "isSAN": false,
-    "azureSubscriptionId": "650085hg4-y6u4-875yh-63hs-hfhg73djgrnd",
-    "accessToken": "eyJ0eXAiOiJKV1QiLCJhb...",
-    "dnsZoneResourceGroup": "shopeneurRG"
+    "azureSubscriptionId": "650085hg4-y6u4-875yh-63..",
+    "accessToken": "eyJ0eXAiOi....",
+    "accessTokenKeyVault":"eyJ0eXAiOiJ5_XjLDJH48VfF7...",
+    "dnsZoneResourceGroup": "shopeneurRG",
+    "keyVaultName":"rclkeyvault"
 }
 ```
 ### Example Request
@@ -120,7 +178,7 @@ POST /prod/v3/ssl/certificate/subscription/subscr-0000/schedule/create HTTP/1.1
 Host: rclapi.azure-api.net
 Content-Type: application/json
 Authorization: Bearer resdfre-t435-dkjh-5re6
-Content-Length: 1689
+Content-Length: 3099
 
 {
     "certificateName" : "shopeneur.com",
@@ -128,11 +186,13 @@ Content-Length: 1689
     "challengeType" : "dns",
     "email" : "rcl@mail.com",
     "password" : "password123",
-    "target": "Azure DNS",
+    "target": "Azure Key Vault + DNS",
     "isSAN": false,
-    "azureSubscriptionId": "650085hg4-y6u4-875yh-63hs-hfhg73djgrnd",
-    "accessToken": "eyJ0eXAiOiJKV1QiLCJ....",
-    "dnsZoneResourceGroup": "shopeneurRG"
+    "azureSubscriptionId": "650085hg4-y6u4-875yh-63h...",
+    "accessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOi...",
+    "accessTokenKeyVault":"eyJ0eXAiOiJKV1QiLC...",
+    "dnsZoneResourceGroup": "shopeneurRG",
+    "keyVaultName":"rclkeyvault"
 }
 ```
 
