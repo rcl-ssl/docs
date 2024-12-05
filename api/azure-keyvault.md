@@ -1,5 +1,5 @@
 ---
-title: Create Azure Key Vault
+title: Azure Key Vault
 description: API for creating a Certificate using an Azure DNS Zone and storing it in Azure Key Vault
 parent: API
 nav_order: 6
@@ -206,4 +206,5 @@ After you make the post request, a ```200 OK``` response will be returned.
 
 Your certificate will then be scheduled for creation at a later time. 
 
-After a few minutes, you can access your new certificate using the [Get Certificate API](get-certificate.md)
+After a few minutes, you can access your new certificate using the [Get Certificate API](get-certificate.md) . 
+Check your Azure Key Vault to ensure your certificate was successfully saved in the certificates section.

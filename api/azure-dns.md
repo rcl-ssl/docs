@@ -1,5 +1,5 @@
 ---
-title: Create Azure DNS
+title: Azure DNS
 description: API for creating a certificate using and Azure DNS Zone
 parent: API
 nav_order: 5

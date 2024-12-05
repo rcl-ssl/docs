@@ -29,6 +29,11 @@ The certificate object is used to make requests to the RCL SSL API.
 | accessToken         | string    | An Azure Access Token to access resources in your Azure subscription| eyJ0eXAiOiJKV1... |
 | dnsZoneResourceGroup| string    | The Azure Resource Group that contains your Azure DNS Zone| myRG |
 | keyVaultName| string    | The name of your Azure Key Vault| mykeyvault |
+| azureAppServicePlanResourceGroup| string    | The Azure Resource Group that contains your App Service Plan| aspRG |
+| azureAppServicePlanName| string    | The name of your App Service Plan| standardASP |
+| azureAppServiceResourceGroup| string    | The Azure Resource Group that contains your App Service |webRG |
+| azureAppServiceName| string    | The name of your App Service |shopeneur |
+| azureAppServiceSlotName| string    | The name of the slot (if any) for your App Service |dev |
 
 Notes
 
