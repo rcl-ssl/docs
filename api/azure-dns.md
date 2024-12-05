@@ -148,12 +148,12 @@ Your certificate will be scheduled for creation at a later time.
 
 After a few minutes, you can access your new certificate using the [Get Certificate API](get-certificate.md)
 
-## Update a Certificate about to Expire
+## Renew a Certificate about to Expire
 
 To update a certificate about to expire, send a **POST** request to :
 
 ```bash
-/prod/v3/ssl/certificate/subscription/{your-subscription}/schedule/update
+/prod/v3/ssl/certificate/subscription/{your-subscription}/schedule/renew
 ```
 
 Include a [Certificate object](./certificate-object.md) in the body of the request in jSON format. The following example shows the required fields for the object.
@@ -168,7 +168,7 @@ Include a [Certificate object](./certificate-object.md) in the body of the reque
 ### Sample Request
 
 ```bash
-POST /prod/v3/ssl/certificate/subscription/subscr-0000/schedule/update HTTP/1.1
+POST /prod/v3/ssl/certificate/subscription/subscr-0000/schedule/renew HTTP/1.1
 Host: rclapi.azure-api.net
 Content-Type: application/json
 Authorization: Bearer resdfre-t435-dkjh-5re6
