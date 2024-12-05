@@ -27,6 +27,7 @@ The certificate object is used to make requests to the RCL SSL API.
 | expiryDate          | string    | The date the certificate will expire                | 2024-12-03T23:52:13.4471564   |
 | azureSubscriptionId | string    | The Azure Subscription Id that contains your resources (eg. DNS Zone)| 650085hg4... |
 | accessToken         | string    | An Azure Access Token to access resources in your Azure subscription| eyJ0eXAiOiJKV1... |
+| accessTokenKeyVault         | string    | An Azure Access Token to access your Azure Key Vault| eyJ0eXAiOiJKV1... |
 | dnsZoneResourceGroup| string    | The Azure Resource Group that contains your Azure DNS Zone| myRG |
 | keyVaultName| string    | The name of your Azure Key Vault| mykeyvault |
 | azureAppServicePlanResourceGroup| string    | The Azure Resource Group that contains your App Service Plan| aspRG |
