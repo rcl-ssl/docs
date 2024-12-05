@@ -150,7 +150,7 @@ After a few minutes, you can access your new certificate using the [Get Certific
 
 ## Renew a Certificate about to Expire
 
-To update a certificate about to expire, send a **POST** request to :
+To renew a certificate about to expire, send a **POST** request to :
 
 ```bash
 /prod/v3/ssl/certificate/subscription/{your-subscription}/schedule/renew

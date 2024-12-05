@@ -211,7 +211,7 @@ Check your Azure Key Vault to ensure your certificate was successfully saved in 
 
 ## Renew a Certificate about to Expire
 
-To update a certificate about to expire, send a **POST** request to :
+To renew a certificate about to expire, send a **POST** request to :
 
 ```bash
 /prod/v3/ssl/certificate/subscription/{your-subscription}/schedule/renew

@@ -253,7 +253,7 @@ You should check the App Service custom domain section to ensure the certificate
 
 ## Renew a Certificate about to Expire
 
-To update a certificate about to expire, send a **POST** request to :
+To renew a certificate about to expire, send a **POST** request to :
 
 ```bash
 /prod/v3/ssl/certificate/subscription/{your-subscription}/schedule/renew
