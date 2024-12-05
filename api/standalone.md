@@ -172,3 +172,13 @@ Your certificate will then be scheduled for creation at a later time. During thi
 Once the domain is validated, your certificate will be created.
 
 You can access your new certificate using the [Get Certificate API](get-certificate.md)
+
+## Error Handling
+
+Errors in the API will be returned as plain text in the body of a response, usually with a ```400 Bad Request```
+
+### Example Response
+
+```bash
+Certificate name is not defined.
+```

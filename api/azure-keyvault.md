@@ -204,7 +204,61 @@ After you make the post request, a ```200 OK``` response will be returned.
 200 OK
 ```
 
-Your certificate will then be scheduled for creation at a later time. 
+Your certificate will be scheduled for creation at a later time. 
 
 After a few minutes, you can access your new certificate using the [Get Certificate API](get-certificate.md) . 
 Check your Azure Key Vault to ensure your certificate was successfully saved in the certificates section.
+
+## Update a Certificate about to Expire
+
+To update a certificate about to expire, send a **POST** request to :
+
+```bash
+/prod/v3/ssl/certificate/subscription/{your-subscription}/schedule/update
+```
+
+Include a [Certificate object](./certificate-object.md) in the body of the request in jSON format. The following example shows the required fields for the object.
+
+```json
+{
+    "certificateName" : "shopeneur.com",
+    "accessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJS..."
+}
+```
+
+### Sample Request
+
+```bash
+POST /prod/v3/ssl/certificate/subscription/subscr-0000/schedule/update HTTP/1.1
+Host: rclapi.azure-api.net
+Content-Type: application/json
+Authorization: Bearer resdfre-t435-dkjh-5re6
+Content-Length: 1397
+
+{
+    "certificateName" : "shopeneur.com",
+    "accessToken": "eyJ0eXAiOiJK..."  
+}
+```
+
+After you make the post request, a ```200 OK``` response will be returned. 
+
+### Example Response
+
+```bash
+200 OK
+```
+Your certificate will be scheduled for update at a later time. 
+
+After a few minutes, you can access your updated certificate using the [Get Certificate API](get-certificate.md) .
+Check your Azure Key Vault to ensure your certificate was successfully saved in the certificates section.
+
+## Error Handling
+
+Errors in the API will be returned as plain text in the body of a response, usually with a ```400 Bad Request```
+
+### Example Response
+
+```bash
+Certificate name is not defined.
+```

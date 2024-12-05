@@ -83,4 +83,14 @@ Authorization: Bearer resdfre-t435-dkjh-5re6
 }
 ```
 
+## Error Handling
+
+Errors in the API will be returned as plain text in the body of a response, usually with a ```400 Bad Request```
+
+### Example Response
+
+```bash
+Certificate name is not defined.
+```
+
 
