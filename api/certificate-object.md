@@ -15,6 +15,7 @@ The certificate object is used to make requests to the RCL SSL API.
 | certificateName     | string    | The hostname you are requesting the certificate for| contoso.com   |
 | rootDomain          | string    | The root domain for the hostname <sup>1</sup>      | contoso.com   |
 | challengeType       | string    | The challenge type, either 'http' or 'dns' <sup>2</sup>          | dns           |
+| password            | string    | The email of the certificate owner                 | jdoe@mail.com |
 | password            | string    | Set a password for the certificate                 | sgrtd$qwdd56  |
 | target              | string    | The certificate type <sup>3</sup>                  | Stand ALone   |
 | isSAN               | bool      | Whether the certificate is a SAN certificate       | false         |
