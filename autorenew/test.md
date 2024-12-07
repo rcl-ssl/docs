@@ -55,6 +55,10 @@ https://func0ascqge.azurewebsites.net/api/certificate/schedule/renewal/manual/ce
 {: .information }
 The 'Certificate-Schedule-Renewal-Automatic' function will automatically run on a weekly basis and automatically renew certificates that are about to expire. There is no need to manually run the 'Certificate-Schedule-Renewal-Manual' function apart from manual testing.
 
+Ensure you add the certificates you want to automatically renew in the Environmental variable when you [Configure](configure.md#add-the-environment-variables) the function.
+
+The function will run once a week and automatically renew the certificates 14 days before the expiration date.
+
 
 
 
