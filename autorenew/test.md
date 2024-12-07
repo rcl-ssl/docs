@@ -20,7 +20,7 @@ In this section, you will learn how to test the RCL SSL AutoRenew function.
 
 - Switch to **Filesystem Logs** instead of **App Insights Logs**
 
-- Get the **function Url**
+- Get the **function Url** (default)
 
 ### Example Function URL with a function key
 
@@ -48,7 +48,7 @@ https://func0ascqge.azurewebsites.net/api/certificate/schedule/renewal/manual/ce
 
 - Please ensure that there are no errors in the log. If there are errors, the function is misconfigured and certificate renewal will fail.
 
-- Wait a few minutes and ensure check the RCL SSL Portal to see if the certificate was renewed.
+- Wait a few minutes and check the RCL SSL Portal to see if the certificate was renewed.
 
 ![install](../images/autorenew_test/func5.png)
 
