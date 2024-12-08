@@ -89,7 +89,7 @@ You can now obtain the access token from the 'access_token' property in the resp
 
 ## Create a Certificate using the HTTP challenge
 
-Before you use the API, ensure you [Take the necessary Precautions in your App Service](../portal/azure-appservice.md#http-validation-precautions) . In addition, you should can configured your [Custom Domain](../portal/azure-appservice.md#add-a-custom-domain-to-your-app-service) for your App Service.
+Before you use the API, ensure you [Take the necessary Precautions in your App Service](../portal/azure-appservice.md#http-validation-precautions) of you are using the HTTP Challenge type. In addition, you should configured your [Custom Domain](../portal/azure-appservice.md#add-a-custom-domain-to-your-app-service) for your App Service.
 
 To create a certificate using RCL SSL API, send a **POST** request to :
 
