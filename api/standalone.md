@@ -38,7 +38,7 @@ To make a request to the API, you must use your subscription. You can obtain the
 
 ## Create a Certificate Order
 
-You will first need to create a certificate order before you can create a certificate.
+You will first need to create a certificate order before you can create a Stand Alone certificate.
 
 Send a **POST** request to :
 
