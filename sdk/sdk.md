@@ -90,6 +90,7 @@ ConfigurationBuilder builder = new ConfigurationBuilder();
 builder.AddUserSecrets<TestProject>();
 IConfiguration configuration = builder.Build();
 
+// Add the service to the Dependency Injection (DI) container
 services.AddRCLSSLAPIService(options => configuration.Bind("RCLSSLAPI", options));
 
 ServiceProvider serviceProvider = services.BuildServiceProvider();
@@ -97,6 +98,7 @@ ServiceProvider serviceProvider = services.BuildServiceProvider();
 // Create an Order for a Stand ALone Certificate
 async Task<Certificate> CreateStandAloneOrderAsync()
 {
+    // Get the service directly from the DI container or use constructor injection in your platform (eg. ASP.NET Core)
     ICertificateService certificateService = (ICertificateService)serviceProvider.GetService(typeof(ICertificateService));
     
     Certificate certificate = new Certificate
