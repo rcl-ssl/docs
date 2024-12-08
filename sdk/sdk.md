@@ -75,7 +75,9 @@ Use the API Key and Subscription to configure the SDK :
 
 ## Create a Certificate Order for a Stand Alone Certificate
 
-You will first need to create a certificate order before you can create a Stand Alone certificate.
+You will first need to create a certificate order before you can create a Stand Alone certificate. 
+
+### Example Console Application
 
 ```csharp
 #nullable disable
@@ -117,13 +119,7 @@ async Task<Certificate> CreateStandAloneOrderAsync()
     return certificateOrder;
 }
 
-Certificate certificate =  await CreateStandAloneOrderAsync();
+// Run the method
+Certificate certificateOrder =  await CreateStandAloneOrderAsync();
 
 class TestProject { }
-```
-
-
-
-
-
-
