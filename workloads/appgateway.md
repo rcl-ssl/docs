@@ -7,7 +7,7 @@ nav_order: 3
 
 # SSL/TLS for Azure Application Gateway
 
-**V7.1.0**
+**V8.0**
 
 This workload allows for the **automatic creation, installation and renewal** of a SSL/TLS certificate for [Azure Application Gateway](https://learn.microsoft.com/en-us/azure/application-gateway/overview) using :
 

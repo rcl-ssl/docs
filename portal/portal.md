@@ -6,7 +6,7 @@ nav_order: 4
 ---
 
 # RCL SSL Portal
-**V7.1.0**
+**V8.0**
 
 The RCL SSL portal is a simple-to-use online Web UI application for creating SSL/TLS certificates. 
 

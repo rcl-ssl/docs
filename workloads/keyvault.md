@@ -7,7 +7,7 @@ nav_order: 7
 
 # SSL/TLS for Azure Key Vault
 
-**V7.1.0**
+**V8.0**
 
 This workload allows for the **automatic creation, installation and renewal** of a SSL/TLS certificate in an [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/).
 
@@ -24,7 +24,7 @@ This workload allows for the **automatic creation, installation and renewal** of
  
 # Manually Renewing a SSL/TLS Certificate
 
-- In the Certificate List, click on **Manage > Update**
+- In the Certificate List, click on **Manage > Renew**
 - Then update the certificate
 
 # Automatically Renewing a SSL/TLS Certificate

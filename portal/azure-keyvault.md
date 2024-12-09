@@ -6,28 +6,28 @@ nav_order: 8
 ---
 
 # Creating SSL/TLS Certificates for Azure Key Vault
-**V7.1.0**
+**V8.0**
 
 RCL SSL creates TLS/SSL certificates using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records) and automatically saves them to [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts).
 
 # Access Control
 
-## AAD Accounts
+## Organization Accounts
 
 {: .warning }
-Personal Microsoft Accounts (MSA) are not supported for Azure resources in a subscription. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
+Personal Microsoft Accounts (MSA) are not supported for Azure resources in a subscription. Only Microsoft Entra ID (formerly AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
 
 If you try to manage an Azure DNS / Key Vault with a MSA account you will get the following error.
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your RCL SSL subscription:
+If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an organization account to your RCL SSL subscription:
 
 - [Sign-In Accounts for RCL SSL Portal](../authorization/sign-in-accounts)
 
 ## Set Access Control
 
-To create certificates for Azure DNS / Key Vault, the Azure AAD organizational account that you use to login to RCL SSL Portal must either be :
+To create certificates for Azure DNS / Key Vault, the Azure organizational account that you use to login to RCL SSL Portal must either be :
 
 - Have a role of ‘Owner’ or ‘Contributor’ to the subscription containing the Azure DNS Zone(s) / Key Vault(s)
 
@@ -39,9 +39,9 @@ You may also experience an error message.
 
 ![image](../images/portal/access-control-errormsg.png)
 
-To set up access control for your AAD account, follow the instructions in the link below :
+To set up access control for your organization account, follow the instructions in the link below :
 
-- [Set Access Control for the AAD user](../authorization/access-control-user)
+- [Set Access Control for the organization user](../authorization/access-control-user)
 
 # Create a SSL/TLS Certificate using DNS-01
 
@@ -90,7 +90,7 @@ This access policy is required to import the SSL/TLS certificate in a Key Vault 
 
 - Click the 'Next' button when you are done
 
-- Select a service principal : search for the Azure Active Directory organizational user account that you use to login to the RCL SSL portal
+- Select a service principal : search for the organizational user account that you use to login to the RCL SSL portal
 
 ![image](../images/portal/certificate-keyvault-access-policy-sp.png)
 
@@ -142,7 +142,7 @@ Select the ‘Azure Key Vault’ option
 
 # Manually Renewing SSL/TLS Certificates
 
-SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the 'Manage' menu in the certificates list to update a certificate.
+SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Renew' link in the 'Manage' menu in the certificates list to update a certificate.
 
 ![image](../images/portal/azure-dns-update.PNG)
 

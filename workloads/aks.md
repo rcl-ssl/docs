@@ -7,7 +7,7 @@ nav_order: 6
 
 # SSL/TLS for Azure Kubernetes Service
 
-**V7.1.0**
+**V8.0**
 
 This workload allows for the **automatic creation, installation and renewal** of a SSL/TLS certificate in an [Azure Kubernetes Service](https://learn.microsoft.com/en-us/azure/aks/).
 

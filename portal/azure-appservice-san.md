@@ -6,7 +6,7 @@ nav_order: 7
 ---
 
 # SAN Certificate - Azure App Services
-**V7.1.0**
+**V8.0**
 
 RCL SSL creates a SAN TLS/SSL certificate using an [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records) and automatically binds it to an **App Service**.
 
@@ -18,22 +18,22 @@ SAN certificates only allow a single domain. For instance, the two different dom
 
 # Access Control
 
-## AAD Accounts
+## Organization Accounts
 
 {: .warning }
-Personal and Microsoft Accounts are not supported for Azure App Service. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
+Personal and Microsoft Accounts are not supported for Azure App Service. Only Microsoft Entra ID (formerly AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
 
 If you try to manage an Azure App service with a MSA account you will get the following error.
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL SSL Portal with a personal Microsoft account (MSA), please follow the instructions in the following link to associate an organization account to your subscription:
 
 - [Sign-In Accounts for RCL SSL Portal](../authorization/sign-in-accounts)
 
 ## Set Access Control
 
-To create certificates for Azure App service, the Azure AAD organizational account that you use to login to the RCL SSL Portal must :
+To create certificates for Azure App service, the organizational account that you use to login to the RCL SSL Portal must :
 
 - Have a role of ‘Owner’ or ‘Contributor’ to the subscription containing the Azure App Service
 
@@ -43,9 +43,9 @@ You may also experience an error message.
 
 ![image](../images/portal/access-control-errormsg.png)
 
-To set up access control for your AAD account, follow the instructions in the link below :
+To set up access control for your organization account, follow the instructions in the link below :
 
-- [Set Access Control for the AAD user](../authorization/access-control-user)
+- [Set Access Control for the organization user](../authorization/access-control-user)
 
 # Add Custom Domains to your App Service
 
@@ -123,7 +123,7 @@ The certificate will be automatically bound to the app service.
 
 # Manually Renewing SSL/TLS Certificates
 
-SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the certificates list to update a certificate.
+SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Renew' link in the certificates list to update a certificate.
 
 ![image](../images/portal/azure-dns-update.PNG)
 

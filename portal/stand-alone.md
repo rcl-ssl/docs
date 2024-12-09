@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 # Creating Stand Alone SSL/TLS Certificates
-**V7.1.0**
+**V8.0**
 
 In the RCL SSL Portal, you can create Stand Alone single-domain SSL/TLS certificates using HTTP and DNS challenges. Your domain can be hosted with any domain registrar.
 
@@ -30,9 +30,6 @@ You can create a SSL/TLS certificate by using either the :
 
 When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the renewed certificate in your web server.
 
-# Automatic Certificate Renewal
-
-Automatic certificate renewal is only supported with the [HTTP Challenge Type](./stand-alone.md#completing-the-http-challenge). You can use [RCL SSL HTTP AutoRenew](/httpautorenew/httpautorenew.md) to automatically renew certificates created with the HTTP challenge.
 
 # Create a SSL/TLS Certificate using HTTP
 
@@ -215,11 +212,6 @@ SSL/TLS certificates will expire in 90 days. You can manually renew a certificat
 - Delete the old certificate
 - Create a new certificate
 - Remove the old certificate from the web server and install the new certificate
-
-# Automatic Certificate Renewal
-
-If the certificate was created using the [HTTP Challenge](#completing-the-http-challenge) type, you can use [RCL SSL HTTP AutoRenew](../httpautorenew/httpautorenew.md) to automatically renew and install certificates in a web server.
-
 
 # Rate Limits
 

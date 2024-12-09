@@ -7,7 +7,7 @@ nav_order: 4
 
 # SSL/TLS for Azure App Service
 
-**V7.1.0**
+**V8.0**
 
 This workload allows for the **automatic creation, installation and renewal** of a SSL/TLS certificate in an [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/) (Web App, Function App, API App, Mobile App, etc.). This workload also supports apps in slots.
 
@@ -26,8 +26,8 @@ This workload allows for the **automatic creation, installation and renewal** of
 
 # Manually Renewing a SSL/TLS Certificate
 
-- In the Certificate List, click on **Manage > Update**
-- Then update the certificate
+- In the Certificate List, click on **Manage > Renew**
+- Then renew the certificate
 
 # Automatically Renewing a SSL/TLS Certificate
 

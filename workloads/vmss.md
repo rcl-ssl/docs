@@ -7,7 +7,7 @@ nav_order: 2
 
 # SSL/TLS for Azure Virtual Machine Scale Sets
 
-**V7.1.0**
+**V8.0**
 
 This workload allows for the **automatic creation, installation and renewal** of a SSL/TLS certificate for [Azure Virtual Machine Scale Sets](https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview) using :
 
@@ -47,19 +47,12 @@ SSL/TLS Certificates will expire within 90 days. Follow these instructions to au
 
 # End-To-End SSL/TLS Encryption
 
-If you require the connection from APplication Gateway to the individual VMs to use SSL/TLS on port 443, you will need to install SSL/TLS certificates in the VM. 
+If you require the connection from Application Gateway to the individual VMs to use SSL/TLS on port 443, you will need to install SSL/TLS certificates in the VM. 
 
 ## Installing SSL/TLS in each VM
 
 You can follow the instructions in this link to install SSL/TLS certificates in each VM
 
 - [SSL/TLS for Azure Virtual Machines](./vm.md)
-
-## Creating a Custom VM Image with RCL SSL
-
-You can also create a custom VM image to use for your VM Scale Set, then, include one of RCL SSL Apps to automatically install and renew the certificate in the VM. You can install the following RCL apps in the custom VM image :
-
-- [RCL SSL HTTP AutoRenew](../httpautorenew/)
-- [RCL SSL DNS AutoRenew](../dnsautorenew/)
 
 

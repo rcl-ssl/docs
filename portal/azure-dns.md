@@ -6,30 +6,27 @@ nav_order: 4
 ---
 
 # Creating SSL/TLS Certificates with Azure DNS
-
-**V7.1.0**
+**V8.0**
 
 In this section, you will learn how to create a SSL/TLS certificate in the RCL SSL Portal using an  [Azure DNS Zone](https://docs.microsoft.com/en-us/azure/dns/dns-zones-records).
 
 
-# Access Control
-
-## AAD Accounts
+## Organization Accounts
 
 {: .warning }
-Personal and Microsoft Accounts are not supported for Azure DNS. Only Azure Active Directory (AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
+Personal and Microsoft Accounts are not supported for Azure DNS. Only Microsoft Entra ID (formerly AAD) organizational accounts (also known as ‘Work or School Accounts’) are supported.
 
 If you try to create a certificate with Azure DNS with a MSA account you will get the following error.
 
 ![image](../images/portal/arm-consent-error.PNG)
 
-If you signed up for the RCL SSL Portal with a Personal Microsoft account (MSA), please follow the instructions in the following link to associate an AAD account to your subscription:
+If you signed up for the RCL SSL Portal with a Personal Microsoft account (MSA), please follow the instructions in the following link to associate an organization account to your subscription:
 
 - [Sign-In Accounts for RCL SSL Portal](../authorization/sign-in-accounts)
 
 ## Set Access Control
 
-To create certificates for Azure DNS, the Azure AAD organizational account that you use to login to the RCL Portal must either be :
+To create certificates for Azure DNS, the Azure organizational account that you use to login to the RCL SSL Portal must either be :
 
 - An administrator to the subscription containing the Azure DNS Zone(s)
 
@@ -43,9 +40,9 @@ You may also experience an error message.
 
 ![image](../images/portal/access-control-errormsg.png)
 
-To set up access control for your AAD account, follow the instructions in the link below :
+To set up access control for your organization account, follow the instructions in the link below :
 
-- [Set Access Control for the AAD user](../authorization/access-control-user)
+- [Set Access Control for the organization user](../authorization/access-control-user)
 
 # Create a SSL/TLS Certificate using DNS-01
 
@@ -126,21 +123,17 @@ You will need to manually download and install your certificate in your web serv
 
 # Manually Renewing SSL/TLS Certificates
 
-SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Update' link in the certificates list to update a certificate.
+SSL/TLS certificates will expire in 90 days. You can manually renew a certificate at any point before the expiry date. Click on the 'Renew' link in the certificates list to update a certificate.
 
 ![image](../images/portal/azure-dns-update.PNG)
 
 # Automatic Certificate Renewal
 
-You can use [RCL SSL DNS AutoRenew](../dnsautorenew/dnsautorenew.md) to automatically renew and install certificates in a web server.
+You can use the [RCL AutoRenew Function](../autorenew/autorenew) to automatically renew certificates.
 
-# SSL/TLS for Containers
+Follow the instructions in the link to use the AutoRenew function :
 
-You can use certificates created with the Azure DNS option, to provide SSL/TLS for container applications. Please refer to the following links for more information :
-
-- [SSL/TLS for Docker](../containers/docker.md)
-- [SSL/TLS for NGINX](../containers/nginx.md)
-- [SSL/TLS for Azure Container Instance](../containers/aci.md)
+- [RCL AutoRenew Function](../autorenew/autorenew)
 
 # Rate Limit
 

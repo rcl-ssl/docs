@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 # SSL/TLS for Azure Virtual Machines 
-**V7.1.0**
+**V8.0**
 
 This workload is applicable for the **creation, installation and renewal** of a SSL/TLS certificate in Azure Virtual Machines (VM) (Linux or Windows) running a web server.
 
@@ -55,12 +55,5 @@ SSL/TLS Certificates will expire within 90 days. Follow these instructions to re
 - Then update the certificate
 - Remove the old certificate and re-install the new one in your web server
 
-## Automatic Renewal with RCL SSL HTTP AutoRenew
-
-Automatic certificate renewal and installation in a web server hosted in a VM is supported with the [HTTP Challenge Type](../portal/stand-alone.md#completing-the-http-challenge) using [RCL SSL Http AutoRenew](../httpautorenew/httpautorenew.md). 
-
-## Automatic Renewal with RCL SSL DNS AutoRenew
-
-Automatic certificate renewal and installation in a web server hosted in a VM is supported using [RCL SSL DNS AutoRenew](../dnsautorenew/dnsautorenew.md). 
 
 

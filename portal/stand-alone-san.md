@@ -6,7 +6,7 @@ nav_order: 3
 ---
 
 # SAN Certificates - Stand Alone
-**V7.1.0**
+**V8.0**
 
 A Subject Alternative Name (SAN) SSL/TLS certificate will contain multiple domains in a single certificate.
 
@@ -46,11 +46,7 @@ You can create a SSL/TLS certificate by using either the :
 
 When a certificate is close to expiration, you should delete the certificate and create a new one. Then, install the renewed certificate in your web server.
 
-# Automatic Certificate Renewal
-
-Automatic certificate renewal is only supported with the [HTTP Challenge Type](./stand-alone-san.md#completing-the-http-challenge). You can use [RCL SSL HTTP AutoRenew](/httpautorenew/httpautorenew.md) to automatically renew certificates created with the HTTP challenge.
-
-## Create a SSL/TLS Certificate
+# Create a SSL/TLS Certificate
 
 - In the ‘Certificates’ module of the portal, click on the **Create New SSL/TLS Certificate** link
 
@@ -113,7 +109,7 @@ Perform the same steps for the second validation file.
 
 ![image](../images/portal/stand-alone-san-http-validation2.PNG)
 
-**Note:** - for sites hosted in IIS, extension-less files are not served by default. To solve, this add the following ``web.config`` file to the ``acme-challenge`` folder.
+**Note:** - for sites hosted in IIS, extension-less files are not served by default. To solve this, add the following ``web.config`` file to the ``acme-challenge`` folder.
 
 ```
 <configuration>
@@ -216,10 +212,6 @@ SSL/TLS certificates will expire in 90 days. You can manually renew a certificat
 - Delete the old certificate
 - Create a new certificate
 - Remove the old certificate from the web server and install the new certificate
-
-# Automatic Certificate Renewal
-
-If the certificate was created using the [HTTP Challenge](#completing-the-http-challenge) type, you can use [RCL SSL HTTP AutoRenew](../httpautorenew/httpautorenew.md) to automatically renew and install certificates in a web server.
 
 # Rate Limits
 
