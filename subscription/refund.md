@@ -6,14 +6,14 @@ nav_order: 3
 ---
 
 # Refund Policy
-**V7.1.0**
+**V8.0**
 
 All subscription payments are final for all the software applications and services provide by  Ray Consulting Limited, which include:
 
 - RCL SSL Portal
 - RCL SSL AutoRenew Function
-- RCL SSL DNS AutoRenew
-- RCL SSL HTTP AutoRenew
+- RCL SSL API
+- RCL SSL SDK
 
  Ray Consulting Limited does not offer any money-back guarantees. 
  

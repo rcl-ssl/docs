@@ -5,14 +5,12 @@ parent: Authorization
 nav_order: 2
 ---
 
-# Azure Active Directory Organization Account
-**V7.1.0**
+# Microsoft Entra ID Account
+**V8.0**
 
-An Azure Active Directory (AAD) organization account is required to sign in to the [RCL SSL Portal](../portal/portal.md) to manage Azure Resources (App Services, DNS, Key Vault, etc.) in a Subscription. An organization account is also called a **‘Work or School’ account**. Follow these steps to use an AAD account in the RCL SSL Portal.
+An Microsoft Entra ID (formerly AAD) organization account is required to sign in to the [RCL SSL Portal](../portal/portal.md) to manage Azure Resources (App Services, DNS, Key Vault, etc.). An organization account is also called a **‘Work or School’ account**. Follow these steps to use an organizaion account in the RCL SSL Portal.
 
-- In the Azure Portal, search for the **Azure Active Directory** and open it
-
-![image](../images/authorization_signin/subscribe-aad-open.png)
+- In the Azure Portal, open **Microsoft Entra ID** 
 
 - In your tenant, click the ‘Users’ link
 
@@ -40,7 +38,7 @@ You can also create a new user account to sign in to the RCL SSL Portal.
 
 ![image](../images/authorization_signin/subscribe-aad-user-member.png)
 
-- You will need to associate this new AAD organization account to login in to the RCL SSL Portal.
+- You will need to associate this new organization account to login in to the RCL SSL Portal.
 
 # Access Control
 
@@ -48,7 +46,7 @@ To access resources in you Microsoft Azure account a further step is required. Y
 
 Refer to the following link for more information :
 
-- [Set Access Control for the AAD user](./access-control-user)
+- [Set Access Control for the organization user](./access-control-user)
 
 
 

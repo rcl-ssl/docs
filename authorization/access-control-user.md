@@ -5,10 +5,10 @@ parent: Authorization
 nav_order: 3
 ---
 
-# Set Access Control for the AAD user
-**V7.1.0**
+# Set Access Control for the organization user
+**V8.0**
 
-The Azure Active Directory (AAD) organization (Work or School) account that you use to login to the [RCL SSL Portal](../portal/portal.md)  must either be :
+The Microsoft Entra ID (formerly AAD) organization (Work or School) account that you use to login to the [RCL SSL Portal](../portal/portal.md)  must either be :
 
 - An 'Owner' to your Azure subscription
 - Have a role of ‘Owner’ or ‘Contributor’ to your Azure subscription
@@ -19,15 +19,15 @@ You may also experience an error message.
 
 ![image](../images/portal/access-control-errormsg.png)
 
-In this article, you will learn how to set access control for your AAD organization account (**AAD user**) to your Azure subscription.
+In this article, you will learn how to set access control for your organization account (**organization user**) to your Azure subscription.
 
-You can select or create a new **AAD user account** in your AAD tenant to sign in to the RCL SSL Portal. Refer to the following link for more information :
+You can select or create a new **user account** in your Microsoft Entra ID tenant to sign in to the RCL SSL Portal. Refer to the following link for more information :
 
-- [AAD User Account](./aad-account)
+- [Organization User Account](./aad-account)
 
 # Subscription Administrator
 
-You can determine if your AAD organization account is an 'Owner' on the Azure subscription by logging in to the Azure portal with the same AAD account that you use to login to to the the RCL SSL Portal.
+You can determine if your organization account is an 'Owner' on the Azure subscription by logging in to the Azure portal with the same organization account that you use to login to to the the RCL SSL Portal.
 
 - In the Azure portal, search for 'Subscriptions' and navigate to it
 
@@ -45,7 +45,7 @@ You can determine if your AAD organization account is an 'Owner' on the Azure su
 
 # Set Owner or Contributor roles
 
-If the AAD account that you use to log in to the RCL SSL Portal is not an 'Owner' in the Azure subscription, you need to add the AAD account as an ‘Owner’ or ‘Contributor’ to the Azure subscription.
+If the organization account that you use to log in to the RCL SSL Portal is not an 'Owner' in the Azure subscription, you need to add the AAD account as an ‘Owner’ or ‘Contributor’ to the Azure subscription.
 
 - Click on the the ‘Access Control (IAM)’ link in the Subscription section
 
@@ -59,7 +59,7 @@ If the AAD account that you use to log in to the RCL SSL Portal is not an 'Owner
 
 ![install](../images/authorization_access_control/add_role2.PNG)
 
-- Search for and select the AAD user account that you use to login to the RCL SSL Portal
+- Search for and select the organization user account that you use to login to the RCL SSL Portal
 
 ![image](../images/authorization_signin/access-control-create.png)
 
@@ -89,7 +89,7 @@ This step is not required, if SSL/TLS certificates are not being created for Key
 
 - Click the 'Next' button when you are done
 
-- Select a service principal : search for the Azure Active Directory organizational user account that you use to login to the RCL SSL portal
+- Select a service principal : search for the organizational user account that you use to login to the RCL SSL portal
 
 ![image](../images/portal/certificate-keyvault-access-policy-sp.png)
 

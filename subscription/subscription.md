@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 # Azure Marketplace Subscription
-**V7.1.0**
+**V8.0**
 
 - You will subscribe to [RCL SSL Portal](../portal/portal.md) app in the Azure portal or in the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/rayconsulting.002?tab=overview)
 

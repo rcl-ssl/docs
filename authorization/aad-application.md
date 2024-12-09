@@ -12,7 +12,8 @@ nav_order: 4
 
 - to access Azure resources such as Key Vault, DNS Zone and App Service in a user's Azure Subscription
 - to use the [RCL SSL AutoRenew](../autorenew/autorenew) Function app
-- to use the [RCL SSL DNS AutoRenew](../dnsautorenew/dnsautorenew.md) app
+- to use the [RCL SSL API](../api/api.md) app
+- to use the [RCL SSL SDK](../sdk/sdk.md) app
 
 
  This authorization will be granted through an **Application**.
@@ -38,7 +39,7 @@ In this section, the following credentials will be obtained from the application
 
 - In Microsoft Entra ID, open the application that was registered
 
-- Copy the **Application (client) ID** [Auth:clientId] and **Directory (tenant) ID** [Auth:tenantId] for configuration purposes
+- Copy the **Application (client) ID** and **Directory (tenant) ID** for configuration purposes
 
 ![install](../images/authorization_aad_app/aad_app.PNG)
 
@@ -48,6 +49,6 @@ In this section, the following credentials will be obtained from the application
 
 ![install](../images/authorization_aad_app/aad_app3.PNG)
 
-- Copy the Client Secret **Value** [Auth:clientSecret] for configuration purposes  
+- Copy the Client Secret **Value** for configuration purposes  
 
 ![install](../images/authorization_aad_app/aad_app4.PNG)

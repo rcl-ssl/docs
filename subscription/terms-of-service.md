@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 # Terms of Service
-**V7.1.0**
+**V8.0**
 
 ## Introduction
 
@@ -14,12 +14,12 @@ These Terms of Service applies to all users who subscribe to or use the RCL SSL 
 
 - RCL SSL Portal
 - RCL SSL AutoRenew Function
-- RCL SSL DNS AutoRenew
-- RCL SSL HTTP AutoRenew
+- RCL SSL API
+- RCL SSL SDK
 
 ## General Conditions
 
-You may not use the RCL SSL Apps for any illegal or unauthorized purpose nor may you, in the use of the RCL SSL Apps, violate any laws in your jurisdiction (including but not limited to copyright laws), the laws applicable to you in your customer’s jurisdiction. You will comply with all applicable laws, rules and regulations in your use of the Service.
+You may not use the RCL SSL Apps for any illegal or unauthorized purpose nor may you, in the use of the RCL SSL Apps, violate any laws in your jurisdiction (including but not limited to copyright laws), the laws applicable to you in your customer’s jurisdiction. You will comply with all applicable laws, rules and regulations in your use of the RCL SSL Apps.
 
 ## Our Rights
 

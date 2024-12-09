@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 # Privacy Policy
-**V7.1.0**
+**V8.0**
 
 ## Cookies
 
@@ -14,8 +14,8 @@ When you visit our various RCL SSL Apps (RCL Client for Let's Encrypt), we use c
 
 - RCL SSL Portal
 - RCL SSL AutoRenew Function
-- RCL SSL DNS AutoRenew
-- RCL SSL HTTP AutoRenew
+- RCL SSL API
+- RCL SSL SDK
 
 We do this to find out things such as the number of visitors to the various parts of our site and to provide you
 with a better experience.
