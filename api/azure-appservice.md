@@ -109,19 +109,6 @@ Include a [Certificate object](./certificate-object.md) in the body of the reque
     "target": "Azure App Service",
     "isSAN": false,
     "azureSubscriptionId": "650085hg4-y6u4-875yh-63hs-hfhg73djgrnd",
-    "accessToken": "eyJ0eXAiOiJK....",
-    "azureAppServiceSiteName": "shopeneur"
-}
-
-{
-    "certificateName" : "shopeneur.com",
-    "rootDomain" : "shopeneur.com",
-    "challengeType" : "http",
-    "email" : "rcl@mail.com",
-    "password" : "password123",
-    "target": "Azure App Service",
-    "isSAN": false,
-    "azureSubscriptionId": "650085hg4-y6u4-875yh-63hs-hfhg73djgrnd",
     "accessToken": "eyJ0eXAiOiJKV1Q...",
     "azureAppServicePlanName" : "standardAppPlan",
     "azureAppServicePlanResourceGroup" : "webRG",
