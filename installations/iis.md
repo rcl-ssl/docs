@@ -6,11 +6,11 @@ nav_order: 5
 ---
 
 # Installing TLS/SSL Certificates in IIS
-**V7.1.0**
+**V8.0**
 
 This article assumes that you have experience with IIS.
 
-## Get the Certificate Files Manually
+## Get the Certificate Files
 
 You can download the files required to install the TLS/SSL certificate in IIS from the **RCL SSL Portal** on the **Certificate Details** page.
 
@@ -22,11 +22,12 @@ The files required are :
 
 - Certificate PFX file (.pfx)
 
+{: .information }
 On some operating systems, .pfx files may be downloaded with a .p12 extension. To resolve this issue, left click the link to download the file and click 'Save link as..'. In the save dialog, change the file extension to .pfx. You can also change the file extension from .p12 to .pfx, or vice versa, after the file is downloaded.
 
-# How To Import The PFX (PKCS12) File Into Microsoft IIS
+# How To Import The PFX (PKCS12) File Into Microsoft Windows
 
-Importing a PFX (PKCS12) file into Windows IIS is generally a straight-forward process.
+Importing a PFX (PKCS12) file into Windows is generally a straight-forward process.
 
 - Step 1 : In “Start” find and open “Run”.
 
@@ -60,7 +61,7 @@ Importing a PFX (PKCS12) file into Windows IIS is generally a straight-forward p
 
 - Step 16 : Close the MMC console. It is not necessary to save any changes that you have made to the MMC console.
 
-The SSL Certificate, Private Key and any Intermediate Certificates should now be imported into your hosting machine in the "Personal" certificates store. You must now follow the instructions below to bind your SSL Certificate to your website.
+The SSL Certificate, Private Key and any Intermediate Certificates should now be imported into your Windows hosting machine in the "Personal" certificates store. You must now follow the instructions below to bind your SSL Certificate to your website.
 
 # How To Bind A SSL Certificate In IIS
 
