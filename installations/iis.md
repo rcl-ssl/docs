@@ -5,14 +5,14 @@ parent: Certificate Installations
 nav_order: 5
 ---
 
-# Installing TLS/SSL Certificates in IIS
+# Installing SSL/TLS Certificates in IIS
 **V8.0**
 
 This article assumes that you have experience with IIS.
 
 ## Get the Certificate Files
 
-You can download the files required to install the TLS/SSL certificate in IIS from the **RCL SSL Portal** on the **Certificate Details** page.
+You can download the files required to install the SSL/TLS certificate in IIS from the **RCL SSL Portal** on the **Certificate Details** page.
 
 ![image](../images/certificate_installations/installation_files_pfx.png)
 
