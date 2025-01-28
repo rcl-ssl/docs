@@ -92,3 +92,6 @@ sudo systemctl restart tomcat
 ```
 
 Now you can confirm your domain SSL certificate using any of the SSL checker tools available. Or you can just browse the URL.
+
+{: .information }
+Apache Tomcat does not normally host websites on port 443 or (80). You can use the **authbind** package to enable this.
