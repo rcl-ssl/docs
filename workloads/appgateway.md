@@ -27,8 +27,6 @@ This workload allows for the **automatic creation, installation and renewal** of
 - After creation, the certificate is automatically imported to Azure Key Vault
 - Check for the **certificate name** and version in Azure Key Vault
 
-
-
 # Azure Application Gateway SSL/TLS with Azure Key Vault
 
 Application Gateway supports TLS termination at the gateway, after which traffic typically flows unencrypted to the backend servers or virtual machines. Follow the instruction in this link to add the SSL/TLS certificate for Azure Key Vault
