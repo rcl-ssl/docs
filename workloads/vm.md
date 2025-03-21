@@ -16,6 +16,7 @@ The web servers running in the VM may include :
  - Apache Tomcat
  - Nginx
  - Microsoft IIS
+ - Azure Application Gateway + Key Vault
  - Other web servers and hosting systems
 
 # Create the SSL/TLS Certificate
@@ -26,6 +27,8 @@ The web servers running in the VM may include :
     - [Stand Alone SAN](../portal/stand-alone-san.md) 
     - [Azure DNS](../portal/azure-dns.md)
     - [Azure DNS SAN](../portal/azure-dns-san.md)
+    - [Azure DNS + Key Vault](../portal/azure-keyvault.md)
+    - [Azure DNS + Key Vault SAN](../portal/azure-keyvault-san.md)
 
 - The SAN options allow for two domains on a single certificate, whereas, the other option only allows one domain on the certificate
 
@@ -37,6 +40,7 @@ The web servers running in the VM may include :
     - [Apache Tomcat](../installations/apache-tomcat.md)
     - [NGINX](../installations/nginx.md)
     - [Microsoft IIS](../installations/iis.md)
+    - [Azure Application Gateway + Key Vault](../workloads/appgateway.md)
     - [Other web servers and hosting systems](../installations/web-servers.md)
 
 # Renewing a SSL/TLS Certificate
@@ -56,6 +60,8 @@ SSL/TLS Certificates will expire within 90 days. Follow these instructions to re
 - Remove the old certificate and re-install the new one in your web server
 
 ## Automatic Renewal - Azure DNS + Key Vault (including SAN) + Application Gateway
+
+Automatic certificate renewal is only supported with the Azure DNS + Key Vault (including SAN) option using an Azure Application Gateway.
 
 ### Create the SSL/TLS Certificate
 
